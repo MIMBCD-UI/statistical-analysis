@@ -1,6 +1,6 @@
 # Statistical Analysis
 
-<img src="https://github.com/mida-project/meta/blob/master/banners/statistical_analysis_banner.png?raw=true"/>
+<img src="https://github.com/mida-project/meta/blob/master/banners/statistical-analysis_banner.png?raw=true"/>
 
 This repository aims to assemble a set of [`methods/`](methods/) for our statistical analysis. We use several statistical models (e.g.: [ANOVA](https://en.wikipedia.org/wiki/Analysis_of_variance), [Kruskal-Wallis One-Way Analysis of Variance](https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance), [Mann-Whitney U test](https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U_test), etc...) to analyse our data and deeper understanding it. For instance, we used the [Kruskal-Wallis One-Way Analysis of Variance](https://en.wikipedia.org/wiki/Kruskal%E2%80%93Wallis_one-way_analysis_of_variance) for our [ISS'17](https://iss2017.acm.org/) Publications ([Paper](https://dl.acm.org/citation.cfm?id=3134111) & [Poster](https://iss2017.acm.org/program/posters/#iss43-ex)) for the **Results** analysis of our data. The hereby repository is dependent from the [sheet-reader](https://github.com/MIMBCD-UI/sheet-reader) repository, so please first of all clone that to your machine.
 
