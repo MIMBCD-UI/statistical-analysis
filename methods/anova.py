@@ -3,6 +3,13 @@ sheetReader_dir = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..',
 + '/sheet-reader/src/')
 sys.path.append(sheetReader_dir)
 
+import pandas as pd
+datafile = (os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
++ '/sheet-reader/temp/sheet.csv')
+print("%s" % datafile)
+
+data = pd.read_csv(datafile, error_bad_lines=False)
+
 from main import sheetReader
 from main import sheetReaderSum
 from main import sheetReaderMean
