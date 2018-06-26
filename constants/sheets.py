@@ -27,6 +27,19 @@ MIN_STR = str(MIN_VAL)
 MAX_STR = str(MAX_VAL)
 
 # ============================================== #
+#                    GROUPS                      #
+# ============================================== #
+
+GROUP_INTERN_1 = 'intern_1'
+GROUP_INTERN_2 = 'intern_2'
+GROUP_JUNIOR_1 = 'junior_1'
+GROUP_JUNIOR_2 = 'junior_2'
+GROUP_MIDDLE_1 = 'middle_1'
+GROUP_MIDDLE_2 = 'middle_2'
+GROUP_SENIOR_1 = 'senior_1'
+GROUP_SENIOR_2 = 'senior_2'
+
+# ============================================== #
 #                    NASA-TLX                    #
 # ============================================== #
 
