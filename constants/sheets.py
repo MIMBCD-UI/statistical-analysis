@@ -88,10 +88,38 @@ TIME_MULTI_TOTAL   = 'AQ'
 #                NUMBER OF CLICKS                #
 # ============================================== #
 
+CLICKS_SINGLE_94662  = 'AR'
+CLICKS_SINGLE_607376 = 'AS'
+CLICKS_SINGLE_737037 = 'AT'
+CLICKS_SINGLE_TOTAL  = 'AU'
+
+CLICKS_MULTI_94662   = 'AV'
+CLICKS_MULTI_607376  = 'AW'
+CLICKS_MULTI_737037  = 'AX'
+CLICKS_MULTI_TOTAL   = 'AY'
+
 # ============================================== #
 #                NUMBER OF ERRORS                #
 # ============================================== #
 
+ERRORS_SINGLE_94662  = 'AZ'
+ERRORS_SINGLE_607376 = 'BA'
+ERRORS_SINGLE_737037 = 'BB'
+ERRORS_SINGLE_TOTAL  = 'BC'
+
+ERRORS_MULTI_94662   = 'BD'
+ERRORS_MULTI_607376  = 'BE'
+ERRORS_MULTI_737037  = 'BF'
+ERRORS_MULTI_TOTAL   = 'BG'
+
 # ============================================== #
 #                     BIRADS                     #
 # ============================================== #
+
+BIRADS_SINGLE_94662  = 'BH'
+BIRADS_SINGLE_607376 = 'BI'
+BIRADS_SINGLE_737037 = 'BJ'
+
+BIRADS_MULTI_94662   = 'BK'
+BIRADS_MULTI_607376  = 'BL'
+BIRADS_MULTI_737037  = 'BM'
