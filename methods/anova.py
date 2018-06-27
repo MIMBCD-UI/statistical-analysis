@@ -10,16 +10,21 @@ __version__     = "1.0.0"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
-                    "Carlos Santiago",
-                    "Jacinto C. Nascimento",
-                    "Pedro Miraldo",
-                    "Nuno Nunes"
-                  ]
+  "Carlos Santiago",
+  "Jacinto C. Nascimento",
+  "Pedro Miraldo",
+  "Nuno Nunes"
+]
 
 import sys, os.path
 
 joinPath = os.path.join(os.path.dirname(__file__), '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
+
+sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
+sys.path.append(sa_scripts_dir)
+
+from nasa import nasaColMean
 
 sheetReader_dir = (pathAbsPath + '/sheet-reader/src/')
 sys.path.append(sheetReader_dir)
@@ -37,9 +42,13 @@ constants_dir = (pathAbsPath + '/sheet-reader/constants/')
 sys.path.append(constants_dir)
 import main_variables
 
+# ============================================== #
+#                IMPORT VARIABLES                #
+# ============================================== #
+
 MIN_VAL = main_variables.MIN_VAL
 MAX_VAL = main_variables.MAX_VAL
-N = MAX_VAL - MIN_VAL
+N       = main_variables.N
 
 GROUP_INTERN_1 = main_variables.GROUP_INTERN_1
 GROUP_INTERN_2 = main_variables.GROUP_INTERN_2
@@ -50,16 +59,7 @@ GROUP_MIDDLE_2 = main_variables.GROUP_MIDDLE_2
 GROUP_SENIOR_1 = main_variables.GROUP_SENIOR_1
 GROUP_SENIOR_2 = main_variables.GROUP_SENIOR_2
 
-GROUPS_LIST = [
-                GROUP_INTERN_1,
-                GROUP_INTERN_2,
-                GROUP_JUNIOR_1,
-                GROUP_JUNIOR_2,
-                GROUP_MIDDLE_1,
-                GROUP_MIDDLE_2,
-                GROUP_SENIOR_1,
-                GROUP_SENIOR_2
-              ]
+GROUPS_LIST = main_variables.GROUPS_LIST
 
 NASATLX_SINGLE_MENTAL_DEMAND = main_variables.NASATLX_SINGLE_MENTAL_DEMAND
 NASATLX_SINGLE_PHYSICAL_DEMAND = main_variables.NASATLX_SINGLE_PHYSICAL_DEMAND
@@ -68,14 +68,7 @@ NASATLX_SINGLE_PERFORMANCE = main_variables.NASATLX_SINGLE_PERFORMANCE
 NASATLX_SINGLE_EFFORT = main_variables.NASATLX_SINGLE_EFFORT
 NASATLX_SINGLE_FRUSTRATION = main_variables.NASATLX_SINGLE_FRUSTRATION
 
-NASATLX_SINGLE_LIST = [
-                        NASATLX_SINGLE_MENTAL_DEMAND,
-                        NASATLX_SINGLE_PHYSICAL_DEMAND,
-                        NASATLX_SINGLE_TEMPORAL_DEMAND,
-                        NASATLX_SINGLE_PERFORMANCE,
-                        NASATLX_SINGLE_EFFORT,
-                        NASATLX_SINGLE_FRUSTRATION
-                      ]
+NASATLX_SINGLE_LIST = main_variables.NASATLX_SINGLE_LIST
 
 NASATLX_MULTI_MENTAL_DEMAND = main_variables.NASATLX_MULTI_MENTAL_DEMAND
 NASATLX_MULTI_PHYSICAL_DEMAND = main_variables.NASATLX_MULTI_PHYSICAL_DEMAND
@@ -84,14 +77,7 @@ NASATLX_MULTI_PERFORMANCE = main_variables.NASATLX_MULTI_PERFORMANCE
 NASATLX_MULTI_EFFORT = main_variables.NASATLX_MULTI_EFFORT
 NASATLX_MULTI_FRUSTRATION = main_variables.NASATLX_MULTI_FRUSTRATION
 
-NASATLX_MULTI_LIST = [
-                        NASATLX_MULTI_MENTAL_DEMAND,
-                        NASATLX_MULTI_PHYSICAL_DEMAND,
-                        NASATLX_MULTI_TEMPORAL_DEMAND,
-                        NASATLX_MULTI_PERFORMANCE,
-                        NASATLX_MULTI_EFFORT,
-                        NASATLX_MULTI_FRUSTRATION
-                     ]
+NASATLX_MULTI_LIST = main_variables.NASATLX_MULTI_LIST
 
 # ============================================== #
 #                 GROUP_INTERN_1                 #
@@ -239,29 +225,14 @@ print(NSF_MEAN_GI1)
 # ============================================== #
 # ============================================== #
 
-# def ssBetweenNasa():
-#   groupsList = GROUPS_LIST
-#   nasaListSingle = NASATLX_SINGLE_LIST
-#   nasaListMulti = NASATLX_MULTI_LIST
-#   for i in range(len(groupsList)):
-#     for j in range(len(nasaListSingle)):
-#       for k in range(len(nasaListMulti)):
-#         NS_SINGLE_SUM = sheetReaderSum(groupsList[i], nasaListSingle[j])
-#         NS_MULTI_SUM = sheetReaderSum(groupsList[i], nasaListMulti[k])
-#         NSMD_SINGLE_MULTI = NS_SINGLE_SUM + NS_MULTI_SUM
-#         SSbetween = ((NS_SUM)**2 / N) - ((NSMD_SINGLE_MULTI)**2 / (N * 2))
-#         return SSbetween
+NSMD_ALL = nasaColMean(NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_ALL = nasaColMean(NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_ALL = nasaColMean(NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_ALL = nasaColMean(NASATLX_SINGLE_PERFORMANCE)
+NSE_ALL = nasaColMean(NASATLX_SINGLE_EFFORT)
+NSF_ALL = nasaColMean(NASATLX_SINGLE_FRUSTRATION)
 
-# def nasaColMean(column):
-#   NS_COL_SUM = 0
-#   groupsList = GROUPS_LIST
-#   for i in range(len(groupsList)):
-#     NS_COL_SUM = sheetReaderSum(groupsList[i], column)
-#   return NS_COL_SUM
-
-# NSMD_ALL = nasaColMean(NASATLX_SINGLE_MENTAL_DEMAND)
-
-# print(NSMD_ALL)
-
-# SSbetween_NSMD_GI1 = ((NSMD_SUM_GI1)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
+SSbetween_NSMD_GI1 = ((NSMD_SUM_GI1)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
 # SSbetween_NSMD_GI2 = ((NSMD_SUM_GI2)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
+
+print(SSbetween_NSMD_GI1)
