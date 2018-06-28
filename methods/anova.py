@@ -27,18 +27,18 @@ sys.path.append(sa_scripts_dir)
 
 from nasa import nasaColMean
 
-sheetReader_dir = (pathAbsPath + '/sheet-reader/src/')
-sys.path.append(sheetReader_dir)
-
-import pandas as pd
-datafile = (pathAbsPath + '/sheet-reader/temp/sheet.csv')
-
-#data = pd.read_csv(datafile, error_bad_lines=False)
-
-from main import sheetReader
-from main import sheetReaderSum
-from main import sheetReaderMean
+src_dir = (pathAbsPath + '/sheet-reader/src/')
+sys.path.append(src_dir)
 
 constants_dir = (pathAbsPath + '/sheet-reader/constants/')
 sys.path.append(constants_dir)
 import main_variables
+
+scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+sys.path.append(scripts_dir)
+import sheetReaders
+
+import pandas as pd
+datafile_main = (pathAbsPath + '/sheet-reader/temp/main_sheet.csv')
+datafile_fs = (pathAbsPath + '/sheet-reader/temp/fs_sheet.csv')
+datafile_fm = (pathAbsPath + '/sheet-reader/temp/fm_sheet.csv')

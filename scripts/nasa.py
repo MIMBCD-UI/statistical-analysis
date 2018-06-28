@@ -28,26 +28,15 @@ import main_variables
 sheetReader_dir = (pathAbsPath + '/sheet-reader/src/')
 sys.path.append(sheetReader_dir)
 
-from main import sheetReaderSum
+scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+sys.path.append(scripts_dir)
+import sheetReaders
 
 MIN_VAL = main_variables.MIN_VAL
 MAX_VAL = main_variables.MAX_VAL
 N       = main_variables.N
 
 GROUPS_LIST = main_variables.GROUPS_LIST
-
-# def ssBetweenNasa():
-#   groupsList = GROUPS_LIST
-#   nasaListSingle = NASATLX_SINGLE_LIST
-#   nasaListMulti = NASATLX_MULTI_LIST
-#   for i in range(len(groupsList)):
-#     for j in range(len(nasaListSingle)):
-#       for k in range(len(nasaListMulti)):
-#         NS_SINGLE_SUM = sheetReaderSum(groupsList[i], nasaListSingle[j])
-#         NS_MULTI_SUM = sheetReaderSum(groupsList[i], nasaListMulti[k])
-#         NSMD_SINGLE_MULTI = NS_SINGLE_SUM + NS_MULTI_SUM
-#         SSbetween = ((NS_SUM)**2 / N) - ((NSMD_SINGLE_MULTI)**2 / (N * 2))
-#         return SSbetween
 
 def nasaColMean(column):
   NS_COL_SUM = 0
