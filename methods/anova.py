@@ -38,7 +38,14 @@ scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
 sys.path.append(scripts_dir)
 import sheetReaders
 
+main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
+fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
+fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
+
 import pandas as pd
-datafile_main = (pathAbsPath + '/sheet-reader/temp/main_sheet.csv')
-datafile_fs = (pathAbsPath + '/sheet-reader/temp/fs_sheet.csv')
-datafile_fm = (pathAbsPath + '/sheet-reader/temp/fm_sheet.csv')
+datafile_fs = pd.read_csv(fs_sheet_dir)
+datafile_fm = pd.read_csv(fm_sheet_dir)
+
+#Create a boxplot
+datafile_fs.boxplot('mental_demand', by='group', figsize=(12, 8))
+datafile_fm.boxplot('mental_demand', by='group', figsize=(12, 8))
