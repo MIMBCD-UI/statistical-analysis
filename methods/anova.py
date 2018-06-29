@@ -47,6 +47,7 @@ fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
 fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
 
 import pandas as pd
+from scipy import stats
 import matplotlib.pyplot as plt
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
@@ -60,27 +61,40 @@ datafile_fm = pd.read_csv(fm_sheet_dir)
 #                                                #
 # ============================================== #
 
+nasatlx_columns = [
+  'mental_demand',
+  'physical_demand',
+  'temporal_demand',
+  'performance',
+  'effort',
+  'frustration'
+]
+
+filterByColumn = 'group'
+figSizeX = 12
+figSizeY = 8
+
 # ============================================== #
 #                SINGLE-MODALITY                 #
 # ============================================== #
 
-datafile_fs.boxplot('mental_demand', by='group', figsize=(12, 8))
-datafile_fs.boxplot('physical_demand', by='group', figsize=(12, 8))
-datafile_fs.boxplot('temporal_demand', by='group', figsize=(12, 8))
-datafile_fs.boxplot('performance', by='group', figsize=(12, 8))
-datafile_fs.boxplot('effort', by='group', figsize=(12, 8))
-datafile_fs.boxplot('frustration', by='group', figsize=(12, 8))
+def createBoxplotFS(filterBy, array):
+  i = 0
+  for i in range(len(array)):
+    datafile_fs.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
+
+createBoxplotFS(filterByColumn, nasatlx_columns)
 
 # ============================================== #
 #                 MULTI-MODALITY                 #
 # ============================================== #
 
-datafile_fm.boxplot('mental_demand', by='group', figsize=(12, 8))
-datafile_fm.boxplot('physical_demand', by='group', figsize=(12, 8))
-datafile_fm.boxplot('temporal_demand', by='group', figsize=(12, 8))
-datafile_fm.boxplot('performance', by='group', figsize=(12, 8))
-datafile_fm.boxplot('effort', by='group', figsize=(12, 8))
-datafile_fm.boxplot('frustration', by='group', figsize=(12, 8))
+def createBoxplotFM(filterBy, array):
+  i = 0
+  for i in range(len(array)):
+    datafile_fm.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
+
+createBoxplotFM(filterByColumn, nasatlx_columns)
 
 # ============================================== #
 # ============================================== #
@@ -89,14 +103,122 @@ datafile_fm.boxplot('frustration', by='group', figsize=(12, 8))
 #                 INITIALIZATION                 #
 # ============================================== #
 
-intern_1 = datafile_fs['mental_demand'][datafile_fs.group == 'intern_1']
+# intern_1 = datafile_fs['mental_demand'][datafile_fs.group == 'intern_1']
+# intern_2 = datafile_fs['mental_demand'][datafile_fs.group == 'intern_2']
+# junior_1 = datafile_fs['mental_demand'][datafile_fs.group == 'junior_1']
+# junior_2 = datafile_fs['mental_demand'][datafile_fs.group == 'junior_2']
+# middle_1 = datafile_fs['mental_demand'][datafile_fs.group == 'middle_1']
+# middle_2 = datafile_fs['mental_demand'][datafile_fs.group == 'middle_2']
+# senior_1 = datafile_fs['mental_demand'][datafile_fs.group == 'senior_1']
+# senior_2 = datafile_fs['mental_demand'][datafile_fs.group == 'senior_2']
 
-grps = pd.unique(datafile_fs.group.values)
-d_data = {grp:datafile_fs['mental_demand'][datafile_fs.group == grp] for grp in grps}
+grps_fs = pd.unique(datafile_fs.group.values)
+grps_fm = pd.unique(datafile_fm.group.values)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                SINGLE-MODALITY                 #
+# ============================================== #
+
+d_data_fs_md = {
+  grp:datafile_fs['mental_demand'][datafile_fs.group == grp]
+  for grp in grps_fs
+}
+
+d_data_fs_pd = {
+  grp:datafile_fs['physical_demand'][datafile_fs.group == grp]
+  for grp in grps_fs
+}
+
+d_data_fs_td = {
+  grp:datafile_fs['temporal_demand'][datafile_fs.group == grp]
+  for grp in grps_fs
+}
+
+d_data_fs_p = {
+  grp:datafile_fs['performance'][datafile_fs.group == grp]
+  for grp in grps_fs
+}
+
+d_data_fs_e = {
+  grp:datafile_fs['effort'][datafile_fs.group == grp]
+  for grp in grps_fs
+}
+
+d_data_fs_f = {
+  grp:datafile_fs['frustration'][datafile_fs.group == grp]
+  for grp in grps_fs
+}
+
+# ============================================== #
+#                 MULTI-MODALITY                 #
+# ============================================== #
+
+d_data_fm_md = {
+  grp:datafile_fm['mental_demand'][datafile_fs.group == grp]
+  for grp in grps_fm
+}
+
+d_data_fm_pd = {
+  grp:datafile_fm['physical_demand'][datafile_fs.group == grp]
+  for grp in grps_fm
+}
+
+d_data_fm_td = {
+  grp:datafile_fm['temporal_demand'][datafile_fs.group == grp]
+  for grp in grps_fm
+}
+
+d_data_fm_p = {
+  grp:datafile_fm['performance'][datafile_fs.group == grp]
+  for grp in grps_fm
+}
+
+d_data_fm_e = {
+  grp:datafile_fm['effort'][datafile_fs.group == grp]
+  for grp in grps_fm
+}
+
+d_data_fm_f = {
+  grp:datafile_fm['frustration'][datafile_fs.group == grp]
+  for grp in grps_fm
+}
+
+# ============================================== #
+# ============================================== #
 
 k = len(pd.unique(datafile_fs.group))  # number of conditions
 N = len(datafile_fs.values)  # conditions times participants
 n = datafile_fs.groupby('group').size()[0] #Participants in each condition
+
+F_fs_md, p_fs_md = stats.f_oneway(
+  d_data_fs_md['intern_1'],
+  d_data_fs_md['intern_2'],
+  d_data_fs_md['junior_1'],
+  d_data_fs_md['junior_2'],
+  #d_data_fs_md['middle_1'],
+  #d_data_fs_md['middle_2'],
+  d_data_fs_md['senior_1']
+  #d_data_fs_md['senior_2']
+)
+
+F_fm_md, p_fm_md = stats.f_oneway(
+  d_data_fm_md['intern_1'],
+  d_data_fm_md['intern_2'],
+  d_data_fm_md['junior_1'],
+  d_data_fm_md['junior_2'],
+  #d_data_fs_md['middle_1'],
+  #d_data_fs_md['middle_2'],
+  d_data_fm_md['senior_1']
+  #d_data_fs_md['senior_2']
+)
+
+print("Single-Modality (Mental Demand): F = %f" % (F_fs_md))
+print("Single-Modality (Mental Demand): p = %f" % (p_fs_md))
+print("Multi-Modality (Mental Demand): F = %f" % (F_fm_md))
+print("Multi-Modality (Mental Demand): p = %f" % (p_fm_md))
 
 # ============================================== #
 # ============================================== #

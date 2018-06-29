@@ -58,6 +58,24 @@ python3 src/main.py
 
 3.2. Enjoy our source code!
 
+### Notebooks
+
+You can also run a Notebook to watch some of our `methods` chart plots. For this goal we are using the well known [Jupyter Notebook](http://jupyter.org/) web application. To run the [Jupyter Notebook](http://jupyter.org/) just follow the steps.
+
+4.1. Get inside our project directory:
+
+```
+cd statistical-analysis/
+```
+
+4.2. Run [Jupyter Notebook](http://jupyter.org/) application by typing:
+
+```
+jupyter notebook
+```
+
+> If you have any question regarding the [Jupyter Notebook](http://jupyter.org/) just follow their [Documentation](http://jupyter.org/documentation). You can also ask for help close to the [Community](http://jupyter.org/community).
+
 ## Information
 
 As far as we have to do several statictical analysis over our users, we need to address their results by calculating a set of measures. This measures will gave us a better understanding regarding how users are aiming to interact with our systems. Therefore it is of chief importance to scale this solution for a spreadsheet template-like where we can duplicate the same document and apply this group of source code to consume our data each time we need it.
