@@ -19,8 +19,12 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
+#pathDirname = '/Users/Francisco/Git/statistical-analysis/methods/anova.py'
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
+#pathAbsPath = '/Users/Francisco/Git/statistical-analysis/methods/anova.py'
+
+print(pathDirname)
 
 sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
 sys.path.append(sa_scripts_dir)
@@ -43,9 +47,58 @@ fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
 fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
 
 import pandas as pd
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+from statsmodels.formula.api import ols
+
 datafile_fs = pd.read_csv(fs_sheet_dir)
 datafile_fm = pd.read_csv(fm_sheet_dir)
 
-#Create a boxplot
+# ============================================== #
+#                                                #
+#                 CREATE BOXPLOT                 #
+#                                                #
+# ============================================== #
+
+# ============================================== #
+#                SINGLE-MODALITY                 #
+# ============================================== #
+
 datafile_fs.boxplot('mental_demand', by='group', figsize=(12, 8))
+datafile_fs.boxplot('physical_demand', by='group', figsize=(12, 8))
+datafile_fs.boxplot('temporal_demand', by='group', figsize=(12, 8))
+datafile_fs.boxplot('performance', by='group', figsize=(12, 8))
+datafile_fs.boxplot('effort', by='group', figsize=(12, 8))
+datafile_fs.boxplot('frustration', by='group', figsize=(12, 8))
+
+# ============================================== #
+#                 MULTI-MODALITY                 #
+# ============================================== #
+
 datafile_fm.boxplot('mental_demand', by='group', figsize=(12, 8))
+datafile_fm.boxplot('physical_demand', by='group', figsize=(12, 8))
+datafile_fm.boxplot('temporal_demand', by='group', figsize=(12, 8))
+datafile_fm.boxplot('performance', by='group', figsize=(12, 8))
+datafile_fm.boxplot('effort', by='group', figsize=(12, 8))
+datafile_fm.boxplot('frustration', by='group', figsize=(12, 8))
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                 INITIALIZATION                 #
+# ============================================== #
+
+intern_1 = datafile_fs['mental_demand'][datafile_fs.group == 'intern_1']
+
+grps = pd.unique(datafile_fs.group.values)
+d_data = {grp:datafile_fs['mental_demand'][datafile_fs.group == grp] for grp in grps}
+
+k = len(pd.unique(datafile_fs.group))  # number of conditions
+N = len(datafile_fs.values)  # conditions times participants
+n = datafile_fs.groupby('group').size()[0] #Participants in each condition
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
