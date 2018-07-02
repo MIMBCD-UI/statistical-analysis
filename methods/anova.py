@@ -193,6 +193,16 @@ k = len(pd.unique(datafile_fs.group))  # number of conditions
 N = len(datafile_fs.values)  # conditions times participants
 n = datafile_fs.groupby('group').size()[0] #Participants in each condition
 
+# ============================================== #
+#                                                #
+#                     ANOVA                      #
+#                                                #
+# ============================================== #
+
+# ============================================== #
+#            NASA-TLX: Mental Demand             #
+# ============================================== #
+
 F_fs_md, p_fs_md = stats.f_oneway(
   d_data_fs_md['intern_1'],
   d_data_fs_md['intern_2'],
@@ -219,6 +229,186 @@ print("Single-Modality (Mental Demand): F = %f" % (F_fs_md))
 print("Single-Modality (Mental Demand): p = %f" % (p_fs_md))
 print("Multi-Modality (Mental Demand): F = %f" % (F_fm_md))
 print("Multi-Modality (Mental Demand): p = %f" % (p_fm_md))
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#           NASA-TLX: Physical Demand            #
+# ============================================== #
+
+F_fs_pd, p_fs_pd = stats.f_oneway(
+  d_data_fs_pd['intern_1'],
+  d_data_fs_pd['intern_2'],
+  d_data_fs_pd['junior_1'],
+  d_data_fs_pd['junior_2'],
+  #d_data_fs_pd['middle_1'],
+  #d_data_fs_pd['middle_2'],
+  d_data_fs_pd['senior_1']
+  #d_data_fs_pd['senior_2']
+)
+
+F_fm_pd, p_fm_pd = stats.f_oneway(
+  d_data_fm_pd['intern_1'],
+  d_data_fm_pd['intern_2'],
+  d_data_fm_pd['junior_1'],
+  d_data_fm_pd['junior_2'],
+  #d_data_fs_pd['middle_1'],
+  #d_data_fs_pd['middle_2'],
+  d_data_fm_pd['senior_1']
+  #d_data_fs_pd['senior_2']
+)
+
+print("Single-Modality (Physical Demand): F = %f" % (F_fs_pd))
+print("Single-Modality (Physical Demand): p = %f" % (p_fs_pd))
+print("Multi-Modality (Physical Demand): F = %f" % (F_fm_pd))
+print("Multi-Modality (Physical Demand): p = %f" % (p_fm_pd))
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#           NASA-TLX: Temporal Demand            #
+# ============================================== #
+
+F_fs_td, p_fs_td = stats.f_oneway(
+  d_data_fs_td['intern_1'],
+  d_data_fs_td['intern_2'],
+  d_data_fs_td['junior_1'],
+  d_data_fs_td['junior_2'],
+  #d_data_fs_td['middle_1'],
+  #d_data_fs_td['middle_2'],
+  d_data_fs_td['senior_1']
+  #d_data_fs_td['senior_2']
+)
+
+F_fm_td, p_fm_td = stats.f_oneway(
+  d_data_fm_td['intern_1'],
+  d_data_fm_td['intern_2'],
+  d_data_fm_td['junior_1'],
+  d_data_fm_td['junior_2'],
+  #d_data_fs_td['middle_1'],
+  #d_data_fs_td['middle_2'],
+  d_data_fm_td['senior_1']
+  #d_data_fs_td['senior_2']
+)
+
+print("Single-Modality (Temporal Demand): F = %f" % (F_fs_td))
+print("Single-Modality (Temporal Demand): p = %f" % (p_fs_td))
+print("Multi-Modality (Temporal Demand): F = %f" % (F_fm_td))
+print("Multi-Modality (Temporal Demand): p = %f" % (p_fm_td))
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#             NASA-TLX: Performance              #
+# ============================================== #
+
+F_fs_p, p_fs_p = stats.f_oneway(
+  d_data_fs_p['intern_1'],
+  d_data_fs_p['intern_2'],
+  d_data_fs_p['junior_1'],
+  d_data_fs_p['junior_2'],
+  #d_data_fs_p['middle_1'],
+  #d_data_fs_p['middle_2'],
+  d_data_fs_p['senior_1']
+  #d_data_fs_p['senior_2']
+)
+
+F_fm_p, p_fm_p = stats.f_oneway(
+  d_data_fm_p['intern_1'],
+  d_data_fm_p['intern_2'],
+  d_data_fm_p['junior_1'],
+  d_data_fm_p['junior_2'],
+  #d_data_fs_p['middle_1'],
+  #d_data_fs_p['middle_2'],
+  d_data_fm_p['senior_1']
+  #d_data_fs_p['senior_2']
+)
+
+print("Single-Modality (Performance): F = %f" % (F_fs_p))
+print("Single-Modality (Performance): p = %f" % (p_fs_p))
+print("Multi-Modality (Performance): F = %f" % (F_fm_p))
+print("Multi-Modality (Performance): p = %f" % (p_fm_p))
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                NASA-TLX: Effort                #
+# ============================================== #
+
+F_fs_e, p_fs_e = stats.f_oneway(
+  d_data_fs_e['intern_1'],
+  d_data_fs_e['intern_2'],
+  d_data_fs_e['junior_1'],
+  d_data_fs_e['junior_2'],
+  #d_data_fs_e['middle_1'],
+  #d_data_fs_e['middle_2'],
+  d_data_fs_e['senior_1']
+  #d_data_fs_e['senior_2']
+)
+
+F_fm_e, p_fm_e = stats.f_oneway(
+  d_data_fm_e['intern_1'],
+  d_data_fm_e['intern_2'],
+  d_data_fm_e['junior_1'],
+  d_data_fm_e['junior_2'],
+  #d_data_fs_e['middle_1'],
+  #d_data_fs_e['middle_2'],
+  d_data_fm_e['senior_1']
+  #d_data_fs_e['senior_2']
+)
+
+print("Single-Modality (Effort): F = %f" % (F_fs_e))
+print("Single-Modality (Effort): p = %f" % (p_fs_e))
+print("Multi-Modality (Effort): F = %f" % (F_fm_e))
+print("Multi-Modality (Effort): p = %f" % (p_fm_e))
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#             NASA-TLX: Frustration              #
+# ============================================== #
+
+F_fs_f, p_fs_f = stats.f_oneway(
+  d_data_fs_f['intern_1'],
+  d_data_fs_f['intern_2'],
+  d_data_fs_f['junior_1'],
+  d_data_fs_f['junior_2'],
+  #d_data_fs_f['middle_1'],
+  #d_data_fs_f['middle_2'],
+  d_data_fs_f['senior_1']
+  #d_data_fs_f['senior_2']
+)
+
+F_fm_f, p_fm_f = stats.f_oneway(
+  d_data_fm_f['intern_1'],
+  d_data_fm_f['intern_2'],
+  d_data_fm_f['junior_1'],
+  d_data_fm_f['junior_2'],
+  #d_data_fs_f['middle_1'],
+  #d_data_fs_f['middle_2'],
+  d_data_fm_f['senior_1']
+  #d_data_fs_f['senior_2']
+)
+
+print("Single-Modality (Frustration): F = %f" % (F_fs_f))
+print("Single-Modality (Frustration): p = %f" % (p_fs_f))
+print("Multi-Modality (Frustration): F = %f" % (F_fm_f))
+print("Multi-Modality (Frustration): p = %f" % (p_fm_f))
+
+# ============================================== #
+# ============================================== #
+
+
+
+
+
+
+
 
 # ============================================== #
 # ============================================== #
