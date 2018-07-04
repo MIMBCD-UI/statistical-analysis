@@ -87,3 +87,11 @@ We would like to convey [Google](https://google.com) from their [Google Sheets A
 ### Authors
 
 - [Francisco Maria Calisto](http://www.franciscocalisto.me/) [[ResearchGate](https://www.researchgate.net/profile/Francisco_Maria_Calisto) | [GitHub](https://github.com/FMCalisto) | [Twitter](https://twitter.com/FMCalisto) | [LinkedIn](https://www.linkedin.com/in/fmcalisto/)]
+
+### IMPORTANT LINKS (TODELETE)
+
+https://www.marsja.se/four-ways-to-conduct-one-way-anovas-using-python/
+
+https://stackoverflow.com/questions/12838993/scipy-normaltest-how-is-it-used
+
+https://docs.scipy.org/doc/numpy/reference/generated/numpy.random.normal.html
