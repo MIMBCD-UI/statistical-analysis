@@ -916,7 +916,15 @@ print("Verification of the Variance for variance_ver_s_012: %r" % variance_ver_s
 # ============================================== #
 
 # ============================================== #
-# Normal Validation:
+#                                                #
+#              NORMAL VALIDATION                 #
+#                                                #
+# ============================================== #
+
+# ============================================== #
+#          NASA-TLX: Single-Modality             #
+# ============================================== #
+
 normalValidation_s_001 = stats.normaltest(s_001)
 normalValidation_s_002 = stats.normaltest(s_002)
 normalValidation_s_003 = stats.normaltest(s_003)
@@ -930,6 +938,13 @@ print(normalValidation_s_004)
 print(normalValidation_s_005)
 print(normalValidation_s_006)
 
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#          NASA-TLX: Multi-Modality              #
+# ============================================== #
+
 normalValidation_s_007 = stats.normaltest(s_007)
 normalValidation_s_008 = stats.normaltest(s_008)
 normalValidation_s_009 = stats.normaltest(s_009)
@@ -942,6 +957,188 @@ print(normalValidation_s_009)
 print(normalValidation_s_010)
 print(normalValidation_s_011)
 print(normalValidation_s_012)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            SUS: Single-Modality                #
+# ============================================== #
+
+normalValidation_s_013 = stats.normaltest(s_013)
+normalValidation_s_014 = stats.normaltest(s_014)
+normalValidation_s_015 = stats.normaltest(s_015)
+normalValidation_s_016 = stats.normaltest(s_016)
+normalValidation_s_017 = stats.normaltest(s_017)
+normalValidation_s_018 = stats.normaltest(s_018)
+normalValidation_s_019 = stats.normaltest(s_019)
+normalValidation_s_020 = stats.normaltest(s_020)
+normalValidation_s_021 = stats.normaltest(s_021)
+normalValidation_s_022 = stats.normaltest(s_022)
+print(normalValidation_s_013)
+print(normalValidation_s_014)
+print(normalValidation_s_015)
+print(normalValidation_s_016)
+print(normalValidation_s_017)
+print(normalValidation_s_018)
+print(normalValidation_s_019)
+print(normalValidation_s_020)
+print(normalValidation_s_021)
+print(normalValidation_s_022)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            SUS: Multi-Modality                 #
+# ============================================== #
+
+normalValidation_s_023 = stats.normaltest(s_023)
+normalValidation_s_024 = stats.normaltest(s_024)
+normalValidation_s_025 = stats.normaltest(s_025)
+normalValidation_s_026 = stats.normaltest(s_026)
+normalValidation_s_027 = stats.normaltest(s_027)
+normalValidation_s_028 = stats.normaltest(s_028)
+normalValidation_s_029 = stats.normaltest(s_029)
+normalValidation_s_030 = stats.normaltest(s_030)
+normalValidation_s_031 = stats.normaltest(s_031)
+normalValidation_s_032 = stats.normaltest(s_032)
+print(normalValidation_s_023)
+print(normalValidation_s_024)
+print(normalValidation_s_025)
+print(normalValidation_s_026)
+print(normalValidation_s_027)
+print(normalValidation_s_028)
+print(normalValidation_s_029)
+print(normalValidation_s_030)
+print(normalValidation_s_031)
+print(normalValidation_s_032)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            TIME: Single-Modality               #
+# ============================================== #
+
+normalValidation_s_033 = stats.normaltest(s_033)
+normalValidation_s_034 = stats.normaltest(s_034)
+normalValidation_s_035 = stats.normaltest(s_035)
+normalValidation_s_036 = stats.normaltest(s_036)
+print(normalValidation_s_033)
+print(normalValidation_s_034)
+print(normalValidation_s_035)
+print(normalValidation_s_036)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            TIME: Multi-Modality                #
+# ============================================== #
+
+normalValidation_s_037 = stats.normaltest(s_037)
+normalValidation_s_038 = stats.normaltest(s_038)
+normalValidation_s_039 = stats.normaltest(s_039)
+normalValidation_s_040 = stats.normaltest(s_040)
+print(normalValidation_s_037)
+print(normalValidation_s_038)
+print(normalValidation_s_039)
+print(normalValidation_s_040)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            CLICKS: Single-Modality             #
+# ============================================== #
+
+normalValidation_s_041 = stats.normaltest(s_041)
+normalValidation_s_042 = stats.normaltest(s_042)
+normalValidation_s_043 = stats.normaltest(s_043)
+normalValidation_s_044 = stats.normaltest(s_044)
+print(normalValidation_s_041)
+print(normalValidation_s_042)
+print(normalValidation_s_043)
+print(normalValidation_s_044)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            CLICKS: Multi-Modality              #
+# ============================================== #
+
+normalValidation_s_045 = stats.normaltest(s_045)
+normalValidation_s_046 = stats.normaltest(s_046)
+normalValidation_s_047 = stats.normaltest(s_047)
+normalValidation_s_048 = stats.normaltest(s_048)
+print(normalValidation_s_045)
+print(normalValidation_s_046)
+print(normalValidation_s_047)
+print(normalValidation_s_048)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            ERRORS: Single-Modality             #
+# ============================================== #
+
+normalValidation_s_049 = stats.normaltest(s_049)
+normalValidation_s_050 = stats.normaltest(s_050)
+normalValidation_s_051 = stats.normaltest(s_051)
+normalValidation_s_052 = stats.normaltest(s_052)
+print(normalValidation_s_049)
+print(normalValidation_s_050)
+print(normalValidation_s_051)
+print(normalValidation_s_052)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            ERRORS: Multi-Modality              #
+# ============================================== #
+
+normalValidation_s_053 = stats.normaltest(s_053)
+normalValidation_s_054 = stats.normaltest(s_054)
+normalValidation_s_055 = stats.normaltest(s_055)
+normalValidation_s_056 = stats.normaltest(s_056)
+print(normalValidation_s_053)
+print(normalValidation_s_054)
+print(normalValidation_s_055)
+print(normalValidation_s_056)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            BIRADS: Single-Modality             #
+# ============================================== #
+
+normalValidation_s_057 = stats.normaltest(s_057)
+normalValidation_s_058 = stats.normaltest(s_058)
+normalValidation_s_059 = stats.normaltest(s_059)
+print(normalValidation_s_057)
+print(normalValidation_s_058)
+print(normalValidation_s_059)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            BIRADS: MULTI-Modality              #
+# ============================================== #
+
+normalValidation_s_060 = stats.normaltest(s_060)
+normalValidation_s_061 = stats.normaltest(s_061)
+normalValidation_s_062 = stats.normaltest(s_062)
+print(normalValidation_s_060)
+print(normalValidation_s_061)
+print(normalValidation_s_062)
+
+# ============================================== #
 # ============================================== #
 
 # ============================================== #
