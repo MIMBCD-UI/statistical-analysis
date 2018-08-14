@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.1.0"
+__version__     = "1.2.1"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -50,14 +50,10 @@ MIN_VAL = main_variables.MIN_VAL
 MAX_VAL = main_variables.MAX_VAL
 N       = main_variables.N
 
-GROUP_INTERN_1 = main_variables.GROUP_INTERN_1
-GROUP_INTERN_2 = main_variables.GROUP_INTERN_2
-GROUP_JUNIOR_1 = main_variables.GROUP_JUNIOR_1
-GROUP_JUNIOR_2 = main_variables.GROUP_JUNIOR_2
-GROUP_MIDDLE_1 = main_variables.GROUP_MIDDLE_1
-GROUP_MIDDLE_2 = main_variables.GROUP_MIDDLE_2
-GROUP_SENIOR_1 = main_variables.GROUP_SENIOR_1
-GROUP_SENIOR_2 = main_variables.GROUP_SENIOR_2
+GROUP_INTERN = main_variables.GROUP_INTERN
+GROUP_JUNIOR = main_variables.GROUP_JUNIOR
+GROUP_MIDDLE = main_variables.GROUP_MIDDLE
+GROUP_SENIOR = main_variables.GROUP_SENIOR
 
 GROUPS_LIST = main_variables.GROUPS_LIST
 
@@ -86,290 +82,145 @@ NASATLX_MULTI_LIST = main_variables.NASATLX_MULTI_LIST
 # ============================================== #
 
 # ============================================== #
-#                 GROUP_INTERN_1                 #
+#                  GROUP_INTERN                  #
 # ============================================== #
 
-NSMD_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_SINGLE_PERFORMANCE)
+NSE_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_SINGLE_EFFORT)
+NSF_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_MULTI_EFFORT)
-NMF_SUM_GI1 = sheetReaderSum(GROUP_INTERN_1, NASATLX_MULTI_FRUSTRATION)
+NMMD_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_MULTI_PERFORMANCE)
+NME_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_MULTI_EFFORT)
+NMF_SUM_GI = sheetReaderSum(GROUP_INTERN, NASATLX_MULTI_FRUSTRATION)
 
-NSMD_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_SINGLE_PERFORMANCE)
+NSE_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_SINGLE_EFFORT)
+NSF_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GI1 = sheetReaderMean(GROUP_INTERN_1, NASATLX_MULTI_FRUSTRATION)
-
-# ============================================== #
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                 GROUP_INTERN_2                 #
-# ============================================== #
-
-NSMD_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_MULTI_EFFORT)
-NMF_SUM_GI2 = sheetReaderSum(GROUP_INTERN_2, NASATLX_MULTI_FRUSTRATION)
-
-NSMD_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GI2 = sheetReaderMean(GROUP_INTERN_2, NASATLX_MULTI_FRUSTRATION)
+NMMD_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_MULTI_PERFORMANCE)
+NME_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_MULTI_EFFORT)
+NMF_MEAN_GI = sheetReaderMean(GROUP_INTERN, NASATLX_MULTI_FRUSTRATION)
 
 # ============================================== #
 # ============================================== #
 # ============================================== #
 
 # ============================================== #
-#                 GROUP_JUNIOR_1                 #
+#                 GROUP_JUNIOR                 #
 # ============================================== #
 
-NSMD_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_SINGLE_PERFORMANCE)
+NSE_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_SINGLE_EFFORT)
+NSF_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_MULTI_EFFORT)
-NMF_SUM_GJ1 = sheetReaderSum(GROUP_JUNIOR_1, NASATLX_MULTI_FRUSTRATION)
+NMMD_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_MULTI_PERFORMANCE)
+NME_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_MULTI_EFFORT)
+NMF_SUM_GJ = sheetReaderSum(GROUP_JUNIOR, NASATLX_MULTI_FRUSTRATION)
 
-NSMD_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_SINGLE_PERFORMANCE)
+NSE_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_SINGLE_EFFORT)
+NSF_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GJ1 = sheetReaderMean(GROUP_JUNIOR_1, NASATLX_MULTI_FRUSTRATION)
-
-# ============================================== #
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                 GROUP_JUNIOR_2                 #
-# ============================================== #
-
-NSMD_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_MULTI_EFFORT)
-NMF_SUM_GJ2 = sheetReaderSum(GROUP_JUNIOR_2, NASATLX_MULTI_FRUSTRATION)
-
-NSMD_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GJ2 = sheetReaderMean(GROUP_JUNIOR_2, NASATLX_MULTI_FRUSTRATION)
+NMMD_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_MULTI_PERFORMANCE)
+NME_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_MULTI_EFFORT)
+NMF_MEAN_GJ = sheetReaderMean(GROUP_JUNIOR, NASATLX_MULTI_FRUSTRATION)
 
 # ============================================== #
 # ============================================== #
 # ============================================== #
 
 # ============================================== #
-#                 GROUP_MIDDLE_1                 #
+#                 GROUP_MIDDLE                 #
 # ============================================== #
 
-NSMD_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_SINGLE_PERFORMANCE)
+NSE_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_SINGLE_EFFORT)
+NSF_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_MULTI_EFFORT)
-NMF_SUM_GM1 = sheetReaderSum(GROUP_MIDDLE_1, NASATLX_MULTI_FRUSTRATION)
+NMMD_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_MULTI_PERFORMANCE)
+NME_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_MULTI_EFFORT)
+NMF_SUM_GM = sheetReaderSum(GROUP_MIDDLE, NASATLX_MULTI_FRUSTRATION)
 
-NSMD_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_SINGLE_PERFORMANCE)
+NSE_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_SINGLE_EFFORT)
+NSF_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GM1 = sheetReaderMean(GROUP_MIDDLE_1, NASATLX_MULTI_FRUSTRATION)
-
-# ============================================== #
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                 GROUP_MIDDLE_2                 #
-# ============================================== #
-
-NSMD_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_MULTI_EFFORT)
-NMF_SUM_GM2 = sheetReaderSum(GROUP_MIDDLE_2, NASATLX_MULTI_FRUSTRATION)
-
-NSMD_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GM2 = sheetReaderMean(GROUP_MIDDLE_2, NASATLX_MULTI_FRUSTRATION)
+NMMD_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_MULTI_PERFORMANCE)
+NME_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_MULTI_EFFORT)
+NMF_MEAN_GM = sheetReaderMean(GROUP_MIDDLE, NASATLX_MULTI_FRUSTRATION)
 
 # ============================================== #
 # ============================================== #
 # ============================================== #
 
 # ============================================== #
-#                 GROUP_SENIOR_1                 #
+#                 GROUP_SENIOR                 #
 # ============================================== #
 
-NSMD_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_SINGLE_PERFORMANCE)
+NSE_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_SINGLE_EFFORT)
+NSF_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_MULTI_EFFORT)
-NMF_SUM_GS1 = sheetReaderSum(GROUP_SENIOR_1, NASATLX_MULTI_FRUSTRATION)
+NMMD_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_MULTI_PERFORMANCE)
+NME_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_MULTI_EFFORT)
+NMF_SUM_GS = sheetReaderSum(GROUP_SENIOR, NASATLX_MULTI_FRUSTRATION)
 
-NSMD_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_SINGLE_FRUSTRATION)
+NSMD_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_SINGLE_MENTAL_DEMAND)
+NSPD_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_SINGLE_PHYSICAL_DEMAND)
+NSTD_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_SINGLE_TEMPORAL_DEMAND)
+NSP_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_SINGLE_PERFORMANCE)
+NSE_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_SINGLE_EFFORT)
+NSF_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_SINGLE_FRUSTRATION)
 
-NMMD_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GS1 = sheetReaderMean(GROUP_SENIOR_1, NASATLX_MULTI_FRUSTRATION)
+NMMD_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_MULTI_MENTAL_DEMAND)
+NMPD_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_MULTI_PHYSICAL_DEMAND)
+NMTD_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_MULTI_TEMPORAL_DEMAND)
+NMP_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_MULTI_PERFORMANCE)
+NME_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_MULTI_EFFORT)
+NMF_MEAN_GS = sheetReaderMean(GROUP_SENIOR, NASATLX_MULTI_FRUSTRATION)
 
-# ============================================== #
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                 GROUP_SENIOR_2                 #
-# ============================================== #
-
-NSMD_SUM_GS2 = sheetReaderSum(GROUP_SENIOR_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_SUM_GS2 = sheetReaderSum(GROUP_SENIOR_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_SUM_GS2 = sheetReaderSum(GROUP_SENIOR_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_SUM_GS2  = sheetReaderSum(GROUP_SENIOR_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_SUM_GS2  = sheetReaderSum(GROUP_SENIOR_2, NASATLX_SINGLE_EFFORT)
-NSF_SUM_GS2  = sheetReaderSum(GROUP_SENIOR_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_SUM_GS2 = sheetReaderSum(GROUP_SENIOR_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_SUM_GS2 = sheetReaderSum(GROUP_SENIOR_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_SUM_GS2 = sheetReaderSum(GROUP_SENIOR_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_SUM_GS2  = sheetReaderSum(GROUP_SENIOR_2, NASATLX_MULTI_PERFORMANCE)
-NME_SUM_GS2  = sheetReaderSum(GROUP_SENIOR_2, NASATLX_MULTI_EFFORT)
-NMF_SUM_GS2  = sheetReaderSum(GROUP_SENIOR_2, NASATLX_MULTI_FRUSTRATION)
-
-NSMD_MEAN_GS2 = sheetReaderMean(GROUP_SENIOR_2, NASATLX_SINGLE_MENTAL_DEMAND)
-NSPD_MEAN_GS2 = sheetReaderMean(GROUP_SENIOR_2, NASATLX_SINGLE_PHYSICAL_DEMAND)
-NSTD_MEAN_GS2 = sheetReaderMean(GROUP_SENIOR_2, NASATLX_SINGLE_TEMPORAL_DEMAND)
-NSP_MEAN_GS2  = sheetReaderMean(GROUP_SENIOR_2, NASATLX_SINGLE_PERFORMANCE)
-NSE_MEAN_GS2  = sheetReaderMean(GROUP_SENIOR_2, NASATLX_SINGLE_EFFORT)
-NSF_MEAN_GS2  = sheetReaderMean(GROUP_SENIOR_2, NASATLX_SINGLE_FRUSTRATION)
-
-NMMD_MEAN_GS2 = sheetReaderMean(GROUP_SENIOR_2, NASATLX_MULTI_MENTAL_DEMAND)
-NMPD_MEAN_GS2 = sheetReaderMean(GROUP_SENIOR_2, NASATLX_MULTI_PHYSICAL_DEMAND)
-NMTD_MEAN_GS2 = sheetReaderMean(GROUP_SENIOR_2, NASATLX_MULTI_TEMPORAL_DEMAND)
-NMP_MEAN_GS2  = sheetReaderMean(GROUP_SENIOR_2, NASATLX_MULTI_PERFORMANCE)
-NME_MEAN_GS2  = sheetReaderMean(GROUP_SENIOR_2, NASATLX_MULTI_EFFORT)
-NMF_MEAN_GS2  = sheetReaderMean(GROUP_SENIOR_2, NASATLX_MULTI_FRUSTRATION)
-
-# ============================================== #
 # ============================================== #
 # ============================================== #
 # ============================================== #
@@ -406,148 +257,76 @@ NMF_ALL  = nasaColMean(NASATLX_MULTI_FRUSTRATION)
 # ============================================== #
 
 # ============================================== #
-#                 GROUP_INTERN_1                 #
+#                 GROUP_INTERN                 #
 # ============================================== #
 
-SSbetween_NSMD_GI1 = ((NSMD_SUM_GI1)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GI1 = ((NSPD_SUM_GI1)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GI1 = ((NSTD_SUM_GI1)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GI1  = ((NSP_SUM_GI1)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GI1  = ((NSE_SUM_GI1)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GI1  = ((NSF_SUM_GI1)**2  / N) - ((NSF_ALL)**2  / (N * 2))
+SSbetween_NSMD_GI = ((NSMD_SUM_GI)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
+SSbetween_NSPD_GI = ((NSPD_SUM_GI)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
+SSbetween_NSTD_GI = ((NSTD_SUM_GI)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
+SSbetween_NSP_GI  = ((NSP_SUM_GI)**2  / N) - ((NSP_ALL)**2  / (N * 2))
+SSbetween_NSE_GI  = ((NSE_SUM_GI)**2  / N) - ((NSE_ALL)**2  / (N * 2))
+SSbetween_NSF_GI  = ((NSF_SUM_GI)**2  / N) - ((NSF_ALL)**2  / (N * 2))
 
-SSbetween_NMMD_GI1 = ((NMMD_SUM_GI1)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GI1 = ((NMPD_SUM_GI1)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GI1 = ((NMTD_SUM_GI1)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GI1  = ((NMP_SUM_GI1)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GI1  = ((NME_SUM_GI1)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GI1  = ((NMF_SUM_GI1)**2  / N) - ((NMF_ALL)**2  / (N * 2))
-
-# ============================================== #
-#                 GROUP_INTERN_2                 #
-# ============================================== #
-
-SSbetween_NSMD_GI2 = ((NSMD_SUM_GI2)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GI2 = ((NSPD_SUM_GI2)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GI2 = ((NSTD_SUM_GI2)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GI2  = ((NSP_SUM_GI2)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GI2  = ((NSE_SUM_GI2)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GI2  = ((NSF_SUM_GI2)**2  / N) - ((NSF_ALL)**2  / (N * 2))
-
-SSbetween_NMMD_GI2 = ((NMMD_SUM_GI2)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GI2 = ((NMPD_SUM_GI2)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GI2 = ((NMTD_SUM_GI2)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GI2  = ((NMP_SUM_GI2)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GI2  = ((NME_SUM_GI2)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GI2  = ((NMF_SUM_GI2)**2  / N) - ((NMF_ALL)**2  / (N * 2))
+SSbetween_NMMD_GI = ((NMMD_SUM_GI)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
+SSbetween_NMPD_GI = ((NMPD_SUM_GI)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
+SSbetween_NMTD_GI = ((NMTD_SUM_GI)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
+SSbetween_NMP_GI  = ((NMP_SUM_GI)**2  / N) - ((NMP_ALL)**2  / (N * 2))
+SSbetween_NME_GI  = ((NME_SUM_GI)**2  / N) - ((NME_ALL)**2  / (N * 2))
+SSbetween_NMF_GI  = ((NMF_SUM_GI)**2  / N) - ((NMF_ALL)**2  / (N * 2))
 
 # ============================================== #
-#                 GROUP_JUNIOR_1                 #
+#                 GROUP_JUNIOR                 #
 # ============================================== #
 
-SSbetween_NSMD_GJ1 = ((NSMD_SUM_GJ1)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GJ1 = ((NSPD_SUM_GJ1)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GJ1 = ((NSTD_SUM_GJ1)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GJ1  = ((NSP_SUM_GJ1)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GJ1  = ((NSE_SUM_GJ1)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GJ1  = ((NSF_SUM_GJ1)**2  / N) - ((NSF_ALL)**2  / (N * 2))
+SSbetween_NSMD_GJ = ((NSMD_SUM_GJ)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
+SSbetween_NSPD_GJ = ((NSPD_SUM_GJ)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
+SSbetween_NSTD_GJ = ((NSTD_SUM_GJ)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
+SSbetween_NSP_GJ  = ((NSP_SUM_GJ)**2  / N) - ((NSP_ALL)**2  / (N * 2))
+SSbetween_NSE_GJ  = ((NSE_SUM_GJ)**2  / N) - ((NSE_ALL)**2  / (N * 2))
+SSbetween_NSF_GJ  = ((NSF_SUM_GJ)**2  / N) - ((NSF_ALL)**2  / (N * 2))
 
-SSbetween_NMMD_GJ1 = ((NMMD_SUM_GJ1)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GJ1 = ((NMPD_SUM_GJ1)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GJ1 = ((NMTD_SUM_GJ1)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GJ1  = ((NMP_SUM_GJ1)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GJ1  = ((NME_SUM_GJ1)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GJ1  = ((NMF_SUM_GJ1)**2  / N) - ((NMF_ALL)**2  / (N * 2))
-
-# ============================================== #
-#                 GROUP_JUNIOR_2                 #
-# ============================================== #
-
-SSbetween_NSMD_GJ2 = ((NSMD_SUM_GJ2)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GJ2 = ((NSPD_SUM_GJ2)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GJ2 = ((NSTD_SUM_GJ2)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GJ2  = ((NSP_SUM_GJ2)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GJ2  = ((NSE_SUM_GJ2)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GJ2  = ((NSF_SUM_GJ2)**2  / N) - ((NSF_ALL)**2  / (N * 2))
-
-SSbetween_NMMD_GJ2 = ((NMMD_SUM_GJ2)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GJ2 = ((NMPD_SUM_GJ2)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GJ2 = ((NMTD_SUM_GJ2)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GJ2  = ((NMP_SUM_GJ2)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GJ2  = ((NME_SUM_GJ2)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GJ2  = ((NMF_SUM_GJ2)**2  / N) - ((NMF_ALL)**2  / (N * 2))
+SSbetween_NMMD_GJ = ((NMMD_SUM_GJ)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
+SSbetween_NMPD_GJ = ((NMPD_SUM_GJ)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
+SSbetween_NMTD_GJ = ((NMTD_SUM_GJ)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
+SSbetween_NMP_GJ  = ((NMP_SUM_GJ)**2  / N) - ((NMP_ALL)**2  / (N * 2))
+SSbetween_NME_GJ  = ((NME_SUM_GJ)**2  / N) - ((NME_ALL)**2  / (N * 2))
+SSbetween_NMF_GJ  = ((NMF_SUM_GJ)**2  / N) - ((NMF_ALL)**2  / (N * 2))
 
 # ============================================== #
-#                 GROUP_MIDDLE_1                 #
+#                 GROUP_MIDDLE                 #
 # ============================================== #
 
-SSbetween_NSMD_GM1 = ((NSMD_SUM_GM1)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GM1 = ((NSPD_SUM_GM1)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GM1 = ((NSTD_SUM_GM1)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GM1  = ((NSP_SUM_GM1)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GM1  = ((NSE_SUM_GM1)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GM1  = ((NSF_SUM_GM1)**2  / N) - ((NSF_ALL)**2  / (N * 2))
+SSbetween_NSMD_GM = ((NSMD_SUM_GM)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
+SSbetween_NSPD_GM = ((NSPD_SUM_GM)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
+SSbetween_NSTD_GM = ((NSTD_SUM_GM)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
+SSbetween_NSP_GM  = ((NSP_SUM_GM)**2  / N) - ((NSP_ALL)**2  / (N * 2))
+SSbetween_NSE_GM  = ((NSE_SUM_GM)**2  / N) - ((NSE_ALL)**2  / (N * 2))
+SSbetween_NSF_GM  = ((NSF_SUM_GM)**2  / N) - ((NSF_ALL)**2  / (N * 2))
 
-SSbetween_NMMD_GM1 = ((NMMD_SUM_GM1)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GM1 = ((NMPD_SUM_GM1)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GM1 = ((NMTD_SUM_GM1)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GM1  = ((NMP_SUM_GM1)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GM1  = ((NME_SUM_GM1)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GM1  = ((NMF_SUM_GM1)**2  / N) - ((NMF_ALL)**2  / (N * 2))
-
-# ============================================== #
-#                 GROUP_MIDDLE_2                 #
-# ============================================== #
-
-SSbetween_NSMD_GM2 = ((NSMD_SUM_GM2)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GM2 = ((NSPD_SUM_GM2)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GM2 = ((NSTD_SUM_GM2)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GM2  = ((NSP_SUM_GM2)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GM2  = ((NSE_SUM_GM2)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GM2  = ((NSF_SUM_GM2)**2  / N) - ((NSF_ALL)**2  / (N * 2))
-
-SSbetween_NMMD_GM2 = ((NMMD_SUM_GM2)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GM2 = ((NMPD_SUM_GM2)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GM2 = ((NMTD_SUM_GM2)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GM2  = ((NMP_SUM_GM2)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GM2  = ((NME_SUM_GM2)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GM2  = ((NMF_SUM_GM2)**2  / N) - ((NMF_ALL)**2  / (N * 2))
+SSbetween_NMMD_GM = ((NMMD_SUM_GM)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
+SSbetween_NMPD_GM = ((NMPD_SUM_GM)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
+SSbetween_NMTD_GM = ((NMTD_SUM_GM)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
+SSbetween_NMP_GM  = ((NMP_SUM_GM)**2  / N) - ((NMP_ALL)**2  / (N * 2))
+SSbetween_NME_GM  = ((NME_SUM_GM)**2  / N) - ((NME_ALL)**2  / (N * 2))
+SSbetween_NMF_GM  = ((NMF_SUM_GM)**2  / N) - ((NMF_ALL)**2  / (N * 2))
 
 # ============================================== #
-#                 GROUP_SENIOR_1                 #
+#                 GROUP_SENIOR                 #
 # ============================================== #
 
-SSbetween_NSMD_GS1 = ((NSMD_SUM_GS1)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GS1 = ((NSPD_SUM_GS1)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GS1 = ((NSTD_SUM_GS1)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GS1  = ((NSP_SUM_GS1)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GS1  = ((NSE_SUM_GS1)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GS1  = ((NSF_SUM_GS1)**2  / N) - ((NSF_ALL)**2  / (N * 2))
+SSbetween_NSMD_GS = ((NSMD_SUM_GS)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
+SSbetween_NSPD_GS = ((NSPD_SUM_GS)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
+SSbetween_NSTD_GS = ((NSTD_SUM_GS)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
+SSbetween_NSP_GS  = ((NSP_SUM_GS)**2  / N) - ((NSP_ALL)**2  / (N * 2))
+SSbetween_NSE_GS  = ((NSE_SUM_GS)**2  / N) - ((NSE_ALL)**2  / (N * 2))
+SSbetween_NSF_GS  = ((NSF_SUM_GS)**2  / N) - ((NSF_ALL)**2  / (N * 2))
 
-SSbetween_NMMD_GS1 = ((NMMD_SUM_GS1)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GS1 = ((NMPD_SUM_GS1)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GS1 = ((NMTD_SUM_GS1)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GS1  = ((NMP_SUM_GS1)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GS1  = ((NME_SUM_GS1)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GS1  = ((NMF_SUM_GS1)**2  / N) - ((NMF_ALL)**2  / (N * 2))
-
-# ============================================== #
-#                 GROUP_SENIOR_2                 #
-# ============================================== #
-
-SSbetween_NSMD_GS2 = ((NSMD_SUM_GS2)**2 / N) - ((NSMD_ALL)**2 / (N * 2))
-SSbetween_NSPD_GS2 = ((NSPD_SUM_GS2)**2 / N) - ((NSPD_ALL)**2 / (N * 2))
-SSbetween_NSTD_GS2 = ((NSTD_SUM_GS2)**2 / N) - ((NSTD_ALL)**2 / (N * 2))
-SSbetween_NSP_GS2  = ((NSP_SUM_GS2)**2  / N) - ((NSP_ALL)**2  / (N * 2))
-SSbetween_NSE_GS2  = ((NSE_SUM_GS2)**2  / N) - ((NSE_ALL)**2  / (N * 2))
-SSbetween_NSF_GS2  = ((NSF_SUM_GS2)**2  / N) - ((NSF_ALL)**2  / (N * 2))
-
-SSbetween_NMMD_GS2 = ((NMMD_SUM_GS2)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
-SSbetween_NMPD_GS2 = ((NMPD_SUM_GS2)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
-SSbetween_NMTD_GS2 = ((NMTD_SUM_GS2)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
-SSbetween_NMP_GS2  = ((NMP_SUM_GS2)**2  / N) - ((NMP_ALL)**2  / (N * 2))
-SSbetween_NME_GS2  = ((NME_SUM_GS2)**2  / N) - ((NME_ALL)**2  / (N * 2))
-SSbetween_NMF_GS2  = ((NMF_SUM_GS2)**2  / N) - ((NMF_ALL)**2  / (N * 2))
+SSbetween_NMMD_GS = ((NMMD_SUM_GS)**2 / N) - ((NMMD_ALL)**2 / (N * 2))
+SSbetween_NMPD_GS = ((NMPD_SUM_GS)**2 / N) - ((NMPD_ALL)**2 / (N * 2))
+SSbetween_NMTD_GS = ((NMTD_SUM_GS)**2 / N) - ((NMTD_ALL)**2 / (N * 2))
+SSbetween_NMP_GS  = ((NMP_SUM_GS)**2  / N) - ((NMP_ALL)**2  / (N * 2))
+SSbetween_NME_GS  = ((NME_SUM_GS)**2  / N) - ((NME_ALL)**2  / (N * 2))
+SSbetween_NMF_GS  = ((NMF_SUM_GS)**2  / N) - ((NMF_ALL)**2  / (N * 2))
 
 # ============================================== #
 # ============================================== #

@@ -53,7 +53,7 @@ The running guidelines are as follows. Please, be sure that you follow it correc
 3.1. Run the sample using the following command:
 
 ```
-python3 src/main.py
+python3 methods/anova.py
 ```
 
 3.2. Enjoy our source code!

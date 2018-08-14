@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.1.0"
+__version__     = "1.2.1"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -50,7 +50,10 @@ fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
 
 import pandas as pd
 from scipy import stats
+
 import matplotlib.pyplot as plt
+plt.rcParams.update({'figure.max_open_warning': 0})
+
 import statsmodels.api as sm
 from statsmodels.formula.api import ols
 import numpy as np
@@ -145,15 +148,6 @@ createBoxplotFM(filterByColumn, birads_columns)
 # ============================================== #
 #                 INITIALIZATION                 #
 # ============================================== #
-
-# intern_1 = datafile_fs['mental_demand'][datafile_fs.group == 'intern_1']
-# intern_2 = datafile_fs['mental_demand'][datafile_fs.group == 'intern_2']
-# junior_1 = datafile_fs['mental_demand'][datafile_fs.group == 'junior_1']
-# junior_2 = datafile_fs['mental_demand'][datafile_fs.group == 'junior_2']
-# middle_1 = datafile_fs['mental_demand'][datafile_fs.group == 'middle_1']
-# middle_2 = datafile_fs['mental_demand'][datafile_fs.group == 'middle_2']
-# senior_1 = datafile_fs['mental_demand'][datafile_fs.group == 'senior_1']
-# senior_2 = datafile_fs['mental_demand'][datafile_fs.group == 'senior_2']
 
 grps_fs = pd.unique(datafile_fs.group.values)
 grps_fm = pd.unique(datafile_fm.group.values)
@@ -325,32 +319,32 @@ d_data_fs_birads_737037 = {
 # ============================================== #
 
 d_data_fm_md = {
-  grp:datafile_fm['mental_demand'][datafile_fs.group == grp]
+  grp:datafile_fm['mental_demand'][datafile_fm.group == grp]
   for grp in grps_fm
 }
 
 d_data_fm_pd = {
-  grp:datafile_fm['physical_demand'][datafile_fs.group == grp]
+  grp:datafile_fm['physical_demand'][datafile_fm.group == grp]
   for grp in grps_fm
 }
 
 d_data_fm_td = {
-  grp:datafile_fm['temporal_demand'][datafile_fs.group == grp]
+  grp:datafile_fm['temporal_demand'][datafile_fm.group == grp]
   for grp in grps_fm
 }
 
 d_data_fm_p = {
-  grp:datafile_fm['performance'][datafile_fs.group == grp]
+  grp:datafile_fm['performance'][datafile_fm.group == grp]
   for grp in grps_fm
 }
 
 d_data_fm_e = {
-  grp:datafile_fm['effort'][datafile_fs.group == grp]
+  grp:datafile_fm['effort'][datafile_fm.group == grp]
   for grp in grps_fm
 }
 
 d_data_fm_f = {
-  grp:datafile_fm['frustration'][datafile_fs.group == grp]
+  grp:datafile_fm['frustration'][datafile_fm.group == grp]
   for grp in grps_fm
 }
 
@@ -1131,25 +1125,17 @@ print(normalValidation_s_062)
 # ============================================== #
 
 F_fs_md, p_fs_md = stats.f_oneway(
-  d_data_fs_md['intern_1'],
-  d_data_fs_md['intern_2'],
-  d_data_fs_md['junior_1'],
-  d_data_fs_md['junior_2'],
-  #d_data_fs_md['middle_1'],
-  #d_data_fs_md['middle_2'],
-  d_data_fs_md['senior_1']
-  #d_data_fs_md['senior_2']
+  d_data_fs_md['intern'],
+  d_data_fs_md['junior'],
+  d_data_fs_md['middle'],
+  d_data_fs_md['senior']
 )
 
 F_fm_md, p_fm_md = stats.f_oneway(
-  d_data_fm_md['intern_1'],
-  d_data_fm_md['intern_2'],
-  d_data_fm_md['junior_1'],
-  d_data_fm_md['junior_2'],
-  #d_data_fs_md['middle_1'],
-  #d_data_fs_md['middle_2'],
-  d_data_fm_md['senior_1']
-  #d_data_fs_md['senior_2']
+  d_data_fm_md['intern'],
+  d_data_fm_md['junior'],
+  d_data_fs_md['middle'],
+  d_data_fm_md['senior']
 )
 
 print("Single-Modality (Mental Demand): F = %f" % (F_fs_md))
@@ -1165,25 +1151,17 @@ print("Multi-Modality (Mental Demand): p = %f" % (p_fm_md))
 # ============================================== #
 
 F_fs_pd, p_fs_pd = stats.f_oneway(
-  d_data_fs_pd['intern_1'],
-  d_data_fs_pd['intern_2'],
-  d_data_fs_pd['junior_1'],
-  d_data_fs_pd['junior_2'],
-  #d_data_fs_pd['middle_1'],
-  #d_data_fs_pd['middle_2'],
-  d_data_fs_pd['senior_1']
-  #d_data_fs_pd['senior_2']
+  d_data_fs_pd['intern'],
+  d_data_fs_pd['junior'],
+  d_data_fs_pd['middle'],
+  d_data_fs_pd['senior']
 )
 
 F_fm_pd, p_fm_pd = stats.f_oneway(
-  d_data_fm_pd['intern_1'],
-  d_data_fm_pd['intern_2'],
-  d_data_fm_pd['junior_1'],
-  d_data_fm_pd['junior_2'],
-  #d_data_fs_pd['middle_1'],
-  #d_data_fs_pd['middle_2'],
-  d_data_fm_pd['senior_1']
-  #d_data_fs_pd['senior_2']
+  d_data_fm_pd['intern'],
+  d_data_fm_pd['junior'],
+  d_data_fs_pd['middle'],
+  d_data_fm_pd['senior']
 )
 
 print("Single-Modality (Physical Demand): F = %f" % (F_fs_pd))
@@ -1199,25 +1177,17 @@ print("Multi-Modality (Physical Demand): p = %f" % (p_fm_pd))
 # ============================================== #
 
 F_fs_td, p_fs_td = stats.f_oneway(
-  d_data_fs_td['intern_1'],
-  d_data_fs_td['intern_2'],
-  d_data_fs_td['junior_1'],
-  d_data_fs_td['junior_2'],
-  #d_data_fs_td['middle_1'],
-  #d_data_fs_td['middle_2'],
-  d_data_fs_td['senior_1']
-  #d_data_fs_td['senior_2']
+  d_data_fs_td['intern'],
+  d_data_fs_td['junior'],
+  d_data_fs_td['middle'],
+  d_data_fs_td['senior']
 )
 
 F_fm_td, p_fm_td = stats.f_oneway(
-  d_data_fm_td['intern_1'],
-  d_data_fm_td['intern_2'],
-  d_data_fm_td['junior_1'],
-  d_data_fm_td['junior_2'],
-  #d_data_fs_td['middle_1'],
-  #d_data_fs_td['middle_2'],
-  d_data_fm_td['senior_1']
-  #d_data_fs_td['senior_2']
+  d_data_fm_td['intern'],
+  d_data_fm_td['junior'],
+  d_data_fs_td['middle'],
+  d_data_fm_td['senior']
 )
 
 print("Single-Modality (Temporal Demand): F = %f" % (F_fs_td))
@@ -1233,25 +1203,17 @@ print("Multi-Modality (Temporal Demand): p = %f" % (p_fm_td))
 # ============================================== #
 
 F_fs_p, p_fs_p = stats.f_oneway(
-  d_data_fs_p['intern_1'],
-  d_data_fs_p['intern_2'],
-  d_data_fs_p['junior_1'],
-  d_data_fs_p['junior_2'],
-  #d_data_fs_p['middle_1'],
-  #d_data_fs_p['middle_2'],
-  d_data_fs_p['senior_1']
-  #d_data_fs_p['senior_2']
+  d_data_fs_p['intern'],
+  d_data_fs_p['junior'],
+  d_data_fs_p['middle'],
+  d_data_fs_p['senior']
 )
 
 F_fm_p, p_fm_p = stats.f_oneway(
-  d_data_fm_p['intern_1'],
-  d_data_fm_p['intern_2'],
-  d_data_fm_p['junior_1'],
-  d_data_fm_p['junior_2'],
-  #d_data_fs_p['middle_1'],
-  #d_data_fs_p['middle_2'],
-  d_data_fm_p['senior_1']
-  #d_data_fs_p['senior_2']
+  d_data_fm_p['intern'],
+  d_data_fm_p['junior'],
+  d_data_fs_p['middle'],
+  d_data_fm_p['senior']
 )
 
 print("Single-Modality (Performance): F = %f" % (F_fs_p))
@@ -1267,25 +1229,17 @@ print("Multi-Modality (Performance): p = %f" % (p_fm_p))
 # ============================================== #
 
 F_fs_e, p_fs_e = stats.f_oneway(
-  d_data_fs_e['intern_1'],
-  d_data_fs_e['intern_2'],
-  d_data_fs_e['junior_1'],
-  d_data_fs_e['junior_2'],
-  #d_data_fs_e['middle_1'],
-  #d_data_fs_e['middle_2'],
-  d_data_fs_e['senior_1']
-  #d_data_fs_e['senior_2']
+  d_data_fs_e['intern'],
+  d_data_fs_e['junior'],
+  d_data_fs_e['middle'],
+  d_data_fs_e['senior']
 )
 
 F_fm_e, p_fm_e = stats.f_oneway(
-  d_data_fm_e['intern_1'],
-  d_data_fm_e['intern_2'],
-  d_data_fm_e['junior_1'],
-  d_data_fm_e['junior_2'],
-  #d_data_fs_e['middle_1'],
-  #d_data_fs_e['middle_2'],
-  d_data_fm_e['senior_1']
-  #d_data_fs_e['senior_2']
+  d_data_fm_e['intern'],
+  d_data_fm_e['junior'],
+  d_data_fs_e['middle'],
+  d_data_fm_e['senior']
 )
 
 print("Single-Modality (Effort): F = %f" % (F_fs_e))
@@ -1301,25 +1255,17 @@ print("Multi-Modality (Effort): p = %f" % (p_fm_e))
 # ============================================== #
 
 F_fs_f, p_fs_f = stats.f_oneway(
-  d_data_fs_f['intern_1'],
-  d_data_fs_f['intern_2'],
-  d_data_fs_f['junior_1'],
-  d_data_fs_f['junior_2'],
-  #d_data_fs_f['middle_1'],
-  #d_data_fs_f['middle_2'],
-  d_data_fs_f['senior_1']
-  #d_data_fs_f['senior_2']
+  d_data_fs_f['intern'],
+  d_data_fs_f['junior'],
+  d_data_fs_f['middle'],
+  d_data_fs_f['senior']
 )
 
 F_fm_f, p_fm_f = stats.f_oneway(
-  d_data_fm_f['intern_1'],
-  d_data_fm_f['intern_2'],
-  d_data_fm_f['junior_1'],
-  d_data_fm_f['junior_2'],
-  #d_data_fs_f['middle_1'],
-  #d_data_fs_f['middle_2'],
-  d_data_fm_f['senior_1']
-  #d_data_fs_f['senior_2']
+  d_data_fm_f['intern'],
+  d_data_fm_f['junior'],
+  d_data_fs_f['middle'],
+  d_data_fm_f['senior']
 )
 
 print("Single-Modality (Frustration): F = %f" % (F_fs_f))
@@ -1335,25 +1281,17 @@ print("Multi-Modality (Frustration): p = %f" % (p_fm_f))
 # ============================================== #
 
 F_fs_sus_01, p_fs_sus_01 = stats.f_oneway(
-  d_data_fs_sus_01['intern_1'],
-  d_data_fs_sus_01['intern_2'],
-  d_data_fs_sus_01['junior_1'],
-  d_data_fs_sus_01['junior_2'],
-  #d_data_fs_sus_01['middle_1'],
-  #d_data_fs_sus_01['middle_2'],
-  d_data_fs_sus_01['senior_1']
-  #d_data_fs_sus_01['senior_2']
+  d_data_fs_sus_01['intern'],
+  d_data_fs_sus_01['junior'],
+  d_data_fs_sus_01['middle'],
+  d_data_fs_sus_01['senior']
 )
 
 F_fm_sus_01, p_fm_sus_01 = stats.f_oneway(
-  d_data_fm_sus_01['intern_1'],
-  d_data_fm_sus_01['intern_2'],
-  d_data_fm_sus_01['junior_1'],
-  d_data_fm_sus_01['junior_2'],
-  #d_data_fm_sus_01['middle_1'],
-  #d_data_fm_sus_01['middle_2'],
-  d_data_fm_sus_01['senior_1']
-  #d_data_fm_sus_01['senior_2']
+  d_data_fm_sus_01['intern'],
+  d_data_fm_sus_01['junior'],
+  d_data_fm_sus_01['middle'],
+  d_data_fm_sus_01['senior']
 )
 
 print("Single-Modality (SUS_01): F = %f" % (F_fs_sus_01))
@@ -1369,25 +1307,17 @@ print("Multi-Modality (SUS_01): p = %f" % (p_fm_sus_01))
 # ============================================== #
 
 F_fs_sus_02, p_fs_sus_02 = stats.f_oneway(
-  d_data_fs_sus_02['intern_1'],
-  d_data_fs_sus_02['intern_2'],
-  d_data_fs_sus_02['junior_1'],
-  d_data_fs_sus_02['junior_2'],
-  #d_data_fs_sus_02['middle_1'],
-  #d_data_fs_sus_02['middle_2'],
-  d_data_fs_sus_02['senior_1']
-  #d_data_fs_sus_02['senior_2']
+  d_data_fs_sus_02['intern'],
+  d_data_fs_sus_02['junior'],
+  d_data_fs_sus_02['middle'],
+  d_data_fs_sus_02['senior']
 )
 
 F_fm_sus_02, p_fm_sus_02 = stats.f_oneway(
-  d_data_fm_sus_02['intern_1'],
-  d_data_fm_sus_02['intern_2'],
-  d_data_fm_sus_02['junior_1'],
-  d_data_fm_sus_02['junior_2'],
-  #d_data_fm_sus_02['middle_1'],
-  #d_data_fm_sus_02['middle_2'],
-  d_data_fm_sus_02['senior_1']
-  #d_data_fm_sus_02['senior_2']
+  d_data_fm_sus_02['intern'],
+  d_data_fm_sus_02['junior'],
+  d_data_fm_sus_02['middle'],
+  d_data_fm_sus_02['senior']
 )
 
 print("Single-Modality (SUS_02): F = %f" % (F_fs_sus_02))
@@ -1403,25 +1333,17 @@ print("Multi-Modality (SUS_02): p = %f" % (p_fm_sus_02))
 # ============================================== #
 
 F_fs_sus_03, p_fs_sus_03 = stats.f_oneway(
-  d_data_fs_sus_03['intern_1'],
-  d_data_fs_sus_03['intern_2'],
-  d_data_fs_sus_03['junior_1'],
-  d_data_fs_sus_03['junior_2'],
-  #d_data_fs_sus_03['middle_1'],
-  #d_data_fs_sus_03['middle_2'],
-  d_data_fs_sus_03['senior_1']
-  #d_data_fs_sus_03['senior_2']
+  d_data_fs_sus_03['intern'],
+  d_data_fs_sus_03['junior'],
+  d_data_fs_sus_03['middle'],
+  d_data_fs_sus_03['senior']
 )
 
 F_fm_sus_03, p_fm_sus_03 = stats.f_oneway(
-  d_data_fm_sus_03['intern_1'],
-  d_data_fm_sus_03['intern_2'],
-  d_data_fm_sus_03['junior_1'],
-  d_data_fm_sus_03['junior_2'],
-  #d_data_fm_sus_03['middle_1'],
-  #d_data_fm_sus_03['middle_2'],
-  d_data_fm_sus_03['senior_1']
-  #d_data_fm_sus_03['senior_2']
+  d_data_fm_sus_03['intern'],
+  d_data_fm_sus_03['junior'],
+  d_data_fm_sus_03['middle'],
+  d_data_fm_sus_03['senior']
 )
 
 print("Single-Modality (SUS_03): F = %f" % (F_fs_sus_03))
@@ -1437,25 +1359,17 @@ print("Multi-Modality (SUS_03): p = %f" % (p_fm_sus_03))
 # ============================================== #
 
 F_fs_sus_04, p_fs_sus_04 = stats.f_oneway(
-  d_data_fs_sus_04['intern_1'],
-  d_data_fs_sus_04['intern_2'],
-  d_data_fs_sus_04['junior_1'],
-  d_data_fs_sus_04['junior_2'],
-  #d_data_fs_sus_04['middle_1'],
-  #d_data_fs_sus_04['middle_2'],
-  d_data_fs_sus_04['senior_1']
-  #d_data_fs_sus_04['senior_2']
+  d_data_fs_sus_04['intern'],
+  d_data_fs_sus_04['junior'],
+  d_data_fs_sus_04['middle'],
+  d_data_fs_sus_04['senior']
 )
 
 F_fm_sus_04, p_fm_sus_04 = stats.f_oneway(
-  d_data_fm_sus_04['intern_1'],
-  d_data_fm_sus_04['intern_2'],
-  d_data_fm_sus_04['junior_1'],
-  d_data_fm_sus_04['junior_2'],
-  #d_data_fm_sus_04['middle_1'],
-  #d_data_fm_sus_04['middle_2'],
-  d_data_fm_sus_04['senior_1']
-  #d_data_fm_sus_04['senior_2']
+  d_data_fm_sus_04['intern'],
+  d_data_fm_sus_04['junior'],
+  d_data_fm_sus_04['middle'],
+  d_data_fm_sus_04['senior']
 )
 
 print("Single-Modality (SUS_04): F = %f" % (F_fs_sus_04))
@@ -1471,25 +1385,17 @@ print("Multi-Modality (SUS_04): p = %f" % (p_fm_sus_04))
 # ============================================== #
 
 F_fs_sus_05, p_fs_sus_05 = stats.f_oneway(
-  d_data_fs_sus_05['intern_1'],
-  d_data_fs_sus_05['intern_2'],
-  d_data_fs_sus_05['junior_1'],
-  d_data_fs_sus_05['junior_2'],
-  #d_data_fs_sus_05['middle_1'],
-  #d_data_fs_sus_05['middle_2'],
-  d_data_fs_sus_05['senior_1']
-  #d_data_fs_sus_05['senior_2']
+  d_data_fs_sus_05['intern'],
+  d_data_fs_sus_05['junior'],
+  d_data_fs_sus_05['middle'],
+  d_data_fs_sus_05['senior']
 )
 
 F_fm_sus_05, p_fm_sus_05 = stats.f_oneway(
-  d_data_fm_sus_05['intern_1'],
-  d_data_fm_sus_05['intern_2'],
-  d_data_fm_sus_05['junior_1'],
-  d_data_fm_sus_05['junior_2'],
-  #d_data_fm_sus_05['middle_1'],
-  #d_data_fm_sus_05['middle_2'],
-  d_data_fm_sus_05['senior_1']
-  #d_data_fm_sus_05['senior_2']
+  d_data_fm_sus_05['intern'],
+  d_data_fm_sus_05['junior'],
+  d_data_fm_sus_05['middle'],
+  d_data_fm_sus_05['senior']
 )
 
 print("Single-Modality (SUS_05): F = %f" % (F_fs_sus_05))
@@ -1505,25 +1411,17 @@ print("Multi-Modality (SUS_05): p = %f" % (p_fm_sus_05))
 # ============================================== #
 
 F_fs_sus_06, p_fs_sus_06 = stats.f_oneway(
-  d_data_fs_sus_06['intern_1'],
-  d_data_fs_sus_06['intern_2'],
-  d_data_fs_sus_06['junior_1'],
-  d_data_fs_sus_06['junior_2'],
-  #d_data_fs_sus_06['middle_1'],
-  #d_data_fs_sus_06['middle_2'],
-  d_data_fs_sus_06['senior_1']
-  #d_data_fs_sus_06['senior_2']
+  d_data_fs_sus_06['intern'],
+  d_data_fs_sus_06['junior'],
+  d_data_fs_sus_06['middle'],
+  d_data_fs_sus_06['senior']
 )
 
 F_fm_sus_06, p_fm_sus_06 = stats.f_oneway(
-  d_data_fm_sus_06['intern_1'],
-  d_data_fm_sus_06['intern_2'],
-  d_data_fm_sus_06['junior_1'],
-  d_data_fm_sus_06['junior_2'],
-  #d_data_fm_sus_06['middle_1'],
-  #d_data_fm_sus_06['middle_2'],
-  d_data_fm_sus_06['senior_1']
-  #d_data_fm_sus_06['senior_2']
+  d_data_fm_sus_06['intern'],
+  d_data_fm_sus_06['junior'],
+  d_data_fm_sus_06['middle'],
+  d_data_fm_sus_06['senior']
 )
 
 print("Single-Modality (SUS_06): F = %f" % (F_fs_sus_06))
@@ -1539,25 +1437,17 @@ print("Multi-Modality (SUS_06): p = %f" % (p_fm_sus_06))
 # ============================================== #
 
 F_fs_sus_07, p_fs_sus_07 = stats.f_oneway(
-  d_data_fs_sus_07['intern_1'],
-  d_data_fs_sus_07['intern_2'],
-  d_data_fs_sus_07['junior_1'],
-  d_data_fs_sus_07['junior_2'],
-  #d_data_fs_sus_07['middle_1'],
-  #d_data_fs_sus_07['middle_2'],
-  d_data_fs_sus_07['senior_1']
-  #d_data_fs_sus_07['senior_2']
+  d_data_fs_sus_07['intern'],
+  d_data_fs_sus_07['junior'],
+  d_data_fs_sus_07['middle'],
+  d_data_fs_sus_07['senior']
 )
 
 F_fm_sus_07, p_fm_sus_07 = stats.f_oneway(
-  d_data_fm_sus_07['intern_1'],
-  d_data_fm_sus_07['intern_2'],
-  d_data_fm_sus_07['junior_1'],
-  d_data_fm_sus_07['junior_2'],
-  #d_data_fm_sus_07['middle_1'],
-  #d_data_fm_sus_07['middle_2'],
-  d_data_fm_sus_07['senior_1']
-  #d_data_fm_sus_07['senior_2']
+  d_data_fm_sus_07['intern'],
+  d_data_fm_sus_07['junior'],
+  d_data_fm_sus_07['middle'],
+  d_data_fm_sus_07['senior']
 )
 
 print("Single-Modality (SUS_07): F = %f" % (F_fs_sus_07))
@@ -1573,25 +1463,17 @@ print("Multi-Modality (SUS_07): p = %f" % (p_fm_sus_07))
 # ============================================== #
 
 F_fs_sus_08, p_fs_sus_08 = stats.f_oneway(
-  d_data_fs_sus_08['intern_1'],
-  d_data_fs_sus_08['intern_2'],
-  d_data_fs_sus_08['junior_1'],
-  d_data_fs_sus_08['junior_2'],
-  #d_data_fs_sus_08['middle_1'],
-  #d_data_fs_sus_08['middle_2'],
-  d_data_fs_sus_08['senior_1']
-  #d_data_fs_sus_08['senior_2']
+  d_data_fs_sus_08['intern'],
+  d_data_fs_sus_08['junior'],
+  d_data_fs_sus_08['middle'],
+  d_data_fs_sus_08['senior']
 )
 
 F_fm_sus_08, p_fm_sus_08 = stats.f_oneway(
-  d_data_fm_sus_08['intern_1'],
-  d_data_fm_sus_08['intern_2'],
-  d_data_fm_sus_08['junior_1'],
-  d_data_fm_sus_08['junior_2'],
-  #d_data_fm_sus_08['middle_1'],
-  #d_data_fm_sus_08['middle_2'],
-  d_data_fm_sus_08['senior_1']
-  #d_data_fm_sus_08['senior_2']
+  d_data_fm_sus_08['intern'],
+  d_data_fm_sus_08['junior'],
+  d_data_fm_sus_08['middle'],
+  d_data_fm_sus_08['senior']
 )
 
 print("Single-Modality (SUS_08): F = %f" % (F_fs_sus_08))
@@ -1607,25 +1489,17 @@ print("Multi-Modality (SUS_08): p = %f" % (p_fm_sus_08))
 # ============================================== #
 
 F_fs_sus_09, p_fs_sus_09 = stats.f_oneway(
-  d_data_fs_sus_09['intern_1'],
-  d_data_fs_sus_09['intern_2'],
-  d_data_fs_sus_09['junior_1'],
-  d_data_fs_sus_09['junior_2'],
-  #d_data_fs_sus_09['middle_1'],
-  #d_data_fs_sus_09['middle_2'],
-  d_data_fs_sus_09['senior_1']
-  #d_data_fs_sus_09['senior_2']
+  d_data_fs_sus_09['intern'],
+  d_data_fs_sus_09['junior'],
+  d_data_fs_sus_09['middle'],
+  d_data_fs_sus_09['senior']
 )
 
 F_fm_sus_09, p_fm_sus_09 = stats.f_oneway(
-  d_data_fm_sus_09['intern_1'],
-  d_data_fm_sus_09['intern_2'],
-  d_data_fm_sus_09['junior_1'],
-  d_data_fm_sus_09['junior_2'],
-  #d_data_fm_sus_09['middle_1'],
-  #d_data_fm_sus_09['middle_2'],
-  d_data_fm_sus_09['senior_1']
-  #d_data_fm_sus_09['senior_2']
+  d_data_fm_sus_09['intern'],
+  d_data_fm_sus_09['junior'],
+  d_data_fm_sus_09['middle'],
+  d_data_fm_sus_09['senior']
 )
 
 print("Single-Modality (SUS_09): F = %f" % (F_fs_sus_09))
@@ -1641,25 +1515,17 @@ print("Multi-Modality (SUS_09): p = %f" % (p_fm_sus_09))
 # ============================================== #
 
 F_fs_sus_10, p_fs_sus_10 = stats.f_oneway(
-  d_data_fs_sus_10['intern_1'],
-  d_data_fs_sus_10['intern_2'],
-  d_data_fs_sus_10['junior_1'],
-  d_data_fs_sus_10['junior_2'],
-  #d_data_fs_sus_10['middle_1'],
-  #d_data_fs_sus_10['middle_2'],
-  d_data_fs_sus_10['senior_1']
-  #d_data_fs_sus_10['senior_2']
+  d_data_fs_sus_10['intern'],
+  d_data_fs_sus_10['junior'],
+  d_data_fs_sus_10['middle'],
+  d_data_fs_sus_10['senior']
 )
 
 F_fm_sus_10, p_fm_sus_10 = stats.f_oneway(
-  d_data_fm_sus_10['intern_1'],
-  d_data_fm_sus_10['intern_2'],
-  d_data_fm_sus_10['junior_1'],
-  d_data_fm_sus_10['junior_2'],
-  #d_data_fm_sus_10['middle_1'],
-  #d_data_fm_sus_10['middle_2'],
-  d_data_fm_sus_10['senior_1']
-  #d_data_fm_sus_10['senior_2']
+  d_data_fm_sus_10['intern'],
+  d_data_fm_sus_10['junior'],
+  d_data_fm_sus_10['middle'],
+  d_data_fm_sus_10['senior']
 )
 
 print("Single-Modality (SUS_10): F = %f" % (F_fs_sus_10))
@@ -1675,25 +1541,17 @@ print("Multi-Modality (SUS_10): p = %f" % (p_fm_sus_10))
 # ============================================== #
 
 F_fs_time_94662, p_fs_time_94662 = stats.f_oneway(
-  d_data_fs_time_94662['intern_1'],
-  d_data_fs_time_94662['intern_2'],
-  d_data_fs_time_94662['junior_1'],
-  d_data_fs_time_94662['junior_2'],
-  #d_data_fs_time_94662['middle_1'],
-  #d_data_fs_time_94662['middle_2'],
-  d_data_fs_time_94662['senior_1']
-  #d_data_fs_time_94662['senior_2']
+  d_data_fs_time_94662['intern'],
+  d_data_fs_time_94662['junior'],
+  d_data_fs_time_94662['middle'],
+  d_data_fs_time_94662['senior']
 )
 
 F_fm_time_94662, p_fm_time_94662 = stats.f_oneway(
-  d_data_fm_time_94662['intern_1'],
-  d_data_fm_time_94662['intern_2'],
-  d_data_fm_time_94662['junior_1'],
-  d_data_fm_time_94662['junior_2'],
-  #d_data_fm_time_94662['middle_1'],
-  #d_data_fm_time_94662['middle_2'],
-  d_data_fm_time_94662['senior_1']
-  #d_data_fm_time_94662['senior_2']
+  d_data_fm_time_94662['intern'],
+  d_data_fm_time_94662['junior'],
+  d_data_fm_time_94662['middle'],
+  d_data_fm_time_94662['senior']
 )
 
 print("Single-Modality (time_94662): F = %f" % (F_fs_time_94662))
@@ -1709,25 +1567,17 @@ print("Multi-Modality (time_94662): p = %f" % (p_fm_time_94662))
 # ============================================== #
 
 F_fs_time_607376, p_fs_time_607376 = stats.f_oneway(
-  d_data_fs_time_607376['intern_1'],
-  d_data_fs_time_607376['intern_2'],
-  d_data_fs_time_607376['junior_1'],
-  d_data_fs_time_607376['junior_2'],
-  #d_data_fs_time_607376['middle_1'],
-  #d_data_fs_time_607376['middle_2'],
-  d_data_fs_time_607376['senior_1']
-  #d_data_fs_time_607376['senior_2']
+  d_data_fs_time_607376['intern'],
+  d_data_fs_time_607376['junior'],
+  d_data_fs_time_607376['middle'],
+  d_data_fs_time_607376['senior']
 )
 
 F_fm_time_607376, p_fm_time_607376 = stats.f_oneway(
-  d_data_fm_time_607376['intern_1'],
-  d_data_fm_time_607376['intern_2'],
-  d_data_fm_time_607376['junior_1'],
-  d_data_fm_time_607376['junior_2'],
-  #d_data_fm_time_607376['middle_1'],
-  #d_data_fm_time_607376['middle_2'],
-  d_data_fm_time_607376['senior_1']
-  #d_data_fm_time_607376['senior_2']
+  d_data_fm_time_607376['intern'],
+  d_data_fm_time_607376['junior'],
+  d_data_fm_time_607376['middle'],
+  d_data_fm_time_607376['senior']
 )
 
 print("Single-Modality (time_607376): F = %f" % (F_fs_time_607376))
@@ -1743,25 +1593,17 @@ print("Multi-Modality (time_607376): p = %f" % (p_fm_time_607376))
 # ============================================== #
 
 F_fs_time_737037, p_fs_time_737037 = stats.f_oneway(
-  d_data_fs_time_737037['intern_1'],
-  d_data_fs_time_737037['intern_2'],
-  d_data_fs_time_737037['junior_1'],
-  d_data_fs_time_737037['junior_2'],
-  #d_data_fs_time_737037['middle_1'],
-  #d_data_fs_time_737037['middle_2'],
-  d_data_fs_time_737037['senior_1']
-  #d_data_fs_time_737037['senior_2']
+  d_data_fs_time_737037['intern'],
+  d_data_fs_time_737037['junior'],
+  d_data_fs_time_737037['middle'],
+  d_data_fs_time_737037['senior']
 )
 
 F_fm_time_737037, p_fm_time_737037 = stats.f_oneway(
-  d_data_fm_time_737037['intern_1'],
-  d_data_fm_time_737037['intern_2'],
-  d_data_fm_time_737037['junior_1'],
-  d_data_fm_time_737037['junior_2'],
-  #d_data_fm_time_737037['middle_1'],
-  #d_data_fm_time_737037['middle_2'],
-  d_data_fm_time_737037['senior_1']
-  #d_data_fm_time_737037['senior_2']
+  d_data_fm_time_737037['intern'],
+  d_data_fm_time_737037['junior'],
+  d_data_fm_time_737037['middle'],
+  d_data_fm_time_737037['senior']
 )
 
 print("Single-Modality (time_737037): F = %f" % (F_fs_time_737037))
@@ -1777,25 +1619,17 @@ print("Multi-Modality (time_737037): p = %f" % (p_fm_time_737037))
 # ============================================== #
 
 F_fs_time_total, p_fs_time_total = stats.f_oneway(
-  d_data_fs_time_total['intern_1'],
-  d_data_fs_time_total['intern_2'],
-  d_data_fs_time_total['junior_1'],
-  d_data_fs_time_total['junior_2'],
-  #d_data_fs_time_total['middle_1'],
-  #d_data_fs_time_total['middle_2'],
-  d_data_fs_time_total['senior_1']
-  #d_data_fs_time_total['senior_2']
+  d_data_fs_time_total['intern'],
+  d_data_fs_time_total['junior'],
+  d_data_fs_time_total['middle'],
+  d_data_fs_time_total['senior']
 )
 
 F_fm_time_total, p_fm_time_total = stats.f_oneway(
-  d_data_fm_time_total['intern_1'],
-  d_data_fm_time_total['intern_2'],
-  d_data_fm_time_total['junior_1'],
-  d_data_fm_time_total['junior_2'],
-  #d_data_fm_time_total['middle_1'],
-  #d_data_fm_time_total['middle_2'],
-  d_data_fm_time_total['senior_1']
-  #d_data_fm_time_total['senior_2']
+  d_data_fm_time_total['intern'],
+  d_data_fm_time_total['junior'],
+  d_data_fm_time_total['middle'],
+  d_data_fm_time_total['senior']
 )
 
 print("Single-Modality (time_total): F = %f" % (F_fs_time_total))
@@ -1811,25 +1645,17 @@ print("Multi-Modality (time_total): p = %f" % (p_fm_time_total))
 # ============================================== #
 
 F_fs_clicks_94662, p_fs_clicks_94662 = stats.f_oneway(
-  d_data_fs_clicks_94662['intern_1'],
-  d_data_fs_clicks_94662['intern_2'],
-  d_data_fs_clicks_94662['junior_1'],
-  d_data_fs_clicks_94662['junior_2'],
-  #d_data_fs_clicks_94662['middle_1'],
-  #d_data_fs_clicks_94662['middle_2'],
-  d_data_fs_clicks_94662['senior_1']
-  #d_data_fs_clicks_94662['senior_2']
+  d_data_fs_clicks_94662['intern'],
+  d_data_fs_clicks_94662['junior'],
+  d_data_fs_clicks_94662['middle'],
+  d_data_fs_clicks_94662['senior']
 )
 
 F_fm_clicks_94662, p_fm_clicks_94662 = stats.f_oneway(
-  d_data_fm_clicks_94662['intern_1'],
-  d_data_fm_clicks_94662['intern_2'],
-  d_data_fm_clicks_94662['junior_1'],
-  d_data_fm_clicks_94662['junior_2'],
-  #d_data_fm_clicks_94662['middle_1'],
-  #d_data_fm_clicks_94662['middle_2'],
-  d_data_fm_clicks_94662['senior_1']
-  #d_data_fm_clicks_94662['senior_2']
+  d_data_fm_clicks_94662['intern'],
+  d_data_fm_clicks_94662['junior'],
+  d_data_fm_clicks_94662['middle'],
+  d_data_fm_clicks_94662['senior']
 )
 
 print("Single-Modality (clicks_94662): F = %f" % (F_fs_clicks_94662))
@@ -1845,25 +1671,17 @@ print("Multi-Modality (clicks_94662): p = %f" % (p_fm_clicks_94662))
 # ============================================== #
 
 F_fs_clicks_607376, p_fs_clicks_607376 = stats.f_oneway(
-  d_data_fs_clicks_607376['intern_1'],
-  d_data_fs_clicks_607376['intern_2'],
-  d_data_fs_clicks_607376['junior_1'],
-  d_data_fs_clicks_607376['junior_2'],
-  #d_data_fs_clicks_607376['middle_1'],
-  #d_data_fs_clicks_607376['middle_2'],
-  d_data_fs_clicks_607376['senior_1']
-  #d_data_fs_clicks_607376['senior_2']
+  d_data_fs_clicks_607376['intern'],
+  d_data_fs_clicks_607376['junior'],
+  d_data_fs_clicks_607376['middle'],
+  d_data_fs_clicks_607376['senior']
 )
 
 F_fm_clicks_607376, p_fm_clicks_607376 = stats.f_oneway(
-  d_data_fm_clicks_607376['intern_1'],
-  d_data_fm_clicks_607376['intern_2'],
-  d_data_fm_clicks_607376['junior_1'],
-  d_data_fm_clicks_607376['junior_2'],
-  #d_data_fm_clicks_607376['middle_1'],
-  #d_data_fm_clicks_607376['middle_2'],
-  d_data_fm_clicks_607376['senior_1']
-  #d_data_fm_clicks_607376['senior_2']
+  d_data_fm_clicks_607376['intern'],
+  d_data_fm_clicks_607376['junior'],
+  d_data_fm_clicks_607376['middle'],
+  d_data_fm_clicks_607376['senior']
 )
 
 print("Single-Modality (clicks_607376): F = %f" % (F_fs_clicks_607376))
@@ -1879,25 +1697,17 @@ print("Multi-Modality (clicks_607376): p = %f" % (p_fm_clicks_607376))
 # ============================================== #
 
 F_fs_clicks_737037, p_fs_clicks_737037 = stats.f_oneway(
-  d_data_fs_clicks_737037['intern_1'],
-  d_data_fs_clicks_737037['intern_2'],
-  d_data_fs_clicks_737037['junior_1'],
-  d_data_fs_clicks_737037['junior_2'],
-  #d_data_fs_clicks_737037['middle_1'],
-  #d_data_fs_clicks_737037['middle_2'],
-  d_data_fs_clicks_737037['senior_1']
-  #d_data_fs_clicks_737037['senior_2']
+  d_data_fs_clicks_737037['intern'],
+  d_data_fs_clicks_737037['junior'],
+  d_data_fs_clicks_737037['middle'],
+  d_data_fs_clicks_737037['senior']
 )
 
 F_fm_clicks_737037, p_fm_clicks_737037 = stats.f_oneway(
-  d_data_fm_clicks_737037['intern_1'],
-  d_data_fm_clicks_737037['intern_2'],
-  d_data_fm_clicks_737037['junior_1'],
-  d_data_fm_clicks_737037['junior_2'],
-  #d_data_fm_clicks_737037['middle_1'],
-  #d_data_fm_clicks_737037['middle_2'],
-  d_data_fm_clicks_737037['senior_1']
-  #d_data_fm_clicks_737037['senior_2']
+  d_data_fm_clicks_737037['intern'],
+  d_data_fm_clicks_737037['junior'],
+  d_data_fm_clicks_737037['middle'],
+  d_data_fm_clicks_737037['senior']
 )
 
 print("Single-Modality (clicks_737037): F = %f" % (F_fs_clicks_737037))
@@ -1913,25 +1723,17 @@ print("Multi-Modality (clicks_737037): p = %f" % (p_fm_clicks_737037))
 # ============================================== #
 
 F_fs_clicks_total, p_fs_clicks_total = stats.f_oneway(
-  d_data_fs_clicks_total['intern_1'],
-  d_data_fs_clicks_total['intern_2'],
-  d_data_fs_clicks_total['junior_1'],
-  d_data_fs_clicks_total['junior_2'],
-  #d_data_fs_clicks_total['middle_1'],
-  #d_data_fs_clicks_total['middle_2'],
-  d_data_fs_clicks_total['senior_1']
-  #d_data_fs_clicks_total['senior_2']
+  d_data_fs_clicks_total['intern'],
+  d_data_fs_clicks_total['junior'],
+  d_data_fs_clicks_total['middle'],
+  d_data_fs_clicks_total['senior']
 )
 
 F_fm_clicks_total, p_fm_clicks_total = stats.f_oneway(
-  d_data_fm_clicks_total['intern_1'],
-  d_data_fm_clicks_total['intern_2'],
-  d_data_fm_clicks_total['junior_1'],
-  d_data_fm_clicks_total['junior_2'],
-  #d_data_fm_clicks_total['middle_1'],
-  #d_data_fm_clicks_total['middle_2'],
-  d_data_fm_clicks_total['senior_1']
-  #d_data_fm_clicks_total['senior_2']
+  d_data_fm_clicks_total['intern'],
+  d_data_fm_clicks_total['junior'],
+  d_data_fm_clicks_total['middle'],
+  d_data_fm_clicks_total['senior']
 )
 
 print("Single-Modality (clicks_total): F = %f" % (F_fs_clicks_total))
@@ -1947,25 +1749,17 @@ print("Multi-Modality (clicks_total): p = %f" % (p_fm_clicks_total))
 # ============================================== #
 
 F_fs_errors_94662, p_fs_errors_94662 = stats.f_oneway(
-  d_data_fs_errors_94662['intern_1'],
-  d_data_fs_errors_94662['intern_2'],
-  d_data_fs_errors_94662['junior_1'],
-  d_data_fs_errors_94662['junior_2'],
-  #d_data_fs_errors_94662['middle_1'],
-  #d_data_fs_errors_94662['middle_2'],
-  d_data_fs_errors_94662['senior_1']
-  #d_data_fs_errors_94662['senior_2']
+  d_data_fs_errors_94662['intern'],
+  d_data_fs_errors_94662['junior'],
+  d_data_fs_errors_94662['middle'],
+  d_data_fs_errors_94662['senior']
 )
 
 F_fm_errors_94662, p_fm_errors_94662 = stats.f_oneway(
-  d_data_fm_errors_94662['intern_1'],
-  d_data_fm_errors_94662['intern_2'],
-  d_data_fm_errors_94662['junior_1'],
-  d_data_fm_errors_94662['junior_2'],
-  #d_data_fm_errors_94662['middle_1'],
-  #d_data_fm_errors_94662['middle_2'],
-  d_data_fm_errors_94662['senior_1']
-  #d_data_fm_errors_94662['senior_2']
+  d_data_fm_errors_94662['intern'],
+  d_data_fm_errors_94662['junior'],
+  d_data_fm_errors_94662['middle'],
+  d_data_fm_errors_94662['senior']
 )
 
 print("Single-Modality (errors_94662): F = %f" % (F_fs_errors_94662))
@@ -1981,25 +1775,17 @@ print("Multi-Modality (errors_94662): p = %f" % (p_fm_errors_94662))
 # ============================================== #
 
 F_fs_errors_607376, p_fs_errors_607376 = stats.f_oneway(
-  d_data_fs_errors_607376['intern_1'],
-  d_data_fs_errors_607376['intern_2'],
-  d_data_fs_errors_607376['junior_1'],
-  d_data_fs_errors_607376['junior_2'],
-  #d_data_fs_errors_607376['middle_1'],
-  #d_data_fs_errors_607376['middle_2'],
-  d_data_fs_errors_607376['senior_1']
-  #d_data_fs_errors_607376['senior_2']
+  d_data_fs_errors_607376['intern'],
+  d_data_fs_errors_607376['junior'],
+  d_data_fs_errors_607376['middle'],
+  d_data_fs_errors_607376['senior']
 )
 
 F_fm_errors_607376, p_fm_errors_607376 = stats.f_oneway(
-  d_data_fm_errors_607376['intern_1'],
-  d_data_fm_errors_607376['intern_2'],
-  d_data_fm_errors_607376['junior_1'],
-  d_data_fm_errors_607376['junior_2'],
-  #d_data_fm_errors_607376['middle_1'],
-  #d_data_fm_errors_607376['middle_2'],
-  d_data_fm_errors_607376['senior_1']
-  #d_data_fm_errors_607376['senior_2']
+  d_data_fm_errors_607376['intern'],
+  d_data_fm_errors_607376['junior'],
+  d_data_fm_errors_607376['middle'],
+  d_data_fm_errors_607376['senior']
 )
 
 print("Single-Modality (errors_607376): F = %f" % (F_fs_errors_607376))
@@ -2015,25 +1801,17 @@ print("Multi-Modality (errors_607376): p = %f" % (p_fm_errors_607376))
 # ============================================== #
 
 F_fs_errors_737037, p_fs_errors_737037 = stats.f_oneway(
-  d_data_fs_errors_737037['intern_1'],
-  d_data_fs_errors_737037['intern_2'],
-  d_data_fs_errors_737037['junior_1'],
-  d_data_fs_errors_737037['junior_2'],
-  #d_data_fs_errors_737037['middle_1'],
-  #d_data_fs_errors_737037['middle_2'],
-  d_data_fs_errors_737037['senior_1']
-  #d_data_fs_errors_737037['senior_2']
+  d_data_fs_errors_737037['intern'],
+  d_data_fs_errors_737037['junior'],
+  d_data_fs_errors_737037['middle'],
+  d_data_fs_errors_737037['senior']
 )
 
 F_fm_errors_737037, p_fm_errors_737037 = stats.f_oneway(
-  d_data_fm_errors_737037['intern_1'],
-  d_data_fm_errors_737037['intern_2'],
-  d_data_fm_errors_737037['junior_1'],
-  d_data_fm_errors_737037['junior_2'],
-  #d_data_fm_errors_737037['middle_1'],
-  #d_data_fm_errors_737037['middle_2'],
-  d_data_fm_errors_737037['senior_1']
-  #d_data_fm_errors_737037['senior_2']
+  d_data_fm_errors_737037['intern'],
+  d_data_fm_errors_737037['junior'],
+  d_data_fm_errors_737037['middle'],
+  d_data_fm_errors_737037['senior']
 )
 
 print("Single-Modality (errors_737037): F = %f" % (F_fs_errors_737037))
@@ -2049,25 +1827,17 @@ print("Multi-Modality (errors_737037): p = %f" % (p_fm_errors_737037))
 # ============================================== #
 
 F_fs_errors_total, p_fs_errors_total = stats.f_oneway(
-  d_data_fs_errors_total['intern_1'],
-  d_data_fs_errors_total['intern_2'],
-  d_data_fs_errors_total['junior_1'],
-  d_data_fs_errors_total['junior_2'],
-  #d_data_fs_errors_total['middle_1'],
-  #d_data_fs_errors_total['middle_2'],
-  d_data_fs_errors_total['senior_1']
-  #d_data_fs_errors_total['senior_2']
+  d_data_fs_errors_total['intern'],
+  d_data_fs_errors_total['junior'],
+  d_data_fs_errors_total['middle'],
+  d_data_fs_errors_total['senior']
 )
 
 F_fm_errors_total, p_fm_errors_total = stats.f_oneway(
-  d_data_fm_errors_total['intern_1'],
-  d_data_fm_errors_total['intern_2'],
-  d_data_fm_errors_total['junior_1'],
-  d_data_fm_errors_total['junior_2'],
-  #d_data_fm_errors_total['middle_1'],
-  #d_data_fm_errors_total['middle_2'],
-  d_data_fm_errors_total['senior_1']
-  #d_data_fm_errors_total['senior_2']
+  d_data_fm_errors_total['intern'],
+  d_data_fm_errors_total['junior'],
+  d_data_fm_errors_total['middle'],
+  d_data_fm_errors_total['senior']
 )
 
 print("Single-Modality (errors_total): F = %f" % (F_fs_errors_total))
@@ -2083,25 +1853,17 @@ print("Multi-Modality (errors_total): p = %f" % (p_fm_errors_total))
 # ============================================== #
 
 F_fs_birads_94662, p_fs_birads_94662 = stats.f_oneway(
-  d_data_fs_birads_94662['intern_1'],
-  d_data_fs_birads_94662['intern_2'],
-  d_data_fs_birads_94662['junior_1'],
-  d_data_fs_birads_94662['junior_2'],
-  #d_data_fs_birads_94662['middle_1'],
-  #d_data_fs_birads_94662['middle_2'],
-  d_data_fs_birads_94662['senior_1']
-  #d_data_fs_birads_94662['senior_2']
+  d_data_fs_birads_94662['intern'],
+  d_data_fs_birads_94662['junior'],
+  d_data_fs_birads_94662['middle'],
+  d_data_fs_birads_94662['senior']
 )
 
 F_fm_birads_94662, p_fm_birads_94662 = stats.f_oneway(
-  d_data_fm_birads_94662['intern_1'],
-  d_data_fm_birads_94662['intern_2'],
-  d_data_fm_birads_94662['junior_1'],
-  d_data_fm_birads_94662['junior_2'],
-  #d_data_fm_birads_94662['middle_1'],
-  #d_data_fm_birads_94662['middle_2'],
-  d_data_fm_birads_94662['senior_1']
-  #d_data_fm_birads_94662['senior_2']
+  d_data_fm_birads_94662['intern'],
+  d_data_fm_birads_94662['junior'],
+  d_data_fm_birads_94662['middle'],
+  d_data_fm_birads_94662['senior']
 )
 
 print("Single-Modality (birads_94662): F = %f" % (F_fs_birads_94662))
@@ -2117,25 +1879,17 @@ print("Multi-Modality (birads_94662): p = %f" % (p_fm_birads_94662))
 # ============================================== #
 
 F_fs_birads_607376, p_fs_birads_607376 = stats.f_oneway(
-  d_data_fs_birads_607376['intern_1'],
-  d_data_fs_birads_607376['intern_2'],
-  d_data_fs_birads_607376['junior_1'],
-  d_data_fs_birads_607376['junior_2'],
-  #d_data_fs_birads_607376['middle_1'],
-  #d_data_fs_birads_607376['middle_2'],
-  d_data_fs_birads_607376['senior_1']
-  #d_data_fs_birads_607376['senior_2']
+  d_data_fs_birads_607376['intern'],
+  d_data_fs_birads_607376['junior'],
+  d_data_fs_birads_607376['middle'],
+  d_data_fs_birads_607376['senior']
 )
 
 F_fm_birads_607376, p_fm_birads_607376 = stats.f_oneway(
-  d_data_fm_birads_607376['intern_1'],
-  d_data_fm_birads_607376['intern_2'],
-  d_data_fm_birads_607376['junior_1'],
-  d_data_fm_birads_607376['junior_2'],
-  #d_data_fm_birads_607376['middle_1'],
-  #d_data_fm_birads_607376['middle_2'],
-  d_data_fm_birads_607376['senior_1']
-  #d_data_fm_birads_607376['senior_2']
+  d_data_fm_birads_607376['intern'],
+  d_data_fm_birads_607376['junior'],
+  d_data_fm_birads_607376['middle'],
+  d_data_fm_birads_607376['senior']
 )
 
 print("Single-Modality (birads_607376): F = %f" % (F_fs_birads_607376))
@@ -2151,25 +1905,17 @@ print("Multi-Modality (birads_607376): p = %f" % (p_fm_birads_607376))
 # ============================================== #
 
 F_fs_birads_737037, p_fs_birads_737037 = stats.f_oneway(
-  d_data_fs_birads_737037['intern_1'],
-  d_data_fs_birads_737037['intern_2'],
-  d_data_fs_birads_737037['junior_1'],
-  d_data_fs_birads_737037['junior_2'],
-  #d_data_fs_birads_737037['middle_1'],
-  #d_data_fs_birads_737037['middle_2'],
-  d_data_fs_birads_737037['senior_1']
-  #d_data_fs_birads_737037['senior_2']
+  d_data_fs_birads_737037['intern'],
+  d_data_fs_birads_737037['junior'],
+  d_data_fs_birads_737037['middle'],
+  d_data_fs_birads_737037['senior']
 )
 
 F_fm_birads_737037, p_fm_birads_737037 = stats.f_oneway(
-  d_data_fm_birads_737037['intern_1'],
-  d_data_fm_birads_737037['intern_2'],
-  d_data_fm_birads_737037['junior_1'],
-  d_data_fm_birads_737037['junior_2'],
-  #d_data_fm_birads_737037['middle_1'],
-  #d_data_fm_birads_737037['middle_2'],
-  d_data_fm_birads_737037['senior_1']
-  #d_data_fm_birads_737037['senior_2']
+  d_data_fm_birads_737037['intern'],
+  d_data_fm_birads_737037['junior'],
+  d_data_fm_birads_737037['middle'],
+  d_data_fm_birads_737037['senior']
 )
 
 print("Single-Modality (birads_737037): F = %f" % (F_fs_birads_737037))
