@@ -1115,7 +1115,7 @@ print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s
 # ============================================== #
 
 # ============================================== #
-#            D'Agostino and Pearson              #
+#       D'Agostino and Pearson: Kurtosis         #
 # ============================================== #
 
 s_min = 1
