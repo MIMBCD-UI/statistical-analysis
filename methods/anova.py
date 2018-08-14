@@ -48,7 +48,12 @@ main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
 fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
 fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
 
+import plotly.plotly as py
+import plotly.graph_objs as go
+from plotly import figure_factory as FF
+
 import pandas as pd
+import scipy
 from scipy import stats
 
 import matplotlib.pyplot as plt
@@ -899,12 +904,12 @@ normalValidation_s_003 = stats.normaltest(s_003)
 normalValidation_s_004 = stats.normaltest(s_004)
 normalValidation_s_005 = stats.normaltest(s_005)
 normalValidation_s_006 = stats.normaltest(s_006)
-print(normalValidation_s_001)
-print(normalValidation_s_002)
-print(normalValidation_s_003)
-print(normalValidation_s_004)
-print(normalValidation_s_005)
-print(normalValidation_s_006)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_001)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_002)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_003)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_004)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_005)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_006)
 
 # ============================================== #
 # ============================================== #
@@ -919,12 +924,12 @@ normalValidation_s_009 = stats.normaltest(s_009)
 normalValidation_s_010 = stats.normaltest(s_010)
 normalValidation_s_011 = stats.normaltest(s_011)
 normalValidation_s_012 = stats.normaltest(s_012)
-print(normalValidation_s_007)
-print(normalValidation_s_008)
-print(normalValidation_s_009)
-print(normalValidation_s_010)
-print(normalValidation_s_011)
-print(normalValidation_s_012)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_007)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_008)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_009)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_010)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_011)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_012)
 
 # ============================================== #
 # ============================================== #
@@ -943,16 +948,16 @@ normalValidation_s_019 = stats.normaltest(s_019)
 normalValidation_s_020 = stats.normaltest(s_020)
 normalValidation_s_021 = stats.normaltest(s_021)
 normalValidation_s_022 = stats.normaltest(s_022)
-print(normalValidation_s_013)
-print(normalValidation_s_014)
-print(normalValidation_s_015)
-print(normalValidation_s_016)
-print(normalValidation_s_017)
-print(normalValidation_s_018)
-print(normalValidation_s_019)
-print(normalValidation_s_020)
-print(normalValidation_s_021)
-print(normalValidation_s_022)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_013)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_014)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_015)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_016)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_017)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_018)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_019)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_020)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_021)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_022)
 
 # ============================================== #
 # ============================================== #
@@ -971,16 +976,16 @@ normalValidation_s_029 = stats.normaltest(s_029)
 normalValidation_s_030 = stats.normaltest(s_030)
 normalValidation_s_031 = stats.normaltest(s_031)
 normalValidation_s_032 = stats.normaltest(s_032)
-print(normalValidation_s_023)
-print(normalValidation_s_024)
-print(normalValidation_s_025)
-print(normalValidation_s_026)
-print(normalValidation_s_027)
-print(normalValidation_s_028)
-print(normalValidation_s_029)
-print(normalValidation_s_030)
-print(normalValidation_s_031)
-print(normalValidation_s_032)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_023)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_024)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_025)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_026)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_027)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_028)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_029)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_030)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_031)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_032)
 
 # ============================================== #
 # ============================================== #
@@ -993,10 +998,10 @@ normalValidation_s_033 = stats.normaltest(s_033)
 normalValidation_s_034 = stats.normaltest(s_034)
 normalValidation_s_035 = stats.normaltest(s_035)
 normalValidation_s_036 = stats.normaltest(s_036)
-print(normalValidation_s_033)
-print(normalValidation_s_034)
-print(normalValidation_s_035)
-print(normalValidation_s_036)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_033)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_034)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_035)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_036)
 
 # ============================================== #
 # ============================================== #
@@ -1009,10 +1014,10 @@ normalValidation_s_037 = stats.normaltest(s_037)
 normalValidation_s_038 = stats.normaltest(s_038)
 normalValidation_s_039 = stats.normaltest(s_039)
 normalValidation_s_040 = stats.normaltest(s_040)
-print(normalValidation_s_037)
-print(normalValidation_s_038)
-print(normalValidation_s_039)
-print(normalValidation_s_040)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_037)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_038)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_039)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_040)
 
 # ============================================== #
 # ============================================== #
@@ -1025,10 +1030,10 @@ normalValidation_s_041 = stats.normaltest(s_041)
 normalValidation_s_042 = stats.normaltest(s_042)
 normalValidation_s_043 = stats.normaltest(s_043)
 normalValidation_s_044 = stats.normaltest(s_044)
-print(normalValidation_s_041)
-print(normalValidation_s_042)
-print(normalValidation_s_043)
-print(normalValidation_s_044)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_041)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_042)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_043)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_044)
 
 # ============================================== #
 # ============================================== #
@@ -1041,10 +1046,10 @@ normalValidation_s_045 = stats.normaltest(s_045)
 normalValidation_s_046 = stats.normaltest(s_046)
 normalValidation_s_047 = stats.normaltest(s_047)
 normalValidation_s_048 = stats.normaltest(s_048)
-print(normalValidation_s_045)
-print(normalValidation_s_046)
-print(normalValidation_s_047)
-print(normalValidation_s_048)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_045)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_046)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_047)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_048)
 
 # ============================================== #
 # ============================================== #
@@ -1057,10 +1062,10 @@ normalValidation_s_049 = stats.normaltest(s_049)
 normalValidation_s_050 = stats.normaltest(s_050)
 normalValidation_s_051 = stats.normaltest(s_051)
 normalValidation_s_052 = stats.normaltest(s_052)
-print(normalValidation_s_049)
-print(normalValidation_s_050)
-print(normalValidation_s_051)
-print(normalValidation_s_052)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_049)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_050)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_051)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_052)
 
 # ============================================== #
 # ============================================== #
@@ -1073,10 +1078,10 @@ normalValidation_s_053 = stats.normaltest(s_053)
 normalValidation_s_054 = stats.normaltest(s_054)
 normalValidation_s_055 = stats.normaltest(s_055)
 normalValidation_s_056 = stats.normaltest(s_056)
-print(normalValidation_s_053)
-print(normalValidation_s_054)
-print(normalValidation_s_055)
-print(normalValidation_s_056)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_053)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_054)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_055)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_056)
 
 # ============================================== #
 # ============================================== #
@@ -1088,9 +1093,9 @@ print(normalValidation_s_056)
 normalValidation_s_057 = stats.normaltest(s_057)
 normalValidation_s_058 = stats.normaltest(s_058)
 normalValidation_s_059 = stats.normaltest(s_059)
-print(normalValidation_s_057)
-print(normalValidation_s_058)
-print(normalValidation_s_059)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_057)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_058)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_059)
 
 # ============================================== #
 # ============================================== #
@@ -1102,9 +1107,39 @@ print(normalValidation_s_059)
 normalValidation_s_060 = stats.normaltest(s_060)
 normalValidation_s_061 = stats.normaltest(s_061)
 normalValidation_s_062 = stats.normaltest(s_062)
-print(normalValidation_s_060)
-print(normalValidation_s_061)
-print(normalValidation_s_062)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_060)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_061)
+print("[D'Agostino and Pearson: Normal Distribution]" + "\n", normalValidation_s_062)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#            D'Agostino and Pearson              #
+# ============================================== #
+
+s_min = 1
+s_max = 62
+
+for s_current in range(s_min, s_max + 1):
+  if s_current < 10:
+    x_string = "s_" + "00" + str(s_current)
+    x = globals()[x_string]
+  elif 10 <= s_current < 100:
+    x_string = "s_" + "0" + str(s_current)
+    x = globals()[x_string]
+  else:
+    x_string = "s_" + str(s_current)
+    x = globals()[x_string]
+  dagostino_results = scipy.stats.mstats.normaltest(x)
+  str_end = x_string + "\n"
+  str_start = "[D'Agostino and Pearson: Kurtosis]"
+  str_1 = str_start + " DF of " + str_end
+  str_2 = str_start + " Test Statistic of " + str_end
+  str_3 = str_start + " p-value of " + x_string + "\n"
+  print(str_1, len(x) - 1)
+  print(str_2, dagostino_results[0])
+  print(str_3, dagostino_results[1])
 
 # ============================================== #
 # ============================================== #
