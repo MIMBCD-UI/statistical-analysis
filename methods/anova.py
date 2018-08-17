@@ -24,8 +24,6 @@ joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 #pathAbsPath = '/Users/Francisco/Git/statistical-analysis/methods/anova.py'
 
-print(pathDirname)
-
 sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
 sys.path.append(sa_scripts_dir)
 
@@ -71,6 +69,13 @@ datafile_fm = pd.read_csv(fm_sheet_dir)
 #                 CREATE BOXPLOT                 #
 #                                                #
 # ============================================== #
+
+experience = [
+  'intern',
+  'junior',
+  'middle',
+  'senior'
+]
 
 nasatlx_columns = [
   'mental_demand',
@@ -120,6 +125,39 @@ figSizeX = 12
 figSizeY = 8
 
 # ============================================== #
+#               DATAFILE ITERATORS               #
+# ============================================== #
+
+datafileList = []
+datafileListVec = []
+
+def datafileIteratorPerGroup(datafile):
+  for i in range(0, 31):
+    for j in range(9, 19):
+      datafileIndexGroup = datafile.loc[i, "group"]
+      datafileIndexGroupStr = str(datafileIndexGroup)
+      datafileList.insert(len(datafileList) ,datafileIndexGroupStr)
+  return datafileList
+
+# def datafileIteratorPerVector(datafile, vector):
+#   for i in range(0, 31):
+#     for j in range(9, 19):
+#       for m in range(len(vector)):
+#         datafileIndexVec = datafile.loc[i, "group"]
+#         datafileIndexVecStr = str(datafileIndexVec)
+#         # print("datafileIndexVecStr", datafileIndexVecStr)
+#         # print("vector[m]", vector[m])
+#         # if(datafileIndexVecStr == vector[m]):
+#         datafileListVec.insert(len(datafileListVec), vector[m])
+#     return datafileListVec
+
+datafile_fs_list = datafileIteratorPerGroup(datafile_fs)
+datafile_fm_list = datafileIteratorPerGroup(datafile_fm)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
 #                SINGLE-MODALITY                 #
 # ============================================== #
 
@@ -132,6 +170,9 @@ createBoxplotFS(filterByColumn, nasatlx_columns)
 createBoxplotFS(filterByColumn, sus_columns)
 createBoxplotFS(filterByColumn, measures_columns)
 createBoxplotFS(filterByColumn, birads_columns)
+
+# ============================================== #
+# ============================================== #
 
 # ============================================== #
 #                 MULTI-MODALITY                 #
@@ -577,6 +618,364 @@ s_060 = datafile_fm.birads_94662[:MV_N].tolist()
 s_061 = datafile_fm.birads_607376[:MV_N].tolist()
 s_062 = datafile_fm.birads_737037[:MV_N].tolist()
 
+# ============================================== #
+
+# ============================================== #
+#         SUS List/Group: Single-Modality        #
+# ============================================== #
+
+lg_fs_sus_01_intern = d_data_fs_sus_01['intern'].tolist()
+lg_fs_sus_01_junior = d_data_fs_sus_01['junior'].tolist()
+lg_fs_sus_01_middle = d_data_fs_sus_01['middle'].tolist()
+lg_fs_sus_01_senior = d_data_fs_sus_01['senior'].tolist()
+
+lg_fs_sus_02_intern = d_data_fs_sus_02['intern'].tolist()
+lg_fs_sus_02_junior = d_data_fs_sus_02['junior'].tolist()
+lg_fs_sus_02_middle = d_data_fs_sus_02['middle'].tolist()
+lg_fs_sus_02_senior = d_data_fs_sus_02['senior'].tolist()
+
+lg_fs_sus_03_intern = d_data_fs_sus_03['intern'].tolist()
+lg_fs_sus_03_junior = d_data_fs_sus_03['junior'].tolist()
+lg_fs_sus_03_middle = d_data_fs_sus_03['middle'].tolist()
+lg_fs_sus_03_senior = d_data_fs_sus_03['senior'].tolist()
+
+lg_fs_sus_04_intern = d_data_fs_sus_04['intern'].tolist()
+lg_fs_sus_04_junior = d_data_fs_sus_04['junior'].tolist()
+lg_fs_sus_04_middle = d_data_fs_sus_04['middle'].tolist()
+lg_fs_sus_04_senior = d_data_fs_sus_04['senior'].tolist()
+
+lg_fs_sus_05_intern = d_data_fs_sus_05['intern'].tolist()
+lg_fs_sus_05_junior = d_data_fs_sus_05['junior'].tolist()
+lg_fs_sus_05_middle = d_data_fs_sus_05['middle'].tolist()
+lg_fs_sus_05_senior = d_data_fs_sus_05['senior'].tolist()
+
+lg_fs_sus_06_intern = d_data_fs_sus_06['intern'].tolist()
+lg_fs_sus_06_junior = d_data_fs_sus_06['junior'].tolist()
+lg_fs_sus_06_middle = d_data_fs_sus_06['middle'].tolist()
+lg_fs_sus_06_senior = d_data_fs_sus_06['senior'].tolist()
+
+lg_fs_sus_07_intern = d_data_fs_sus_07['intern'].tolist()
+lg_fs_sus_07_junior = d_data_fs_sus_07['junior'].tolist()
+lg_fs_sus_07_middle = d_data_fs_sus_07['middle'].tolist()
+lg_fs_sus_07_senior = d_data_fs_sus_07['senior'].tolist()
+
+lg_fs_sus_08_intern = d_data_fs_sus_08['intern'].tolist()
+lg_fs_sus_08_junior = d_data_fs_sus_08['junior'].tolist()
+lg_fs_sus_08_middle = d_data_fs_sus_08['middle'].tolist()
+lg_fs_sus_08_senior = d_data_fs_sus_08['senior'].tolist()
+
+lg_fs_sus_09_intern = d_data_fs_sus_09['intern'].tolist()
+lg_fs_sus_09_junior = d_data_fs_sus_09['junior'].tolist()
+lg_fs_sus_09_middle = d_data_fs_sus_09['middle'].tolist()
+lg_fs_sus_09_senior = d_data_fs_sus_09['senior'].tolist()
+
+lg_fs_sus_10_intern = d_data_fs_sus_10['intern'].tolist()
+lg_fs_sus_10_junior = d_data_fs_sus_10['junior'].tolist()
+lg_fs_sus_10_middle = d_data_fs_sus_10['middle'].tolist()
+lg_fs_sus_10_senior = d_data_fs_sus_10['senior'].tolist()
+
+lg_fs_sus_intern = lg_fs_sus_01_intern + lg_fs_sus_02_intern + lg_fs_sus_03_intern + lg_fs_sus_04_intern + lg_fs_sus_05_intern + lg_fs_sus_06_intern + lg_fs_sus_07_intern + lg_fs_sus_08_intern + lg_fs_sus_09_intern + lg_fs_sus_10_intern
+
+lg_fs_sus_intern_arr = [
+  lg_fs_sus_01_intern,
+  lg_fs_sus_02_intern,
+  lg_fs_sus_03_intern,
+  lg_fs_sus_04_intern,
+  lg_fs_sus_05_intern,
+  lg_fs_sus_06_intern,
+  lg_fs_sus_07_intern,
+  lg_fs_sus_08_intern,
+  lg_fs_sus_09_intern,
+  lg_fs_sus_10_intern
+]
+
+lg_fs_sus_junior = lg_fs_sus_01_junior + lg_fs_sus_02_junior + lg_fs_sus_03_junior + lg_fs_sus_04_junior + lg_fs_sus_05_junior + lg_fs_sus_06_junior + lg_fs_sus_07_junior + lg_fs_sus_08_junior + lg_fs_sus_09_junior + lg_fs_sus_10_junior
+
+lg_fs_sus_junior_arr = [
+  lg_fs_sus_01_junior,
+  lg_fs_sus_02_junior,
+  lg_fs_sus_03_junior,
+  lg_fs_sus_04_junior,
+  lg_fs_sus_05_junior,
+  lg_fs_sus_06_junior,
+  lg_fs_sus_07_junior,
+  lg_fs_sus_08_junior,
+  lg_fs_sus_09_junior,
+  lg_fs_sus_10_junior
+]
+
+lg_fs_sus_middle = lg_fs_sus_01_middle + lg_fs_sus_02_middle + lg_fs_sus_03_middle + lg_fs_sus_04_middle + lg_fs_sus_05_middle + lg_fs_sus_06_middle + lg_fs_sus_07_middle + lg_fs_sus_08_middle + lg_fs_sus_09_middle + lg_fs_sus_10_middle
+
+lg_fs_sus_middle_arr = [
+  lg_fs_sus_01_middle,
+  lg_fs_sus_02_middle,
+  lg_fs_sus_03_middle,
+  lg_fs_sus_04_middle,
+  lg_fs_sus_05_middle,
+  lg_fs_sus_06_middle,
+  lg_fs_sus_07_middle,
+  lg_fs_sus_08_middle,
+  lg_fs_sus_09_middle,
+  lg_fs_sus_10_middle
+]
+
+lg_fs_sus_senior = lg_fs_sus_01_senior + lg_fs_sus_02_senior + lg_fs_sus_03_senior + lg_fs_sus_04_senior + lg_fs_sus_05_senior + lg_fs_sus_06_senior + lg_fs_sus_07_senior + lg_fs_sus_08_senior + lg_fs_sus_09_senior + lg_fs_sus_10_senior
+
+lg_fs_sus_senior_arr = [
+  lg_fs_sus_01_senior,
+  lg_fs_sus_02_senior,
+  lg_fs_sus_03_senior,
+  lg_fs_sus_04_senior,
+  lg_fs_sus_05_senior,
+  lg_fs_sus_06_senior,
+  lg_fs_sus_07_senior,
+  lg_fs_sus_08_senior,
+  lg_fs_sus_09_senior,
+  lg_fs_sus_10_senior
+]
+
+# ============================================== #
+
+# ============================================== #
+#         SUS List/Group: Multi-Modality        #
+# ============================================== #
+
+lg_fm_sus_01_intern = d_data_fm_sus_01['intern'].tolist()
+lg_fm_sus_01_junior = d_data_fm_sus_01['junior'].tolist()
+lg_fm_sus_01_middle = d_data_fm_sus_01['middle'].tolist()
+lg_fm_sus_01_senior = d_data_fm_sus_01['senior'].tolist()
+
+lg_fm_sus_02_intern = d_data_fm_sus_02['intern'].tolist()
+lg_fm_sus_02_junior = d_data_fm_sus_02['junior'].tolist()
+lg_fm_sus_02_middle = d_data_fm_sus_02['middle'].tolist()
+lg_fm_sus_02_senior = d_data_fm_sus_02['senior'].tolist()
+
+lg_fm_sus_03_intern = d_data_fm_sus_03['intern'].tolist()
+lg_fm_sus_03_junior = d_data_fm_sus_03['junior'].tolist()
+lg_fm_sus_03_middle = d_data_fm_sus_03['middle'].tolist()
+lg_fm_sus_03_senior = d_data_fm_sus_03['senior'].tolist()
+
+lg_fm_sus_04_intern = d_data_fm_sus_04['intern'].tolist()
+lg_fm_sus_04_junior = d_data_fm_sus_04['junior'].tolist()
+lg_fm_sus_04_middle = d_data_fm_sus_04['middle'].tolist()
+lg_fm_sus_04_senior = d_data_fm_sus_04['senior'].tolist()
+
+lg_fm_sus_05_intern = d_data_fm_sus_05['intern'].tolist()
+lg_fm_sus_05_junior = d_data_fm_sus_05['junior'].tolist()
+lg_fm_sus_05_middle = d_data_fm_sus_05['middle'].tolist()
+lg_fm_sus_05_senior = d_data_fm_sus_05['senior'].tolist()
+
+lg_fm_sus_06_intern = d_data_fm_sus_06['intern'].tolist()
+lg_fm_sus_06_junior = d_data_fm_sus_06['junior'].tolist()
+lg_fm_sus_06_middle = d_data_fm_sus_06['middle'].tolist()
+lg_fm_sus_06_senior = d_data_fm_sus_06['senior'].tolist()
+
+lg_fm_sus_07_intern = d_data_fm_sus_07['intern'].tolist()
+lg_fm_sus_07_junior = d_data_fm_sus_07['junior'].tolist()
+lg_fm_sus_07_middle = d_data_fm_sus_07['middle'].tolist()
+lg_fm_sus_07_senior = d_data_fm_sus_07['senior'].tolist()
+
+lg_fm_sus_08_intern = d_data_fm_sus_08['intern'].tolist()
+lg_fm_sus_08_junior = d_data_fm_sus_08['junior'].tolist()
+lg_fm_sus_08_middle = d_data_fm_sus_08['middle'].tolist()
+lg_fm_sus_08_senior = d_data_fm_sus_08['senior'].tolist()
+
+lg_fm_sus_09_intern = d_data_fm_sus_09['intern'].tolist()
+lg_fm_sus_09_junior = d_data_fm_sus_09['junior'].tolist()
+lg_fm_sus_09_middle = d_data_fm_sus_09['middle'].tolist()
+lg_fm_sus_09_senior = d_data_fm_sus_09['senior'].tolist()
+
+lg_fm_sus_10_intern = d_data_fm_sus_10['intern'].tolist()
+lg_fm_sus_10_junior = d_data_fm_sus_10['junior'].tolist()
+lg_fm_sus_10_middle = d_data_fm_sus_10['middle'].tolist()
+lg_fm_sus_10_senior = d_data_fm_sus_10['senior'].tolist()
+
+lg_fm_sus_intern = lg_fm_sus_01_intern + lg_fm_sus_02_intern + lg_fm_sus_03_intern + lg_fm_sus_04_intern + lg_fm_sus_05_intern + lg_fm_sus_06_intern + lg_fm_sus_07_intern + lg_fm_sus_08_intern + lg_fm_sus_09_intern + lg_fm_sus_10_intern
+
+lg_fm_sus_intern_arr = [
+  lg_fm_sus_01_intern,
+  lg_fm_sus_02_intern,
+  lg_fm_sus_03_intern,
+  lg_fm_sus_04_intern,
+  lg_fm_sus_05_intern,
+  lg_fm_sus_06_intern,
+  lg_fm_sus_07_intern,
+  lg_fm_sus_08_intern,
+  lg_fm_sus_09_intern,
+  lg_fm_sus_10_intern
+]
+
+lg_fm_sus_junior = lg_fm_sus_01_junior + lg_fm_sus_02_junior + lg_fm_sus_03_junior + lg_fm_sus_04_junior + lg_fm_sus_05_junior + lg_fm_sus_06_junior + lg_fm_sus_07_junior + lg_fm_sus_08_junior + lg_fm_sus_09_junior + lg_fm_sus_10_junior
+
+lg_fm_sus_junior_arr = [
+  lg_fm_sus_01_junior,
+  lg_fm_sus_02_junior,
+  lg_fm_sus_03_junior,
+  lg_fm_sus_04_junior,
+  lg_fm_sus_05_junior,
+  lg_fm_sus_06_junior,
+  lg_fm_sus_07_junior,
+  lg_fm_sus_08_junior,
+  lg_fm_sus_09_junior,
+  lg_fm_sus_10_junior
+]
+
+lg_fm_sus_middle = lg_fm_sus_01_middle + lg_fm_sus_02_middle + lg_fm_sus_03_middle + lg_fm_sus_04_middle + lg_fm_sus_05_middle + lg_fm_sus_06_middle + lg_fm_sus_07_middle + lg_fm_sus_08_middle + lg_fm_sus_09_middle + lg_fm_sus_10_middle
+
+lg_fm_sus_middle_arr = [
+  lg_fm_sus_01_middle,
+  lg_fm_sus_02_middle,
+  lg_fm_sus_03_middle,
+  lg_fm_sus_04_middle,
+  lg_fm_sus_05_middle,
+  lg_fm_sus_06_middle,
+  lg_fm_sus_07_middle,
+  lg_fm_sus_08_middle,
+  lg_fm_sus_09_middle,
+  lg_fm_sus_10_middle
+]
+
+lg_fm_sus_senior = lg_fm_sus_01_senior + lg_fm_sus_02_senior + lg_fm_sus_03_senior + lg_fm_sus_04_senior + lg_fm_sus_05_senior + lg_fm_sus_06_senior + lg_fm_sus_07_senior + lg_fm_sus_08_senior + lg_fm_sus_09_senior + lg_fm_sus_10_senior
+
+lg_fm_sus_senior_arr = [
+  lg_fm_sus_01_senior,
+  lg_fm_sus_02_senior,
+  lg_fm_sus_03_senior,
+  lg_fm_sus_04_senior,
+  lg_fm_sus_05_senior,
+  lg_fm_sus_06_senior,
+  lg_fm_sus_07_senior,
+  lg_fm_sus_08_senior,
+  lg_fm_sus_09_senior,
+  lg_fm_sus_10_senior
+]
+
+vecReplacerList = []
+
+def vecReplacer(arr, vec):
+  for i in range(len(vec)):
+    for j in range(len(arr[i])):
+      vecReplacerList.insert(len(vecReplacerList), vec[i])
+  return vecReplacerList
+
+varReplacer_fs_intern = vecReplacer(lg_fs_sus_intern_arr, sus_columns)
+varReplacer_fs_junior = vecReplacer(lg_fs_sus_junior_arr, sus_columns)
+varReplacer_fs_middle = vecReplacer(lg_fs_sus_middle_arr, sus_columns)
+varReplacer_fs_senior = vecReplacer(lg_fs_sus_senior_arr, sus_columns)
+
+datafile_fs_vec = varReplacer_fs_intern + varReplacer_fs_junior + varReplacer_fs_middle + varReplacer_fs_senior
+
+varReplacer_fm_intern = vecReplacer(lg_fm_sus_intern_arr, sus_columns)
+varReplacer_fm_junior = vecReplacer(lg_fm_sus_junior_arr, sus_columns)
+varReplacer_fm_middle = vecReplacer(lg_fm_sus_middle_arr, sus_columns)
+varReplacer_fm_senior = vecReplacer(lg_fm_sus_senior_arr, sus_columns)
+
+datafile_fm_vec = varReplacer_fm_intern + varReplacer_fm_junior + varReplacer_fm_middle + varReplacer_fm_senior
+
+# ============================================== #
+
+# ============================================== #
+#             SUS: Grouped Box Plots             #
+# ============================================== #
+
+x_fs = datafile_fs_vec
+x_fm = datafile_fm_vec
+
+trace_fs_intern = go.Box(
+  y=lg_fs_sus_intern,
+  x=x_fs,
+  name='Single-Modality: Intern',
+  marker=dict(
+    color='#1abc9c'
+  )
+)
+
+trace_fm_intern = go.Box(
+  y=lg_fm_sus_intern,
+  x=x_fm,
+  name='Multi-Modality: Intern',
+  marker=dict(
+    color='#16a085'
+  )
+)
+
+trace_fs_junior = go.Box(
+  y=lg_fs_sus_junior,
+  x=x_fs,
+  name='Single-Modality: Junior',
+  marker=dict(
+    color='#9b59b6'
+  )
+)
+
+trace_fm_junior = go.Box(
+  y=lg_fm_sus_junior,
+  x=x_fm,
+  name='Multi-Modality: Junior',
+  marker=dict(
+    color='#8e44ad'
+  )
+)
+
+trace_fs_middle = go.Box(
+  y=lg_fs_sus_middle,
+  x=x_fs,
+  name='Single-Modality: Middle',
+  marker=dict(
+    color='#3498db'
+  )
+)
+
+trace_fm_middle = go.Box(
+  y=lg_fm_sus_middle,
+  x=x_fm,
+  name='Multi-Modality: Middle',
+  marker=dict(
+    color='#2980b9'
+  )
+)
+
+trace_fs_senior = go.Box(
+  y=lg_fs_sus_senior,
+  x=x_fs,
+  name='Single-Modality: Senior',
+  marker=dict(
+    color='#e74c3c'
+  )
+)
+
+trace_fm_senior = go.Box(
+  y=lg_fm_sus_senior,
+  x=x_fm,
+  name='Multi-Modality: Senior',
+  marker=dict(
+    color='#c0392b'
+  )
+)
+
+data = [
+  trace_fs_intern,
+  trace_fm_intern,
+  trace_fs_junior,
+  trace_fm_junior,
+  trace_fs_middle,
+  trace_fm_middle,
+  trace_fs_senior,
+  trace_fm_senior
+]
+
+layout = go.Layout(
+  yaxis=dict(
+    title='normalized moisture',
+    zeroline=False
+  ),
+  boxmode='group'
+)
+
+fig = go.Figure(data=data, layout=layout)
+py.plot(fig)
+
+# ============================================== #
 # ============================================== #
 
 # ============================================== #
