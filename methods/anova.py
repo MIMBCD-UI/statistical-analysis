@@ -804,27 +804,52 @@ lg_fm_sus_senior_arr = [
   lg_fm_sus_10_senior
 ]
 
-vecReplacerList = []
-
 def vecReplacer(arr, vec):
-  for i in range(len(vec)):
+  vecReplacerList = []
+  for i in range(len(arr)):
     for j in range(len(arr[i])):
       vecReplacerList.insert(len(vecReplacerList), vec[i])
   return vecReplacerList
+
+def vecReplacePrinter(arr):
+  for i in range(len(arr)):
+    return arr[i]
 
 varReplacer_fs_intern = vecReplacer(lg_fs_sus_intern_arr, sus_columns)
 varReplacer_fs_junior = vecReplacer(lg_fs_sus_junior_arr, sus_columns)
 varReplacer_fs_middle = vecReplacer(lg_fs_sus_middle_arr, sus_columns)
 varReplacer_fs_senior = vecReplacer(lg_fs_sus_senior_arr, sus_columns)
 
+varReplacer_fs_intern_p = vecReplacePrinter(lg_fs_sus_intern_arr)
+varReplacer_fs_junior_p = vecReplacePrinter(lg_fs_sus_junior_arr)
+varReplacer_fs_middle_p = vecReplacePrinter(lg_fs_sus_middle_arr)
+varReplacer_fs_senior_p = vecReplacePrinter(lg_fs_sus_senior_arr)
+
 datafile_fs_vec = varReplacer_fs_intern + varReplacer_fs_junior + varReplacer_fs_middle + varReplacer_fs_senior
+
+print("varReplacer_fs_intern", varReplacer_fs_intern)
+print("varReplacer_fs_junior", varReplacer_fs_junior)
+print("varReplacer_fs_middle", varReplacer_fs_middle)
+print("varReplacer_fs_senior", varReplacer_fs_senior)
 
 varReplacer_fm_intern = vecReplacer(lg_fm_sus_intern_arr, sus_columns)
 varReplacer_fm_junior = vecReplacer(lg_fm_sus_junior_arr, sus_columns)
 varReplacer_fm_middle = vecReplacer(lg_fm_sus_middle_arr, sus_columns)
 varReplacer_fm_senior = vecReplacer(lg_fm_sus_senior_arr, sus_columns)
 
+varReplacer_fm_intern_p = vecReplacePrinter(lg_fm_sus_intern_arr)
+varReplacer_fm_junior_p = vecReplacePrinter(lg_fm_sus_junior_arr)
+varReplacer_fm_middle_p = vecReplacePrinter(lg_fm_sus_middle_arr)
+varReplacer_fm_senior_p = vecReplacePrinter(lg_fm_sus_senior_arr)
+
+print("varReplacer_fm_intern", varReplacer_fm_intern)
+print("varReplacer_fm_junior", varReplacer_fm_junior)
+print("varReplacer_fm_middle", varReplacer_fm_middle)
+print("varReplacer_fm_senior", varReplacer_fm_senior)
+
 datafile_fm_vec = varReplacer_fm_intern + varReplacer_fm_junior + varReplacer_fm_middle + varReplacer_fm_senior
+
+datafile_vec = datafile_fs_vec + datafile_fm_vec
 
 # ============================================== #
 
@@ -832,78 +857,79 @@ datafile_fm_vec = varReplacer_fm_intern + varReplacer_fm_junior + varReplacer_fm
 #             SUS: Grouped Box Plots             #
 # ============================================== #
 
+x = datafile_vec
 x_fs = datafile_fs_vec
 x_fm = datafile_fm_vec
 
 trace_fs_intern = go.Box(
   y=lg_fs_sus_intern,
-  x=x_fs,
+  x=varReplacer_fs_intern,
   name='Single-Modality: Intern',
   marker=dict(
-    color='#1abc9c'
+    color='#1E824C'
   )
 )
 
 trace_fm_intern = go.Box(
   y=lg_fm_sus_intern,
-  x=x_fm,
+  x=varReplacer_fm_intern,
   name='Multi-Modality: Intern',
   marker=dict(
-    color='#16a085'
+    color='#049372'
   )
 )
 
 trace_fs_junior = go.Box(
   y=lg_fs_sus_junior,
-  x=x_fs,
+  x=varReplacer_fs_junior,
   name='Single-Modality: Junior',
   marker=dict(
-    color='#9b59b6'
+    color='#663399'
   )
 )
 
 trace_fm_junior = go.Box(
   y=lg_fm_sus_junior,
-  x=x_fm,
+  x=varReplacer_fm_junior,
   name='Multi-Modality: Junior',
   marker=dict(
-    color='#8e44ad'
+    color='#913D88'
   )
 )
 
 trace_fs_middle = go.Box(
   y=lg_fs_sus_middle,
-  x=x_fs,
+  x=varReplacer_fs_middle,
   name='Single-Modality: Middle',
   marker=dict(
-    color='#3498db'
+    color='#4183D7'
   )
 )
 
 trace_fm_middle = go.Box(
   y=lg_fm_sus_middle,
-  x=x_fm,
+  x=varReplacer_fm_middle,
   name='Multi-Modality: Middle',
   marker=dict(
-    color='#2980b9'
+    color='#59ABE3'
   )
 )
 
 trace_fs_senior = go.Box(
   y=lg_fs_sus_senior,
-  x=x_fs,
+  x=varReplacer_fs_senior,
   name='Single-Modality: Senior',
   marker=dict(
-    color='#e74c3c'
+    color='#F22613'
   )
 )
 
 trace_fm_senior = go.Box(
   y=lg_fm_sus_senior,
-  x=x_fm,
+  x=varReplacer_fm_senior,
   name='Multi-Modality: Senior',
   marker=dict(
-    color='#c0392b'
+    color='#C0392B'
   )
 )
 
@@ -920,7 +946,11 @@ data = [
 
 layout = go.Layout(
   yaxis=dict(
-    title='normalized moisture',
+    title='SUS Scores',
+    zeroline=False
+  ),
+  xaxis=dict(
+    title='SUS Questions',
     zeroline=False
   ),
   boxmode='group'
