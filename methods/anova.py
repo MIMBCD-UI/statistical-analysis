@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.2.1"
+__version__     = "1.2.2"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -19,28 +19,36 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-#pathDirname = '/Users/Francisco/Git/statistical-analysis/methods/anova.py'
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
-#pathAbsPath = '/Users/Francisco/Git/statistical-analysis/methods/anova.py'
 
 sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
+sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
+src_dir = (pathAbsPath + '/sheet-reader/src/')
+constants_dir = (pathAbsPath + '/sheet-reader/constants/')
+scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+
 sys.path.append(sa_scripts_dir)
+sys.path.append(sa_constants_dir)
+sys.path.append(src_dir)
+sys.path.append(constants_dir)
+sys.path.append(scripts_dir)
 
 from nasa import nasaColMean
 
-src_dir = (pathAbsPath + '/sheet-reader/src/')
-sys.path.append(src_dir)
-
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-sys.path.append(constants_dir)
 import main_variables
+import structures
+import sheetReaders
 
 MV_N = main_variables.N
-
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
-sys.path.append(scripts_dir)
-import sheetReaders
+experience = structures.experience
+nasatlx_columns = structures.nasatlx_columns
+sus_columns = structures.sus_columns
+measures_columns = structures.measures_columns
+birads_columns = structures.birads_columns
+filterByColumn = structures.filterByColumn
+figSizeX = structures.figSizeX
+figSizeY = structures.figSizeY
 
 main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
 fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
@@ -69,60 +77,6 @@ datafile_fm = pd.read_csv(fm_sheet_dir)
 #                 CREATE BOXPLOT                 #
 #                                                #
 # ============================================== #
-
-experience = [
-  'intern',
-  'junior',
-  'middle',
-  'senior'
-]
-
-nasatlx_columns = [
-  'mental_demand',
-  'physical_demand',
-  'temporal_demand',
-  'performance',
-  'effort',
-  'frustration'
-]
-
-sus_columns = [
-  'sus_01',
-  'sus_02',
-  'sus_03',
-  'sus_04',
-  'sus_05',
-  'sus_06',
-  'sus_07',
-  'sus_08',
-  'sus_09',
-  'sus_10',
-]
-
-measures_columns = [
-  'time_94662',
-  'time_607376',
-  'time_737037',
-  'time_total',
-  'clicks_94662',
-  'clicks_607376',
-  'clicks_737037',
-  'clicks_total',
-  'errors_94662',
-  'errors_607376',
-  'errors_737037',
-  'errors_total'
-]
-
-birads_columns = [
-  'birads_94662',
-  'birads_607376',
-  'birads_737037'
-]
-
-filterByColumn = 'group'
-figSizeX = 12
-figSizeY = 8
 
 # ============================================== #
 #               DATAFILE ITERATORS               #
