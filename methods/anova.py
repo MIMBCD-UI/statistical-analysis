@@ -827,11 +827,6 @@ varReplacer_fs_senior_p = vecReplacePrinter(lg_fs_sus_senior_arr)
 
 datafile_fs_vec = varReplacer_fs_intern + varReplacer_fs_junior + varReplacer_fs_middle + varReplacer_fs_senior
 
-print("varReplacer_fs_intern", varReplacer_fs_intern)
-print("varReplacer_fs_junior", varReplacer_fs_junior)
-print("varReplacer_fs_middle", varReplacer_fs_middle)
-print("varReplacer_fs_senior", varReplacer_fs_senior)
-
 varReplacer_fm_intern = vecReplacer(lg_fm_sus_intern_arr, sus_columns)
 varReplacer_fm_junior = vecReplacer(lg_fm_sus_junior_arr, sus_columns)
 varReplacer_fm_middle = vecReplacer(lg_fm_sus_middle_arr, sus_columns)
@@ -841,11 +836,6 @@ varReplacer_fm_intern_p = vecReplacePrinter(lg_fm_sus_intern_arr)
 varReplacer_fm_junior_p = vecReplacePrinter(lg_fm_sus_junior_arr)
 varReplacer_fm_middle_p = vecReplacePrinter(lg_fm_sus_middle_arr)
 varReplacer_fm_senior_p = vecReplacePrinter(lg_fm_sus_senior_arr)
-
-print("varReplacer_fm_intern", varReplacer_fm_intern)
-print("varReplacer_fm_junior", varReplacer_fm_junior)
-print("varReplacer_fm_middle", varReplacer_fm_middle)
-print("varReplacer_fm_senior", varReplacer_fm_senior)
 
 datafile_fm_vec = varReplacer_fm_intern + varReplacer_fm_junior + varReplacer_fm_middle + varReplacer_fm_senior
 
@@ -956,8 +946,8 @@ layout = go.Layout(
   boxmode='group'
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.plot(fig)
+#fig = go.Figure(data=data, layout=layout)
+#py.plot(fig)
 
 # ============================================== #
 # ============================================== #
