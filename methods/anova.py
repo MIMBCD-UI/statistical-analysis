@@ -955,8 +955,8 @@ layout = go.Layout(
   boxmode='group'
 )
 
-fig = go.Figure(data=data, layout=layout)
-py.plot(fig)
+#fig = go.Figure(data=data, layout=layout)
+#py.plot(fig)
 
 # ============================================== #
 # ============================================== #
