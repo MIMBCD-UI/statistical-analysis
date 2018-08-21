@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.2.1"
+__version__     = "1.2.2"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -23,23 +23,20 @@ joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
 sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
+src_dir = (pathAbsPath + '/sheet-reader/src/')
+constants_dir = (pathAbsPath + '/sheet-reader/constants/')
+scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+constants_dir = (pathAbsPath + '/sheet-reader/constants/')
+
 sys.path.append(sa_scripts_dir)
+sys.path.append(src_dir)
+sys.path.append(constants_dir)
+sys.path.append(scripts_dir)
+sys.path.append(constants_dir)
 
 from nasa import nasaColMean
-
-src_dir = (pathAbsPath + '/sheet-reader/src/')
-sys.path.append(src_dir)
-
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-sys.path.append(constants_dir)
 import main_variables
-
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
-sys.path.append(scripts_dir)
 import sheetReadersmain_sheet
-
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-sys.path.append(constants_dir)
 import main_variables
 
 # ============================================== #

@@ -24,12 +24,14 @@ pathAbsPath = os.path.abspath(joinPath)
 
 sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
 sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
+sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
 src_dir = (pathAbsPath + '/sheet-reader/src/')
 constants_dir = (pathAbsPath + '/sheet-reader/constants/')
 scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
 
 sys.path.append(sa_scripts_dir)
 sys.path.append(sa_constants_dir)
+sys.path.append(sa_methods_dir)
 sys.path.append(src_dir)
 sys.path.append(constants_dir)
 sys.path.append(scripts_dir)
@@ -39,6 +41,7 @@ from nasa import nasaColMean
 import main_variables
 import structures
 import sheetReaders
+import iterators
 
 MV_N = main_variables.N
 experience = structures.experience
@@ -50,6 +53,7 @@ birads_columns = structures.birads_columns
 filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
+datafileIteratorPerGroup = iterators.datafileIteratorPerGroup
 
 main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
 fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
@@ -82,29 +86,6 @@ datafile_fm = pd.read_csv(fm_sheet_dir)
 # ============================================== #
 #               DATAFILE ITERATORS               #
 # ============================================== #
-
-datafileList = []
-datafileListVec = []
-
-def datafileIteratorPerGroup(datafile):
-  for i in range(0, 31):
-    for j in range(9, 19):
-      datafileIndexGroup = datafile.loc[i, "group"]
-      datafileIndexGroupStr = str(datafileIndexGroup)
-      datafileList.insert(len(datafileList) ,datafileIndexGroupStr)
-  return datafileList
-
-# def datafileIteratorPerVector(datafile, vector):
-#   for i in range(0, 31):
-#     for j in range(9, 19):
-#       for m in range(len(vector)):
-#         datafileIndexVec = datafile.loc[i, "group"]
-#         datafileIndexVecStr = str(datafileIndexVec)
-#         # print("datafileIndexVecStr", datafileIndexVecStr)
-#         # print("vector[m]", vector[m])
-#         # if(datafileIndexVecStr == vector[m]):
-#         datafileListVec.insert(len(datafileListVec), vector[m])
-#     return datafileListVec
 
 datafile_fs_list = datafileIteratorPerGroup(datafile_fs)
 datafile_fm_list = datafileIteratorPerGroup(datafile_fm)

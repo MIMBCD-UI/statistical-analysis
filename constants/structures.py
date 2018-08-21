@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.0.0"
+__version__     = "1.0.1"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -77,6 +77,12 @@ birads_columns = [
   'birads_94662',
   'birads_607376',
   'birads_737037'
+]
+
+birads_labels = [
+  'BI-RADS = 2',
+  'BI-RADS = 3',
+  'BI-RADS = 5'
 ]
 
 filterByColumn = 'group'
