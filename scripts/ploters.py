@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""biradsCalcs.py: Calculations for the BI-RADS."""
+"""ploters.py: Generators of several plots."""
 
 __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
@@ -22,31 +22,18 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
 sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
-sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
-src_dir = (pathAbsPath + '/sheet-reader/src/')
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
 
-sys.path.append(sa_scripts_dir)
 sys.path.append(sa_constants_dir)
-sys.path.append(sa_methods_dir)
-sys.path.append(src_dir)
-sys.path.append(constants_dir)
-sys.path.append(scripts_dir)
 
-from nasa import nasaColMean
-
-import main_variables
 import structures
 import sheet
-import sheetReaders
-import iterators
-import ploters
 
+experience = structures.experience
+nasatlx_columns = structures.nasatlx_columns
+sus_columns = structures.sus_columns
+measures_columns = structures.measures_columns
 birads_columns = structures.birads_columns
-birads_labels = structures.birads_labels
 filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
@@ -73,12 +60,22 @@ import numpy as np
 datafile_fs = sheet.datafile_fs
 datafile_fm = sheet.datafile_fm
 
-createBoxplot = ploters.createBoxplot
-
 # ============================================== #
 #                                                #
-#                 CREATE BOXPLOT                 #
+#              BOXPLOT DEFINITIONS               #
 #                                                #
+# ============================================== #
+
+# ============================================== #
+#                   CREATORS                     #
+# ============================================== #
+
+def createBoxplot(dataFile, filterBy, array):
+  i = 0
+  for i in range(len(array)):
+    dataFile.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
+
+# ============================================== #
 # ============================================== #
 
 # ============================================== #

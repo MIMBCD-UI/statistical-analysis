@@ -40,16 +40,21 @@ from nasa import nasaColMean
 
 import main_variables
 import structures
-import sheet
 import sheetReaders
 import iterators
-import ploters
 
+MV_N = main_variables.N
+experience = structures.experience
+nasatlx_columns = structures.nasatlx_columns
+sus_columns = structures.sus_columns
+sus_questions = structures.sus_questions
+measures_columns = structures.measures_columns
 birads_columns = structures.birads_columns
 birads_labels = structures.birads_labels
 filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
+datafileIteratorPerGroup = iterators.datafileIteratorPerGroup
 
 main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
 fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
@@ -70,42 +75,5 @@ import statsmodels.api as sm
 from statsmodels.formula.api import ols
 import numpy as np
 
-datafile_fs = sheet.datafile_fs
-datafile_fm = sheet.datafile_fm
-
-createBoxplot = ploters.createBoxplot
-
-# ============================================== #
-#                                                #
-#                 CREATE BOXPLOT                 #
-#                                                #
-# ============================================== #
-
-# ============================================== #
-#                SINGLE-MODALITY                 #
-# ============================================== #
-
-# createBoxplot(datafile_fs, filterByColumn, nasatlx_columns)
-# createBoxplot(datafile_fs, filterByColumn, sus_columns)
-# createBoxplot(datafile_fs, filterByColumn, measures_columns)
-# createBoxplot(datafile_fs, filterByColumn, birads_columns)
-
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                 MULTI-MODALITY                 #
-# ============================================== #
-
-# createBoxplot(datafile_fm, filterByColumn, nasatlx_columns)
-# createBoxplot(datafile_fm, filterByColumn, sus_columns)
-# createBoxplot(datafile_fm, filterByColumn, measures_columns)
-# createBoxplot(datafile_fm, filterByColumn, birads_columns)
-
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-# ============================================== #
-# ============================================== #
-# ============================================== #
+datafile_fs = pd.read_csv(fs_sheet_dir)
+datafile_fm = pd.read_csv(fm_sheet_dir)

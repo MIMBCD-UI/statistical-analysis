@@ -40,8 +40,10 @@ from nasa import nasaColMean
 
 import main_variables
 import structures
+import sheet
 import sheetReaders
 import iterators
+import ploters
 
 MV_N = main_variables.N
 experience = structures.experience
@@ -74,8 +76,10 @@ import statsmodels.api as sm
 from statsmodels.formula.api import ols
 import numpy as np
 
-datafile_fs = pd.read_csv(fs_sheet_dir)
-datafile_fm = pd.read_csv(fm_sheet_dir)
+datafile_fs = sheet.datafile_fs
+datafile_fm = sheet.datafile_fm
+
+createBoxplot = ploters.createBoxplot
 
 # ============================================== #
 #                                                #
@@ -89,40 +93,6 @@ datafile_fm = pd.read_csv(fm_sheet_dir)
 
 datafile_fs_list = datafileIteratorPerGroup(datafile_fs)
 datafile_fm_list = datafileIteratorPerGroup(datafile_fm)
-
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                SINGLE-MODALITY                 #
-# ============================================== #
-
-def createBoxplotFS(filterBy, array):
-  i = 0
-  for i in range(len(array)):
-    datafile_fs.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
-
-createBoxplotFS(filterByColumn, nasatlx_columns)
-createBoxplotFS(filterByColumn, sus_columns)
-createBoxplotFS(filterByColumn, measures_columns)
-createBoxplotFS(filterByColumn, birads_columns)
-
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                 MULTI-MODALITY                 #
-# ============================================== #
-
-def createBoxplotFM(filterBy, array):
-  i = 0
-  for i in range(len(array)):
-    datafile_fm.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
-
-createBoxplotFM(filterByColumn, nasatlx_columns)
-createBoxplotFM(filterByColumn, sus_columns)
-createBoxplotFM(filterByColumn, measures_columns)
-createBoxplotFM(filterByColumn, birads_columns)
 
 # ============================================== #
 # ============================================== #

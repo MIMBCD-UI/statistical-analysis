@@ -15,8 +15,5 @@ def datafileIteratorPerVector(datafile, vector):
       for m in range(len(vector)):
         datafileIndexVec = datafile.loc[i, "group"]
         datafileIndexVecStr = str(datafileIndexVec)
-        # print("datafileIndexVecStr", datafileIndexVecStr)
-        # print("vector[m]", vector[m])
-        # if(datafileIndexVecStr == vector[m]):
         datafileListVec.insert(len(datafileListVec), vector[m])
     return datafileListVec
