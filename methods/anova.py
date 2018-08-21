@@ -44,6 +44,7 @@ MV_N = main_variables.N
 experience = structures.experience
 nasatlx_columns = structures.nasatlx_columns
 sus_columns = structures.sus_columns
+sus_questions = structures.sus_questions
 measures_columns = structures.measures_columns
 birads_columns = structures.birads_columns
 filterByColumn = structures.filterByColumn
@@ -815,10 +816,10 @@ def vecReplacePrinter(arr):
   for i in range(len(arr)):
     return arr[i]
 
-varReplacer_fs_intern = vecReplacer(lg_fs_sus_intern_arr, sus_columns)
-varReplacer_fs_junior = vecReplacer(lg_fs_sus_junior_arr, sus_columns)
-varReplacer_fs_middle = vecReplacer(lg_fs_sus_middle_arr, sus_columns)
-varReplacer_fs_senior = vecReplacer(lg_fs_sus_senior_arr, sus_columns)
+varReplacer_fs_intern = vecReplacer(lg_fs_sus_intern_arr, sus_questions)
+varReplacer_fs_junior = vecReplacer(lg_fs_sus_junior_arr, sus_questions)
+varReplacer_fs_middle = vecReplacer(lg_fs_sus_middle_arr, sus_questions)
+varReplacer_fs_senior = vecReplacer(lg_fs_sus_senior_arr, sus_questions)
 
 varReplacer_fs_intern_p = vecReplacePrinter(lg_fs_sus_intern_arr)
 varReplacer_fs_junior_p = vecReplacePrinter(lg_fs_sus_junior_arr)
@@ -827,10 +828,10 @@ varReplacer_fs_senior_p = vecReplacePrinter(lg_fs_sus_senior_arr)
 
 datafile_fs_vec = varReplacer_fs_intern + varReplacer_fs_junior + varReplacer_fs_middle + varReplacer_fs_senior
 
-varReplacer_fm_intern = vecReplacer(lg_fm_sus_intern_arr, sus_columns)
-varReplacer_fm_junior = vecReplacer(lg_fm_sus_junior_arr, sus_columns)
-varReplacer_fm_middle = vecReplacer(lg_fm_sus_middle_arr, sus_columns)
-varReplacer_fm_senior = vecReplacer(lg_fm_sus_senior_arr, sus_columns)
+varReplacer_fm_intern = vecReplacer(lg_fm_sus_intern_arr, sus_questions)
+varReplacer_fm_junior = vecReplacer(lg_fm_sus_junior_arr, sus_questions)
+varReplacer_fm_middle = vecReplacer(lg_fm_sus_middle_arr, sus_questions)
+varReplacer_fm_senior = vecReplacer(lg_fm_sus_senior_arr, sus_questions)
 
 varReplacer_fm_intern_p = vecReplacePrinter(lg_fm_sus_intern_arr)
 varReplacer_fm_junior_p = vecReplacePrinter(lg_fm_sus_junior_arr)
@@ -855,6 +856,7 @@ trace_fs_intern = go.Box(
   y=lg_fs_sus_intern,
   x=varReplacer_fs_intern,
   name='Single-Modality: Intern',
+  boxpoints = False,
   marker=dict(
     color='#1E824C'
   )
@@ -864,6 +866,7 @@ trace_fm_intern = go.Box(
   y=lg_fm_sus_intern,
   x=varReplacer_fm_intern,
   name='Multi-Modality: Intern',
+  boxpoints = False,
   marker=dict(
     color='#049372'
   )
@@ -873,6 +876,7 @@ trace_fs_junior = go.Box(
   y=lg_fs_sus_junior,
   x=varReplacer_fs_junior,
   name='Single-Modality: Junior',
+  boxpoints = False,
   marker=dict(
     color='#663399'
   )
@@ -882,6 +886,7 @@ trace_fm_junior = go.Box(
   y=lg_fm_sus_junior,
   x=varReplacer_fm_junior,
   name='Multi-Modality: Junior',
+  boxpoints = False,
   marker=dict(
     color='#913D88'
   )
@@ -891,6 +896,7 @@ trace_fs_middle = go.Box(
   y=lg_fs_sus_middle,
   x=varReplacer_fs_middle,
   name='Single-Modality: Middle',
+  boxpoints = False,
   marker=dict(
     color='#4183D7'
   )
@@ -900,6 +906,7 @@ trace_fm_middle = go.Box(
   y=lg_fm_sus_middle,
   x=varReplacer_fm_middle,
   name='Multi-Modality: Middle',
+  boxpoints = False,
   marker=dict(
     color='#59ABE3'
   )
@@ -909,6 +916,7 @@ trace_fs_senior = go.Box(
   y=lg_fs_sus_senior,
   x=varReplacer_fs_senior,
   name='Single-Modality: Senior',
+  boxpoints = False,
   marker=dict(
     color='#F22613'
   )
@@ -918,6 +926,7 @@ trace_fm_senior = go.Box(
   y=lg_fm_sus_senior,
   x=varReplacer_fm_senior,
   name='Multi-Modality: Senior',
+  boxpoints = False,
   marker=dict(
     color='#C0392B'
   )
@@ -946,8 +955,8 @@ layout = go.Layout(
   boxmode='group'
 )
 
-#fig = go.Figure(data=data, layout=layout)
-#py.plot(fig)
+fig = go.Figure(data=data, layout=layout)
+py.plot(fig)
 
 # ============================================== #
 # ============================================== #

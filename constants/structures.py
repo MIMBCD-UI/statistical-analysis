@@ -45,6 +45,19 @@ sus_columns = [
   'sus_10',
 ]
 
+sus_questions = [
+  'Q1',
+  'Q2',
+  'Q3',
+  'Q4',
+  'Q5',
+  'Q6',
+  'Q7',
+  'Q8',
+  'Q9',
+  'Q10',
+]
+
 measures_columns = [
   'time_94662',
   'time_607376',
