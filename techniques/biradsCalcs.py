@@ -160,6 +160,7 @@ gt_fm_birads_737037_list = biradsAbsList(df_fm_birads_737037_list, actual_birads
 trace0 = go.Box(
     y=gt_fs_birads_94662_list,
     name=sm_birads_labels[0],
+    boxpoints = False,
     marker=dict(
         color='rgb(26, 188, 156)',
     ),
@@ -169,6 +170,7 @@ trace0 = go.Box(
 trace1 = go.Box(
     y=gt_fm_birads_94662_list,
     name=mm_birads_labels[0],
+    boxpoints = False,
     marker=dict(
         color='rgb(22, 160, 133)',
     ),
@@ -178,6 +180,7 @@ trace1 = go.Box(
 trace2 = go.Box(
     y=gt_fs_birads_607376_list,
     name=sm_birads_labels[1],
+    boxpoints = False,
     marker=dict(
         color='rgb(52, 152, 219)',
     ),
@@ -187,6 +190,7 @@ trace2 = go.Box(
 trace3 = go.Box(
     y=gt_fm_birads_607376_list,
     name=mm_birads_labels[1],
+    boxpoints = False,
     marker=dict(
         color='rgb(41, 128, 185)',
     ),
@@ -196,6 +200,7 @@ trace3 = go.Box(
 trace4 = go.Box(
     y=gt_fs_birads_737037_list,
     name=sm_birads_labels[2],
+    boxpoints = False,
     marker=dict(
         color='rgb(155, 89, 182)',
     ),
@@ -205,6 +210,7 @@ trace4 = go.Box(
 trace5 = go.Box(
     y=gt_fm_birads_737037_list,
     name=mm_birads_labels[2],
+    boxpoints = False,
     marker=dict(
         color='rgb(142, 68, 173)',
     ),
