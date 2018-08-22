@@ -28,8 +28,8 @@ import main_variables
 sheetReader_dir = (pathAbsPath + '/sheet-reader/src/')
 sys.path.append(sheetReader_dir)
 
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
-sys.path.append(scripts_dir)
+techniques_dir = (pathAbsPath + '/sheet-reader/scripts/')
+sys.path.append(techniques_dir)
 import sheetReaders
 
 MIN_VAL = main_variables.MIN_VAL

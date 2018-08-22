@@ -22,19 +22,19 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
+sa_techniques_dir = (pathAbsPath + '/statistical-analysis/techniques/')
 sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
 sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
 src_dir = (pathAbsPath + '/sheet-reader/src/')
 constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
 
-sys.path.append(sa_scripts_dir)
+sys.path.append(sa_techniques_dir)
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
 sys.path.append(src_dir)
 sys.path.append(constants_dir)
-sys.path.append(scripts_dir)
+sys.path.append(techniques_dir)
 
 from nasa import nasaColMean
 
@@ -906,8 +906,8 @@ layout = go.Layout(
   boxmode='group'
 )
 
-#fig = go.Figure(data=data, layout=layout)
-#py.plot(fig)
+fig = go.Figure(data=data, layout=layout)
+#py.plot(fig, filename = "sus-scores-vs-sus-questions")
 
 # ============================================== #
 # ============================================== #

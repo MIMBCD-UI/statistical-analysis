@@ -22,19 +22,19 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
+sa_techniques_dir = (pathAbsPath + '/statistical-analysis/techniques/')
 sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
 sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
 src_dir = (pathAbsPath + '/sheet-reader/src/')
 constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
 
-sys.path.append(sa_scripts_dir)
+sys.path.append(sa_techniques_dir)
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
 sys.path.append(src_dir)
 sys.path.append(constants_dir)
-sys.path.append(scripts_dir)
+sys.path.append(techniques_dir)
 
 from nasa import nasaColMean
 
@@ -50,7 +50,6 @@ sus_columns = structures.sus_columns
 sus_questions = structures.sus_questions
 measures_columns = structures.measures_columns
 birads_columns = structures.birads_columns
-birads_labels = structures.birads_labels
 filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY

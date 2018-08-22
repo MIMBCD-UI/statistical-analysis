@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""anova.py: A python version of ANOVA."""
+"""..."""
 
 __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
@@ -22,16 +22,16 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_scripts_dir = (pathAbsPath + '/statistical-analysis/scripts/')
+sa_techniques_dir = (pathAbsPath + '/statistical-analysis/techniques/')
 src_dir = (pathAbsPath + '/sheet-reader/src/')
 constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-scripts_dir = (pathAbsPath + '/sheet-reader/scripts/')
+techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
 constants_dir = (pathAbsPath + '/sheet-reader/constants/')
 
-sys.path.append(sa_scripts_dir)
+sys.path.append(sa_techniques_dir)
 sys.path.append(src_dir)
 sys.path.append(constants_dir)
-sys.path.append(scripts_dir)
+sys.path.append(techniques_dir)
 sys.path.append(constants_dir)
 
 from nasa import nasaColMean

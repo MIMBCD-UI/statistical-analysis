@@ -79,10 +79,16 @@ birads_columns = [
   'birads_737037'
 ]
 
-birads_labels = [
-  'BI-RADS = 2',
-  'BI-RADS = 3',
-  'BI-RADS = 5'
+sm_birads_labels = [
+  'SM: 94662',
+  'SM: 607376',
+  'SM: 737037'
+]
+
+mm_birads_labels = [
+  'MM: 94662',
+  'MM: 607376',
+  'MM: 737037'
 ]
 
 filterByColumn = 'group'
