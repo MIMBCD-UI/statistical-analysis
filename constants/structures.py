@@ -80,15 +80,15 @@ birads_columns = [
 ]
 
 sm_birads_labels = [
-  'SM: 94662',
-  'SM: 607376',
-  'SM: 737037'
+  'SM: P1',
+  'SM: P2',
+  'SM: P3'
 ]
 
 mm_birads_labels = [
-  'MM: 94662',
-  'MM: 607376',
-  'MM: 737037'
+  'MM: P1',
+  'MM: P2',
+  'MM: P3'
 ]
 
 filterByColumn = 'group'
