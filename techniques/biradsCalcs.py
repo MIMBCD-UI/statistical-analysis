@@ -227,7 +227,7 @@ data = [
 ]
 
 layout = go.Layout(
-  title = "BI-RADS Variation & SD"
+  title = "BI-RADS Variation & SD",
 )
 
 fig = go.Figure(data=data, layout=layout)

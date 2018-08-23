@@ -348,16 +348,111 @@ data1 = [
   trace5,
 ]
 
+cluster0 = [dict(type='circle',
+  xref='x', yref='y',
+  x0=min(sm_time_94662_charted), y0=min(sm_clicks_94662_charted),
+  x1=max(sm_time_94662_charted), y1=max(sm_clicks_94662_charted),
+  opacity=.25,
+  line=dict(color='rgb(26, 188, 156)'),
+  fillcolor='rgb(26, 188, 156)')]
+
+cluster1 = [dict(type='circle',
+  xref='x', yref='y',
+  x0=min(mm_time_94662_charted), y0=min(mm_clicks_94662_charted),
+  x1=max(mm_time_94662_charted), y1=max(mm_clicks_94662_charted),
+  opacity=.25,
+  line=dict(color='rgb(243, 156, 18)'),
+  fillcolor='rgb(243, 156, 18)')]
+
+cluster2 = [dict(type='circle',
+  xref='x', yref='y',
+  x0=min(sm_time_607376_charted), y0=min(sm_clicks_607376_charted),
+  x1=max(sm_time_607376_charted), y1=max(sm_clicks_607376_charted),
+  opacity=.25,
+  line=dict(color='rgb(52, 152, 219)'),
+  fillcolor='rgb(52, 152, 219)')]
+
+cluster3 = [dict(type='circle',
+  xref='x', yref='y',
+  x0=min(mm_time_607376_charted), y0=min(mm_clicks_607376_charted),
+  x1=max(mm_time_607376_charted), y1=max(mm_clicks_607376_charted),
+  opacity=.25,
+  line=dict(color='rgb(192, 57, 43)'),
+  fillcolor='rgb(192, 57, 43)')]
+
+cluster4 = [dict(type='circle',
+  xref='x', yref='y',
+  x0=min(sm_time_737037_charted), y0=min(sm_clicks_737037_charted),
+  x1=max(sm_time_737037_charted), y1=max(sm_clicks_737037_charted),
+  opacity=.25,
+  line=dict(color='rgb(155, 89, 182)'),
+  fillcolor='rgb(155, 89, 182)')]
+
+cluster5 = [dict(type='circle',
+  xref='x', yref='y',
+  x0=min(mm_time_737037_charted), y0=min(mm_clicks_737037_charted),
+  x1=max(mm_time_737037_charted), y1=max(mm_clicks_737037_charted),
+  opacity=.25,
+  line=dict(color='rgb(44, 62, 80)'),
+  fillcolor='rgb(44, 62, 80)')]
+
+smAllClusters = cluster0 + cluster2 + cluster4
+mmAllClusters = cluster1 + cluster3 + cluster5
+
+smUpdatemenus = list([
+  dict(buttons=list([
+    dict(label = 'None',
+      method = 'relayout',
+      args = ['shapes', []]),
+    dict(label = 'SM: 94662 Cluster',
+      method = 'relayout',
+      args = ['shapes', cluster0]),
+    dict(label = 'SM: 607376 Cluster',
+      method = 'relayout',
+      args = ['shapes', cluster2]),
+    dict(label = 'SM: 737037 Cluster',
+      method = 'relayout',
+      args = ['shapes', cluster4]),
+    dict(label = 'All',
+     method = 'relayout',
+     args = ['shapes', smAllClusters])
+  ]),
+  )
+])
+
+mmUpdatemenus = list([
+  dict(buttons=list([
+    dict(label = 'None',
+      method = 'relayout',
+      args = ['shapes', []]),
+    dict(label = 'Cluster 0',
+      method = 'relayout',
+      args = ['shapes', cluster1]),
+    dict(label = 'Cluster 1',
+      method = 'relayout',
+      args = ['shapes', cluster3]),
+    dict(label = 'Cluster 2',
+      method = 'relayout',
+      args = ['shapes', cluster5]),
+    dict(label = 'All',
+     method = 'relayout',
+     args = ['shapes', mmAllClusters])
+  ]),
+  )
+])
+
 layout0 = go.Layout(
   title = "[Single-Modality] Measurements: Time vs Number of Clicks",
   xaxis = dict(title = 'Time'),
   yaxis = dict(title = 'Number of Clicks'),
+  updatemenus=smUpdatemenus,
 )
 
 layout1 = go.Layout(
   title = "[Multi-Modality] Measurements: Time vs Number of Clicks",
   xaxis = dict(title = 'Time'),
   yaxis = dict(title = 'Number of Clicks'),
+  updatemenus=mmUpdatemenus,
 )
 
 fig0 = go.Figure(data=data0, layout=layout0)
