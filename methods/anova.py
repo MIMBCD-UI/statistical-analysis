@@ -909,7 +909,7 @@ layout = go.Layout(
 # REFACTOR!!!
 
 fig = go.Figure(data=data, layout=layout)
-#py.plot(fig, filename = "sus-scores-vs-sus-questions")
+py.plot(fig, filename = "sus-scores-vs-sus-questions")
 
 # ============================================== #
 # ============================================== #
