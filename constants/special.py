@@ -19,3 +19,11 @@ __credits__     = [
 actual_birads_94662 = 2
 actual_birads_607376 = 5
 actual_birads_737037 = 3
+
+sm_num_img_94662 = 1
+sm_num_img_607376 = 256
+sm_num_img_737037 = 1
+
+mm_num_img_94662 = 130
+mm_num_img_607376 = 258
+mm_num_img_737037 = 178

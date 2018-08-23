@@ -100,7 +100,7 @@ def biradsAbsList(df_birads_list, actual_birads):
 
 # ============================================== #
 #                                                #
-#                 CREATE BOXPLOT                 #
+#                      VARS                      #
 #                                                #
 # ============================================== #
 
@@ -158,63 +158,63 @@ gt_fm_birads_737037_list = biradsAbsList(df_fm_birads_737037_list, actual_birads
 # ============================================== #
 
 trace0 = go.Box(
-    y=gt_fs_birads_94662_list,
-    name=sm_birads_labels[0],
-    boxpoints = False,
-    marker=dict(
-        color='rgb(26, 188, 156)',
-    ),
-    boxmean='sd'
+  y=gt_fs_birads_94662_list,
+  name=sm_birads_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(26, 188, 156)',
+  ),
+  boxmean='sd'
 )
 
 trace1 = go.Box(
-    y=gt_fm_birads_94662_list,
-    name=mm_birads_labels[0],
-    boxpoints = False,
-    marker=dict(
-        color='rgb(22, 160, 133)',
-    ),
-    boxmean='sd'
+  y=gt_fm_birads_94662_list,
+  name=mm_birads_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(22, 160, 133)',
+  ),
+  boxmean='sd'
 )
 
 trace2 = go.Box(
-    y=gt_fs_birads_607376_list,
-    name=sm_birads_labels[1],
-    boxpoints = False,
-    marker=dict(
-        color='rgb(52, 152, 219)',
-    ),
-    boxmean='sd'
+  y=gt_fs_birads_607376_list,
+  name=sm_birads_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(52, 152, 219)',
+  ),
+  boxmean='sd'
 )
 
 trace3 = go.Box(
-    y=gt_fm_birads_607376_list,
-    name=mm_birads_labels[1],
-    boxpoints = False,
-    marker=dict(
-        color='rgb(41, 128, 185)',
-    ),
-    boxmean='sd'
+  y=gt_fm_birads_607376_list,
+  name=mm_birads_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(41, 128, 185)',
+  ),
+  boxmean='sd'
 )
 
 trace4 = go.Box(
-    y=gt_fs_birads_737037_list,
-    name=sm_birads_labels[2],
-    boxpoints = False,
-    marker=dict(
-        color='rgb(155, 89, 182)',
-    ),
-    boxmean='sd'
+  y=gt_fs_birads_737037_list,
+  name=sm_birads_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(155, 89, 182)',
+  ),
+  boxmean='sd'
 )
 
 trace5 = go.Box(
-    y=gt_fm_birads_737037_list,
-    name=mm_birads_labels[2],
-    boxpoints = False,
-    marker=dict(
-        color='rgb(142, 68, 173)',
-    ),
-    boxmean='sd'
+  y=gt_fm_birads_737037_list,
+  name=mm_birads_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(142, 68, 173)',
+  ),
+  boxmean='sd'
 )
 
 data = [
@@ -227,7 +227,7 @@ data = [
 ]
 
 layout = go.Layout(
-    title = "BI-RADS Variation & SD"
+  title = "BI-RADS Variation & SD"
 )
 
 fig = go.Figure(data=data, layout=layout)
