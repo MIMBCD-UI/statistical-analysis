@@ -82,7 +82,7 @@ As far as we have to do several statictical analysis over our users, we need to 
 
 ### Dataset Resources
 
-For the User Test Analysis (UTA) 4 of this project we generated a combination of interesting [datasets](https://www.kaggle.com/MIMBCD-UI/uta4-sm-vs-mm-sheets). To publish our [datasets](https://www.kaggle.com/MIMBCD-UI/uta4-sm-vs-mm-sheets) we used a well known platform called [Kaggle](https://www.kaggle.com). To access our project's [Profile Page](https://www.kaggle.com/MIMBCD-UI) just follow the [link](https://www.kaggle.com/MIMBCD-UI).
+For the [User Test Analysis (UTA) 4](https://github.com/MIMBCD-UI/prototype-breast-screening/wiki/User-Test-Evaluation#test-4-single-modality-vs-multi-modality) of this project we generated a combination of interesting [datasets](https://www.kaggle.com/MIMBCD-UI/uta4-sm-vs-mm-sheets). To publish our [datasets](https://www.kaggle.com/MIMBCD-UI/uta4-sm-vs-mm-sheets) we used a well known platform called [Kaggle](https://www.kaggle.com). To access our project's [Profile Page](https://www.kaggle.com/MIMBCD-UI) just follow the [link](https://www.kaggle.com/MIMBCD-UI).
 
 ### Acknowledgements
 
