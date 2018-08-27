@@ -80,6 +80,10 @@ jupyter notebook
 
 As far as we have to do several statictical analysis over our users, we need to address their results by calculating a set of measures. This measures will gave us a better understanding regarding how users are aiming to interact with our systems. Therefore it is of chief importance to scale this solution for a spreadsheet template-like where we can duplicate the same document and apply this group of source code to consume our data each time we need it.
 
+### Dataset Resources
+
+For the User Test Analysis (UTA) 4 of this project we generated a combination of interesting [datasets](https://www.kaggle.com/MIMBCD-UI/uta4-sm-vs-mm-sheets). To publish our [datasets](https://www.kaggle.com/MIMBCD-UI/uta4-sm-vs-mm-sheets) we used a well known platform called [Kaggle](https://www.kaggle.com). To access our project's [Profile Page](https://www.kaggle.com/MIMBCD-UI) just follow the [link](https://www.kaggle.com/MIMBCD-UI).
+
 ### Acknowledgements
 
 We would like to convey [Google](https://google.com) from their [Google Sheets API Documentation](https://developers.google.com/sheets/api/guides/concepts). This repository source code is based on [Google](https://google.com)'s [Python Quickstart](https://developers.google.com/sheets/api/quickstart/python) guide.
