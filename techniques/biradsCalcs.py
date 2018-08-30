@@ -231,7 +231,7 @@ layout = go.Layout(
 )
 
 fig = go.Figure(data=data, layout=layout)
-py.plot(fig, filename = "birads_variation_sd")
+#py.plot(fig, filename = "birads_variation_sd")
 
 # ============================================== #
 # ============================================== #

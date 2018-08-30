@@ -909,7 +909,7 @@ layout = go.Layout(
 # REFACTOR!!!
 
 fig = go.Figure(data=data, layout=layout)
-py.plot(fig, filename = "sus_scores_vs_sus_questions")
+#py.plot(fig, filename = "sus_scores_vs_sus_questions")
 
 # ============================================== #
 # ============================================== #
@@ -989,6 +989,20 @@ mu_s_059 = np.mean(s_059, axis=0)
 mu_s_060 = np.mean(s_060, axis=0)
 mu_s_061 = np.mean(s_061, axis=0)
 mu_s_062 = np.mean(s_062, axis=0)
+# ============================================== #
+
+# ============================================== #
+# SUS MEANS
+
+sus_sm_val = mu_s_013 + mu_s_014 + mu_s_015 + mu_s_016 + mu_s_017 + mu_s_018 + mu_s_019 + mu_s_020 + mu_s_021 + mu_s_022
+sus_mm_val = mu_s_023 + mu_s_024 + mu_s_025 + mu_s_026 + mu_s_027 + mu_s_028 + mu_s_029 + mu_s_030 + mu_s_031 + mu_s_032
+
+sus_sm_mean = sus_sm_val / 10
+sus_mm_mean = sus_mm_val / 10
+
+print("Compute Mean Value for sus_sm_mean: %d" % sus_sm_val)
+print("Compute Mean Value for sus_mm_mean: %d" % sus_mm_val)
+
 # ============================================== #
 
 # ============================================== #
@@ -1192,6 +1206,35 @@ print("Compute Variance for stdS_009: %f" % stdS_009)
 print("Compute Variance for stdS_010: %f" % stdS_010)
 print("Compute Variance for stdS_011: %f" % stdS_011)
 print("Compute Variance for stdS_012: %f" % stdS_012)
+
+stdS_013 = np.std(s_013, ddof=1)
+stdS_014 = np.std(s_014, ddof=1)
+stdS_015 = np.std(s_015, ddof=1)
+stdS_016 = np.std(s_016, ddof=1)
+stdS_017 = np.std(s_017, ddof=1)
+stdS_018 = np.std(s_018, ddof=1)
+stdS_019 = np.std(s_019, ddof=1)
+stdS_020 = np.std(s_020, ddof=1)
+stdS_021 = np.std(s_021, ddof=1)
+stdS_022 = np.std(s_022, ddof=1)
+
+stdS_023 = np.std(s_023, ddof=1)
+stdS_024 = np.std(s_024, ddof=1)
+stdS_025 = np.std(s_025, ddof=1)
+stdS_026 = np.std(s_026, ddof=1)
+stdS_027 = np.std(s_027, ddof=1)
+stdS_028 = np.std(s_028, ddof=1)
+stdS_029 = np.std(s_029, ddof=1)
+stdS_030 = np.std(s_030, ddof=1)
+stdS_031 = np.std(s_031, ddof=1)
+stdS_032 = np.std(s_032, ddof=1)
+
+stdS_sm = stdS_013 + stdS_014 + stdS_015 + stdS_016 + stdS_017 + stdS_018 + stdS_019 + stdS_020 + stdS_021 + stdS_022
+stdS_mm = stdS_023 + stdS_024 + stdS_025 + stdS_026 + stdS_027 + stdS_028 + stdS_029 + stdS_030 + stdS_031 + stdS_032
+stdS_sm_mean = stdS_sm / 10
+stdS_mm_mean = stdS_mm / 10
+print("Compute Variance for stdS_sm: %f" % stdS_sm_mean)
+print("Compute Variance for stdS_mm: %f" % stdS_mm_mean)
 # ============================================== #
 
 # ============================================== #
