@@ -24,13 +24,16 @@ pathAbsPath = os.path.abspath(joinPath)
 
 sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
 sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
+techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
 
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
+sys.path.append(techniques_dir)
 
 from listGroups import *
 from dataFileVectors import *
 from replacers import *
+from biradsCalcs import *
 
 import structures
 import sheet
@@ -77,7 +80,6 @@ datafile_fm = sheet.datafile_fm
 # ============================================== #
 
 def createBoxplot(dataFile, filterBy, array):
-  i = 0
   for i in range(len(array)):
     dataFile.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
 
@@ -88,10 +90,10 @@ def createBoxplot(dataFile, filterBy, array):
 #                SINGLE-MODALITY                 #
 # ============================================== #
 
-# createBoxplot(datafile_fs, filterByColumn, nasatlx_columns)
-# createBoxplot(datafile_fs, filterByColumn, sus_columns)
-# createBoxplot(datafile_fs, filterByColumn, measures_columns)
-# createBoxplot(datafile_fs, filterByColumn, birads_columns)
+createBoxplot(datafile_fs, filterByColumn, nasatlx_columns)
+createBoxplot(datafile_fs, filterByColumn, sus_columns)
+createBoxplot(datafile_fs, filterByColumn, measures_columns)
+createBoxplot(datafile_fs, filterByColumn, birads_columns)
 
 # ============================================== #
 # ============================================== #
@@ -100,10 +102,10 @@ def createBoxplot(dataFile, filterBy, array):
 #                 MULTI-MODALITY                 #
 # ============================================== #
 
-# createBoxplot(datafile_fm, filterByColumn, nasatlx_columns)
-# createBoxplot(datafile_fm, filterByColumn, sus_columns)
-# createBoxplot(datafile_fm, filterByColumn, measures_columns)
-# createBoxplot(datafile_fm, filterByColumn, birads_columns)
+createBoxplot(datafile_fm, filterByColumn, nasatlx_columns)
+createBoxplot(datafile_fm, filterByColumn, sus_columns)
+createBoxplot(datafile_fm, filterByColumn, measures_columns)
+createBoxplot(datafile_fm, filterByColumn, birads_columns)
 
 # ============================================== #
 # ============================================== #
@@ -196,7 +198,7 @@ trace_fm_senior = go.Box(
   )
 )
 
-data = [
+dataSus = [
   trace_fs_intern,
   trace_fm_intern,
   trace_fs_junior,
@@ -207,7 +209,7 @@ data = [
   trace_fm_senior
 ]
 
-layout = go.Layout(
+layoutSus = go.Layout(
   yaxis=dict(
     title='SUS Scores',
     zeroline=False
@@ -221,11 +223,98 @@ layout = go.Layout(
 
 # REFACTOR!!!
 
-fig = go.Figure(data=data, layout=layout)
-#py.plot(fig, filename = "sus_scores_vs_sus_questions")
+figSus = go.Figure(data=dataSus, layout=layoutSus)
+py.plot(figSus, filename = "sus_scores_vs_sus_questions")
 
 # ============================================== #
 # ============================================== #
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                                                #
+#                    BIRADS                      #
+#                                                #
+# ============================================== #
+
+trace0 = go.Box(
+  y=gt_fs_birads_94662_list,
+  name=sm_birads_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(26, 188, 156)',
+  ),
+  boxmean='sd'
+)
+
+trace1 = go.Box(
+  y=gt_fm_birads_94662_list,
+  name=mm_birads_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(22, 160, 133)',
+  ),
+  boxmean='sd'
+)
+
+trace2 = go.Box(
+  y=gt_fs_birads_607376_list,
+  name=sm_birads_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(52, 152, 219)',
+  ),
+  boxmean='sd'
+)
+
+trace3 = go.Box(
+  y=gt_fm_birads_607376_list,
+  name=mm_birads_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(41, 128, 185)',
+  ),
+  boxmean='sd'
+)
+
+trace4 = go.Box(
+  y=gt_fs_birads_737037_list,
+  name=sm_birads_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(155, 89, 182)',
+  ),
+  boxmean='sd'
+)
+
+trace5 = go.Box(
+  y=gt_fm_birads_737037_list,
+  name=mm_birads_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(142, 68, 173)',
+  ),
+  boxmean='sd'
+)
+
+dataBirads = [
+  trace0,
+  trace1,
+  trace2,
+  trace3,
+  trace4,
+  trace5
+]
+
+layoutBirads = go.Layout(
+  title = "BI-RADS Variation & SD",
+)
+
+figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
+py.plot(figBirads, filename = "birads_variation_sd")
 
 # ============================================== #
 # ============================================== #

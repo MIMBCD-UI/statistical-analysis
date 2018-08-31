@@ -289,12 +289,16 @@
         \PY{k}{if} \PY{n}{module\PYZus{}path} \PY{o+ow}{not} \PY{o+ow}{in} \PY{n}{sys}\PY{o}{.}\PY{n}{path}\PY{p}{:}
             \PY{n}{sys}\PY{o}{.}\PY{n}{path}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{module\PYZus{}path}\PY{p}{)}
         
-        \PY{k+kn}{import} \PY{n+nn}{methods}\PY{n+nn}{.}\PY{n+nn}{anova}
+        \PY{k+kn}{from} \PY{n+nn}{techniques} \PY{k}{import} \PY{n}{measures}
+        \PY{k+kn}{from} \PY{n+nn}{methods} \PY{k}{import} \PY{n}{variance}
+        \PY{k+kn}{from} \PY{n+nn}{methods} \PY{k}{import} \PY{n}{normalValidation}
+        \PY{k+kn}{from} \PY{n+nn}{methods} \PY{k}{import} \PY{n}{anova}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-/Users/Francisco/Git/statistical-analysis/methods
+Compute Mean Value for sus\_sm\_mean: 27
+Compute Mean Value for sus\_mm\_mean: 29
 Compute Standard Deviation for stdComp\_s\_001: 4
 Compute Standard Deviation for stdComp\_s\_002: 2
 Compute Standard Deviation for stdComp\_s\_003: 3
@@ -381,6 +385,8 @@ Compute Variance for stdS\_009: 4.095106
 Compute Variance for stdS\_010: 2.954494
 Compute Variance for stdS\_011: 4.614144
 Compute Variance for stdS\_012: 5.691344
+Compute Variance for stdS\_sm: 1.019665
+Compute Variance for stdS\_mm: 0.900776
 Verification of the Variance for variance\_ver\_s\_001: False
 Verification of the Variance for variance\_ver\_s\_002: False
 Verification of the Variance for variance\_ver\_s\_003: False
@@ -953,6 +959,10 @@ Single-Modality (SUS\_10): F = 0.716776
 Single-Modality (SUS\_10): p = 0.550603
 Multi-Modality (SUS\_10): F = 1.049547
 Multi-Modality (SUS\_10): p = 0.386719
+Single-Modality (SUS\_TOTAL): F = 11.797301
+Single-Modality (SUS\_TOTAL): p = 0.000000
+Multi-Modality (SUS\_TOTAL): F = 23.312485
+Multi-Modality (SUS\_TOTAL): p = 0.000000
 Single-Modality (time\_94662): F = 1.226714
 Single-Modality (time\_94662): p = 0.319175
 Multi-Modality (time\_94662): F = 1.167369

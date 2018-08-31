@@ -76,8 +76,6 @@ import numpy as np
 datafile_fs = sheet.datafile_fs
 datafile_fm = sheet.datafile_fm
 
-createBoxplot = ploters.createBoxplot
-
 # ============================================== #
 #                                                #
 #                  DEFINITIONS                   #
@@ -145,93 +143,6 @@ gt_fm_birads_737037_list = biradsAbsList(df_fm_birads_737037_list, actual_birads
 
 # ============================================== #
 # ============================================== #
-
-# ============================================== #
-# ============================================== #
-# ============================================== #
-# ============================================== #
-
-# ============================================== #
-#                                                #
-#                    BOXPLOT                     #
-#                                                #
-# ============================================== #
-
-trace0 = go.Box(
-  y=gt_fs_birads_94662_list,
-  name=sm_birads_labels[0],
-  boxpoints = False,
-  marker=dict(
-    color='rgb(26, 188, 156)',
-  ),
-  boxmean='sd'
-)
-
-trace1 = go.Box(
-  y=gt_fm_birads_94662_list,
-  name=mm_birads_labels[0],
-  boxpoints = False,
-  marker=dict(
-    color='rgb(22, 160, 133)',
-  ),
-  boxmean='sd'
-)
-
-trace2 = go.Box(
-  y=gt_fs_birads_607376_list,
-  name=sm_birads_labels[1],
-  boxpoints = False,
-  marker=dict(
-    color='rgb(52, 152, 219)',
-  ),
-  boxmean='sd'
-)
-
-trace3 = go.Box(
-  y=gt_fm_birads_607376_list,
-  name=mm_birads_labels[1],
-  boxpoints = False,
-  marker=dict(
-    color='rgb(41, 128, 185)',
-  ),
-  boxmean='sd'
-)
-
-trace4 = go.Box(
-  y=gt_fs_birads_737037_list,
-  name=sm_birads_labels[2],
-  boxpoints = False,
-  marker=dict(
-    color='rgb(155, 89, 182)',
-  ),
-  boxmean='sd'
-)
-
-trace5 = go.Box(
-  y=gt_fm_birads_737037_list,
-  name=mm_birads_labels[2],
-  boxpoints = False,
-  marker=dict(
-    color='rgb(142, 68, 173)',
-  ),
-  boxmean='sd'
-)
-
-data = [
-  trace0,
-  trace1,
-  trace2,
-  trace3,
-  trace4,
-  trace5
-]
-
-layout = go.Layout(
-  title = "BI-RADS Variation & SD",
-)
-
-fig = go.Figure(data=data, layout=layout)
-#py.plot(fig, filename = "birads_variation_sd")
 
 # ============================================== #
 # ============================================== #
