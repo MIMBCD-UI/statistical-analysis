@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-"""special.py: Special values and variables for simple calculations."""
+""".py: """
 
 __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
@@ -16,16 +16,13 @@ __credits__     = [
   "Nuno Nunes"
 ]
 
-s_Number = 62
+def vecReplacer(arr, vec):
+  vecReplacerList = []
+  for i in range(len(arr)):
+    for j in range(len(arr[i])):
+      vecReplacerList.insert(len(vecReplacerList), vec[i])
+  return vecReplacerList
 
-actual_birads_94662 = 2
-actual_birads_607376 = 5
-actual_birads_737037 = 3
-
-sm_num_img_94662 = 1
-sm_num_img_607376 = 256
-sm_num_img_737037 = 1
-
-mm_num_img_94662 = 130
-mm_num_img_607376 = 258
-mm_num_img_737037 = 178
+def vecReplacePrinter(arr):
+  for i in range(len(arr)):
+    return arr[i]
