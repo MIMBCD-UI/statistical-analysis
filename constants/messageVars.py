@@ -16,76 +16,300 @@ __credits__     = [
   "Nuno Nunes"
 ]
 
-message_001 = "Compute Standard Deviation for MD (SM):" + "\n"
-message_002 = "Compute Standard Deviation for PD (SM):" + "\n"
-message_003 = "Compute Standard Deviation for TD (SM):" + "\n"
-message_004 = "Compute Standard Deviation for PE (SM):" + "\n"
-message_005 = "Compute Standard Deviation for EF (SM):" + "\n"
-message_006 = "Compute Standard Deviation for FR (SM):" + "\n"
+# ============================================== #
+#                    Phrases                     #
+# ============================================== #
 
-message_007 = "Compute Standard Deviation for MD (MM):" + "\n"
-message_008 = "Compute Standard Deviation for PD (MM):" + "\n"
-message_009 = "Compute Standard Deviation for TD (MM):" + "\n"
-message_010 = "Compute Standard Deviation for PE (MM):" + "\n"
-message_011 = "Compute Standard Deviation for EF (MM):" + "\n"
-message_012 = "Compute Standard Deviation for FR (MM):" + "\n"
+spc = " "
+dpt = ":"
 
-message_013 = "Compute Standard Deviation for SUS01 (SM):" + "\n"
-message_014 = "Compute Standard Deviation for SUS02 (SM):" + "\n"
-message_015 = "Compute Standard Deviation for SUS03 (SM):" + "\n"
-message_016 = "Compute Standard Deviation for SUS04 (SM):" + "\n"
-message_017 = "Compute Standard Deviation for SUS05 (SM):" + "\n"
-message_018 = "Compute Standard Deviation for SUS06 (SM):" + "\n"
-message_019 = "Compute Standard Deviation for SUS07 (SM):" + "\n"
-message_020 = "Compute Standard Deviation for SUS08 (SM):" + "\n"
-message_021 = "Compute Standard Deviation for SUS09 (SM):" + "\n"
-message_022 = "Compute Standard Deviation for SUS10 (SM):" + "\n"
+p001 = "Verification of the Mean for"
+p002 = "Compute Mean for"
+p003 = "Compute Standard Deviation (SD) for"
 
-message_023 = "Compute Standard Deviation for SUS01 (MM):" + "\n"
-message_024 = "Compute Standard Deviation for SUS02 (MM):" + "\n"
-message_025 = "Compute Standard Deviation for SUS03 (MM):" + "\n"
-message_026 = "Compute Standard Deviation for SUS04 (MM):" + "\n"
-message_027 = "Compute Standard Deviation for SUS05 (MM):" + "\n"
-message_028 = "Compute Standard Deviation for SUS06 (MM):" + "\n"
-message_029 = "Compute Standard Deviation for SUS07 (MM):" + "\n"
-message_030 = "Compute Standard Deviation for SUS08 (MM):" + "\n"
-message_031 = "Compute Standard Deviation for SUS09 (MM):" + "\n"
-message_032 = "Compute Standard Deviation for SUS10 (MM):" + "\n"
+sm = "(SM)"
+mm = "(MM)"
 
-message_033 = "Compute Standard Deviation for TIME__94662 (SM):" + "\n"
-message_034 = "Compute Standard Deviation for TIME_607376 (SM):" + "\n"
-message_035 = "Compute Standard Deviation for TIME_737037 (SM):" + "\n"
-message_036 = "Compute Standard Deviation for TIME__TOTAL (SM):" + "\n"
+md = "MD"
+pd = "PD"
+td = "TD"
+pe = "PE"
+ef = "EF"
+fr = "FR"
 
-message_037 = "Compute Standard Deviation for CLICKS__94662 (SM):" + "\n"
-message_038 = "Compute Standard Deviation for CLICKS_607376 (SM):" + "\n"
-message_039 = "Compute Standard Deviation for CLICKS_737037 (SM):" + "\n"
-message_040 = "Compute Standard Deviation for CLICKS__TOTAL (SM):" + "\n"
+sus01 = "SUS01"
+sus02 = "SUS02"
+sus03 = "SUS03"
+sus04 = "SUS04"
+sus05 = "SUS05"
+sus06 = "SUS06"
+sus06 = "SUS07"
+sus08 = "SUS08"
+sus09 = "SUS09"
+sus10 = "SUS10"
 
-message_041 = "Compute Standard Deviation for ERRORS__94662 (SM):" + "\n"
-message_042 = "Compute Standard Deviation for ERRORS_607376 (SM):" + "\n"
-message_043 = "Compute Standard Deviation for ERRORS_737037 (SM):" + "\n"
-message_044 = "Compute Standard Deviation for ERRORS__TOTAL (SM):" + "\n"
+time001 = "TIME__94662"
+time002 = "TIME_607376"
+time003 = "TIME_737037"
+time004 = "TIME__TOTAL"
 
-message_045 = "Compute Standard Deviation for BIRADS__94662 (SM):" + "\n"
-message_046 = "Compute Standard Deviation for BIRADS_607376 (SM):" + "\n"
-message_047 = "Compute Standard Deviation for BIRADS_737037 (SM):" + "\n"
+clicks001 = "CLICKS__94662"
+clicks002 = "CLICKS_607376"
+clicks003 = "CLICKS_737037"
+clicks004 = "CLICKS__TOTAL"
 
-message_048 = "Compute Standard Deviation for TIME__94662 (MM):" + "\n"
-message_049 = "Compute Standard Deviation for TIME_607376 (MM):" + "\n"
-message_050 = "Compute Standard Deviation for TIME_737037 (MM):" + "\n"
-message_051 = "Compute Standard Deviation for TIME__TOTAL (MM):" + "\n"
+errors001 = "ERRORS__94662"
+errors002 = "ERRORS_607376"
+errors003 = "ERRORS_737037"
+errors004 = "ERRORS__TOTAL"
 
-message_052 = "Compute Standard Deviation for CLICKS__94662 (MM):" + "\n"
-message_053 = "Compute Standard Deviation for CLICKS_607376 (MM):" + "\n"
-message_054 = "Compute Standard Deviation for CLICKS_737037 (MM):" + "\n"
-message_055 = "Compute Standard Deviation for CLICKS__TOTAL (MM):" + "\n"
+birads001 = "BIRADS__94662"
+birads002 = "BIRADS_607376"
+birads003 = "BIRADS_737037"
 
-message_056 = "Compute Standard Deviation for ERRORS__94662 (MM):" + "\n"
-message_057 = "Compute Standard Deviation for ERRORS_607376 (MM):" + "\n"
-message_058 = "Compute Standard Deviation for ERRORS_737037 (MM):" + "\n"
-message_059 = "Compute Standard Deviation for ERRORS__TOTAL (MM):" + "\n"
+# ============================================== #
 
-message_060 = "Compute Standard Deviation for BIRADS__94662 (MM):" + "\n"
-message_061 = "Compute Standard Deviation for BIRADS_607376 (MM):" + "\n"
-message_062 = "Compute Standard Deviation for BIRADS_737037 (MM):" + "\n"
+# ============================================== #
+#               Mean Verification                #
+# ============================================== #
+
+message_mean_ver_s_001 = p001 + spc + md + spc + sm + "\n"
+message_mean_ver_s_002 = p001 + spc + pd + spc + sm + "\n"
+message_mean_ver_s_003 = p001 + spc + td + spc + sm + "\n"
+message_mean_ver_s_004 = p001 + spc + pe + spc + sm + "\n"
+message_mean_ver_s_005 = p001 + spc + ef + spc + sm + "\n"
+message_mean_ver_s_006 = p001 + spc + fr + spc + sm + "\n"
+
+message_mean_ver_s_007 = p001 + spc + md + spc + mm + "\n"
+message_mean_ver_s_008 = p001 + spc + pd + spc + mm + "\n"
+message_mean_ver_s_009 = p001 + spc + td + spc + mm + "\n"
+message_mean_ver_s_010 = p001 + spc + pe + spc + mm + "\n"
+message_mean_ver_s_011 = p001 + spc + ef + spc + mm + "\n"
+message_mean_ver_s_012 = p001 + spc + fr + spc + mm + "\n"
+
+message_mean_ver_s_013 = p001 + spc + sus01 + spc + sm + "\n"
+message_mean_ver_s_014 = p001 + spc + sus02 + spc + sm + "\n"
+message_mean_ver_s_015 = p001 + spc + sus03 + spc + sm + "\n"
+message_mean_ver_s_016 = p001 + spc + sus04 + spc + sm + "\n"
+message_mean_ver_s_017 = p001 + spc + sus05 + spc + sm + "\n"
+message_mean_ver_s_018 = p001 + spc + sus06 + spc + sm + "\n"
+message_mean_ver_s_019 = p001 + spc + sus06 + spc + sm + "\n"
+message_mean_ver_s_020 = p001 + spc + sus08 + spc + sm + "\n"
+message_mean_ver_s_021 = p001 + spc + sus09 + spc + sm + "\n"
+message_mean_ver_s_022 = p001 + spc + sus10 + spc + sm + "\n"
+
+message_mean_ver_s_023 = p001 + spc + sus01 + spc + mm + "\n"
+message_mean_ver_s_024 = p001 + spc + sus02 + spc + mm + "\n"
+message_mean_ver_s_025 = p001 + spc + sus03 + spc + mm + "\n"
+message_mean_ver_s_026 = p001 + spc + sus04 + spc + mm + "\n"
+message_mean_ver_s_027 = p001 + spc + sus05 + spc + mm + "\n"
+message_mean_ver_s_028 = p001 + spc + sus06 + spc + mm + "\n"
+message_mean_ver_s_029 = p001 + spc + sus06 + spc + mm + "\n"
+message_mean_ver_s_030 = p001 + spc + sus08 + spc + mm + "\n"
+message_mean_ver_s_031 = p001 + spc + sus09 + spc + mm + "\n"
+message_mean_ver_s_032 = p001 + spc + sus10 + spc + mm + "\n"
+
+message_mean_ver_s_033 = p001 + spc + time001 + spc + sm + "\n"
+message_mean_ver_s_034 = p001 + spc + time002 + spc + sm + "\n"
+message_mean_ver_s_035 = p001 + spc + time003 + spc + sm + "\n"
+message_mean_ver_s_036 = p001 + spc + time004 + spc + sm + "\n"
+
+message_mean_ver_s_037 = p001 + spc + clicks001 + spc + sm + "\n"
+message_mean_ver_s_038 = p001 + spc + clicks002 + spc + sm + "\n"
+message_mean_ver_s_039 = p001 + spc + clicks003 + spc + sm + "\n"
+message_mean_ver_s_040 = p001 + spc + clicks004 + spc + sm + "\n"
+
+message_mean_ver_s_041 = p001 + spc + errors001 + spc + sm + "\n"
+message_mean_ver_s_042 = p001 + spc + errors002 + spc + sm + "\n"
+message_mean_ver_s_043 = p001 + spc + errors003 + spc + sm + "\n"
+message_mean_ver_s_044 = p001 + spc + errors004 + spc + sm + "\n"
+
+message_mean_ver_s_045 = p001 + spc + birads001 + spc + sm + "\n"
+message_mean_ver_s_046 = p001 + spc + birads002 + spc + sm + "\n"
+message_mean_ver_s_047 = p001 + spc + birads003 + spc + sm + "\n"
+
+message_mean_ver_s_048 = p001 + spc + time001 + spc + mm + "\n"
+message_mean_ver_s_049 = p001 + spc + time002 + spc + mm + "\n"
+message_mean_ver_s_050 = p001 + spc + time003 + spc + mm + "\n"
+message_mean_ver_s_051 = p001 + spc + time004 + spc + mm + "\n"
+
+message_mean_ver_s_052 = p001 + spc + clicks001 + spc + mm + "\n"
+message_mean_ver_s_053 = p001 + spc + clicks002 + spc + mm + "\n"
+message_mean_ver_s_054 = p001 + spc + clicks003 + spc + mm + "\n"
+message_mean_ver_s_055 = p001 + spc + clicks004 + spc + mm + "\n"
+
+message_mean_ver_s_056 = p001 + spc + errors001 + spc + mm + "\n"
+message_mean_ver_s_057 = p001 + spc + errors002 + spc + mm + "\n"
+message_mean_ver_s_058 = p001 + spc + errors003 + spc + mm + "\n"
+message_mean_ver_s_059 = p001 + spc + errors004 + spc + mm + "\n"
+
+message_mean_ver_s_060 = p001 + spc + birads001 + spc + mm + "\n"
+message_mean_ver_s_061 = p001 + spc + birads002 + spc + mm + "\n"
+message_mean_ver_s_062 = p001 + spc + birads003 + spc + mm + "\n"
+
+# ============================================== #
+
+# ============================================== #
+#           Compute Standard Deviation           #
+# ============================================== #
+
+message_001 = p002 + spc + md + spc + sm + "\n"
+message_002 = p002 + spc + pd + spc + sm + "\n"
+message_003 = p002 + spc + td + spc + sm + "\n"
+message_004 = p002 + spc + pe + spc + sm + "\n"
+message_005 = p002 + spc + ef + spc + sm + "\n"
+message_006 = p002 + spc + fr + spc + sm + "\n"
+
+message_007 = p002 + spc + md + spc + mm + "\n"
+message_008 = p002 + spc + pd + spc + mm + "\n"
+message_009 = p002 + spc + td + spc + mm + "\n"
+message_010 = p002 + spc + pe + spc + mm + "\n"
+message_011 = p002 + spc + ef + spc + mm + "\n"
+message_012 = p002 + spc + fr + spc + mm + "\n"
+
+message_013 = p002 + spc + sus01 + spc + sm + "\n"
+message_014 = p002 + spc + sus02 + spc + sm + "\n"
+message_015 = p002 + spc + sus03 + spc + sm + "\n"
+message_016 = p002 + spc + sus04 + spc + sm + "\n"
+message_017 = p002 + spc + sus05 + spc + sm + "\n"
+message_018 = p002 + spc + sus06 + spc + sm + "\n"
+message_019 = p002 + spc + sus06 + spc + sm + "\n"
+message_020 = p002 + spc + sus08 + spc + sm + "\n"
+message_021 = p002 + spc + sus09 + spc + sm + "\n"
+message_022 = p002 + spc + sus10 + spc + sm + "\n"
+
+message_023 = p002 + spc + sus01 + spc + mm + "\n"
+message_024 = p002 + spc + sus02 + spc + mm + "\n"
+message_025 = p002 + spc + sus03 + spc + mm + "\n"
+message_026 = p002 + spc + sus04 + spc + mm + "\n"
+message_027 = p002 + spc + sus05 + spc + mm + "\n"
+message_028 = p002 + spc + sus06 + spc + mm + "\n"
+message_029 = p002 + spc + sus06 + spc + mm + "\n"
+message_030 = p002 + spc + sus08 + spc + mm + "\n"
+message_031 = p002 + spc + sus09 + spc + mm + "\n"
+message_032 = p002 + spc + sus10 + spc + mm + "\n"
+
+message_033 = p002 + spc + time001 + spc + sm + "\n"
+message_034 = p002 + spc + time002 + spc + sm + "\n"
+message_035 = p002 + spc + time003 + spc + sm + "\n"
+message_036 = p002 + spc + time004 + spc + sm + "\n"
+
+message_037 = p002 + spc + clicks001 + spc + sm + "\n"
+message_038 = p002 + spc + clicks002 + spc + sm + "\n"
+message_039 = p002 + spc + clicks003 + spc + sm + "\n"
+message_040 = p002 + spc + clicks004 + spc + sm + "\n"
+
+message_041 = p002 + spc + errors001 + spc + sm + "\n"
+message_042 = p002 + spc + errors002 + spc + sm + "\n"
+message_043 = p002 + spc + errors003 + spc + sm + "\n"
+message_044 = p002 + spc + errors004 + spc + sm + "\n"
+
+message_045 = p002 + spc + birads001 + spc + sm + "\n"
+message_046 = p002 + spc + birads002 + spc + sm + "\n"
+message_047 = p002 + spc + birads003 + spc + sm + "\n"
+
+message_048 = p002 + spc + time001 + spc + mm + "\n"
+message_049 = p002 + spc + time002 + spc + mm + "\n"
+message_050 = p002 + spc + time003 + spc + mm + "\n"
+message_051 = p002 + spc + time004 + spc + mm + "\n"
+
+message_052 = p002 + spc + clicks001 + spc + mm + "\n"
+message_053 = p002 + spc + clicks002 + spc + mm + "\n"
+message_054 = p002 + spc + clicks003 + spc + mm + "\n"
+message_055 = p002 + spc + clicks004 + spc + mm + "\n"
+
+message_056 = p002 + spc + errors001 + spc + mm + "\n"
+message_057 = p002 + spc + errors002 + spc + mm + "\n"
+message_058 = p002 + spc + errors003 + spc + mm + "\n"
+message_059 = p002 + spc + errors004 + spc + mm + "\n"
+
+message_060 = p002 + spc + birads001 + spc + mm + "\n"
+message_061 = p002 + spc + birads002 + spc + mm + "\n"
+message_062 = p002 + spc + birads003 + spc + mm + "\n"
+
+# ============================================== #
+
+# ============================================== #
+#                Compute Variance                #
+# ============================================== #
+
+message_stdS_001 = p003 + spc + md + spc + sm + "\n"
+message_stdS_002 = p003 + spc + pd + spc + sm + "\n"
+message_stdS_003 = p003 + spc + td + spc + sm + "\n"
+message_stdS_004 = p003 + spc + pe + spc + sm + "\n"
+message_stdS_005 = p003 + spc + ef + spc + sm + "\n"
+message_stdS_006 = p003 + spc + fr + spc + sm + "\n"
+
+message_stdS_007 = p003 + spc + md + spc + mm + "\n"
+message_stdS_008 = p003 + spc + pd + spc + mm + "\n"
+message_stdS_009 = p003 + spc + td + spc + mm + "\n"
+message_stdS_010 = p003 + spc + pe + spc + mm + "\n"
+message_stdS_011 = p003 + spc + ef + spc + mm + "\n"
+message_stdS_012 = p003 + spc + fr + spc + mm + "\n"
+
+message_stdS_013 = p003 + spc + sus01 + spc + sm + "\n"
+message_stdS_014 = p003 + spc + sus02 + spc + sm + "\n"
+message_stdS_015 = p003 + spc + sus03 + spc + sm + "\n"
+message_stdS_016 = p003 + spc + sus04 + spc + sm + "\n"
+message_stdS_017 = p003 + spc + sus05 + spc + sm + "\n"
+message_stdS_018 = p003 + spc + sus06 + spc + sm + "\n"
+message_stdS_019 = p003 + spc + sus06 + spc + sm + "\n"
+message_stdS_020 = p003 + spc + sus08 + spc + sm + "\n"
+message_stdS_021 = p003 + spc + sus09 + spc + sm + "\n"
+message_stdS_022 = p003 + spc + sus10 + spc + sm + "\n"
+
+message_stdS_023 = p003 + spc + sus01 + spc + mm + "\n"
+message_stdS_024 = p003 + spc + sus02 + spc + mm + "\n"
+message_stdS_025 = p003 + spc + sus03 + spc + mm + "\n"
+message_stdS_026 = p003 + spc + sus04 + spc + mm + "\n"
+message_stdS_027 = p003 + spc + sus05 + spc + mm + "\n"
+message_stdS_028 = p003 + spc + sus06 + spc + mm + "\n"
+message_stdS_029 = p003 + spc + sus06 + spc + mm + "\n"
+message_stdS_030 = p003 + spc + sus08 + spc + mm + "\n"
+message_stdS_031 = p003 + spc + sus09 + spc + mm + "\n"
+message_stdS_032 = p003 + spc + sus10 + spc + mm + "\n"
+
+message_stdS_033 = p003 + spc + time001 + spc + sm + "\n"
+message_stdS_034 = p003 + spc + time002 + spc + sm + "\n"
+message_stdS_035 = p003 + spc + time003 + spc + sm + "\n"
+message_stdS_036 = p003 + spc + time004 + spc + sm + "\n"
+
+message_stdS_037 = p003 + spc + clicks001 + spc + sm + "\n"
+message_stdS_038 = p003 + spc + clicks002 + spc + sm + "\n"
+message_stdS_039 = p003 + spc + clicks003 + spc + sm + "\n"
+message_stdS_040 = p003 + spc + clicks004 + spc + sm + "\n"
+
+message_stdS_041 = p003 + spc + errors001 + spc + sm + "\n"
+message_stdS_042 = p003 + spc + errors002 + spc + sm + "\n"
+message_stdS_043 = p003 + spc + errors003 + spc + sm + "\n"
+message_stdS_044 = p003 + spc + errors004 + spc + sm + "\n"
+
+message_stdS_045 = p003 + spc + birads001 + spc + sm + "\n"
+message_stdS_046 = p003 + spc + birads002 + spc + sm + "\n"
+message_stdS_047 = p003 + spc + birads003 + spc + sm + "\n"
+
+message_stdS_048 = p003 + spc + time001 + spc + mm + "\n"
+message_stdS_049 = p003 + spc + time002 + spc + mm + "\n"
+message_stdS_050 = p003 + spc + time003 + spc + mm + "\n"
+message_stdS_051 = p003 + spc + time004 + spc + mm + "\n"
+
+message_stdS_052 = p003 + spc + clicks001 + spc + mm + "\n"
+message_stdS_053 = p003 + spc + clicks002 + spc + mm + "\n"
+message_stdS_054 = p003 + spc + clicks003 + spc + mm + "\n"
+message_stdS_055 = p003 + spc + clicks004 + spc + mm + "\n"
+
+message_stdS_056 = p003 + spc + errors001 + spc + mm + "\n"
+message_stdS_057 = p003 + spc + errors002 + spc + mm + "\n"
+message_stdS_058 = p003 + spc + errors003 + spc + mm + "\n"
+message_stdS_059 = p003 + spc + errors004 + spc + mm + "\n"
+
+message_stdS_060 = p003 + spc + birads001 + spc + mm + "\n"
+message_stdS_061 = p003 + spc + birads002 + spc + mm + "\n"
+message_stdS_062 = p003 + spc + birads003 + spc + mm + "\n"
+
+
+# ============================================== #
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
