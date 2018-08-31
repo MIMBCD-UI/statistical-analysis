@@ -221,10 +221,8 @@ layoutSus = go.Layout(
   boxmode='group'
 )
 
-# REFACTOR!!!
-
 figSus = go.Figure(data=dataSus, layout=layoutSus)
-py.plot(figSus, filename = "sus_scores_vs_sus_questions")
+#py.plot(figSus, filename = "sus_scores_vs_sus_questions")
 
 # ============================================== #
 # ============================================== #
@@ -314,7 +312,7 @@ layoutBirads = go.Layout(
 )
 
 figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
-py.plot(figBirads, filename = "birads_variation_sd")
+#py.plot(figBirads, filename = "birads_variation_sd")
 
 # ============================================== #
 # ============================================== #

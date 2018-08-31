@@ -218,8 +218,8 @@ layout1 = go.Layout(
 
 fig0 = go.Figure(data=data0, layout=layout0)
 fig1 = go.Figure(data=data1, layout=layout1)
-py.plot(fig0, filename='sm_measures_time_vs_clicks')
-py.plot(fig1, filename='mm_measures_time_vs_clicks')
+#py.plot(fig0, filename='sm_measures_time_vs_clicks')
+#py.plot(fig1, filename='mm_measures_time_vs_clicks')
 
 # ============================================== #
 # ============================================== #
