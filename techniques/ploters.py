@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.0.0"
+__version__     = "1.0.1"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -23,8 +23,14 @@ joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
 sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
+sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
 
 sys.path.append(sa_constants_dir)
+sys.path.append(sa_methods_dir)
+
+from listGroups import *
+from dataFileVectors import *
+from replacers import *
 
 import structures
 import sheet
@@ -98,6 +104,125 @@ def createBoxplot(dataFile, filterBy, array):
 # createBoxplot(datafile_fm, filterByColumn, sus_columns)
 # createBoxplot(datafile_fm, filterByColumn, measures_columns)
 # createBoxplot(datafile_fm, filterByColumn, birads_columns)
+
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#             SUS: Grouped Box Plots             #
+# ============================================== #
+
+x = datafile_vec
+x_fs = datafile_fs_vec
+x_fm = datafile_fm_vec
+
+trace_fs_intern = go.Box(
+  y=lg_fs_sus_intern,
+  x=varReplacer_fs_intern,
+  name='SM: Intern',
+  boxpoints = False,
+  marker=dict(
+    color='#1E824C'
+  )
+)
+
+trace_fm_intern = go.Box(
+  y=lg_fm_sus_intern,
+  x=varReplacer_fm_intern,
+  name='MM: Intern',
+  boxpoints = False,
+  marker=dict(
+    color='#049372'
+  )
+)
+
+trace_fs_junior = go.Box(
+  y=lg_fs_sus_junior,
+  x=varReplacer_fs_junior,
+  name='SM: Junior',
+  boxpoints = False,
+  marker=dict(
+    color='#663399'
+  )
+)
+
+trace_fm_junior = go.Box(
+  y=lg_fm_sus_junior,
+  x=varReplacer_fm_junior,
+  name='MM: Junior',
+  boxpoints = False,
+  marker=dict(
+    color='#913D88'
+  )
+)
+
+trace_fs_middle = go.Box(
+  y=lg_fs_sus_middle,
+  x=varReplacer_fs_middle,
+  name='SM: Middle',
+  boxpoints = False,
+  marker=dict(
+    color='#4183D7'
+  )
+)
+
+trace_fm_middle = go.Box(
+  y=lg_fm_sus_middle,
+  x=varReplacer_fm_middle,
+  name='MM: Middle',
+  boxpoints = False,
+  marker=dict(
+    color='#59ABE3'
+  )
+)
+
+trace_fs_senior = go.Box(
+  y=lg_fs_sus_senior,
+  x=varReplacer_fs_senior,
+  name='SM: Senior',
+  boxpoints = False,
+  marker=dict(
+    color='#F22613'
+  )
+)
+
+trace_fm_senior = go.Box(
+  y=lg_fm_sus_senior,
+  x=varReplacer_fm_senior,
+  name='MM: Senior',
+  boxpoints = False,
+  marker=dict(
+    color='#C0392B'
+  )
+)
+
+data = [
+  trace_fs_intern,
+  trace_fm_intern,
+  trace_fs_junior,
+  trace_fm_junior,
+  trace_fs_middle,
+  trace_fm_middle,
+  trace_fs_senior,
+  trace_fm_senior
+]
+
+layout = go.Layout(
+  yaxis=dict(
+    title='SUS Scores',
+    zeroline=False
+  ),
+  xaxis=dict(
+    title='SUS Questions',
+    zeroline=False
+  ),
+  boxmode='group'
+)
+
+# REFACTOR!!!
+
+fig = go.Figure(data=data, layout=layout)
+#py.plot(fig, filename = "sus_scores_vs_sus_questions")
 
 # ============================================== #
 # ============================================== #

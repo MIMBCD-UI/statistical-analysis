@@ -18,6 +18,9 @@ __credits__     = [
 
 s_Number = 62
 
+s_min = 1
+s_max = 62
+
 actual_birads_94662 = 2
 actual_birads_607376 = 5
 actual_birads_737037 = 3
