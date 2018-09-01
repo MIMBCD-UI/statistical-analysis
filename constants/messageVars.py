@@ -22,6 +22,7 @@ __credits__     = [
 
 spc = " "
 dpt = ":"
+an = "and"
 
 p001 = "Verification of the Mean for"
 p002 = "Compute Mean for"
@@ -307,6 +308,23 @@ message_stdS_060 = p003 + spc + birads001 + spc + mm + "\n"
 message_stdS_061 = p003 + spc + birads002 + spc + mm + "\n"
 message_stdS_062 = p003 + spc + birads003 + spc + mm + "\n"
 
+
+# ============================================== #
+
+# ============================================== #
+#                   Tukeys HSD                   #
+# ============================================== #
+
+mc_unique_group = "MC Unique Group" + "\n"
+m_t_main = "Compute Tukeys HSD for" + spc
+m_t_t_001 = "Group:" + spc
+m_t_t_002 = "F-test =" + spc
+m_t_t_003 = "p-value =" + spc
+m_t_t_004 = "[SM] SD =" + spc
+m_t_t_005 = "[MM] SD =" + spc
+m_t_w = "\n" + "When computing Tukeys HSD for" + spc
+m_degree_freedom = spc + "there is no enough Degree of Freedom (DF)." + "\n"
+m_marks_thsd = "\n" + "++++++++++++++++++++++++++++++++++++++++" + "\n"
 
 # ============================================== #
 

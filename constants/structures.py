@@ -94,3 +94,21 @@ mm_birads_labels = [
 filterByColumn = 'group'
 figSizeX = 12
 figSizeY = 8
+
+d_data_fs_nasatlx_arr = [
+  'd_data_fs_md',
+  'd_data_fs_pd',
+  'd_data_fs_td',
+  'd_data_fs_p',
+  'd_data_fs_e',
+  'd_data_fs_f'
+]
+
+d_data_fm_nasatlx_arr = [
+  'd_data_fm_md',
+  'd_data_fm_pd',
+  'd_data_fm_td',
+  'd_data_fm_p',
+  'd_data_fm_e',
+  'd_data_fm_f'
+]
