@@ -37,25 +37,9 @@ sys.path.append(src_dir)
 sys.path.append(constants_dir)
 sys.path.append(techniques_dir)
 
-from nasa import nasaColMean
-
-import main_variables
-import structures
 import sheet
-import sheetReaders
 import iterators
-import ploters
 
-MV_N = main_variables.N
-experience = structures.experience
-nasatlx_columns = structures.nasatlx_columns
-sus_columns = structures.sus_columns
-sus_questions = structures.sus_questions
-measures_columns = structures.measures_columns
-birads_columns = structures.birads_columns
-filterByColumn = structures.filterByColumn
-figSizeX = structures.figSizeX
-figSizeY = structures.figSizeY
 datafileIteratorPerGroup = iterators.datafileIteratorPerGroup
 
 main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
