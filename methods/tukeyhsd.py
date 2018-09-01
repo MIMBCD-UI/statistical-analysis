@@ -39,20 +39,26 @@ from scipy.misc import logsumexp
 from scipy.stats import f_oneway
 
 def computeTukeyModalities(d_data_fs, d_data_fm, vec):
-  limit_t = 0.80
+  limit_t = 0.01
   limit_p = 0.10
   for i in range(len(vec)):
     actual = vec[i]
     ddfs_act = d_data_fs[actual]
     ddfm_act = d_data_fm[actual]
     dd_t, dd_p = f_oneway(ddfs_act, ddfm_act)
-    print(m_t_t_001, actual)
-    print(m_t_t_002, dd_t)
-    print(m_t_t_003, dd_p)
-    ddfs_std = np.std(ddfs_act, ddof=1)
-    ddfm_std = np.std(ddfm_act, ddof=1)
-    print(m_t_t_004, ddfs_std)
-    print(m_t_t_005, ddfm_std)
+    print(m_t_t_001, d_data_fs[actual].name)
+    print(m_t_t_002, d_data_fm[actual].name)
+    print(m_t_t_003, actual)
+    print(m_t_t_004, dd_t)
+    print(m_t_t_005, dd_p)
+    ddfs_std = np.std(ddfs_act, ddof=0)
+    ddfm_std = np.std(ddfm_act, ddof=0)
+    print(m_t_t_006, ddfs_std)
+    print(m_t_t_007, ddfm_std)
+    ddfs_mean = np.mean(ddfs_act)
+    ddfm_mean = np.mean(ddfm_act)
+    print(m_t_t_008, ddfs_mean)
+    print(m_t_t_009, ddfm_mean)
     cond1 = dd_t < 0
     cond2 = dd_p < 0
     cond3 = dd_t < limit_t

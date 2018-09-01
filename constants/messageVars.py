@@ -317,11 +317,15 @@ message_stdS_062 = p003 + spc + birads003 + spc + mm + "\n"
 
 mc_unique_group = "MC Unique Group" + "\n"
 m_t_main = "Compute Tukeys HSD for" + spc
-m_t_t_001 = "Group:" + spc
-m_t_t_002 = "F-test =" + spc
-m_t_t_003 = "p-value =" + spc
-m_t_t_004 = "[SM] SD =" + spc
-m_t_t_005 = "[MM] SD =" + spc
+m_t_t_001 = "[SM]" + spc + "Data:" + spc
+m_t_t_002 = "[MM]" + spc + "Data:" + spc
+m_t_t_003 = "Group:" + spc
+m_t_t_004 = "F-test" + spc + "=" + spc
+m_t_t_005 = "p-value" + spc + "=" + spc
+m_t_t_006 = "[SM]" + spc + "SD" + spc + "=" + spc
+m_t_t_007 = "[MM]" + spc + "SD" + spc + "=" + spc
+m_t_t_008 = "[SM]" + spc + "Mean" + spc + "=" + spc
+m_t_t_009 = "[MM]" + spc + "Mean" + spc + "=" + spc
 m_t_w = "\n" + "When computing Tukeys HSD for" + spc
 m_degree_freedom = spc + "there is no enough Degree of Freedom (DF)." + "\n"
 m_marks_thsd = "\n" + "++++++++++++++++++++++++++++++++++++++++" + "\n"
