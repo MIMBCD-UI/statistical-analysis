@@ -21,9 +21,9 @@ s_Number = 62
 s_min = 1
 s_max = 62
 
-actual_birads_94662 = 2
-actual_birads_607376 = 5
-actual_birads_737037 = 3
+real_birads_94662 = 2
+real_birads_607376 = 5
+real_birads_737037 = 3
 
 sm_num_img_94662 = 1
 sm_num_img_607376 = 256

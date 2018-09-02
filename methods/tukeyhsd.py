@@ -26,6 +26,7 @@ sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
 
 sys.path.append(sa_constants_dir)
 
+from sheet import *
 from structures import *
 from dataFileGroups import *
 from messageVars import *
@@ -85,12 +86,12 @@ def computeTukeyExperience(d_data, vec):
       dd_act = d_data[actVal]
       dd_nxt = d_data[nextVal]
       dd_t, dd_p = f_oneway(dd_act, dd_nxt)
-      print("COMP----->", dd_t)
-      print("COMP----->", dd_p)
+      print(m_t_t_004, dd_t)
+      print(m_t_t_005, dd_p)
       dd_act_std = np.std(dd_act, ddof=1)
       dd_nxt_std = np.std(dd_nxt, ddof=1)
-      print("STD----->", dd_act_std)
-      print("STD----->", dd_nxt_std)
+      print(m_t_t_006, dd_act_std)
+      print(m_t_t_007, dd_nxt_std)
       cond1 = dd_t < 0
       cond2 = dd_p < 0
       cond3 = dd_p > dd_t

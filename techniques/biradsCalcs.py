@@ -82,11 +82,11 @@ datafile_fm = sheet.datafile_fm
 #                                                #
 # ============================================== #
 
-def biradsAbsList(df_birads_list, actual_birads):
+def biradsAbsList(df_birads_list, real_birads):
   gt_list = []
   for i in range(len(df_birads_list)):
-    gt_calc_sub = df_birads_list[i] - actual_birads
-    gt_calc_alg = gt_calc_sub / actual_birads
+    gt_calc_sub = df_birads_list[i] - real_birads
+    gt_calc_alg = gt_calc_sub / real_birads
     gt_calc_abs = abs(gt_calc_sub)
     gt_list.insert(len(df_birads_list), gt_calc_abs)
   return gt_list
@@ -102,9 +102,9 @@ def biradsAbsList(df_birads_list, actual_birads):
 #                                                #
 # ============================================== #
 
-actual_birads_94662 = special.actual_birads_94662
-actual_birads_607376 = special.actual_birads_607376
-actual_birads_737037 = special.actual_birads_737037
+real_birads_94662 = special.real_birads_94662
+real_birads_607376 = special.real_birads_607376
+real_birads_737037 = special.real_birads_737037
 
 # ============================================== #
 #                SINGLE-MODALITY                 #
@@ -118,9 +118,9 @@ df_fs_birads_94662_list = df_fs_birads_94662.tolist()
 df_fs_birads_607376_list = df_fs_birads_607376.tolist()
 df_fs_birads_737037_list = df_fs_birads_737037.tolist()
 
-gt_fs_birads_94662_list = biradsAbsList(df_fs_birads_94662_list, actual_birads_94662)
-gt_fs_birads_607376_list = biradsAbsList(df_fs_birads_607376_list, actual_birads_607376)
-gt_fs_birads_737037_list = biradsAbsList(df_fs_birads_737037_list, actual_birads_737037)
+gt_fs_birads_94662_list = biradsAbsList(df_fs_birads_94662_list, real_birads_94662)
+gt_fs_birads_607376_list = biradsAbsList(df_fs_birads_607376_list, real_birads_607376)
+gt_fs_birads_737037_list = biradsAbsList(df_fs_birads_737037_list, real_birads_737037)
 
 # ============================================== #
 # ============================================== #
@@ -137,9 +137,9 @@ df_fm_birads_94662_list = df_fm_birads_94662.tolist()
 df_fm_birads_607376_list = df_fm_birads_607376.tolist()
 df_fm_birads_737037_list = df_fm_birads_737037.tolist()
 
-gt_fm_birads_94662_list = biradsAbsList(df_fm_birads_94662_list, actual_birads_94662)
-gt_fm_birads_607376_list = biradsAbsList(df_fm_birads_607376_list, actual_birads_607376)
-gt_fm_birads_737037_list = biradsAbsList(df_fm_birads_737037_list, actual_birads_737037)
+gt_fm_birads_94662_list = biradsAbsList(df_fm_birads_94662_list, real_birads_94662)
+gt_fm_birads_607376_list = biradsAbsList(df_fm_birads_607376_list, real_birads_607376)
+gt_fm_birads_737037_list = biradsAbsList(df_fm_birads_737037_list, real_birads_737037)
 
 # ============================================== #
 # ============================================== #
