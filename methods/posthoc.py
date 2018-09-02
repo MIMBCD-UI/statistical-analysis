@@ -56,6 +56,25 @@ computeTukeyModalities(d_data_fs_sus_08, d_data_fm_sus_08, experience)
 computeTukeyModalities(d_data_fs_sus_09, d_data_fm_sus_09, experience)
 computeTukeyModalities(d_data_fs_sus_10, d_data_fm_sus_10, experience)
 
+# computeTukeyModalities(d_data_fs_time_94662, d_data_fm_time_94662, experience)
+# computeTukeyModalities(d_data_fs_time_607376, d_data_fm_time_607376, experience)
+# computeTukeyModalities(d_data_fs_time_737037, d_data_fm_time_737037, experience)
+# computeTukeyModalities(d_data_fs_time_total, d_data_fm_time_total, experience)
+
+# computeTukeyModalities(d_data_fs_clicks_94662, d_data_fm_clicks_94662, experience)
+# computeTukeyModalities(d_data_fs_clicks_607376, d_data_fm_clicks_607376, experience)
+# computeTukeyModalities(d_data_fs_clicks_737037, d_data_fm_clicks_737037, experience)
+# computeTukeyModalities(d_data_fs_clicks_total, d_data_fm_clicks_total, experience)
+
+# computeTukeyModalities(d_data_fs_errors_94662, d_data_fm_errors_94662, experience)
+# computeTukeyModalities(d_data_fs_errors_607376, d_data_fm_errors_607376, experience)
+# computeTukeyModalities(d_data_fs_errors_737037, d_data_fm_errors_737037, experience)
+# computeTukeyModalities(d_data_fs_errors_total, d_data_fm_errors_total, experience)
+
+# computeTukeyModalities(d_data_fs_birads_94662, d_data_fm_birads_94662, experience)
+# computeTukeyModalities(d_data_fs_birads_607376, d_data_fm_birads_607376, experience)
+# computeTukeyModalities(d_data_fs_birads_737037, d_data_fm_birads_737037, experience)
+
 # computeTukeyExperience(d_data_fs_md, experience)
 # computeTukeyExperience(d_data_fs_pd, experience)
 # computeTukeyExperience(d_data_fs_td, experience)

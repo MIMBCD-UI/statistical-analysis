@@ -45,6 +45,7 @@ def computeTukeyModalities(d_data_fs, d_data_fm, vec):
     actual = vec[i]
     ddfs_act = d_data_fs[actual]
     ddfm_act = d_data_fm[actual]
+    merge_dd_act = ddfs_act + ddfm_act
     dd_t, dd_p = f_oneway(ddfs_act, ddfm_act)
     print(m_t_t_001, d_data_fs[actual].name)
     print(m_t_t_002, d_data_fm[actual].name)
