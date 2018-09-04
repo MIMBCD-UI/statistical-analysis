@@ -399,3 +399,50 @@ d_data_fm_birads_737037 = {
 
 # ============================================== #
 # ============================================== #
+
+# ============================================== #
+#             DATA FRAMES: Grouping              #
+# ============================================== #
+
+d_data_fs_sus_intern_arr = d_data_fs_sus_01['intern'] + d_data_fs_sus_02['intern'] + d_data_fs_sus_03['intern'] + d_data_fs_sus_04['intern'] + d_data_fs_sus_05['intern'] + d_data_fs_sus_06['intern'] + d_data_fs_sus_07['intern'] + d_data_fs_sus_08['intern'] + d_data_fs_sus_09['intern'] + d_data_fs_sus_10['intern']
+
+d_data_fs_sus_junior_arr = d_data_fs_sus_01['junior'] + d_data_fs_sus_02['junior'] + d_data_fs_sus_03['junior'] + d_data_fs_sus_04['junior'] + d_data_fs_sus_05['junior'] + d_data_fs_sus_06['junior'] + d_data_fs_sus_07['junior'] + d_data_fs_sus_08['junior'] + d_data_fs_sus_09['junior'] + d_data_fs_sus_10['junior']
+
+d_data_fs_sus_middle_arr = d_data_fs_sus_01['middle'] + d_data_fs_sus_02['middle'] + d_data_fs_sus_03['middle'] + d_data_fs_sus_04['middle'] + d_data_fs_sus_05['middle'] + d_data_fs_sus_06['middle'] + d_data_fs_sus_07['middle'] + d_data_fs_sus_08['middle'] + d_data_fs_sus_09['middle'] + d_data_fs_sus_10['middle']
+
+d_data_fs_sus_senior_arr = d_data_fs_sus_01['senior'] + d_data_fs_sus_02['senior'] + d_data_fs_sus_03['senior'] + d_data_fs_sus_04['senior'] + d_data_fs_sus_05['senior'] + d_data_fs_sus_06['senior'] + d_data_fs_sus_07['senior'] + d_data_fs_sus_08['senior'] + d_data_fs_sus_09['senior'] + d_data_fs_sus_10['senior']
+
+d_data_fs_sus_intern_list = list(d_data_fs_sus_intern_arr)
+d_data_fs_sus_junior_list = list(d_data_fs_sus_junior_arr)
+d_data_fs_sus_middle_list = list(d_data_fs_sus_middle_arr)
+d_data_fs_sus_senior_list = list(d_data_fs_sus_senior_arr)
+
+df_fs_sus_groups = {
+  'intern': d_data_fs_sus_intern_arr,
+  'junior': d_data_fs_sus_junior_arr,
+  'middle': d_data_fs_sus_middle_arr,
+  'senior': d_data_fs_sus_senior_arr
+}
+
+d_data_fm_sus_intern_arr = d_data_fm_sus_01['intern'] + d_data_fm_sus_02['intern'] + d_data_fm_sus_03['intern'] + d_data_fm_sus_04['intern'] + d_data_fm_sus_05['intern'] + d_data_fm_sus_06['intern'] + d_data_fm_sus_07['intern'] + d_data_fm_sus_08['intern'] + d_data_fm_sus_09['intern'] + d_data_fm_sus_10['intern']
+
+d_data_fm_sus_junior_arr = d_data_fm_sus_01['junior'] + d_data_fm_sus_02['junior'] + d_data_fm_sus_03['junior'] + d_data_fm_sus_04['junior'] + d_data_fm_sus_05['junior'] + d_data_fm_sus_06['junior'] + d_data_fm_sus_07['junior'] + d_data_fm_sus_08['junior'] + d_data_fm_sus_09['junior'] + d_data_fm_sus_10['junior']
+
+d_data_fm_sus_middle_arr = d_data_fm_sus_01['middle'] + d_data_fm_sus_02['middle'] + d_data_fm_sus_03['middle'] + d_data_fm_sus_04['middle'] + d_data_fm_sus_05['middle'] + d_data_fm_sus_06['middle'] + d_data_fm_sus_07['middle'] + d_data_fm_sus_08['middle'] + d_data_fm_sus_09['middle'] + d_data_fm_sus_10['middle']
+
+d_data_fm_sus_senior_arr = d_data_fm_sus_01['senior'] + d_data_fm_sus_02['senior'] + d_data_fm_sus_03['senior'] + d_data_fm_sus_04['senior'] + d_data_fm_sus_05['senior'] + d_data_fm_sus_06['senior'] + d_data_fm_sus_07['senior'] + d_data_fm_sus_08['senior'] + d_data_fm_sus_09['senior'] + d_data_fm_sus_10['senior']
+
+df_fm_sus_groups = {
+  'intern': d_data_fm_sus_intern_arr,
+  'junior': d_data_fm_sus_junior_arr,
+  'middle': d_data_fm_sus_middle_arr,
+  'senior': d_data_fm_sus_senior_arr
+}
+
+pd_df_fs = pd.DataFrame(df_fs_sus_groups)
+pd_df_fm = pd.DataFrame(df_fm_sus_groups)
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #

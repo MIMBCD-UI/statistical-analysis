@@ -42,7 +42,7 @@ from scipy.stats import f_oneway
 def computeTukeyModalities(d_data_fs, d_data_fm, vec):
   limit_t = 0.01
   limit_p = 0.10
-  for i in range(len(vec)):
+  for i in range(0, len(vec)):
     actual = vec[i]
     ddfs_act = d_data_fs[actual]
     ddfm_act = d_data_fm[actual]
@@ -111,3 +111,12 @@ def computeTukeyExperience(d_data, vec):
         print(nextVal)
         print(m_t_main, dd_act, an, dd_nxt, result)
         print(mc_unique_group, mc.groupsunique)
+
+def computeDataFileGroupsMean(arr):
+  arr_sums = 0
+  arr_std = 0
+  for i in range(0, len(arr)):
+    arr_sums = arr_sums + arr[i]
+  #arr_std = np.std(arr, ddof=0)
+  arr_mean = arr_sums / len(arr)
+  return arr_mean, arr_std

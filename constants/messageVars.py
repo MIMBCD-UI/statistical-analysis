@@ -23,6 +23,7 @@ __credits__     = [
 spc = " "
 dpt = ":"
 an = "and"
+ent = "\n"
 
 p001 = "Verification of the Mean for"
 p002 = "Compute Mean for"
@@ -30,6 +31,9 @@ p003 = "Compute Standard Deviation (SD) for"
 
 sm = "(SM)"
 mm = "(MM)"
+
+sma = "[SM]"
+mma = "[MM]"
 
 md = "MD"
 pd = "PD"
@@ -329,6 +333,26 @@ m_t_t_009 = "[MM]" + spc + "Mean" + spc + "=" + spc
 m_t_w = "\n" + "When computing Tukeys HSD for" + spc
 m_degree_freedom = spc + "there is no enough Degree of Freedom (DF)." + "\n"
 m_marks_thsd = "\n" + "++++++++++++++++++++++++++++++++++++++++" + "\n"
+m_equal_thsd = "\n" + "========================================" + "\n"
+
+m_t_hsd_001 = "[Compute Tukey Modalities]" + spc + "F-test" + spc + "=" + spc
+m_t_hsd_002 = "[Compute Tukey Modalities]" + spc + "p-value" + spc + "=" + spc
+
+# ============================================== #
+
+# ============================================== #
+#                Data File Groups                #
+# ============================================== #
+
+m_dfg_001 = sma + spc + "Interns" + dpt + ent
+m_dfg_002 = sma + spc + "Juniors" + dpt + ent
+m_dfg_003 = sma + spc + "Middles" + dpt + ent
+m_dfg_004 = sma + spc + "Seniors" + dpt + ent
+
+m_dfg_005 = mma + spc + "Interns" + dpt + ent
+m_dfg_006 = mma + spc + "Juniors" + dpt + ent
+m_dfg_007 = mma + spc + "Middles" + dpt + ent
+m_dfg_008 = mma + spc + "Seniors" + dpt + ent
 
 # ============================================== #
 
