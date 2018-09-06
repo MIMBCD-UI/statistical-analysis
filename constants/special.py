@@ -32,3 +32,19 @@ sm_num_img_737037 = 1
 mm_num_img_94662 = 130
 mm_num_img_607376 = 258
 mm_num_img_737037 = 178
+
+flag01 = 'SUS'
+flag02 = 'NASA-TLX'
+flag03 = 'Time'
+flag04 = 'Clicks'
+flag05 = 'Errors'
+flag06 = 'BIRADS'
+
+num_patients = 3
+
+elm_size01 = 10
+elm_size02 = 6
+elm_size03 = num_patients
+elm_size04 = num_patients
+elm_size05 = num_patients
+elm_size06 = num_patients

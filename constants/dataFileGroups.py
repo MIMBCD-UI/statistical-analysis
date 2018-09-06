@@ -404,6 +404,8 @@ d_data_fm_birads_737037 = {
 #             DATA FRAMES: Grouping              #
 # ============================================== #
 
+# ==================== SUS ===================== #
+
 d_data_fs_sus_intern_arr = d_data_fs_sus_01['intern'] + d_data_fs_sus_02['intern'] + d_data_fs_sus_03['intern'] + d_data_fs_sus_04['intern'] + d_data_fs_sus_05['intern'] + d_data_fs_sus_06['intern'] + d_data_fs_sus_07['intern'] + d_data_fs_sus_08['intern'] + d_data_fs_sus_09['intern'] + d_data_fs_sus_10['intern']
 
 d_data_fs_sus_junior_arr = d_data_fs_sus_01['junior'] + d_data_fs_sus_02['junior'] + d_data_fs_sus_03['junior'] + d_data_fs_sus_04['junior'] + d_data_fs_sus_05['junior'] + d_data_fs_sus_06['junior'] + d_data_fs_sus_07['junior'] + d_data_fs_sus_08['junior'] + d_data_fs_sus_09['junior'] + d_data_fs_sus_10['junior']
@@ -432,6 +434,11 @@ d_data_fm_sus_middle_arr = d_data_fm_sus_01['middle'] + d_data_fm_sus_02['middle
 
 d_data_fm_sus_senior_arr = d_data_fm_sus_01['senior'] + d_data_fm_sus_02['senior'] + d_data_fm_sus_03['senior'] + d_data_fm_sus_04['senior'] + d_data_fm_sus_05['senior'] + d_data_fm_sus_06['senior'] + d_data_fm_sus_07['senior'] + d_data_fm_sus_08['senior'] + d_data_fm_sus_09['senior'] + d_data_fm_sus_10['senior']
 
+d_data_fm_sus_intern_list = list(d_data_fm_sus_intern_arr)
+d_data_fm_sus_junior_list = list(d_data_fm_sus_junior_arr)
+d_data_fm_sus_middle_list = list(d_data_fm_sus_middle_arr)
+d_data_fm_sus_senior_list = list(d_data_fm_sus_senior_arr)
+
 df_fm_sus_groups = {
   'intern': d_data_fm_sus_intern_arr,
   'junior': d_data_fm_sus_junior_arr,
@@ -441,6 +448,228 @@ df_fm_sus_groups = {
 
 pd_df_fs = pd.DataFrame(df_fs_sus_groups)
 pd_df_fm = pd.DataFrame(df_fm_sus_groups)
+
+# ============================================== #
+
+# ================= NASA-TLX =================== #
+
+d_data_fs_nasatlx_intern_arr = d_data_fs_md['intern'] + d_data_fs_pd['intern'] + d_data_fs_td['intern'] + d_data_fs_p['intern'] + d_data_fs_e['intern'] + d_data_fs_f['intern']
+
+d_data_fs_nasatlx_junior_arr = d_data_fs_md['junior'] + d_data_fs_pd['junior'] + d_data_fs_td['junior'] + d_data_fs_p['junior'] + d_data_fs_e['junior'] + d_data_fs_f['junior']
+
+d_data_fs_nasatlx_middle_arr = d_data_fs_md['middle'] + d_data_fs_pd['middle'] + d_data_fs_td['middle'] + d_data_fs_p['middle'] + d_data_fs_e['middle'] + d_data_fs_f['middle']
+
+d_data_fs_nasatlx_senior_arr = d_data_fs_md['senior'] + d_data_fs_pd['senior'] + d_data_fs_td['senior'] + d_data_fs_p['senior'] + d_data_fs_e['senior'] + d_data_fs_f['senior']
+
+d_data_fs_nasatlx_intern_list = list(d_data_fs_nasatlx_intern_arr)
+d_data_fs_nasatlx_junior_list = list(d_data_fs_nasatlx_junior_arr)
+d_data_fs_nasatlx_middle_list = list(d_data_fs_nasatlx_middle_arr)
+d_data_fs_nasatlx_senior_list = list(d_data_fs_nasatlx_senior_arr)
+
+df_fs_nasatlx_groups = {
+  'intern': d_data_fs_nasatlx_intern_arr,
+  'junior': d_data_fs_nasatlx_junior_arr,
+  'middle': d_data_fs_nasatlx_middle_arr,
+  'senior': d_data_fs_nasatlx_senior_arr
+}
+
+d_data_fm_nasatlx_intern_arr = d_data_fm_md['intern'] + d_data_fm_pd['intern'] + d_data_fm_td['intern'] + d_data_fm_p['intern'] + d_data_fm_e['intern'] + d_data_fm_f['intern']
+
+d_data_fm_nasatlx_junior_arr = d_data_fm_md['junior'] + d_data_fm_pd['junior'] + d_data_fm_td['junior'] + d_data_fm_p['junior'] + d_data_fm_e['junior'] + d_data_fm_f['junior']
+
+d_data_fm_nasatlx_middle_arr = d_data_fm_md['middle'] + d_data_fm_pd['middle'] + d_data_fm_td['middle'] + d_data_fm_p['middle'] + d_data_fm_e['middle'] + d_data_fm_f['middle']
+
+d_data_fm_nasatlx_senior_arr = d_data_fm_md['senior'] + d_data_fm_pd['senior'] + d_data_fm_td['senior'] + d_data_fm_p['senior'] + d_data_fm_e['senior'] + d_data_fm_f['senior']
+
+d_data_fm_nasatlx_intern_list = list(d_data_fm_nasatlx_intern_arr)
+d_data_fm_nasatlx_junior_list = list(d_data_fm_nasatlx_junior_arr)
+d_data_fm_nasatlx_middle_list = list(d_data_fm_nasatlx_middle_arr)
+d_data_fm_nasatlx_senior_list = list(d_data_fm_nasatlx_senior_arr)
+
+df_fm_nasatlx_groups = {
+  'intern': d_data_fm_nasatlx_intern_arr,
+  'junior': d_data_fm_nasatlx_junior_arr,
+  'middle': d_data_fm_nasatlx_middle_arr,
+  'senior': d_data_fm_nasatlx_senior_arr
+}
+
+# ============================================== #
+
+# =================== TIME ===================== #
+
+d_data_fs_time_intern_arr = d_data_fs_time_94662['intern'] + d_data_fs_time_607376['intern'] + d_data_fs_time_737037['intern']
+
+d_data_fs_time_junior_arr = d_data_fs_time_94662['junior'] + d_data_fs_time_607376['junior'] + d_data_fs_time_737037['junior']
+
+d_data_fs_time_middle_arr = d_data_fs_time_94662['middle'] + d_data_fs_time_607376['middle'] + d_data_fs_time_737037['middle']
+
+d_data_fs_time_senior_arr = d_data_fs_time_94662['senior'] + d_data_fs_time_607376['senior'] + d_data_fs_time_737037['senior']
+
+d_data_fs_time_intern_list = list(d_data_fs_time_intern_arr)
+d_data_fs_time_junior_list = list(d_data_fs_time_junior_arr)
+d_data_fs_time_middle_list = list(d_data_fs_time_middle_arr)
+d_data_fs_time_senior_list = list(d_data_fs_time_senior_arr)
+
+df_fs_time_groups = {
+  'intern': d_data_fs_time_intern_arr,
+  'junior': d_data_fs_time_junior_arr,
+  'middle': d_data_fs_time_middle_arr,
+  'senior': d_data_fs_time_senior_arr
+}
+
+d_data_fm_time_intern_arr = d_data_fm_time_94662['intern'] + d_data_fm_time_607376['intern'] + d_data_fm_time_737037['intern']
+
+d_data_fm_time_junior_arr = d_data_fm_time_94662['junior'] + d_data_fm_time_607376['junior'] + d_data_fm_time_737037['junior']
+
+d_data_fm_time_middle_arr = d_data_fm_time_94662['middle'] + d_data_fm_time_607376['middle'] + d_data_fm_time_737037['middle']
+
+d_data_fm_time_senior_arr = d_data_fm_time_94662['senior'] + d_data_fm_time_607376['senior'] + d_data_fm_time_737037['senior']
+
+d_data_fm_time_intern_list = list(d_data_fm_time_intern_arr)
+d_data_fm_time_junior_list = list(d_data_fm_time_junior_arr)
+d_data_fm_time_middle_list = list(d_data_fm_time_middle_arr)
+d_data_fm_time_senior_list = list(d_data_fm_time_senior_arr)
+
+df_fm_time_groups = {
+  'intern': d_data_fm_time_intern_arr,
+  'junior': d_data_fm_time_junior_arr,
+  'middle': d_data_fm_time_middle_arr,
+  'senior': d_data_fm_time_senior_arr
+}
+
+# ============================================== #
+
+# ================== CLICKS ==================== #
+
+d_data_fs_clicks_intern_arr = d_data_fs_clicks_94662['intern'] + d_data_fs_clicks_607376['intern'] + d_data_fs_clicks_737037['intern']
+
+d_data_fs_clicks_junior_arr = d_data_fs_clicks_94662['junior'] + d_data_fs_clicks_607376['junior'] + d_data_fs_clicks_737037['junior']
+
+d_data_fs_clicks_middle_arr = d_data_fs_clicks_94662['middle'] + d_data_fs_clicks_607376['middle'] + d_data_fs_clicks_737037['middle']
+
+d_data_fs_clicks_senior_arr = d_data_fs_clicks_94662['senior'] + d_data_fs_clicks_607376['senior'] + d_data_fs_clicks_737037['senior']
+
+d_data_fs_clicks_intern_list = list(d_data_fs_clicks_intern_arr)
+d_data_fs_clicks_junior_list = list(d_data_fs_clicks_junior_arr)
+d_data_fs_clicks_middle_list = list(d_data_fs_clicks_middle_arr)
+d_data_fs_clicks_senior_list = list(d_data_fs_clicks_senior_arr)
+
+df_fs_clicks_groups = {
+  'intern': d_data_fs_clicks_intern_arr,
+  'junior': d_data_fs_clicks_junior_arr,
+  'middle': d_data_fs_clicks_middle_arr,
+  'senior': d_data_fs_clicks_senior_arr
+}
+
+d_data_fm_clicks_intern_arr = d_data_fm_clicks_94662['intern'] + d_data_fm_clicks_607376['intern'] + d_data_fm_clicks_737037['intern']
+
+d_data_fm_clicks_junior_arr = d_data_fm_clicks_94662['junior'] + d_data_fm_clicks_607376['junior'] + d_data_fm_clicks_737037['junior']
+
+d_data_fm_clicks_middle_arr = d_data_fm_clicks_94662['middle'] + d_data_fm_clicks_607376['middle'] + d_data_fm_clicks_737037['middle']
+
+d_data_fm_clicks_senior_arr = d_data_fm_clicks_94662['senior'] + d_data_fm_clicks_607376['senior'] + d_data_fm_clicks_737037['senior']
+
+d_data_fm_clicks_intern_list = list(d_data_fm_clicks_intern_arr)
+d_data_fm_clicks_junior_list = list(d_data_fm_clicks_junior_arr)
+d_data_fm_clicks_middle_list = list(d_data_fm_clicks_middle_arr)
+d_data_fm_clicks_senior_list = list(d_data_fm_clicks_senior_arr)
+
+df_fm_clicks_groups = {
+  'intern': d_data_fm_clicks_intern_arr,
+  'junior': d_data_fm_clicks_junior_arr,
+  'middle': d_data_fm_clicks_middle_arr,
+  'senior': d_data_fm_clicks_senior_arr
+}
+
+# ============================================== #
+
+# ================== ERRORS ==================== #
+
+d_data_fs_errors_intern_arr = d_data_fs_errors_94662['intern'] + d_data_fs_errors_607376['intern'] + d_data_fs_errors_737037['intern']
+
+d_data_fs_errors_junior_arr = d_data_fs_errors_94662['junior'] + d_data_fs_errors_607376['junior'] + d_data_fs_errors_737037['junior']
+
+d_data_fs_errors_middle_arr = d_data_fs_errors_94662['middle'] + d_data_fs_errors_607376['middle'] + d_data_fs_errors_737037['middle']
+
+d_data_fs_errors_senior_arr = d_data_fs_errors_94662['senior'] + d_data_fs_errors_607376['senior'] + d_data_fs_errors_737037['senior']
+
+d_data_fs_errors_intern_list = list(d_data_fs_errors_intern_arr)
+d_data_fs_errors_junior_list = list(d_data_fs_errors_junior_arr)
+d_data_fs_errors_middle_list = list(d_data_fs_errors_middle_arr)
+d_data_fs_errors_senior_list = list(d_data_fs_errors_senior_arr)
+
+df_fs_errors_groups = {
+  'intern': d_data_fs_errors_intern_arr,
+  'junior': d_data_fs_errors_junior_arr,
+  'middle': d_data_fs_errors_middle_arr,
+  'senior': d_data_fs_errors_senior_arr
+}
+
+d_data_fm_errors_intern_arr = d_data_fm_errors_94662['intern'] + d_data_fm_errors_607376['intern'] + d_data_fm_errors_737037['intern']
+
+d_data_fm_errors_junior_arr = d_data_fm_errors_94662['junior'] + d_data_fm_errors_607376['junior'] + d_data_fm_errors_737037['junior']
+
+d_data_fm_errors_middle_arr = d_data_fm_errors_94662['middle'] + d_data_fm_errors_607376['middle'] + d_data_fm_errors_737037['middle']
+
+d_data_fm_errors_senior_arr = d_data_fm_errors_94662['senior'] + d_data_fm_errors_607376['senior'] + d_data_fm_errors_737037['senior']
+
+d_data_fm_errors_intern_list = list(d_data_fm_errors_intern_arr)
+d_data_fm_errors_junior_list = list(d_data_fm_errors_junior_arr)
+d_data_fm_errors_middle_list = list(d_data_fm_errors_middle_arr)
+d_data_fm_errors_senior_list = list(d_data_fm_errors_senior_arr)
+
+df_fm_errors_groups = {
+  'intern': d_data_fm_errors_intern_arr,
+  'junior': d_data_fm_errors_junior_arr,
+  'middle': d_data_fm_errors_middle_arr,
+  'senior': d_data_fm_errors_senior_arr
+}
+
+# ============================================== #
+
+# ================== BIRADS ==================== #
+
+d_data_fs_birads_intern_arr = d_data_fs_birads_94662['intern'] + d_data_fs_birads_607376['intern'] + d_data_fs_birads_737037['intern']
+
+d_data_fs_birads_junior_arr = d_data_fs_birads_94662['junior'] + d_data_fs_birads_607376['junior'] + d_data_fs_birads_737037['junior']
+
+d_data_fs_birads_middle_arr = d_data_fs_birads_94662['middle'] + d_data_fs_birads_607376['middle'] + d_data_fs_birads_737037['middle']
+
+d_data_fs_birads_senior_arr = d_data_fs_birads_94662['senior'] + d_data_fs_birads_607376['senior'] + d_data_fs_birads_737037['senior']
+
+d_data_fs_birads_intern_list = list(d_data_fs_birads_intern_arr)
+d_data_fs_birads_junior_list = list(d_data_fs_birads_junior_arr)
+d_data_fs_birads_middle_list = list(d_data_fs_birads_middle_arr)
+d_data_fs_birads_senior_list = list(d_data_fs_birads_senior_arr)
+
+df_fs_birads_groups = {
+  'intern': d_data_fs_birads_intern_arr,
+  'junior': d_data_fs_birads_junior_arr,
+  'middle': d_data_fs_birads_middle_arr,
+  'senior': d_data_fs_birads_senior_arr
+}
+
+d_data_fm_birads_intern_arr = d_data_fm_birads_94662['intern'] + d_data_fm_birads_607376['intern'] + d_data_fm_birads_737037['intern']
+
+d_data_fm_birads_junior_arr = d_data_fm_birads_94662['junior'] + d_data_fm_birads_607376['junior'] + d_data_fm_birads_737037['junior']
+
+d_data_fm_birads_middle_arr = d_data_fm_birads_94662['middle'] + d_data_fm_birads_607376['middle'] + d_data_fm_birads_737037['middle']
+
+d_data_fm_birads_senior_arr = d_data_fm_birads_94662['senior'] + d_data_fm_birads_607376['senior'] + d_data_fm_birads_737037['senior']
+
+d_data_fm_birads_intern_list = list(d_data_fm_birads_intern_arr)
+d_data_fm_birads_junior_list = list(d_data_fm_birads_junior_arr)
+d_data_fm_birads_middle_list = list(d_data_fm_birads_middle_arr)
+d_data_fm_birads_senior_list = list(d_data_fm_birads_senior_arr)
+
+df_fm_birads_groups = {
+  'intern': d_data_fm_birads_intern_arr,
+  'junior': d_data_fm_birads_junior_arr,
+  'middle': d_data_fm_birads_middle_arr,
+  'senior': d_data_fm_birads_senior_arr
+}
+
+# ============================================== #
 
 # ============================================== #
 # ============================================== #

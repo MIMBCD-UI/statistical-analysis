@@ -24,6 +24,8 @@ spc = " "
 dpt = ":"
 an = "and"
 ent = "\n"
+of = "of"
+pfor = "for"
 
 p001 = "Verification of the Mean for"
 p002 = "Compute Mean for"
@@ -35,6 +37,7 @@ mm = "(MM)"
 sma = "[SM]"
 mma = "[MM]"
 
+nasatlx = "NASA-TLX"
 md = "MD"
 pd = "PD"
 td = "TD"
@@ -42,6 +45,7 @@ pe = "PE"
 ef = "EF"
 fr = "FR"
 
+sus = "SUS"
 sus01 = "SUS01"
 sus02 = "SUS02"
 sus03 = "SUS03"
@@ -53,24 +57,52 @@ sus08 = "SUS08"
 sus09 = "SUS09"
 sus10 = "SUS10"
 
+ptime = "Time"
 time001 = "TIME__94662"
 time002 = "TIME_607376"
 time003 = "TIME_737037"
 time004 = "TIME__TOTAL"
 
+clicks = "Clicks"
 clicks001 = "CLICKS__94662"
 clicks002 = "CLICKS_607376"
 clicks003 = "CLICKS_737037"
 clicks004 = "CLICKS__TOTAL"
 
+errors = "Errors"
 errors001 = "ERRORS__94662"
 errors002 = "ERRORS_607376"
 errors003 = "ERRORS_737037"
 errors004 = "ERRORS__TOTAL"
 
+birads = "BIRADS"
 birads001 = "BIRADS__94662"
 birads002 = "BIRADS_607376"
 birads003 = "BIRADS_737037"
+
+m_mean = "Mean"
+m_means = "Means"
+
+m_std = "SD"
+m_stds = "SDs"
+
+m_intern = "Intern"
+m_junior = "Junior"
+m_middle = "Middle"
+m_senior = "Senior"
+
+m_interns = "Interns"
+m_juniors = "Juniors"
+m_middles = "Middles"
+m_seniors = "Seniors"
+
+# ============================================== #
+
+# ============================================== #
+#                 Error Messages                 #
+# ============================================== #
+
+m_err_001 = ent + "Please try another flag..." + ent
 
 # ============================================== #
 
@@ -344,15 +376,131 @@ m_t_hsd_002 = "[Compute Tukey Modalities]" + spc + "p-value" + spc + "=" + spc
 #                Data File Groups                #
 # ============================================== #
 
-m_dfg_001 = sma + spc + "Interns" + dpt + ent
-m_dfg_002 = sma + spc + "Juniors" + dpt + ent
-m_dfg_003 = sma + spc + "Middles" + dpt + ent
-m_dfg_004 = sma + spc + "Seniors" + dpt + ent
+sma_means = sma + spc + m_means + spc + of + spc
+mma_means = mma + spc + m_means + spc + of + spc
 
-m_dfg_005 = mma + spc + "Interns" + dpt + ent
-m_dfg_006 = mma + spc + "Juniors" + dpt + ent
-m_dfg_007 = mma + spc + "Middles" + dpt + ent
-m_dfg_008 = mma + spc + "Seniors" + dpt + ent
+sma_stds = sma + spc + m_stds + spc + of + spc
+mma_stds = mma + spc + m_stds + spc + of + spc
+
+m_dfg_001 = sma_means + sus + spc + pfor + spc + m_interns + ent
+m_dfg_002 = sma_means + sus + spc + pfor + spc + m_juniors + ent
+m_dfg_003 = sma_means + sus + spc + pfor + spc + m_middles + ent
+m_dfg_004 = sma_means + sus + spc + pfor + spc + m_seniors + ent
+
+m_dfg_005 = mma_means + sus + spc + pfor + spc + m_interns + ent
+m_dfg_006 = mma_means + sus + spc + pfor + spc + m_juniors + ent
+m_dfg_007 = mma_means + sus + spc + pfor + spc + m_middles + ent
+m_dfg_008 = mma_means + sus + spc + pfor + spc + m_seniors + ent
+
+m_dfg_009 = sma_stds + sus + spc + pfor + spc + m_interns + ent
+m_dfg_010 = sma_stds + sus + spc + pfor + spc + m_juniors + ent
+m_dfg_011 = sma_stds + sus + spc + pfor + spc + m_middles + ent
+m_dfg_012 = sma_stds + sus + spc + pfor + spc + m_seniors + ent
+
+m_dfg_013 = mma_stds + sus + spc + pfor + spc + m_interns + ent
+m_dfg_014 = mma_stds + sus + spc + pfor + spc + m_juniors + ent
+m_dfg_015 = mma_stds + sus + spc + pfor + spc + m_middles + ent
+m_dfg_016 = mma_stds + sus + spc + pfor + spc + m_seniors + ent
+
+m_dfg_017 = sma_means + nasatlx + spc + pfor + spc + m_interns + ent
+m_dfg_018 = sma_means + nasatlx + spc + pfor + spc + m_juniors + ent
+m_dfg_019 = sma_means + nasatlx + spc + pfor + spc + m_middles + ent
+m_dfg_020 = sma_means + nasatlx + spc + pfor + spc + m_seniors + ent
+
+m_dfg_021 = mma_means + nasatlx + spc + pfor + spc + m_interns + ent
+m_dfg_022 = mma_means + nasatlx + spc + pfor + spc + m_juniors + ent
+m_dfg_023 = mma_means + nasatlx + spc + pfor + spc + m_middles + ent
+m_dfg_024 = mma_means + nasatlx + spc + pfor + spc + m_seniors + ent
+
+m_dfg_025 = sma_stds + nasatlx + spc + pfor + spc + m_interns + ent
+m_dfg_026 = sma_stds + nasatlx + spc + pfor + spc + m_juniors + ent
+m_dfg_027 = sma_stds + nasatlx + spc + pfor + spc + m_middles + ent
+m_dfg_028 = sma_stds + nasatlx + spc + pfor + spc + m_seniors + ent
+
+m_dfg_029 = mma_stds + nasatlx + spc + pfor + spc + m_interns + ent
+m_dfg_030 = mma_stds + nasatlx + spc + pfor + spc + m_juniors + ent
+m_dfg_031 = mma_stds + nasatlx + spc + pfor + spc + m_middles + ent
+m_dfg_032 = mma_stds + nasatlx + spc + pfor + spc + m_seniors + ent
+
+m_dfg_033 = sma_means + ptime + spc + pfor + spc + m_interns + ent
+m_dfg_034 = sma_means + ptime + spc + pfor + spc + m_juniors + ent
+m_dfg_035 = sma_means + ptime + spc + pfor + spc + m_middles + ent
+m_dfg_036 = sma_means + ptime + spc + pfor + spc + m_seniors + ent
+
+m_dfg_037 = mma_means + ptime + spc + pfor + spc + m_interns + ent
+m_dfg_038 = mma_means + ptime + spc + pfor + spc + m_juniors + ent
+m_dfg_039 = mma_means + ptime + spc + pfor + spc + m_middles + ent
+m_dfg_040 = mma_means + ptime + spc + pfor + spc + m_seniors + ent
+
+m_dfg_041 = sma_stds + ptime + spc + pfor + spc + m_interns + ent
+m_dfg_042 = sma_stds + ptime + spc + pfor + spc + m_juniors + ent
+m_dfg_043 = sma_stds + ptime + spc + pfor + spc + m_middles + ent
+m_dfg_044 = sma_stds + ptime + spc + pfor + spc + m_seniors + ent
+
+m_dfg_045 = mma_stds + ptime + spc + pfor + spc + m_interns + ent
+m_dfg_046 = mma_stds + ptime + spc + pfor + spc + m_juniors + ent
+m_dfg_047 = mma_stds + ptime + spc + pfor + spc + m_middles + ent
+m_dfg_048 = mma_stds + ptime + spc + pfor + spc + m_seniors + ent
+
+m_dfg_049 = sma_means + clicks + spc + pfor + spc + m_interns + ent
+m_dfg_050 = sma_means + clicks + spc + pfor + spc + m_juniors + ent
+m_dfg_051 = sma_means + clicks + spc + pfor + spc + m_middles + ent
+m_dfg_052 = sma_means + clicks + spc + pfor + spc + m_seniors + ent
+
+m_dfg_053 = mma_means + clicks + spc + pfor + spc + m_interns + ent
+m_dfg_054 = mma_means + clicks + spc + pfor + spc + m_juniors + ent
+m_dfg_055 = mma_means + clicks + spc + pfor + spc + m_middles + ent
+m_dfg_056 = mma_means + clicks + spc + pfor + spc + m_seniors + ent
+
+m_dfg_057 = sma_stds + clicks + spc + pfor + spc + m_interns + ent
+m_dfg_058 = sma_stds + clicks + spc + pfor + spc + m_juniors + ent
+m_dfg_059 = sma_stds + clicks + spc + pfor + spc + m_middles + ent
+m_dfg_060 = sma_stds + clicks + spc + pfor + spc + m_seniors + ent
+
+m_dfg_061 = mma_stds + clicks + spc + pfor + spc + m_interns + ent
+m_dfg_062 = mma_stds + clicks + spc + pfor + spc + m_juniors + ent
+m_dfg_063 = mma_stds + clicks + spc + pfor + spc + m_middles + ent
+m_dfg_064 = mma_stds + clicks + spc + pfor + spc + m_seniors + ent
+
+m_dfg_065 = sma_means + errors + spc + pfor + spc + m_interns + ent
+m_dfg_066 = sma_means + errors + spc + pfor + spc + m_juniors + ent
+m_dfg_067 = sma_means + errors + spc + pfor + spc + m_middles + ent
+m_dfg_068 = sma_means + errors + spc + pfor + spc + m_seniors + ent
+
+m_dfg_069 = mma_means + errors + spc + pfor + spc + m_interns + ent
+m_dfg_070 = mma_means + errors + spc + pfor + spc + m_juniors + ent
+m_dfg_071 = mma_means + errors + spc + pfor + spc + m_middles + ent
+m_dfg_072 = mma_means + errors + spc + pfor + spc + m_seniors + ent
+
+m_dfg_073 = sma_stds + errors + spc + pfor + spc + m_interns + ent
+m_dfg_074 = sma_stds + errors + spc + pfor + spc + m_juniors + ent
+m_dfg_075 = sma_stds + errors + spc + pfor + spc + m_middles + ent
+m_dfg_076 = sma_stds + errors + spc + pfor + spc + m_seniors + ent
+
+m_dfg_077 = mma_stds + errors + spc + pfor + spc + m_interns + ent
+m_dfg_078 = mma_stds + errors + spc + pfor + spc + m_juniors + ent
+m_dfg_079 = mma_stds + errors + spc + pfor + spc + m_middles + ent
+m_dfg_080 = mma_stds + errors + spc + pfor + spc + m_seniors + ent
+
+m_dfg_081 = sma_means + birads + spc + pfor + spc + m_interns + ent
+m_dfg_082 = sma_means + birads + spc + pfor + spc + m_juniors + ent
+m_dfg_083 = sma_means + birads + spc + pfor + spc + m_middles + ent
+m_dfg_084 = sma_means + birads + spc + pfor + spc + m_seniors + ent
+
+m_dfg_085 = mma_means + birads + spc + pfor + spc + m_interns + ent
+m_dfg_086 = mma_means + birads + spc + pfor + spc + m_juniors + ent
+m_dfg_087 = mma_means + birads + spc + pfor + spc + m_middles + ent
+m_dfg_088 = mma_means + birads + spc + pfor + spc + m_seniors + ent
+
+m_dfg_089 = sma_stds + birads + spc + pfor + spc + m_interns + ent
+m_dfg_090 = sma_stds + birads + spc + pfor + spc + m_juniors + ent
+m_dfg_091 = sma_stds + birads + spc + pfor + spc + m_middles + ent
+m_dfg_092 = sma_stds + birads + spc + pfor + spc + m_seniors + ent
+
+m_dfg_093 = mma_stds + birads + spc + pfor + spc + m_interns + ent
+m_dfg_094 = mma_stds + birads + spc + pfor + spc + m_juniors + ent
+m_dfg_095 = mma_stds + birads + spc + pfor + spc + m_middles + ent
+m_dfg_096 = mma_stds + birads + spc + pfor + spc + m_seniors + ent
 
 # ============================================== #
 
