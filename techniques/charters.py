@@ -204,19 +204,61 @@ mmUpdatemenus = list([
 layout0 = go.Layout(
   title = "[Single-Modality] Measurements: Time vs Number of Clicks",
   xaxis = dict(
-    title = 'Time'
+    title = 'Time',
+    titlefont=dict(
+      size=24
     ),
+    tickfont=dict(
+      size=14
+    )
+  ),
   yaxis = dict(
-    title = 'Number of Clicks'
+    title = 'Number of Clicks',
+    titlefont=dict(
+      size=24
     ),
+    tickfont=dict(
+      size=14
+    )
+  ),
+  legend=dict(
+    font=dict(
+      size=18
+    )
+  ),
   updatemenus=smUpdatemenus,
+  width=1000,
+  height=500,
 )
 
 layout1 = go.Layout(
   title = "[Multi-Modality] Measurements: Time vs Number of Clicks",
-  xaxis = dict(title = 'Time'),
-  yaxis = dict(title = 'Number of Clicks'),
+  xaxis = dict(
+    title = 'Time',
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
+  ),
+  yaxis = dict(
+    title = 'Number of Clicks',
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
+  ),
+  legend=dict(
+    font=dict(
+      size=18
+    )
+  ),
   updatemenus=mmUpdatemenus,
+  width=1000,
+  height=500,
 )
 
 fig0 = go.Figure(data=data0, layout=layout0)

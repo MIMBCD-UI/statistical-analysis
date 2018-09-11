@@ -216,13 +216,34 @@ dataSus = [
 layoutSus = go.Layout(
   yaxis=dict(
     title='SUS Scores',
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
     zeroline=False
   ),
   xaxis=dict(
     title='SUS Questions',
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
     zeroline=False
   ),
-  boxmode='group'
+  legend=dict(
+    font=dict(
+      size=18
+    )
+  ),
+  boxmode='group',
+  width=1000,
+  height=500,
+  boxgap=0.05,
+  boxgroupgap=0.25,
 )
 
 figSus = go.Figure(data=dataSus, layout=layoutSus)
@@ -312,7 +333,32 @@ dataBirads = [
 ]
 
 layoutBirads = go.Layout(
-  title = "BI-RADS Variation & SD"
+  title = "BI-RADS Variation & SD",
+  xaxis = dict(
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
+  ),
+  yaxis = dict(
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
+  ),
+  legend=dict(
+    font=dict(
+      size=18
+    )
+  ),
+  width=1000,
+  height=500,
+  boxgap=0.05,
+  boxgroupgap=0.25,
 )
 
 figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
