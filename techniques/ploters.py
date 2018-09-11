@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.0.1"
+__version__     = "1.1.2"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -22,9 +22,9 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
-sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
-techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
+sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'constants')
+sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'methods')
+techniques_dir = os.path.join(pathAbsPath, 'ssheet-reader', 'techniques')
 
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
@@ -47,9 +47,13 @@ filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
 
-main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
-fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
-fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
+main_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'main_sheet.csv')
+fs_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fs_sheet.csv')
+fm_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fm_sheet.csv')
+
+sys.path.append(main_sheet_dir)
+sys.path.append(fs_sheet_dir)
+sys.path.append(fm_sheet_dir)
 
 import plotly.plotly as py
 import plotly.graph_objs as go
@@ -222,7 +226,7 @@ layoutSus = go.Layout(
 )
 
 figSus = go.Figure(data=dataSus, layout=layoutSus)
-#py.plot(figSus, filename = "sus_scores_vs_sus_questions")
+py.plot(figSus, filename = "sus_scores_vs_sus_questions")
 
 # ============================================== #
 # ============================================== #
@@ -308,11 +312,11 @@ dataBirads = [
 ]
 
 layoutBirads = go.Layout(
-  title = "BI-RADS Variation & SD",
+  title = "BI-RADS Variation & SD"
 )
 
 figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
-#py.plot(figBirads, filename = "birads_variation_sd")
+py.plot(figBirads, filename = "birads_variation_sd")
 
 # ============================================== #
 # ============================================== #
