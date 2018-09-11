@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.2.2"
+__version__     = "1.2.3"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -22,12 +22,12 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_techniques_dir = (pathAbsPath + '/statistical-analysis/techniques/')
-sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
-sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
-src_dir = (pathAbsPath + '/sheet-reader/src/')
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
+sa_techniques_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'techniques')
+sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'constants')
+sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'methods')
+src_dir = os.path.join(pathAbsPath, 'sheet-reader', 'src')
+constants_dir = os.path.join(pathAbsPath, 'sheet-read', 'constants')
+techniques_dir = os.path.join(pathAbsPath, 'sheet-reader', 'techniques')
 
 sys.path.append(sa_techniques_dir)
 sys.path.append(sa_constants_dir)
@@ -58,9 +58,13 @@ datafileIteratorPerGroup = iterators.datafileIteratorPerGroup
 vecReplacer = replacers.vecReplacer
 vecReplacePrinter = replacers.vecReplacePrinter
 
-main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
-fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
-fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
+main_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'main_sheet.csv')
+fs_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fs_sheet.csv')
+fm_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fm_sheet.csv')
+
+sys.path.append(main_sheet_dir)
+sys.path.append(fs_sheet_dir)
+sys.path.append(fm_sheet_dir)
 
 import plotly.plotly as py
 import plotly.graph_objs as go
