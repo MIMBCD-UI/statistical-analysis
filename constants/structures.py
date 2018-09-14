@@ -91,6 +91,12 @@ mm_birads_labels = [
   'MM: P3'
 ]
 
+mm_assis_labels = [
+  'ASSIS: P1',
+  'ASSIS: P2',
+  'ASSIS: P3'
+]
+
 filterByColumn = 'group'
 figSizeX = 12
 figSizeY = 8

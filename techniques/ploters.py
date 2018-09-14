@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.1.2"
+__version__     = "1.2.1"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -43,6 +43,7 @@ nasatlx_columns = structures.nasatlx_columns
 sus_columns = structures.sus_columns
 measures_columns = structures.measures_columns
 birads_columns = structures.birads_columns
+mm_assis_labels = structures.mm_assis_labels
 filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
@@ -284,6 +285,16 @@ trace1 = go.Box(
 )
 
 trace2 = go.Box(
+  y=gt_fm_assis_94662_list,
+  name=mm_assis_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(18, 160, 133)',
+  ),
+  boxmean='sd'
+)
+
+trace3 = go.Box(
   y=gt_fs_birads_607376_list,
   name=sm_birads_labels[1],
   boxpoints = False,
@@ -293,7 +304,7 @@ trace2 = go.Box(
   boxmean='sd'
 )
 
-trace3 = go.Box(
+trace4 = go.Box(
   y=gt_fm_birads_607376_list,
   name=mm_birads_labels[1],
   boxpoints = False,
@@ -303,7 +314,17 @@ trace3 = go.Box(
   boxmean='sd'
 )
 
-trace4 = go.Box(
+trace5 = go.Box(
+  y=gt_fm_assis_607376_list,
+  name=mm_assis_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(38, 92, 131)',
+  ),
+  boxmean='sd'
+)
+
+trace6 = go.Box(
   y=gt_fs_birads_737037_list,
   name=sm_birads_labels[2],
   boxpoints = False,
@@ -313,12 +334,22 @@ trace4 = go.Box(
   boxmean='sd'
 )
 
-trace5 = go.Box(
+trace7 = go.Box(
   y=gt_fm_birads_737037_list,
   name=mm_birads_labels[2],
   boxpoints = False,
   marker=dict(
     color='rgb(142, 68, 173)',
+  ),
+  boxmean='sd'
+)
+
+trace8 = go.Box(
+  y=gt_fm_assis_737037_list,
+  name=mm_assis_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(137, 47, 164)',
   ),
   boxmean='sd'
 )
@@ -329,7 +360,10 @@ dataBirads = [
   trace2,
   trace3,
   trace4,
-  trace5
+  trace5,
+  trace6,
+  trace7,
+  trace8
 ]
 
 layoutBirads = go.Layout(
@@ -361,8 +395,36 @@ layoutBirads = go.Layout(
   boxgroupgap=0.25,
 )
 
+layoutBirads2 = go.Layout(
+  title = "BI-RADS Variation & SD",
+  xaxis = dict(
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
+  ),
+  yaxis = dict(
+    titlefont=dict(
+      size=24
+    ),
+    tickfont=dict(
+      size=14
+    ),
+  ),
+  legend=dict(
+    font=dict(
+      size=18
+    )
+  )
+)
+
 figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
 py.plot(figBirads, filename = "birads_variation_sd")
+
+# figBirads = go.Figure(data=dataBirads, layout=layoutBirads2)
+# py.plot(figBirads, filename = "birads_variation_sd")
 
 # ============================================== #
 # ============================================== #

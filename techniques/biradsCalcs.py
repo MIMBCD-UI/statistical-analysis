@@ -133,13 +133,25 @@ df_fm_birads_94662 = datafile_fm.birads_94662[:MV_N]
 df_fm_birads_607376 = datafile_fm.birads_607376[:MV_N]
 df_fm_birads_737037 = datafile_fm.birads_737037[:MV_N]
 
+df_fm_assis_94662 = datafile_fm.assis_94662[:MV_N]
+df_fm_assis_607376 = datafile_fm.assis_607376[:MV_N]
+df_fm_assis_737037 = datafile_fm.assis_737037[:MV_N]
+
 df_fm_birads_94662_list = df_fm_birads_94662.tolist()
 df_fm_birads_607376_list = df_fm_birads_607376.tolist()
 df_fm_birads_737037_list = df_fm_birads_737037.tolist()
 
+df_fm_assis_94662_list = df_fm_assis_94662.tolist()
+df_fm_assis_607376_list = df_fm_assis_607376.tolist()
+df_fm_assis_737037_list = df_fm_assis_737037.tolist()
+
 gt_fm_birads_94662_list = biradsAbsList(df_fm_birads_94662_list, real_birads_94662)
 gt_fm_birads_607376_list = biradsAbsList(df_fm_birads_607376_list, real_birads_607376)
 gt_fm_birads_737037_list = biradsAbsList(df_fm_birads_737037_list, real_birads_737037)
+
+gt_fm_assis_94662_list = biradsAbsList(df_fm_assis_94662_list, real_birads_94662)
+gt_fm_assis_607376_list = biradsAbsList(df_fm_assis_607376_list, real_birads_607376)
+gt_fm_assis_737037_list = biradsAbsList(df_fm_assis_737037_list, real_birads_737037)
 
 # ============================================== #
 # ============================================== #
