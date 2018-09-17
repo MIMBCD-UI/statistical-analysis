@@ -354,6 +354,96 @@ trace8 = go.Box(
   boxmean='sd'
 )
 
+trace0_df = go.Box(
+  y=df_fs_birads_94662_list,
+  name=sm_birads_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(26, 188, 156)',
+  ),
+  boxmean='sd'
+)
+
+trace1_df = go.Box(
+  y=df_fm_birads_94662_list,
+  name=mm_birads_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(22, 160, 133)',
+  ),
+  boxmean='sd'
+)
+
+trace2_df = go.Box(
+  y=df_fm_assis_94662_list,
+  name=mm_assis_labels[0],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(18, 160, 133)',
+  ),
+  boxmean='sd'
+)
+
+trace3_df = go.Box(
+  y=df_fs_birads_607376_list,
+  name=sm_birads_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(52, 152, 219)',
+  ),
+  boxmean='sd'
+)
+
+trace4_df = go.Box(
+  y=df_fm_birads_607376_list,
+  name=mm_birads_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(41, 128, 185)',
+  ),
+  boxmean='sd'
+)
+
+trace5_df = go.Box(
+  y=df_fm_assis_607376_list,
+  name=mm_assis_labels[1],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(38, 92, 131)',
+  ),
+  boxmean='sd'
+)
+
+trace6_df = go.Box(
+  y=df_fs_birads_737037_list,
+  name=sm_birads_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(155, 89, 182)',
+  ),
+  boxmean='sd'
+)
+
+trace7_df = go.Box(
+  y=df_fm_birads_737037_list,
+  name=mm_birads_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(142, 68, 173)',
+  ),
+  boxmean='sd'
+)
+
+trace8_df = go.Box(
+  y=df_fm_assis_737037_list,
+  name=mm_assis_labels[2],
+  boxpoints = False,
+  marker=dict(
+    color='rgb(137, 47, 164)',
+  ),
+  boxmean='sd'
+)
+
 dataBirads = [
   trace0,
   trace1,
@@ -366,8 +456,20 @@ dataBirads = [
   trace8
 ]
 
+dataBirads_df = [
+  trace0_df,
+  trace1_df,
+  trace2_df,
+  trace3_df,
+  trace4_df,
+  trace5_df,
+  trace6_df,
+  trace7_df,
+  trace8_df
+]
+
 layoutBirads = go.Layout(
-  title = "BI-RADS Variation & SD",
+  title = "BIRADS Variation & SD",
   xaxis = dict(
     titlefont=dict(
       size=24
@@ -396,7 +498,7 @@ layoutBirads = go.Layout(
 )
 
 layoutBirads2 = go.Layout(
-  title = "BI-RADS Variation & SD",
+  title = "BIRADS Variation & SD",
   xaxis = dict(
     titlefont=dict(
       size=24
@@ -420,7 +522,10 @@ layoutBirads2 = go.Layout(
   )
 )
 
-figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
+# figBirads = go.Figure(data=dataBirads, layout=layoutBirads)
+# py.plot(figBirads, filename = "birads_variation_sd")
+
+figBirads = go.Figure(data=dataBirads_df, layout=layoutBirads)
 py.plot(figBirads, filename = "birads_variation_sd")
 
 # figBirads = go.Figure(data=dataBirads, layout=layoutBirads2)
