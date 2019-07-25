@@ -19,10 +19,10 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-techniques_dir = os.path.join(pathAbsPath, 'sheet-reader', 'techniques')
+techniques_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'techniques')
 
 sys.path.append(techniques_dir)
 

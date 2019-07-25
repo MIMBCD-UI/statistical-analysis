@@ -19,10 +19,10 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
+sa_methods_dir = (pathAbsPath + '/statistical-analysis/src/methods/')
 
 sys.path.append(sa_methods_dir)
 

@@ -19,58 +19,57 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_techniques_dir = (pathAbsPath + '/statistical-analysis/techniques/')
-src_dir = (pathAbsPath + '/sheet-reader/src/')
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
+sa_techniques_dir = (pathAbsPath + '/statistical-analysis/src/techniques/')
+src_dir = (pathAbsPath + '/sheet-reader/src/core/')
+constants_dir = (pathAbsPath + '/sheet-reader/src/constants/')
+techniques_dir = (pathAbsPath + '/sheet-reader/src/techniques/')
+methods_dir = (pathAbsPath + '/sheet-reader/src/methods/')
 
 sys.path.append(sa_techniques_dir)
 sys.path.append(src_dir)
 sys.path.append(constants_dir)
 sys.path.append(techniques_dir)
-sys.path.append(constants_dir)
+sys.path.append(methods_dir)
 
-from nasa import nasaColMean
-import main_variables
-import sheetReadersmain_sheet
-import main_variables
+from nasa import *
+from main_variables import *
+from sheetReaders import *
 
 # ============================================== #
 #                IMPORT VARIABLES                #
 # ============================================== #
 
-MIN_VAL = main_variables.MIN_VAL
-MAX_VAL = main_variables.MAX_VAL
-N       = main_variables.N
+MIN_VAL = MIN_VAL
+MAX_VAL = MAX_VAL
+N       = N
 
-GROUP_INTERN = main_variables.GROUP_INTERN
-GROUP_JUNIOR = main_variables.GROUP_JUNIOR
-GROUP_MIDDLE = main_variables.GROUP_MIDDLE
-GROUP_SENIOR = main_variables.GROUP_SENIOR
+GROUP_INTERN = GROUP_INTERN
+GROUP_JUNIOR = GROUP_JUNIOR
+GROUP_MIDDLE = GROUP_MIDDLE
+GROUP_SENIOR = GROUP_SENIOR
 
-GROUPS_LIST = main_variables.GROUPS_LIST
+GROUPS_LIST = GROUPS_LIST
 
-NASATLX_SINGLE_MENTAL_DEMAND = main_variables.NASATLX_SINGLE_MENTAL_DEMAND
-NASATLX_SINGLE_PHYSICAL_DEMAND = main_variables.NASATLX_SINGLE_PHYSICAL_DEMAND
-NASATLX_SINGLE_TEMPORAL_DEMAND = main_variables.NASATLX_SINGLE_TEMPORAL_DEMAND
-NASATLX_SINGLE_PERFORMANCE = main_variables.NASATLX_SINGLE_PERFORMANCE
-NASATLX_SINGLE_EFFORT = main_variables.NASATLX_SINGLE_EFFORT
-NASATLX_SINGLE_FRUSTRATION = main_variables.NASATLX_SINGLE_FRUSTRATION
+NASATLX_SINGLE_MENTAL_DEMAND = NASATLX_SINGLE_MENTAL_DEMAND
+NASATLX_SINGLE_PHYSICAL_DEMAND = NASATLX_SINGLE_PHYSICAL_DEMAND
+NASATLX_SINGLE_TEMPORAL_DEMAND = NASATLX_SINGLE_TEMPORAL_DEMAND
+NASATLX_SINGLE_PERFORMANCE = NASATLX_SINGLE_PERFORMANCE
+NASATLX_SINGLE_EFFORT = NASATLX_SINGLE_EFFORT
+NASATLX_SINGLE_FRUSTRATION = NASATLX_SINGLE_FRUSTRATION
 
-NASATLX_SINGLE_LIST = main_variables.NASATLX_SINGLE_LIST
+NASATLX_SINGLE_LIST = NASATLX_SINGLE_LIST
 
-NASATLX_MULTI_MENTAL_DEMAND = main_variables.NASATLX_MULTI_MENTAL_DEMAND
-NASATLX_MULTI_PHYSICAL_DEMAND = main_variables.NASATLX_MULTI_PHYSICAL_DEMAND
-NASATLX_MULTI_TEMPORAL_DEMAND = main_variables.NASATLX_MULTI_TEMPORAL_DEMAND
-NASATLX_MULTI_PERFORMANCE = main_variables.NASATLX_MULTI_PERFORMANCE
-NASATLX_MULTI_EFFORT = main_variables.NASATLX_MULTI_EFFORT
-NASATLX_MULTI_FRUSTRATION = main_variables.NASATLX_MULTI_FRUSTRATION
+NASATLX_MULTI_MENTAL_DEMAND = NASATLX_MULTI_MENTAL_DEMAND
+NASATLX_MULTI_PHYSICAL_DEMAND = NASATLX_MULTI_PHYSICAL_DEMAND
+NASATLX_MULTI_TEMPORAL_DEMAND = NASATLX_MULTI_TEMPORAL_DEMAND
+NASATLX_MULTI_PERFORMANCE = NASATLX_MULTI_PERFORMANCE
+NASATLX_MULTI_EFFORT = NASATLX_MULTI_EFFORT
+NASATLX_MULTI_FRUSTRATION = NASATLX_MULTI_FRUSTRATION
 
-NASATLX_MULTI_LIST = main_variables.NASATLX_MULTI_LIST
+NASATLX_MULTI_LIST = NASATLX_MULTI_LIST
 
 # ============================================== #
 #                                                #

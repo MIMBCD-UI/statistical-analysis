@@ -18,17 +18,17 @@ __credits__     = [
 
 import sys, os.path
 
-joinPath = os.path.join(os.path.dirname(__file__), '..', '..')
+joinPath = os.path.join(os.path.dirname(__file__), '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
+constants_dir = (pathAbsPath + '/sheet-reader/src/constants/')
 sys.path.append(constants_dir)
 import main_variables
 
-sheetReader_dir = (pathAbsPath + '/sheet-reader/src/')
+sheetReader_dir = (pathAbsPath + '/sheet-reader/src/core/')
 sys.path.append(sheetReader_dir)
 
-techniques_dir = (pathAbsPath + '/sheet-reader/scripts/')
+techniques_dir = (pathAbsPath + '/sheet-reader/src/methods/')
 sys.path.append(techniques_dir)
 import sheetReaders
 

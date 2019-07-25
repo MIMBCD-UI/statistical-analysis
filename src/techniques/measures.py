@@ -19,15 +19,15 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_techniques_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'techniques')
-sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'constants')
-sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'methods')
-src_dir = os.path.join(pathAbsPath, 'sheet-reader', 'src')
-constants_dir = os.path.join(pathAbsPath, 'sheet-reader', 'constants')
-techniques_dir = os.path.join(pathAbsPath, 'sheet-reader', 'techniques')
+sa_techniques_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'techniques')
+sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'constants')
+sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'methods')
+src_dir = os.path.join(pathAbsPath, 'sheet-reader', 'src', 'core')
+constants_dir = os.path.join(pathAbsPath, 'sheet-reader', 'src', 'constants')
+techniques_dir = os.path.join(pathAbsPath, 'sheet-reader', 'src', 'techniques')
 
 sys.path.append(sa_techniques_dir)
 sys.path.append(sa_constants_dir)
@@ -36,16 +36,15 @@ sys.path.append(src_dir)
 sys.path.append(constants_dir)
 sys.path.append(techniques_dir)
 
-from nasa import nasaColMean
+from nasa import *
+from sheet import *
+from special import *
+from structures import *
+from iterators import *
+from ploters import *
 
 import main_variables
-import sheet
-import special
-import structures
 import sheetReaders
-import iterators
-import charters
-import ploters
 
 MV_N = main_variables.N
 sm_num_img_94662 = special.sm_num_img_94662
@@ -60,9 +59,9 @@ filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
 
-main_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'main_sheet.csv')
-fs_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fs_sheet.csv')
-fm_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fm_sheet.csv')
+main_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'data', 'temp', 'main_sheet.csv')
+fs_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'data', 'temp', 'fs_sheet.csv')
+fm_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'data', 'temp', 'fm_sheet.csv')
 
 sys.path.append(main_sheet_dir)
 sys.path.append(fs_sheet_dir)

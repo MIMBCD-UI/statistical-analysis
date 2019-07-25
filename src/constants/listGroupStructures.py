@@ -19,10 +19,10 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
+sa_constants_dir = (pathAbsPath + '/statistical-analysis/src/constants/')
 
 sys.path.append(sa_constants_dir)
 

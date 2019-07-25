@@ -19,12 +19,12 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'constants')
-sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'methods')
-techniques_dir = os.path.join(pathAbsPath, 'ssheet-reader', 'techniques')
+sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'constants')
+sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'methods')
+techniques_dir = os.path.join(pathAbsPath, 'ssheet-reader', 'src', 'techniques')
 
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
@@ -48,9 +48,9 @@ filterByColumn = structures.filterByColumn
 figSizeX = structures.figSizeX
 figSizeY = structures.figSizeY
 
-main_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'main_sheet.csv')
-fs_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fs_sheet.csv')
-fm_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'temp', 'fm_sheet.csv')
+main_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'data', 'temp', 'main_sheet.csv')
+fs_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'data', 'temp', 'fs_sheet.csv')
+fm_sheet_dir = os.path.join(pathAbsPath, 'sheet-reader', 'data', 'temp', 'fm_sheet.csv')
 
 sys.path.append(main_sheet_dir)
 sys.path.append(fs_sheet_dir)
@@ -86,7 +86,8 @@ datafile_fm = sheet.datafile_fm
 
 def createBoxplot(dataFile, filterBy, array):
   for i in range(len(array)):
-    dataFile.boxplot(array[i], by=filterByColumn, figsize=(figSizeX, figSizeY))
+    stringTo = array[i]
+    dataFile.boxplot(stringTo, by=filterByColumn, figsize=(figSizeX, figSizeY))
 
 # ============================================== #
 # ============================================== #

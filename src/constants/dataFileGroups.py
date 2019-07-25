@@ -20,15 +20,15 @@ __credits__     = [
 import sys, os.path
 
 pathDirname = os.path.dirname(__file__)
-joinPath = os.path.join(pathDirname, '..', '..')
+joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_techniques_dir = (pathAbsPath + '/statistical-analysis/techniques/')
-sa_constants_dir = (pathAbsPath + '/statistical-analysis/constants/')
-sa_methods_dir = (pathAbsPath + '/statistical-analysis/methods/')
-src_dir = (pathAbsPath + '/sheet-reader/src/')
-constants_dir = (pathAbsPath + '/sheet-reader/constants/')
-techniques_dir = (pathAbsPath + '/sheet-reader/techniques/')
+sa_techniques_dir = (pathAbsPath + '/statistical-analysis/src/techniques/')
+sa_constants_dir = (pathAbsPath + '/statistical-analysis/src/constants/')
+sa_methods_dir = (pathAbsPath + '/statistical-analysis/src/methods/')
+src_dir = (pathAbsPath + '/sheet-reader/src/core')
+constants_dir = (pathAbsPath + '/sheet-reader/src/constants/')
+techniques_dir = (pathAbsPath + '/sheet-reader/src/techniques/')
 
 sys.path.append(sa_techniques_dir)
 sys.path.append(sa_constants_dir)
@@ -42,9 +42,9 @@ import iterators
 
 datafileIteratorPerGroup = iterators.datafileIteratorPerGroup
 
-main_sheet_dir = pathAbsPath + '/sheet-reader/temp/main_sheet.csv'
-fs_sheet_dir = pathAbsPath + '/sheet-reader/temp/fs_sheet.csv'
-fm_sheet_dir = pathAbsPath + '/sheet-reader/temp/fm_sheet.csv'
+main_sheet_dir = pathAbsPath + '/sheet-reader/data/temp/main_sheet.csv'
+fs_sheet_dir = pathAbsPath + '/sheet-reader/data/temp/fs_sheet.csv'
+fm_sheet_dir = pathAbsPath + '/sheet-reader/data/temp/fm_sheet.csv'
 
 import pandas as pd
 import scipy
