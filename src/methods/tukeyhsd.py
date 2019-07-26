@@ -26,7 +26,7 @@ sa_constants_dir = (pathAbsPath + '/statistical-analysis/src/constants/')
 
 sys.path.append(sa_constants_dir)
 
-from sheet import *
+from sheets import *
 from structures import *
 from dataFileGroups import *
 from messageVars import *

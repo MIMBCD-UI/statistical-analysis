@@ -45,3 +45,5 @@ def nasaColMean(column):
     NS_COL_SUM = sheetReaderSum(groupsList[i], column)
     NS_COL_MEAN = NS_COL_SUM / N
   return NS_COL_MEAN
+
+# ==================== END File ==================== #

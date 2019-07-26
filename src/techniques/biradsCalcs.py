@@ -39,7 +39,7 @@ sys.path.append(techniques_dir)
 from nasa import nasaColMean
 
 import main_variables
-import sheet
+import sheets
 import special
 import structures
 import sheetReaders

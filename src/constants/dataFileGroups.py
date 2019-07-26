@@ -37,7 +37,7 @@ sys.path.append(src_dir)
 sys.path.append(constants_dir)
 sys.path.append(techniques_dir)
 
-import sheet
+import sheets
 import iterators
 
 datafileIteratorPerGroup = iterators.datafileIteratorPerGroup

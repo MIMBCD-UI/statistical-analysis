@@ -22,3 +22,5 @@ isFlag03 = 'Time'
 isFlag04 = 'Clicks'
 isFlag05 = 'Errors'
 isFlag06 = 'BIRADS'
+
+# ==================== END File ==================== #

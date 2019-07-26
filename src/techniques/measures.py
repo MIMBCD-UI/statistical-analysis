@@ -37,7 +37,7 @@ sys.path.append(constants_dir)
 sys.path.append(techniques_dir)
 
 from nasa import *
-from sheet import *
+from sheets import *
 from special import *
 from structures import *
 from iterators import *
