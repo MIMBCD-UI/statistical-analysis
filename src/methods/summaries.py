@@ -78,19 +78,31 @@ from sheets import *
 
 # NASA-TLX
 
-rp_nasatlx_crrnt_mendem = rp.summary_cont(df_nasatlx_crrnt['mental_demand'])
+rp_nasatlx_crrnt_mendem = rp.summary_cont(df_nasatlx_crrnt['mental_demand'].groupby(df_nasatlx_crrnt['group']))
 print (rp_nasatlx_crrnt_mendem)
 
-rp_nasatlx_assis_mendem = rp.summary_cont(df_nasatlx_assis['mental_demand'])
+rp_nasatlx_assis_mendem = rp.summary_cont(df_nasatlx_assis['mental_demand'].groupby(df_nasatlx_crrnt['group']))
 print (rp_nasatlx_assis_mendem)
 
 # BIRADS
 
-rp_birads_assis_low = rp.summary_cont(df_birads_assis['low'])
+rp_birads_assis_low = rp.summary_cont(df_birads_assis['low'].groupby(df_nasatlx_crrnt['group']))
 print (rp_birads_assis_low)
 
-rp_birads_phy_low = rp.summary_cont(df_birads_phy['low'])
+rp_birads_phy_low = rp.summary_cont(df_birads_phy['low'].groupby(df_nasatlx_crrnt['group']))
 print (rp_birads_phy_low)
+
+rp_birads_assis_medium = rp.summary_cont(df_birads_assis['medium'].groupby(df_nasatlx_crrnt['group']))
+print (rp_birads_assis_medium)
+
+rp_birads_phy_medium = rp.summary_cont(df_birads_phy['medium'].groupby(df_nasatlx_crrnt['group']))
+print (rp_birads_phy_medium)
+
+rp_birads_assis_high = rp.summary_cont(df_birads_assis['high'].groupby(df_nasatlx_crrnt['group']))
+print (rp_birads_assis_high)
+
+rp_birads_phy_high = rp.summary_cont(df_birads_phy['high'].groupby(df_nasatlx_crrnt['group']))
+print (rp_birads_phy_high)
 
 # ============================================== #
 # ============================================== #
