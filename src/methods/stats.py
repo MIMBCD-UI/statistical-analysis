@@ -80,65 +80,98 @@ from sheets import *
 
 # Time
 
-f_time_full_crrnt_low_per_group = stats.f_oneway(df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'intern'],
-	                                               df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'junior'],
-	                                               df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'middle'],
-	                                               df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'senior'])
+df001 = df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'intern']
+df002 = df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'junior']
+df003 = df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'middle']
+df004 = df_time_full_crrnt['low'][df_time_full_crrnt['group'] == 'senior']
 
+f_time_full_crrnt_low_per_group = stats.f_oneway(df001,
+	                                               df002,
+	                                               df003,
+	                                               df004)
 
 print(f_time_full_crrnt_low_per_group)
 
-f_time_full_crrnt_medium_per_group = stats.f_oneway(df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'intern'],
-	                                                  df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'junior'],
-	                                                  df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'middle'],
-	                                                  df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'senior'])
+df005 = df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'intern']
+df006 = df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'junior']
+df007 = df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'middle']
+df008 = df_time_full_crrnt['medium'][df_time_full_crrnt['group'] == 'senior']
+
+f_time_full_crrnt_medium_per_group = stats.f_oneway(df005,
+	                                                  df006,
+	                                                  df007,
+	                                                  df008)
 
 
 print(f_time_full_crrnt_medium_per_group)
 
-f_time_full_crrnt_high_per_group = stats.f_oneway(df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'intern'],
-	                                                df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'junior'],
-	                                                df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'middle'],
-	                                                df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'senior'])
+df009 = df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'intern']
+df010 = df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'junior']
+df011 = df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'middle']
+df012 = df_time_full_crrnt['high'][df_time_full_crrnt['group'] == 'senior']
+
+f_time_full_crrnt_high_per_group = stats.f_oneway(df009,
+	                                                df010,
+	                                                df011,
+	                                                df012)
 
 
 print(f_time_full_crrnt_high_per_group)
 
 print("==============================")
 
-f_time_full_assis_low_per_group = stats.f_oneway(df_time_full_assis['low'][df_time_full_assis['group'] == 'intern'],
-	                                               df_time_full_assis['low'][df_time_full_assis['group'] == 'junior'],
-	                                               df_time_full_assis['low'][df_time_full_assis['group'] == 'middle'],
-	                                               df_time_full_assis['low'][df_time_full_assis['group'] == 'senior'])
+df013 = df_time_full_assis['low'][df_time_full_assis['group'] == 'intern']
+df014 = df_time_full_assis['low'][df_time_full_assis['group'] == 'junior']
+df015 = df_time_full_assis['low'][df_time_full_assis['group'] == 'middle']
+df016 = df_time_full_assis['low'][df_time_full_assis['group'] == 'senior']
+
+f_time_full_assis_low_per_group = stats.f_oneway(df013,
+	                                               df014,
+	                                               df015,
+	                                               df016)
 
 
 print(f_time_full_assis_low_per_group)
 
-f_time_full_assis_medium_per_group = stats.f_oneway(df_time_full_assis['medium'][df_time_full_assis['group'] == 'intern'],
-	                                                  df_time_full_assis['medium'][df_time_full_assis['group'] == 'junior'],
-	                                                  df_time_full_assis['medium'][df_time_full_assis['group'] == 'middle'],
-	                                                  df_time_full_assis['medium'][df_time_full_assis['group'] == 'senior'])
+df017 = df_time_full_assis['medium'][df_time_full_assis['group'] == 'intern']
+df018 = df_time_full_assis['medium'][df_time_full_assis['group'] == 'junior']
+df019 = df_time_full_assis['medium'][df_time_full_assis['group'] == 'middle']
+df020 = df_time_full_assis['medium'][df_time_full_assis['group'] == 'senior']
 
+f_time_full_assis_medium_per_group = stats.f_oneway(df017,
+	                                                  df018,
+	                                                  df019,
+	                                                  df020)
 
 print(f_time_full_assis_medium_per_group)
 
-f_time_full_assis_high_per_group = stats.f_oneway(df_time_full_assis['high'][df_time_full_assis['group'] == 'intern'],
-	                                                df_time_full_assis['high'][df_time_full_assis['group'] == 'junior'],
-	                                                df_time_full_assis['high'][df_time_full_assis['group'] == 'middle'],
-	                                                df_time_full_assis['high'][df_time_full_assis['group'] == 'senior'])
+df021 = df_time_full_assis['high'][df_time_full_assis['group'] == 'intern']
+df022 = df_time_full_assis['high'][df_time_full_assis['group'] == 'junior']
+df023 = df_time_full_assis['high'][df_time_full_assis['group'] == 'middle']
+df024 = df_time_full_assis['high'][df_time_full_assis['group'] == 'senior']
+
+f_time_full_assis_high_per_group = stats.f_oneway(df021,
+	                                                df022,
+	                                                df023,
+	                                                df024)
 
 
 print(f_time_full_assis_high_per_group)
 
 # BIRADS
 
-# f_birads_phy_low_per_group = stats.f_oneway(df_birads_phy['high'][df_birads_phy['group'] == 'intern'],
-# 	                                          df_birads_phy['high'][df_birads_phy['group'] == 'junior'],
-# 	                                          df_birads_phy['high'][df_birads_phy['group'] == 'middle'],
-# 	                                          df_birads_phy['high'][df_birads_phy['group'] == 'senior'])
+df025 = df_birads_phy['high'][df_birads_phy['group'] == 'intern']
+df026 = df_birads_phy['high'][df_birads_phy['group'] == 'junior']
+df026 = df_birads_phy['high'][df_birads_phy['group'] == 'middle']
+df028 = df_birads_phy['high'][df_birads_phy['group'] == 'senior']
+
+f_birads_phy_low_per_group = stats.f_oneway(df025,
+	                                          df026,
+	                                          df026,
+	                                          df028)
 
 
-# print(f_birads_phy_low_per_group)
+print(f_birads_phy_low_per_group)
 
 # ============================================== #
 # ============================================== #
