@@ -103,14 +103,14 @@ sys.stdout = f_birads
 
 print(c010)
 print(tc001, fne003, fne105)
-birads_assis_low_grp = df_birads_assis[fne105].groupby(df_nasatlx_crrnt[fne012])
+birads_assis_low_grp = df_birads_assis[fne105].groupby(df_birads_assis[fne012])
 rp_birads_assis_low = rp.summary_cont(birads_assis_low_grp)
 print(rp_birads_assis_low)
 print(c010)
 
 print(c010)
 print(tc001, fne004, fne105)
-birads_phy_low_grp = df_birads_phy[fne105].groupby(df_nasatlx_crrnt[fne012])
+birads_phy_low_grp = df_birads_phy[fne105].groupby(df_birads_phy[fne012])
 rp_birads_phy_low = rp.summary_cont(birads_phy_low_grp)
 print(rp_birads_phy_low)
 print(c010)
@@ -125,14 +125,14 @@ print(c010)
 
 print(c010)
 print(tc001, fne003, fne104)
-birads_assis_md_grp = df_birads_assis[fne104].groupby(df_nasatlx_crrnt[fne012])
+birads_assis_md_grp = df_birads_assis[fne104].groupby(df_birads_assis[fne012])
 rp_birads_assis_medium = rp.summary_cont(birads_assis_md_grp)
 print(rp_birads_assis_medium)
 print(c010)
 
 print(c010)
 print(tc001, fne004, fne104)
-birads_phy_med_grp = df_birads_phy[fne104].groupby(df_nasatlx_crrnt[fne012])
+birads_phy_med_grp = df_birads_phy[fne104].groupby(df_birads_phy[fne012])
 rp_birads_phy_medium = rp.summary_cont(birads_phy_med_grp)
 print(rp_birads_phy_medium)
 print(c010)
@@ -147,14 +147,14 @@ print(c010)
 
 print(c010)
 print(tc001, fne003, fne103)
-birads_assis_high_grp = df_birads_assis[fne103].groupby(df_nasatlx_crrnt[fne012])
+birads_assis_high_grp = df_birads_assis[fne103].groupby(df_birads_assis[fne012])
 rp_birads_assis_high = rp.summary_cont(birads_assis_high_grp)
 print(rp_birads_assis_high)
 print(c010)
 
 print(c010)
 print(tc001, fne004, fne103)
-birads_phy_high_grp = df_birads_phy[fne103].groupby(df_nasatlx_crrnt[fne012])
+birads_phy_high_grp = df_birads_phy[fne103].groupby(df_birads_phy[fne012])
 rp_birads_phy_high = rp.summary_cont(birads_phy_high_grp)
 print(rp_birads_phy_high)
 print(c010)
@@ -197,15 +197,112 @@ sys.stdout = f_nasatlx
 # +++++++++++++++++++ MD +++++++++++++++++++++++ #
 
 print(c010)
+print(tc003, fne004, fne301)
 nasatlx_crrnt_md_grp = df_nasatlx_crrnt[fne301].groupby(df_nasatlx_crrnt[fne012])
 rp_nasatlx_crrnt_mendem = rp.summary_cont(nasatlx_crrnt_md_grp)
 print(rp_nasatlx_crrnt_mendem)
 print(c010)
 
 print(c010)
-nasatlx_assis_md_grp = df_nasatlx_assis[fne301].groupby(df_nasatlx_crrnt[fne012])
+print(tc003, fne003, fne301)
+nasatlx_assis_md_grp = df_nasatlx_assis[fne301].groupby(df_nasatlx_assis[fne012])
 rp_nasatlx_assis_mendem = rp.summary_cont(nasatlx_assis_md_grp)
 print(rp_nasatlx_assis_mendem)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# +++++++++++++++++++ PD +++++++++++++++++++++++ #
+
+print(c010)
+print(tc003, fne004, fne302)
+nasatlx_crrnt_pd_grp = df_nasatlx_crrnt[fne302].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_crrnt_phydem = rp.summary_cont(nasatlx_crrnt_pd_grp)
+print(rp_nasatlx_crrnt_phydem)
+print(c010)
+
+print(c010)
+print(tc003, fne003, fne302)
+nasatlx_assis_pd_grp = df_nasatlx_assis[fne302].groupby(df_nasatlx_assis[fne012])
+rp_nasatlx_assis_phydem = rp.summary_cont(nasatlx_assis_pd_grp)
+print(rp_nasatlx_assis_phydem)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# +++++++++++++++++++ TD +++++++++++++++++++++++ #
+
+print(c010)
+print(tc003, fne004, fne303)
+nasatlx_crrnt_tm_grp = df_nasatlx_crrnt[fne303].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_crrnt_tmpdem = rp.summary_cont(nasatlx_crrnt_tm_grp)
+print(rp_nasatlx_crrnt_tmpdem)
+print(c010)
+
+print(c010)
+print(tc003, fne003, fne303)
+nasatlx_assis_tm_grp = df_nasatlx_assis[fne303].groupby(df_nasatlx_assis[fne012])
+rp_nasatlx_assis_tmpdem = rp.summary_cont(nasatlx_assis_tm_grp)
+print(rp_nasatlx_assis_tmpdem)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++ Performance +++++++++++++++++++ #
+
+print(c010)
+print(tc003, fne004, fne304)
+nasatlx_crrnt_pr_grp = df_nasatlx_crrnt[fne304].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_crrnt_prf = rp.summary_cont(nasatlx_crrnt_pr_grp)
+print(rp_nasatlx_crrnt_prf)
+print(c010)
+
+print(c010)
+print(tc003, fne003, fne304)
+nasatlx_assis_pr_grp = df_nasatlx_assis[fne304].groupby(df_nasatlx_assis[fne012])
+rp_nasatlx_assis_prf = rp.summary_cont(nasatlx_assis_pr_grp)
+print(rp_nasatlx_assis_prf)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ Effort ++++++++++++++++++++++ #
+
+print(c010)
+print(tc003, fne004, fne305)
+nasatlx_crrnt_ef_grp = df_nasatlx_crrnt[fne305].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_crrnt_effrt = rp.summary_cont(nasatlx_crrnt_ef_grp)
+print(rp_nasatlx_crrnt_effrt)
+print(c010)
+
+print(c010)
+print(tc003, fne003, fne305)
+nasatlx_assis_ef_grp = df_nasatlx_assis[fne305].groupby(df_nasatlx_assis[fne012])
+rp_nasatlx_assis_effrt = rp.summary_cont(nasatlx_assis_ef_grp)
+print(rp_nasatlx_assis_effrt)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# +++++++++++++++ Frustration ++++++++++++++++++ #
+
+print(c010)
+print(tc003, fne004, fne306)
+nasatlx_crrnt_ft_grp = df_nasatlx_crrnt[fne306].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_crrnt_frtr = rp.summary_cont(nasatlx_crrnt_ft_grp)
+print(rp_nasatlx_crrnt_frtr)
+print(c010)
+
+print(c010)
+print(tc003, fne003, fne306)
+nasatlx_assis_ft_grp = df_nasatlx_assis[fne306].groupby(df_nasatlx_assis[fne012])
+rp_nasatlx_assis_frtr = rp.summary_cont(nasatlx_assis_ft_grp)
+print(rp_nasatlx_assis_frtr)
 print(c010)
 
 # ============================================== #

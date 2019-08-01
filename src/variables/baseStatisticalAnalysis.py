@@ -81,7 +81,7 @@ fne203 = 'benevolence'
 fne301 = 'mental_demand'
 fne302 = 'physical_demand'
 fne303 = 'temporal_demand'
-fne304 = 'performand'
+fne304 = 'performance'
 fne305 = 'effort'
 fne306 = 'frustration'
 
