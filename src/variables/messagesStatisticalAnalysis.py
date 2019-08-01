@@ -43,8 +43,6 @@ c019 = "["
 c020 = "]"
 c021 = ":"
 
-
-
 fn001 = 'birads'
 fn002 = 'dots'
 fn003 = 'nasatlx'
