@@ -213,6 +213,9 @@ print(c010)
 # ============================================== #
 # ============================================== #
 
+print(c010)
+print(c010)
+
 # +++++++++++++++++++ PD +++++++++++++++++++++++ #
 
 print(c010)
@@ -231,6 +234,9 @@ print(c010)
 
 # ============================================== #
 # ============================================== #
+
+print(c010)
+print(c010)
 
 # +++++++++++++++++++ TD +++++++++++++++++++++++ #
 
@@ -251,6 +257,9 @@ print(c010)
 # ============================================== #
 # ============================================== #
 
+print(c010)
+print(c010)
+
 # ++++++++++++++ Performance +++++++++++++++++++ #
 
 print(c010)
@@ -270,6 +279,9 @@ print(c010)
 # ============================================== #
 # ============================================== #
 
+print(c010)
+print(c010)
+
 # ++++++++++++++++ Effort ++++++++++++++++++++++ #
 
 print(c010)
@@ -288,6 +300,9 @@ print(c010)
 
 # ============================================== #
 # ============================================== #
+
+print(c010)
+print(c010)
 
 # +++++++++++++++ Frustration ++++++++++++++++++ #
 
@@ -352,12 +367,202 @@ f_nasatlx.close()
 #                     SUS                        #
 # ============================================== #
 
-# TODO
+orig_stdout = sys.stdout
+f_sus = open(fp006, 'w')
+sys.stdout = f_sus
 
+# ++++++++++++++++ SUS_01 ++++++++++++++++++++++ #
 
+print(c010)
+print(tc006, fne004, fne601)
+sus_crrnt_sus_01_grp = df_sus_crrnt[fne601].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_01 = rp.summary_cont(sus_crrnt_sus_01_grp)
+print(rp_sus_crrnt_sus_01)
+print(c010)
 
+print(c010)
+print(tc006, fne003, fne601)
+sus_assis_sus_01_grp = df_sus_assis[fne601].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_01 = rp.summary_cont(sus_assis_sus_01_grp)
+print(rp_sus_assis_sus_01)
+print(c010)
 
+# ============================================== #
+# ============================================== #
 
+# ++++++++++++++++ SUS_02 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne602)
+sus_crrnt_sus_02_grp = df_sus_crrnt[fne602].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_02 = rp.summary_cont(sus_crrnt_sus_02_grp)
+print(rp_sus_crrnt_sus_02)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne602)
+sus_assis_sus_02_grp = df_sus_assis[fne602].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_02 = rp.summary_cont(sus_assis_sus_02_grp)
+print(rp_sus_assis_sus_02)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_03 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne603)
+sus_crrnt_sus_03_grp = df_sus_crrnt[fne603].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_03 = rp.summary_cont(sus_crrnt_sus_03_grp)
+print(rp_sus_crrnt_sus_03)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne603)
+sus_assis_sus_03_grp = df_sus_assis[fne603].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_03 = rp.summary_cont(sus_assis_sus_03_grp)
+print(rp_sus_assis_sus_03)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_04 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne604)
+sus_crrnt_sus_04_grp = df_sus_crrnt[fne604].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_04 = rp.summary_cont(sus_crrnt_sus_04_grp)
+print(rp_sus_crrnt_sus_04)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne604)
+sus_assis_sus_04_grp = df_sus_assis[fne604].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_04 = rp.summary_cont(sus_assis_sus_04_grp)
+print(rp_sus_assis_sus_04)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_05 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne605)
+sus_crrnt_sus_05_grp = df_sus_crrnt[fne605].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_05 = rp.summary_cont(sus_crrnt_sus_05_grp)
+print(rp_sus_crrnt_sus_05)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne605)
+sus_assis_sus_05_grp = df_sus_assis[fne605].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_05 = rp.summary_cont(sus_assis_sus_05_grp)
+print(rp_sus_assis_sus_05)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_06 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne606)
+sus_crrnt_sus_06_grp = df_sus_crrnt[fne606].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_06 = rp.summary_cont(sus_crrnt_sus_06_grp)
+print(rp_sus_crrnt_sus_06)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne606)
+sus_assis_sus_06_grp = df_sus_assis[fne606].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_06 = rp.summary_cont(sus_assis_sus_06_grp)
+print(rp_sus_assis_sus_06)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_07 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne607)
+sus_crrnt_sus_07_grp = df_sus_crrnt[fne607].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_07 = rp.summary_cont(sus_crrnt_sus_07_grp)
+print(rp_sus_crrnt_sus_07)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne607)
+sus_assis_sus_07_grp = df_sus_assis[fne607].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_07 = rp.summary_cont(sus_assis_sus_07_grp)
+print(rp_sus_assis_sus_07)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_08 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne608)
+sus_crrnt_sus_08_grp = df_sus_crrnt[fne608].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_08 = rp.summary_cont(sus_crrnt_sus_08_grp)
+print(rp_sus_crrnt_sus_08)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne608)
+sus_assis_sus_08_grp = df_sus_assis[fne608].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_08 = rp.summary_cont(sus_assis_sus_08_grp)
+print(rp_sus_assis_sus_08)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_09 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne609)
+sus_crrnt_sus_09_grp = df_sus_crrnt[fne609].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_09 = rp.summary_cont(sus_crrnt_sus_09_grp)
+print(rp_sus_crrnt_sus_09)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne609)
+sus_assis_sus_09_grp = df_sus_assis[fne609].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_09 = rp.summary_cont(sus_assis_sus_09_grp)
+print(rp_sus_assis_sus_09)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# ++++++++++++++++ SUS_10 ++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fne004, fne610)
+sus_crrnt_sus_10_grp = df_sus_crrnt[fne610].groupby(df_sus_crrnt[fne012])
+rp_sus_crrnt_sus_10 = rp.summary_cont(sus_crrnt_sus_10_grp)
+print(rp_sus_crrnt_sus_10)
+print(c010)
+
+print(c010)
+print(tc006, fne003, fne610)
+sus_assis_sus_10_grp = df_sus_assis[fne610].groupby(df_sus_assis[fne012])
+rp_sus_assis_sus_10 = rp.summary_cont(sus_assis_sus_10_grp)
+print(rp_sus_assis_sus_10)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+sys.stdout = orig_stdout
+f_sus.close()
 
 # ============================================== #
 # ============================================== #
