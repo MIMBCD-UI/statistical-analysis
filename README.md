@@ -12,6 +12,8 @@ To run the various methods available on the `src/methods/` directory, it is need
 
 - The [pip](https://pypi.org/project/pip/) package management tool;
 
+- The [`sheet-reader`](https://github.com/MIMBCD-UI/sheet-reader) (>= [v1.2.1](https://github.com/MIMBCD-UI/sheet-reader/releases/tag/v1.2.1) version) repository;
+
 ## Instructions
 
 The instructions are as follows. We assume that you already have knowledge over [Git](https://git-scm.com/) and [GitHub](https://github.com/). If not, please follow this [support](https://guides.github.com/activities/hello-world/) information. Any need for support, just open a [New issue](https://github.com/MIMBCD-UI/statistical_analysis/issues/new).
