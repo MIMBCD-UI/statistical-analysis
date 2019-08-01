@@ -34,6 +34,10 @@ saSrcConsJoinPath = os.path.join(saSrcAbsPath, 'constants')
 sys.path.append(saSrcConsJoinPath)
 saSrcConsAbsPath = os.path.abspath(saSrcConsJoinPath)
 
+saSrcVarsJoinPath = os.path.join(saSrcAbsPath, 'variables')
+sys.path.append(saSrcVarsJoinPath)
+saSrcVarsAbsPath = os.path.abspath(saSrcVarsJoinPath)
+
 import pandas as pd
 import scipy.stats as stats
 import researchpy as rp
@@ -43,11 +47,20 @@ from statsmodels.formula.api import ols
 import matplotlib.pyplot as plt
 
 from sheets import *
+from baseStatisticalAnalysis import *
+from pathsStatisticalAnalysis import *
+from messagesStatisticalAnalysis import *
 
+# ============================================== #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 # ============================================== #
 #                                                #
 #                       UTA7                     #
 #                                                #
+# ============================================== #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 # ============================================== #
 
 # birads_assis.csv
@@ -73,43 +86,210 @@ from sheets import *
 # time_full_crrnt.csv
 
 # ============================================== #
+#                                                #
 #           UTA7: Current vs Assistant           #
+#                                                #
 # ============================================== #
 
-# NASA-TLX
+# ============================================== #
+#                    BIRADS                      #
+# ============================================== #
 
-rp_nasatlx_crrnt_mendem = rp.summary_cont(df_nasatlx_crrnt['mental_demand'].groupby(df_nasatlx_crrnt['group']))
-print (rp_nasatlx_crrnt_mendem)
+orig_stdout = sys.stdout
+f_birads = open(fp001, 'w')
+sys.stdout = f_birads
 
-rp_nasatlx_assis_mendem = rp.summary_cont(df_nasatlx_assis['mental_demand'].groupby(df_nasatlx_crrnt['group']))
-print (rp_nasatlx_assis_mendem)
+# +++++++++++++++++++ LOW ++++++++++++++++++++++ #
 
-# BIRADS
+print(c010)
+print(tc001, fne003, fne105)
+birads_assis_low_grp = df_birads_assis[fne105].groupby(df_nasatlx_crrnt[fne012])
+rp_birads_assis_low = rp.summary_cont(birads_assis_low_grp)
+print(rp_birads_assis_low)
+print(c010)
 
-rp_birads_assis_low = rp.summary_cont(df_birads_assis['low'].groupby(df_nasatlx_crrnt['group']))
-print (rp_birads_assis_low)
-
-rp_birads_phy_low = rp.summary_cont(df_birads_phy['low'].groupby(df_nasatlx_crrnt['group']))
-print (rp_birads_phy_low)
-
-rp_birads_assis_medium = rp.summary_cont(df_birads_assis['medium'].groupby(df_nasatlx_crrnt['group']))
-print (rp_birads_assis_medium)
-
-rp_birads_phy_medium = rp.summary_cont(df_birads_phy['medium'].groupby(df_nasatlx_crrnt['group']))
-print (rp_birads_phy_medium)
-
-rp_birads_assis_high = rp.summary_cont(df_birads_assis['high'].groupby(df_nasatlx_crrnt['group']))
-print (rp_birads_assis_high)
-
-rp_birads_phy_high = rp.summary_cont(df_birads_phy['high'].groupby(df_nasatlx_crrnt['group']))
-print (rp_birads_phy_high)
+print(c010)
+print(tc001, fne004, fne105)
+birads_phy_low_grp = df_birads_phy[fne105].groupby(df_nasatlx_crrnt[fne012])
+rp_birads_phy_low = rp.summary_cont(birads_phy_low_grp)
+print(rp_birads_phy_low)
+print(c010)
 
 # ============================================== #
 # ============================================== #
 
+print(c010)
+print(c010)
+
+# +++++++++++++++++ MEDIUM +++++++++++++++++++++ #
+
+print(c010)
+print(tc001, fne003, fne104)
+birads_assis_md_grp = df_birads_assis[fne104].groupby(df_nasatlx_crrnt[fne012])
+rp_birads_assis_medium = rp.summary_cont(birads_assis_md_grp)
+print(rp_birads_assis_medium)
+print(c010)
+
+print(c010)
+print(tc001, fne004, fne104)
+birads_phy_med_grp = df_birads_phy[fne104].groupby(df_nasatlx_crrnt[fne012])
+rp_birads_phy_medium = rp.summary_cont(birads_phy_med_grp)
+print(rp_birads_phy_medium)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+print(c010)
+print(c010)
+
+# ++++++++++++++++++ HIGH ++++++++++++++++++++++ #
+
+print(c010)
+print(tc001, fne003, fne103)
+birads_assis_high_grp = df_birads_assis[fne103].groupby(df_nasatlx_crrnt[fne012])
+rp_birads_assis_high = rp.summary_cont(birads_assis_high_grp)
+print(rp_birads_assis_high)
+print(c010)
+
+print(c010)
+print(tc001, fne004, fne103)
+birads_phy_high_grp = df_birads_phy[fne103].groupby(df_nasatlx_crrnt[fne012])
+rp_birads_phy_high = rp.summary_cont(birads_phy_high_grp)
+print(rp_birads_phy_high)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+sys.stdout = orig_stdout
+f_birads.close()
+
 # ============================================== #
 # ============================================== #
 # ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                     DOTS                       #
+# ============================================== #
+
+# TODO
+
+
+
+
+
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                   NASA-TLX                     #
+# ============================================== #
+
+orig_stdout = sys.stdout
+f_nasatlx = open(fp003, 'w')
+sys.stdout = f_nasatlx
+
+# +++++++++++++++++++ MD +++++++++++++++++++++++ #
+
+print(c010)
+nasatlx_crrnt_md_grp = df_nasatlx_crrnt[fne301].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_crrnt_mendem = rp.summary_cont(nasatlx_crrnt_md_grp)
+print(rp_nasatlx_crrnt_mendem)
+print(c010)
+
+print(c010)
+nasatlx_assis_md_grp = df_nasatlx_assis[fne301].groupby(df_nasatlx_crrnt[fne012])
+rp_nasatlx_assis_mendem = rp.summary_cont(nasatlx_assis_md_grp)
+print(rp_nasatlx_assis_mendem)
+print(c010)
+
+# ============================================== #
+# ============================================== #
+
+sys.stdout = orig_stdout
+f_nasatlx.close()
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                     NOC                        #
+# ============================================== #
+
+# TODO
+
+
+
+
+
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                     NOE                        #
+# ============================================== #
+
+# TODO
+
+
+
+
+
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                     SUS                        #
+# ============================================== #
+
+# TODO
+
+
+
+
+
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                    TIME                        #
+# ============================================== #
+
+# TODO
+
+
+
+
+
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 # ============================================== #
 
 # ==================== END File ==================== #
