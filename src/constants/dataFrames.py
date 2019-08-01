@@ -46,9 +46,7 @@ from statsmodels.formula.api import ols
     
 import matplotlib.pyplot as plt
 
-from dataFrames import *
 from sheets import *
-
 from baseStatisticalAnalysis import *
 from pathsStatisticalAnalysis import *
 from messagesStatisticalAnalysis import *
@@ -58,28 +56,6 @@ from messagesStatisticalAnalysis import *
 #                       UTA7                     #
 #                                                #
 # ============================================== #
-
-# birads_assis.csv
-# birads_crrnt.csv
-# birads_phy.csv
-# birads_real.csv
-# dots_assis.csv
-# nasatlx_assis.csv
-# nasatlx_crrnt.csv
-# noc_assis.csv
-# noc_crrnt.csv
-# noe_ce_assis.csv
-# noe_ce_crrnt.csv
-# noe_nce_assis.csv
-# noe_nce_crrnt.csv
-# sus_assis.csv
-# sus_crrnt.csv
-# time_assis_avtr.csv
-# time_assis_dgns.csv
-# time_ext_all.csv
-# time_ext_reg.csv
-# time_full_assis.csv
-# time_full_crrnt.csv
 
 # ============================================== #
 #           UTA7: Current vs Assistant           #
@@ -97,12 +73,10 @@ from messagesStatisticalAnalysis import *
 
 # NASA-TLX
 
-f_birads_phy_low_per_group = stats.f_oneway(df025,
-	                                          df026,
-	                                          df026,
-	                                          df028)
-
-print(f_birads_phy_low_per_group)
+df025 = df_birads_phy[fne103][df_birads_phy[fne012] == fne013]
+df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne014]
+df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne015]
+df028 = df_birads_phy[fne103][df_birads_phy[fne012] == fne016]
 
 # ============================================== #
 # ============================================== #
@@ -124,37 +98,19 @@ print(f_birads_phy_low_per_group)
 
 # Time
 
-orig_stdout = sys.stdout
-f_a_time = open(fp107, 'w')
-sys.stdout = f_a_time
+# ============================================== #
+
+df001 = df_time_full_crrnt[fne105][df_time_full_crrnt[fne012] == fne013]
+df002 = df_time_full_crrnt[fne105][df_time_full_crrnt[fne012] == fne014]
+df003 = df_time_full_crrnt[fne105][df_time_full_crrnt[fne012] == fne015]
+df004 = df_time_full_crrnt[fne105][df_time_full_crrnt[fne012] == fne016]
 
 # ============================================== #
 
-f_time_full_crrnt_low_per_group = stats.f_oneway(df001,
-	                                               df002,
-	                                               df003,
-	                                               df004)
-
-res001 = ols('low ~ C(group)', data=df_time_full_crrnt).fit()
-res001_summ = res001.summary()
-print(res001_summ)
-
-print(c010)
-print(t007, fne002, fne004, fne105)
-print(f_time_full_crrnt_low_per_group)
-print(c010)
-
-# ============================================== #
-
-f_time_full_assis_low_per_group = stats.f_oneway(df013,
-	                                               df014,
-	                                               df015,
-	                                               df016)
-
-print(c010)
-print(t007, fne002, fne003, fne105)
-print(f_time_full_assis_low_per_group)
-print(c010)
+df013 = df_time_full_assis[fne105][df_time_full_assis[fne012] == fne013]
+df014 = df_time_full_assis[fne105][df_time_full_assis[fne012] == fne014]
+df015 = df_time_full_assis[fne105][df_time_full_assis[fne012] == fne015]
+df016 = df_time_full_assis[fne105][df_time_full_assis[fne012] == fne016]
 
 # ============================================== #
 
@@ -162,60 +118,35 @@ print(c010)
 
 # ============================================== #
 
-f_time_full_crrnt_medium_per_group = stats.f_oneway(df005,
-	                                                  df006,
-	                                                  df007,
-	                                                  df008)
-
-print(c010)
-print(t007, fne002, fne004, fne104)
-print(f_time_full_crrnt_medium_per_group)
-print(c010)
+df005 = df_time_full_crrnt[fne104][df_time_full_crrnt[fne012] == fne013]
+df006 = df_time_full_crrnt[fne104][df_time_full_crrnt[fne012] == fne014]
+df007 = df_time_full_crrnt[fne104][df_time_full_crrnt[fne012] == fne015]
+df008 = df_time_full_crrnt[fne104][df_time_full_crrnt[fne012] == fne016]
 
 # ============================================== #
 
-f_time_full_assis_medium_per_group = stats.f_oneway(df017,
-	                                                  df018,
-	                                                  df019,
-	                                                  df020)
-
-print(c010)
-print(t007, fne002, fne003, fne104)
-print(f_time_full_assis_medium_per_group)
-print(c010)
+df017 = df_time_full_assis[fne104][df_time_full_assis[fne012] == fne013]
+df018 = df_time_full_assis[fne104][df_time_full_assis[fne012] == fne014]
+df019 = df_time_full_assis[fne104][df_time_full_assis[fne012] == fne015]
+df020 = df_time_full_assis[fne104][df_time_full_assis[fne012] == fne016]
 
 # ============================================== #
 
-print(c010)
+# ============================================== #
+
+df009 = df_time_full_crrnt[fne103][df_time_full_crrnt[fne012] == fne013]
+df010 = df_time_full_crrnt[fne103][df_time_full_crrnt[fne012] == fne014]
+df011 = df_time_full_crrnt[fne103][df_time_full_crrnt[fne012] == fne015]
+df012 = df_time_full_crrnt[fne103][df_time_full_crrnt[fne012] == fne016]
 
 # ============================================== #
 
-f_time_full_crrnt_high_per_group = stats.f_oneway(df009,
-	                                                df010,
-	                                                df011,
-	                                                df012)
-
-print(c010)
-print(t007, fne002, fne004, fne103)
-print(f_time_full_crrnt_high_per_group)
-print(c010)
+df021 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne013]
+df022 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne014]
+df023 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne015]
+df024 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne016]
 
 # ============================================== #
-
-f_time_full_assis_high_per_group = stats.f_oneway(df021,
-	                                                df022,
-	                                                df023,
-	                                                df024)
-
-print(c010)
-print(t007, fne002, fne003, fne103)
-print(f_time_full_assis_high_per_group)
-print(c010)
-
-# ============================================== #
-
-sys.stdout = orig_stdout
-f_a_time.close()
 
 # ============================================== #
 # ============================================== #

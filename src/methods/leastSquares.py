@@ -59,28 +59,6 @@ from messagesStatisticalAnalysis import *
 #                                                #
 # ============================================== #
 
-# birads_assis.csv
-# birads_crrnt.csv
-# birads_phy.csv
-# birads_real.csv
-# dots_assis.csv
-# nasatlx_assis.csv
-# nasatlx_crrnt.csv
-# noc_assis.csv
-# noc_crrnt.csv
-# noe_ce_assis.csv
-# noe_ce_crrnt.csv
-# noe_nce_assis.csv
-# noe_nce_crrnt.csv
-# sus_assis.csv
-# sus_crrnt.csv
-# time_assis_avtr.csv
-# time_assis_dgns.csv
-# time_ext_all.csv
-# time_ext_reg.csv
-# time_full_assis.csv
-# time_full_crrnt.csv
-
 # ============================================== #
 #           UTA7: Current vs Assistant           #
 # ============================================== #
@@ -96,13 +74,6 @@ from messagesStatisticalAnalysis import *
 # ============================================== #
 
 # NASA-TLX
-
-f_birads_phy_low_per_group = stats.f_oneway(df025,
-	                                          df026,
-	                                          df026,
-	                                          df028)
-
-print(f_birads_phy_low_per_group)
 
 # ============================================== #
 # ============================================== #
@@ -125,97 +96,21 @@ print(f_birads_phy_low_per_group)
 # Time
 
 orig_stdout = sys.stdout
-f_a_time = open(fp107, 'w')
-sys.stdout = f_a_time
+f_ls_time = open(fp207, 'w')
+sys.stdout = f_ls_time
 
 # ============================================== #
-
-f_time_full_crrnt_low_per_group = stats.f_oneway(df001,
-	                                               df002,
-	                                               df003,
-	                                               df004)
 
 res001 = ols('low ~ C(group)', data=df_time_full_crrnt).fit()
 res001_summ = res001.summary()
 print(res001_summ)
 
-print(c010)
-print(t007, fne002, fne004, fne105)
-print(f_time_full_crrnt_low_per_group)
-print(c010)
-
 # ============================================== #
-
-f_time_full_assis_low_per_group = stats.f_oneway(df013,
-	                                               df014,
-	                                               df015,
-	                                               df016)
-
-print(c010)
-print(t007, fne002, fne003, fne105)
-print(f_time_full_assis_low_per_group)
-print(c010)
-
-# ============================================== #
-
-print(c010)
-
-# ============================================== #
-
-f_time_full_crrnt_medium_per_group = stats.f_oneway(df005,
-	                                                  df006,
-	                                                  df007,
-	                                                  df008)
-
-print(c010)
-print(t007, fne002, fne004, fne104)
-print(f_time_full_crrnt_medium_per_group)
-print(c010)
-
-# ============================================== #
-
-f_time_full_assis_medium_per_group = stats.f_oneway(df017,
-	                                                  df018,
-	                                                  df019,
-	                                                  df020)
-
-print(c010)
-print(t007, fne002, fne003, fne104)
-print(f_time_full_assis_medium_per_group)
-print(c010)
-
-# ============================================== #
-
-print(c010)
-
-# ============================================== #
-
-f_time_full_crrnt_high_per_group = stats.f_oneway(df009,
-	                                                df010,
-	                                                df011,
-	                                                df012)
-
-print(c010)
-print(t007, fne002, fne004, fne103)
-print(f_time_full_crrnt_high_per_group)
-print(c010)
-
-# ============================================== #
-
-f_time_full_assis_high_per_group = stats.f_oneway(df021,
-	                                                df022,
-	                                                df023,
-	                                                df024)
-
-print(c010)
-print(t007, fne002, fne003, fne103)
-print(f_time_full_assis_high_per_group)
-print(c010)
 
 # ============================================== #
 
 sys.stdout = orig_stdout
-f_a_time.close()
+f_ls_time.close()
 
 # ============================================== #
 # ============================================== #
