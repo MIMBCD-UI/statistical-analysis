@@ -62,8 +62,6 @@ import chart_studio.plotly as py
 import plotly.graph_objs as go
 from plotly import figure_factory as FF
 
-plotly.tools.set_credentials_file(username='FMCalisto', api_key='nYNjIeeTiMtCSI24Hnav')
-
 import pandas as pd
 import scipy
 from scipy import stats
