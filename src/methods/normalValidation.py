@@ -101,6 +101,25 @@ print(c001)
 
 # +++++++++++++++++ Current ++++++++++++++++++++ #
 
+dfbc_birads_low = df_birads_crrnt[fne105]
+dfbc_birads_med = df_birads_crrnt[fne104]
+dfbc_birads_hgh = df_birads_crrnt[fne103]
+
+n_birads_crrnt_low = stats.normaltest(dfbc_birads_low)
+n_birads_crrnt_med = stats.normaltest(dfbc_birads_med)
+n_birads_crrnt_hgh = stats.normaltest(dfbc_birads_hgh)
+
+nbclow_k2, nbclow_p = stats.normaltest(dfbc_birads_low)
+nbcmed_k2, nbcmed_p = stats.normaltest(dfbc_birads_med)
+nbchgh_k2, nbchgh_p = stats.normaltest(dfbc_birads_hgh)
+
+print(c010)
+print(fne004)
+print(n_birads_crrnt_low)
+print(n_birads_crrnt_med)
+print(n_birads_crrnt_hgh)
+print(c010)
+
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # +++++++++++++++++++ Real +++++++++++++++++++++ #
@@ -108,6 +127,25 @@ print(c001)
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ++++++++++++++++ Physician +++++++++++++++++++ #
+
+dfbp_birads_low = df_birads_phy[fne105]
+dfbp_birads_med = df_birads_phy[fne104]
+dfbp_birads_hgh = df_birads_phy[fne103]
+
+n_birads_phy_low = stats.normaltest(dfbp_birads_low)
+n_birads_phy_med = stats.normaltest(dfbp_birads_med)
+n_birads_phy_hgh = stats.normaltest(dfbp_birads_hgh)
+
+nbplow_k2, nbplow_p = stats.normaltest(dfbp_birads_low)
+nbpmed_k2, nbpmed_p = stats.normaltest(dfbp_birads_med)
+nbphgh_k2, nbphgh_p = stats.normaltest(dfbp_birads_hgh)
+
+print(c010)
+print(fne011)
+print(n_birads_phy_low)
+print(n_birads_phy_med)
+print(n_birads_phy_hgh)
+print(c010)
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
