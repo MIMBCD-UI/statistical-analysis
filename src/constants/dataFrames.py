@@ -63,6 +63,11 @@ from messagesStatisticalAnalysis import *
 
 # BIRADS
 
+df025 = df_birads_phy[fne103][df_birads_phy[fne012] == fne013]
+df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne014]
+df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne015]
+df028 = df_birads_phy[fne103][df_birads_phy[fne012] == fne016]
+
 # ============================================== #
 # ============================================== #
 
@@ -72,11 +77,6 @@ from messagesStatisticalAnalysis import *
 # ============================================== #
 
 # NASA-TLX
-
-df025 = df_birads_phy[fne103][df_birads_phy[fne012] == fne013]
-df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne014]
-df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne015]
-df028 = df_birads_phy[fne103][df_birads_phy[fne012] == fne016]
 
 # ============================================== #
 # ============================================== #
@@ -113,8 +113,6 @@ df015 = df_time_full_assis[fne105][df_time_full_assis[fne012] == fne015]
 df016 = df_time_full_assis[fne105][df_time_full_assis[fne012] == fne016]
 
 # ============================================== #
-
-print(c010)
 
 # ============================================== #
 

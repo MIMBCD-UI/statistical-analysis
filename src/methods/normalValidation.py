@@ -6,9 +6,9 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.0.0"
+__version__     = "2.0.0"
 __status__      = "Production"
-__copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
+__copyright__   = "Copyright 2019, Instituto Superior Técnico (IST)"
 __credits__     = [
   "Carlos Santiago",
   "Jacinto C. Nascimento",
@@ -22,8 +22,16 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_constants_dir = (pathAbsPath + '/statistical-analysis/src/constants/')
-sa_methods_dir = (pathAbsPath + '/statistical-analysis/src/methods/')
+saJoinPath = os.path.join(pathAbsPath, 'statistical-analysis', '')
+saPathAbsPath = os.path.abspath(saJoinPath)
+sys.path.append(saPathAbsPath)
+
+saSrcJoinPath = os.path.join(saPathAbsPath, 'src', '')
+saSrcPathAbsPath = os.path.abspath(saSrcJoinPath)
+sys.path.append(saSrcPathAbsPath)
+
+sa_constants_dir = os.path.join(saSrcPathAbsPath, 'constants')
+sa_methods_dir = os.path.join(saSrcPathAbsPath, 'methods')
 
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
@@ -32,9 +40,418 @@ from special import *
 from listGroups import *
 from kDagostPear import *
 
+from dataFrames import *
+from sheets import *
+
+from baseStatisticalAnalysis import *
+from pathsStatisticalAnalysis import *
+from messagesStatisticalAnalysis import *
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
 # ============================================== #
 #                                                #
 #              NORMAL VALIDATION                 #
+#                                                #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+# ============================================== #
+#                                                #
+#                       UTA7                     #
+#                                                #
+# ============================================== #
+
+# birads_assis.csv
+# birads_crrnt.csv
+# birads_phy.csv
+# birads_real.csv
+# dots_assis.csv
+# nasatlx_assis.csv
+# nasatlx_crrnt.csv
+# noc_assis.csv
+# noc_crrnt.csv
+# noe_ce_assis.csv
+# noe_ce_crrnt.csv
+# noe_nce_assis.csv
+# noe_nce_crrnt.csv
+# sus_assis.csv
+# sus_crrnt.csv
+# time_assis_avtr.csv
+# time_assis_dgns.csv
+# time_ext_all.csv
+# time_ext_reg.csv
+# time_full_assis.csv
+# time_full_crrnt.csv
+
+# ============================================== #
+#           UTA7: Current vs Assistant           #
+# ============================================== #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                   BIRADS                       #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c010)
+print(tc001, fn008)
+
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                    DOTS                        #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c010)
+print(tc002, fn008)
+
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                  NASA-TLX                      #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c010)
+print(tc003, fn008)
+
+# +++++++++++++++++ Current ++++++++++++++++++++ #
+
+print(c010)
+
+print(fne004)
+
+dfnc_nasatlx_md = df_nasatlx_crrnt[fne301]
+dfnc_nasatlx_pd = df_nasatlx_crrnt[fne302]
+dfnc_nasatlx_td = df_nasatlx_crrnt[fne303]
+dfnc_nasatlx_pe = df_nasatlx_crrnt[fne304]
+dfnc_nasatlx_ef = df_nasatlx_crrnt[fne305]
+dfnc_nasatlx_fr = df_nasatlx_crrnt[fne306]
+
+n_nasatlx_crrnt_md = stats.normaltest(dfnc_nasatlx_md)
+n_nasatlx_crrnt_pd = stats.normaltest(dfnc_nasatlx_pd)
+n_nasatlx_crrnt_td = stats.normaltest(dfnc_nasatlx_td)
+n_nasatlx_crrnt_pe = stats.normaltest(dfnc_nasatlx_pe)
+n_nasatlx_crrnt_ef = stats.normaltest(dfnc_nasatlx_ef)
+n_nasatlx_crrnt_fr = stats.normaltest(dfnc_nasatlx_fr)
+
+nncmd_k2, nncmd_p = stats.normaltest(dfnc_nasatlx_md)
+nncpd_k2, nncpd_p = stats.normaltest(dfnc_nasatlx_pd)
+nnctd_k2, nnctd_p = stats.normaltest(dfnc_nasatlx_td)
+nncpe_k2, nncpe_p = stats.normaltest(dfnc_nasatlx_pe)
+nncef_k2, nncef_p = stats.normaltest(dfnc_nasatlx_ef)
+nncfr_k2, nncfr_p = stats.normaltest(dfnc_nasatlx_fr)
+
+print(n_nasatlx_crrnt_md)
+print(n_nasatlx_crrnt_pd)
+print(n_nasatlx_crrnt_td)
+print(n_nasatlx_crrnt_pe)
+print(n_nasatlx_crrnt_ef)
+print(n_nasatlx_crrnt_fr)
+
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++ Assistant +++++++++++++++++++ #
+
+print(c010)
+
+print(fne003)
+
+dfna_nasatlx_md = df_nasatlx_assis[fne301]
+dfna_nasatlx_pd = df_nasatlx_assis[fne302]
+dfna_nasatlx_td = df_nasatlx_assis[fne303]
+dfna_nasatlx_pe = df_nasatlx_assis[fne304]
+dfna_nasatlx_ef = df_nasatlx_assis[fne305]
+dfna_nasatlx_fr = df_nasatlx_assis[fne306]
+
+n_nasatlx_assis_md = stats.normaltest(dfna_nasatlx_md)
+n_nasatlx_assis_pd = stats.normaltest(dfna_nasatlx_pd)
+n_nasatlx_assis_td = stats.normaltest(dfna_nasatlx_td)
+n_nasatlx_assis_pe = stats.normaltest(dfna_nasatlx_pe)
+n_nasatlx_assis_ef = stats.normaltest(dfna_nasatlx_ef)
+n_nasatlx_assis_fr = stats.normaltest(dfna_nasatlx_fr)
+
+nnamd_k2, nnamd_p = stats.normaltest(dfna_nasatlx_md)
+nnapd_k2, nnapd_p = stats.normaltest(dfna_nasatlx_pd)
+nnatd_k2, nnatd_p = stats.normaltest(dfna_nasatlx_td)
+nnape_k2, nnape_p = stats.normaltest(dfna_nasatlx_pe)
+nnaef_k2, nnaef_p = stats.normaltest(dfna_nasatlx_ef)
+nnafr_k2, nnafr_p = stats.normaltest(dfna_nasatlx_fr)
+
+print(n_nasatlx_assis_md)
+print(n_nasatlx_assis_pd)
+print(n_nasatlx_assis_td)
+print(n_nasatlx_assis_pe)
+print(n_nasatlx_assis_ef)
+print(n_nasatlx_assis_fr)
+
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                    NOC                         #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c010)
+print(tc004, fn008)
+
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                    NOE                         #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c010)
+print(tc005, fn008)
+
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                    SUS                         #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c010)
+print(tc006, fn008)
+
+# ++++++++++++++++ Current +++++++++++++++++++++ #
+
+print(c010)
+
+print(fne004)
+
+dfsc_sus_01 = df_sus_crrnt[fne601]
+dfsc_sus_02 = df_sus_crrnt[fne602]
+dfsc_sus_03 = df_sus_crrnt[fne603]
+dfsc_sus_04 = df_sus_crrnt[fne604]
+dfsc_sus_05 = df_sus_crrnt[fne605]
+dfsc_sus_06 = df_sus_crrnt[fne606]
+dfsc_sus_07 = df_sus_crrnt[fne607]
+dfsc_sus_08 = df_sus_crrnt[fne608]
+dfsc_sus_09 = df_sus_crrnt[fne609]
+dfsc_sus_10 = df_sus_crrnt[fne610]
+
+n_sus_crrnt_sus_01 = stats.normaltest(dfsc_sus_01)
+n_sus_crrnt_sus_02 = stats.normaltest(dfsc_sus_02)
+n_sus_crrnt_sus_03 = stats.normaltest(dfsc_sus_03)
+n_sus_crrnt_sus_04 = stats.normaltest(dfsc_sus_04)
+n_sus_crrnt_sus_05 = stats.normaltest(dfsc_sus_05)
+n_sus_crrnt_sus_06 = stats.normaltest(dfsc_sus_06)
+n_sus_crrnt_sus_07 = stats.normaltest(dfsc_sus_07)
+n_sus_crrnt_sus_08 = stats.normaltest(dfsc_sus_08)
+n_sus_crrnt_sus_09 = stats.normaltest(dfsc_sus_09)
+n_sus_crrnt_sus_10 = stats.normaltest(dfsc_sus_10)
+
+nscs_01_k2, nscs_01_p = stats.normaltest(dfsc_sus_01)
+nscs_02_k2, nscs_02_p = stats.normaltest(dfsc_sus_02)
+nscs_03_k2, nscs_03_p = stats.normaltest(dfsc_sus_03)
+nscs_04_k2, nscs_04_p = stats.normaltest(dfsc_sus_04)
+nscs_05_k2, nscs_05_p = stats.normaltest(dfsc_sus_05)
+nscs_06_k2, nscs_06_p = stats.normaltest(dfsc_sus_06)
+nscs_07_k2, nscs_07_p = stats.normaltest(dfsc_sus_07)
+nscs_08_k2, nscs_08_p = stats.normaltest(dfsc_sus_08)
+nscs_09_k2, nscs_09_p = stats.normaltest(dfsc_sus_09)
+nscs_10_k2, nscs_10_p = stats.normaltest(dfsc_sus_10)
+
+print(n_sus_crrnt_sus_01)
+print(n_sus_crrnt_sus_02)
+print(n_sus_crrnt_sus_03)
+print(n_sus_crrnt_sus_04)
+print(n_sus_crrnt_sus_05)
+print(n_sus_crrnt_sus_06)
+print(n_sus_crrnt_sus_07)
+print(n_sus_crrnt_sus_08)
+print(n_sus_crrnt_sus_09)
+print(n_sus_crrnt_sus_10)
+
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c001)
+
+# +++++++++++++++ Assistant ++++++++++++++++++++ #
+
+print(c010)
+
+print(fne003)
+
+dfsa_sus_01 = df_sus_assis[fne601]
+dfsa_sus_02 = df_sus_assis[fne602]
+dfsa_sus_03 = df_sus_assis[fne603]
+dfsa_sus_04 = df_sus_assis[fne604]
+dfsa_sus_05 = df_sus_assis[fne605]
+dfsa_sus_06 = df_sus_assis[fne606]
+dfsa_sus_07 = df_sus_assis[fne607]
+dfsa_sus_08 = df_sus_assis[fne608]
+dfsa_sus_09 = df_sus_assis[fne609]
+dfsa_sus_10 = df_sus_assis[fne610]
+
+n_sus_assis_sus_01 = stats.normaltest(dfsa_sus_01)
+n_sus_assis_sus_02 = stats.normaltest(dfsa_sus_02)
+n_sus_assis_sus_03 = stats.normaltest(dfsa_sus_03)
+n_sus_assis_sus_04 = stats.normaltest(dfsa_sus_04)
+n_sus_assis_sus_05 = stats.normaltest(dfsa_sus_05)
+n_sus_assis_sus_06 = stats.normaltest(dfsa_sus_06)
+n_sus_assis_sus_07 = stats.normaltest(dfsa_sus_07)
+n_sus_assis_sus_08 = stats.normaltest(dfsa_sus_08)
+n_sus_assis_sus_09 = stats.normaltest(dfsa_sus_09)
+n_sus_assis_sus_10 = stats.normaltest(dfsa_sus_10)
+
+nsas_01_k2, nsas_01_p = stats.normaltest(dfsa_sus_01)
+nsas_02_k2, nsas_02_p = stats.normaltest(dfsa_sus_02)
+nsas_03_k2, nsas_03_p = stats.normaltest(dfsa_sus_03)
+nsas_04_k2, nsas_04_p = stats.normaltest(dfsa_sus_04)
+nsas_05_k2, nsas_05_p = stats.normaltest(dfsa_sus_05)
+nsas_06_k2, nsas_06_p = stats.normaltest(dfsa_sus_06)
+nsas_07_k2, nsas_07_p = stats.normaltest(dfsa_sus_07)
+nsas_08_k2, nsas_08_p = stats.normaltest(dfsa_sus_08)
+nsas_09_k2, nsas_09_p = stats.normaltest(dfsa_sus_09)
+nsas_10_k2, nsas_10_p = stats.normaltest(dfsa_sus_10)
+
+print(n_sus_assis_sus_01)
+print(n_sus_assis_sus_02)
+print(n_sus_assis_sus_03)
+print(n_sus_assis_sus_04)
+print(n_sus_assis_sus_05)
+print(n_sus_assis_sus_06)
+print(n_sus_assis_sus_07)
+print(n_sus_assis_sus_08)
+print(n_sus_assis_sus_09)
+print(n_sus_assis_sus_10)
+
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                 Time - Full                    #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# +++++++++++++++++ Current ++++++++++++++++++++ #
+
+dftfc_low = df_time_full_crrnt[fne105]
+dftfc_med = df_time_full_crrnt[fne104]
+dftfc_hgh = df_time_full_crrnt[fne103]
+
+n_time_full_crrnt_low = stats.normaltest(dftfc_low)
+n_time_full_crrnt_med = stats.normaltest(dftfc_med)
+n_time_full_crrnt_hgh = stats.normaltest(dftfc_hgh)
+
+ntfcl_k2, ntfcl_p = stats.normaltest(dftfc_low)
+ntfcm_k2, ntfcm_p = stats.normaltest(dftfc_med)
+ntfch_k2, ntfch_p = stats.normaltest(dftfc_hgh)
+
+print(c010)
+print(tc007, fn008)
+
+print(c023)
+print(fn007, fne004, fne105)
+print(n_time_full_crrnt_low)
+print(c023)
+print(fn007, fne004, fne104)
+print(n_time_full_crrnt_med)
+print(c023)
+print(fn007, fne004, fne103)
+print(n_time_full_crrnt_hgh)
+print(c023)
+
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+print(c001)
+
+# ++++++++++++++++ Assistant +++++++++++++++++++ #
+
+dftfa_low = df_time_full_assis[fne105]
+dftfa_med = df_time_full_assis[fne104]
+dftfa_hgh = df_time_full_assis[fne103]
+
+n_time_full_assis_low = stats.normaltest(dftfa_low)
+n_time_full_assis_med = stats.normaltest(dftfa_med)
+n_time_full_assis_hgh = stats.normaltest(dftfa_hgh)
+
+ntfal_k2, ntfal_p = stats.normaltest(dftfa_low)
+ntfam_k2, ntfam_p = stats.normaltest(dftfa_med)
+ntfah_k2, ntfah_p = stats.normaltest(dftfa_hgh)
+
+print(c010)
+print(tc007, fn008)
+
+print(c023)
+print(fn007, fne003, fne105)
+print(n_time_full_assis_low)
+print(c023)
+print(fn007, fne003, fne104)
+print(n_time_full_assis_med)
+print(c023)
+print(fn007, fne003, fne103)
+print(n_time_full_assis_hgh)
+print(c023)
+
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ============================================== #
+
+# ============================================== #
+# ============================================== #
+# ============================================== #
+# ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
+# ============================================== #
+#                                                #
+#                       UTA4                     #
 #                                                #
 # ============================================== #
 
@@ -266,3 +683,5 @@ kDagostPear(s_min, s_max)
 
 # ============================================== #
 # ============================================== #
+
+# ==================== END File ==================== #

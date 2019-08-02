@@ -1,10 +1,21 @@
+==============================
+                 sum_sq    df       mean_sq         F    PR(>F)    eta_sq  omega_sq
+C(group)   64243.219372   3.0  21414.406457  3.252569  0.031255  0.192241  0.130564
+Residual  269937.580628  41.0   6583.843430       NaN       NaN       NaN       NaN
+==============================
+{'jb': 2.9096660333768534, 'jbpv': 0.23343934112102, 'skew': 0.6164358867656349, 'kurtosis': 2.821536909985519, 'omni': 3.2543435328485155, 'omnipv': 0.19648449307724422, 'condno': 4.714599429068059, 'mineigval': 2.4333174901243795}
+==============================
+===========================================================================
+===========================================================================
+==============================
+TIME full current low
                             OLS Regression Results                            
 ==============================================================================
 Dep. Variable:                    low   R-squared:                       0.192
 Model:                            OLS   Adj. R-squared:                  0.133
 Method:                 Least Squares   F-statistic:                     3.253
 Date:                Thu, 01 Aug 2019   Prob (F-statistic):             0.0313
-Time:                        16:05:26   Log-Likelihood:                -259.59
+Time:                        17:10:57   Log-Likelihood:                -259.59
 No. Observations:                  45   AIC:                             527.2
 Df Residuals:                      41   BIC:                             534.4
 Df Model:                           3                                         
@@ -25,3 +36,173 @@ Kurtosis:                       2.822   Cond. No.                         4.71
 
 Warnings:
 [1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+==============================
+
+
+===========================================================================
+                 sum_sq    df         F    PR(>F)       mean_sq    eta_sq  omega_sq
+C(group)   64243.219372   3.0  3.252569  0.031255  21414.406457  0.192241  0.130564
+Residual  269937.580628  41.0       NaN       NaN   6583.843430       NaN       NaN
+===========================================================================
+
+
+==============================
+TIME full assistant low
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                    low   R-squared:                       0.057
+Model:                            OLS   Adj. R-squared:                 -0.012
+Method:                 Least Squares   F-statistic:                    0.8309
+Date:                Thu, 01 Aug 2019   Prob (F-statistic):              0.485
+Time:                        17:10:57   Log-Likelihood:                -256.29
+No. Observations:                  45   AIC:                             520.6
+Df Residuals:                      41   BIC:                             527.8
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept            109.0833     21.769      5.011      0.000      65.120     153.047
+C(group)[T.junior]     6.5417     34.420      0.190      0.850     -62.971      76.054
+C(group)[T.middle]   -25.0833     29.666     -0.846      0.403     -84.996      34.829
+C(group)[T.senior]    21.5530     31.478      0.685      0.497     -42.018      85.124
+==============================================================================
+Omnibus:                        4.756   Durbin-Watson:                   2.000
+Prob(Omnibus):                  0.093   Jarque-Bera (JB):                4.609
+Skew:                           0.757   Prob(JB):                       0.0998
+Kurtosis:                       2.593   Cond. No.                         4.71
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+==============================
+
+
+**************************************************
+
+
+==============================
+TIME full current medium
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 medium   R-squared:                       0.070
+Model:                            OLS   Adj. R-squared:                  0.002
+Method:                 Least Squares   F-statistic:                     1.026
+Date:                Thu, 01 Aug 2019   Prob (F-statistic):              0.391
+Time:                        17:10:57   Log-Likelihood:                -236.47
+No. Observations:                  45   AIC:                             480.9
+Df Residuals:                      41   BIC:                             488.2
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept             80.4167     14.015      5.738      0.000      52.112     108.721
+C(group)[T.junior]   -12.6667     22.160     -0.572      0.571     -57.420      32.087
+C(group)[T.middle]    20.0833     19.100      1.052      0.299     -18.489      58.656
+C(group)[T.senior]    17.6742     20.266      0.872      0.388     -23.254      58.602
+==============================================================================
+Omnibus:                       13.590   Durbin-Watson:                   2.918
+Prob(Omnibus):                  0.001   Jarque-Bera (JB):               14.577
+Skew:                           1.154   Prob(JB):                     0.000683
+Kurtosis:                       4.564   Cond. No.                         4.71
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+==============================
+==============================
+TIME full assistant medium
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                 medium   R-squared:                       0.170
+Model:                            OLS   Adj. R-squared:                  0.109
+Method:                 Least Squares   F-statistic:                     2.801
+Date:                Thu, 01 Aug 2019   Prob (F-statistic):             0.0518
+Time:                        17:10:57   Log-Likelihood:                -265.43
+No. Observations:                  45   AIC:                             538.9
+Df Residuals:                      41   BIC:                             546.1
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept            146.1667     26.671      5.480      0.000      92.304     200.029
+C(group)[T.junior]   -40.6667     42.170     -0.964      0.341    -125.831      44.497
+C(group)[T.middle]   -95.5238     36.346     -2.628      0.012    -168.926     -22.122
+C(group)[T.senior]   -10.8030     38.566     -0.280      0.781     -88.688      67.082
+==============================================================================
+Omnibus:                       21.059   Durbin-Watson:                   1.888
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               29.532
+Skew:                           1.528   Prob(JB):                     3.87e-07
+Kurtosis:                       5.531   Cond. No.                         4.71
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+==============================
+
+
+**************************************************
+
+
+==============================
+TIME full current high
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   high   R-squared:                       0.002
+Model:                            OLS   Adj. R-squared:                 -0.072
+Method:                 Least Squares   F-statistic:                   0.02076
+Date:                Thu, 01 Aug 2019   Prob (F-statistic):              0.996
+Time:                        17:10:57   Log-Likelihood:                -252.15
+No. Observations:                  45   AIC:                             512.3
+Df Residuals:                      41   BIC:                             519.5
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept            114.8333     19.855      5.784      0.000      74.735     154.932
+C(group)[T.junior]     5.0417     31.394      0.161      0.873     -58.360      68.443
+C(group)[T.middle]    -0.4762     27.058     -0.018      0.986     -55.121      54.169
+C(group)[T.senior]    -2.8333     28.711     -0.099      0.922     -60.816      55.149
+==============================================================================
+Omnibus:                       23.651   Durbin-Watson:                   2.605
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               43.541
+Skew:                           1.484   Prob(JB):                     3.51e-10
+Kurtosis:                       6.797   Cond. No.                         4.71
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+==============================
+==============================
+TIME full assistant high
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:                   high   R-squared:                       0.083
+Model:                            OLS   Adj. R-squared:                  0.016
+Method:                 Least Squares   F-statistic:                     1.231
+Date:                Thu, 01 Aug 2019   Prob (F-statistic):              0.311
+Time:                        17:10:57   Log-Likelihood:                -262.85
+No. Observations:                  45   AIC:                             533.7
+Df Residuals:                      41   BIC:                             540.9
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+======================================================================================
+                         coef    std err          t      P>|t|      [0.025      0.975]
+--------------------------------------------------------------------------------------
+Intercept            120.5833     25.184      4.788      0.000      69.724     171.443
+C(group)[T.junior]   -51.3333     39.819     -1.289      0.205    -131.749      29.082
+C(group)[T.middle]   -14.5119     34.319     -0.423      0.675     -83.821      54.798
+C(group)[T.senior]   -60.7652     36.415     -1.669      0.103    -134.308      12.777
+==============================================================================
+Omnibus:                       26.362   Durbin-Watson:                   1.337
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):               49.358
+Skew:                           1.682   Prob(JB):                     1.91e-11
+Kurtosis:                       6.874   Cond. No.                         4.71
+==============================================================================
+
+Warnings:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+==============================

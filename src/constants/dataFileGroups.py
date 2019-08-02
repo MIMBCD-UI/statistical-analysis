@@ -56,8 +56,8 @@ from scipy import stats
 #                                                #
 # ============================================== #
 
-datafile_fs = sheet.datafile_fs
-datafile_fm = sheet.datafile_fm
+datafile_fs = sheets.datafile_fs
+datafile_fm = sheets.datafile_fm
 
 # ============================================== #
 #               DATAFILE ITERATORS               #

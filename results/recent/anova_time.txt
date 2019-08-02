@@ -1,30 +1,3 @@
-                            OLS Regression Results                            
-==============================================================================
-Dep. Variable:                    low   R-squared:                       0.192
-Model:                            OLS   Adj. R-squared:                  0.133
-Method:                 Least Squares   F-statistic:                     3.253
-Date:                Thu, 01 Aug 2019   Prob (F-statistic):             0.0313
-Time:                        16:05:03   Log-Likelihood:                -259.59
-No. Observations:                  45   AIC:                             527.2
-Df Residuals:                      41   BIC:                             534.4
-Df Model:                           3                                         
-Covariance Type:            nonrobust                                         
-======================================================================================
-                         coef    std err          t      P>|t|      [0.025      0.975]
---------------------------------------------------------------------------------------
-Intercept            126.3333     23.423      5.393      0.000      79.029     173.638
-C(group)[T.junior]   111.2917     37.036      3.005      0.005      36.497     186.087
-C(group)[T.middle]    22.9524     31.921      0.719      0.476     -41.513      87.417
-C(group)[T.senior]    46.3939     33.870      1.370      0.178     -22.008     114.796
-==============================================================================
-Omnibus:                        3.254   Durbin-Watson:                   2.333
-Prob(Omnibus):                  0.196   Jarque-Bera (JB):                2.910
-Skew:                           0.616   Prob(JB):                        0.233
-Kurtosis:                       2.822   Cond. No.                         4.71
-==============================================================================
-
-Warnings:
-[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
 ==============================
 TIME full current low
 F_onewayResult(statistic=3.252569215123859, pvalue=0.03125489173825423)

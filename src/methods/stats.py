@@ -42,7 +42,10 @@ import pandas as pd
 import scipy.stats as stats
 import researchpy as rp
 import statsmodels.api as sm
+
 from statsmodels.formula.api import ols
+from statsmodels.stats.multicomp import pairwise_tukeyhsd
+from statsmodels.stats.multicomp import MultiComparison
     
 import matplotlib.pyplot as plt
 
@@ -102,9 +105,24 @@ f_birads_phy_low_per_group = stats.f_oneway(df025,
 	                                          df026,
 	                                          df028)
 
+l_birads_phy_low_per_group = stats.levene(df025,
+                                          df026,
+                                          df026,
+                                          df028)
+
+print(c010)
+print(t003, fne002, fne004, fne105)
 print(f_birads_phy_low_per_group)
+print(l_birads_phy_low_per_group)
+print(c010)
 
 # ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
 # ============================================== #
 
 # NOC
@@ -122,11 +140,14 @@ print(f_birads_phy_low_per_group)
 # ============================================== #
 # ============================================== #
 
-# Time
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+#                    Time                        #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 
-orig_stdout = sys.stdout
-f_a_time = open(fp107, 'w')
-sys.stdout = f_a_time
+# ============================================== #
+
+print(c001)
+print(c001)
 
 # ============================================== #
 
@@ -135,13 +156,20 @@ f_time_full_crrnt_low_per_group = stats.f_oneway(df001,
 	                                               df003,
 	                                               df004)
 
-res001 = ols('low ~ C(group)', data=df_time_full_crrnt).fit()
-res001_summ = res001.summary()
-print(res001_summ)
+l_time_full_crrnt_low_per_group = stats.levene(df001,
+                                               df002,
+                                               df003,
+                                               df004)
+
+mc_time_full_crrnt_low_per_group = MultiComparison(df_time_full_crrnt[fne105],
+	                                                 df_time_full_crrnt[fne012])
+mc_res_time_full_crrnt_low_per_group = mc_time_full_crrnt_low_per_group.tukeyhsd()
 
 print(c010)
 print(t007, fne002, fne004, fne105)
 print(f_time_full_crrnt_low_per_group)
+print(l_time_full_crrnt_low_per_group)
+print(mc_res_time_full_crrnt_low_per_group)
 print(c010)
 
 # ============================================== #
@@ -151,14 +179,22 @@ f_time_full_assis_low_per_group = stats.f_oneway(df013,
 	                                               df015,
 	                                               df016)
 
+l_time_full_assis_low_per_group = stats.levene(df013,
+                                               df014,
+                                               df015,
+                                               df016)
+
 print(c010)
 print(t007, fne002, fne003, fne105)
 print(f_time_full_assis_low_per_group)
+print(l_time_full_assis_low_per_group)
 print(c010)
 
 # ============================================== #
 
+print(c001)
 print(c010)
+print(c001)
 
 # ============================================== #
 
@@ -167,9 +203,15 @@ f_time_full_crrnt_medium_per_group = stats.f_oneway(df005,
 	                                                  df007,
 	                                                  df008)
 
+l_time_full_crrnt_medium_per_group = stats.levene(df005,
+                                                  df006,
+                                                  df007,
+                                                  df008)
+
 print(c010)
 print(t007, fne002, fne004, fne104)
 print(f_time_full_crrnt_medium_per_group)
+print(l_time_full_crrnt_medium_per_group)
 print(c010)
 
 # ============================================== #
@@ -179,14 +221,22 @@ f_time_full_assis_medium_per_group = stats.f_oneway(df017,
 	                                                  df019,
 	                                                  df020)
 
+l_time_full_assis_medium_per_group = stats.levene(df017,
+                                                  df018,
+                                                  df019,
+                                                  df020)
+
 print(c010)
 print(t007, fne002, fne003, fne104)
 print(f_time_full_assis_medium_per_group)
+print(l_time_full_assis_medium_per_group)
 print(c010)
 
 # ============================================== #
 
+print(c001)
 print(c010)
+print(c001)
 
 # ============================================== #
 
@@ -195,9 +245,15 @@ f_time_full_crrnt_high_per_group = stats.f_oneway(df009,
 	                                                df011,
 	                                                df012)
 
+l_time_full_crrnt_high_per_group = stats.levene(df009,
+                                                df010,
+                                                df011,
+                                                df012)
+
 print(c010)
 print(t007, fne002, fne004, fne103)
 print(f_time_full_crrnt_high_per_group)
+print(l_time_full_crrnt_high_per_group)
 print(c010)
 
 # ============================================== #
@@ -207,15 +263,18 @@ f_time_full_assis_high_per_group = stats.f_oneway(df021,
 	                                                df023,
 	                                                df024)
 
+l_time_full_assis_high_per_group = stats.levene(df021,
+                                                df022,
+                                                df023,
+                                                df024)
+
 print(c010)
 print(t007, fne002, fne003, fne103)
 print(f_time_full_assis_high_per_group)
+print(l_time_full_assis_high_per_group)
 print(c010)
 
 # ============================================== #
-
-sys.stdout = orig_stdout
-f_a_time.close()
 
 # ============================================== #
 # ============================================== #

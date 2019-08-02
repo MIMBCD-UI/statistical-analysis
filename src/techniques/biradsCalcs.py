@@ -57,9 +57,12 @@ main_sheet_dir = pathAbsPath + '/sheet-reader/data/temp/main_sheet.csv'
 fs_sheet_dir = pathAbsPath + '/sheet-reader/data/temp/fs_sheet.csv'
 fm_sheet_dir = pathAbsPath + '/sheet-reader/data/temp/fm_sheet.csv'
 
-import plotly.plotly as py
+import plotly
+import chart_studio.plotly as py
 import plotly.graph_objs as go
 from plotly import figure_factory as FF
+
+plotly.tools.set_credentials_file(username='FMCalisto', api_key='nYNjIeeTiMtCSI24Hnav')
 
 import pandas as pd
 import scipy
@@ -72,8 +75,8 @@ import statsmodels.api as sm
 from statsmodels.formula.api import ols
 import numpy as np
 
-datafile_fs = sheet.datafile_fs
-datafile_fm = sheet.datafile_fm
+datafile_fs = sheets.datafile_fs
+datafile_fm = sheets.datafile_fm
 
 # ============================================== #
 #                                                #
