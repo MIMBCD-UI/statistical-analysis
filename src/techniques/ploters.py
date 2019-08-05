@@ -110,6 +110,38 @@ datafile_fm = sheets.datafile_fm
 # ++++++++++++++++++ SUS +++++++++++++++++++++++ #
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
+# Odd & Even Number Questions
+
+colors_odd = ['rgba(192, 57, 43, 1.0)',
+              'rgba(230, 126, 34, 1.0)',
+              'rgba(241, 196, 15, 1.0)',
+              'rgba(41, 128, 185, 1.0)',
+              'rgba(39, 174, 96, 1.0)']
+
+colors_even = ['rgba(39, 174, 96, 1.0)',
+               'rgba(41, 128, 185, 1.0)',
+               'rgba(241, 196, 15, 1.0)',
+               'rgba(230, 126, 34, 1.0)',
+               'rgba(192, 57, 43, 1.0)']
+
+y_data_odd = [sq009,
+              sq007,
+              sq005,
+              sq003,
+              sq001]
+
+y_data_even = [sq010,
+               sq008,
+               sq006,
+               sq004,
+               sq002]
+
+top_labels = ['Strongly<br>disagree',
+              'Disagree',
+              'Neutral',
+              'Agree',
+              'Strongly<br>agree']
+
 # ++++++++++++++++ Current +++++++++++++++++++++ #
 
 freq_sus_crrnt_01_1 = df_sus_crrnt[fne601][df_sus_crrnt[fne601] == 1]
@@ -302,37 +334,197 @@ arr_ratio_sus_crrnt_10 = [ratio_sus_crrnt_10_1,
                           ratio_sus_crrnt_10_4,
                           ratio_sus_crrnt_10_5]
 
-top_labels = ['Strongly<br>disagree',
-              'Disagree',
-              'Neutral',
-              'Agree',
-              'Strongly<br>agree']
+# ++++++++++++++++ Assistant +++++++++++++++++++ #
 
-# Odd Number Questions
+freq_sus_assis_01_1 = df_sus_assis[fne601][df_sus_assis[fne601] == 1]
+freq_sus_assis_01_2 = df_sus_assis[fne601][df_sus_assis[fne601] == 2]
+freq_sus_assis_01_3 = df_sus_assis[fne601][df_sus_assis[fne601] == 3]
+freq_sus_assis_01_4 = df_sus_assis[fne601][df_sus_assis[fne601] == 4]
+freq_sus_assis_01_5 = df_sus_assis[fne601][df_sus_assis[fne601] == 5]
 
-colors_odd = ['rgba(192, 57, 43, 1.0)',
-              'rgba(230, 126, 34, 1.0)',
-              'rgba(241, 196, 15, 1.0)',
-              'rgba(41, 128, 185, 1.0)',
-              'rgba(39, 174, 96, 1.0)']
+freq_sus_assis_02_1 = df_sus_assis[fne602][df_sus_assis[fne602] == 1]
+freq_sus_assis_02_2 = df_sus_assis[fne602][df_sus_assis[fne602] == 2]
+freq_sus_assis_02_3 = df_sus_assis[fne602][df_sus_assis[fne602] == 3]
+freq_sus_assis_02_4 = df_sus_assis[fne602][df_sus_assis[fne602] == 4]
+freq_sus_assis_02_5 = df_sus_assis[fne602][df_sus_assis[fne602] == 5]
 
-colors_even = ['rgba(39, 174, 96, 1.0)',
-               'rgba(41, 128, 185, 1.0)',
-               'rgba(241, 196, 15, 1.0)',
-               'rgba(230, 126, 34, 1.0)',
-               'rgba(192, 57, 43, 1.0)']
+freq_sus_assis_03_1 = df_sus_assis[fne603][df_sus_assis[fne603] == 1]
+freq_sus_assis_03_2 = df_sus_assis[fne603][df_sus_assis[fne603] == 2]
+freq_sus_assis_03_3 = df_sus_assis[fne603][df_sus_assis[fne603] == 3]
+freq_sus_assis_03_4 = df_sus_assis[fne603][df_sus_assis[fne603] == 4]
+freq_sus_assis_03_5 = df_sus_assis[fne603][df_sus_assis[fne603] == 5]
 
-y_data_odd = ['msg005',
-              'msg004',
-              'msg003',
-              'msg002',
-              'msg001']
+freq_sus_assis_04_1 = df_sus_assis[fne604][df_sus_assis[fne604] == 1]
+freq_sus_assis_04_2 = df_sus_assis[fne604][df_sus_assis[fne604] == 2]
+freq_sus_assis_04_3 = df_sus_assis[fne604][df_sus_assis[fne604] == 3]
+freq_sus_assis_04_4 = df_sus_assis[fne604][df_sus_assis[fne604] == 4]
+freq_sus_assis_04_5 = df_sus_assis[fne604][df_sus_assis[fne604] == 5]
 
-y_data_even = ['msg005',
-               'msg004',
-               'msg003',
-               'msg002',
-               'msg001']
+freq_sus_assis_05_1 = df_sus_assis[fne605][df_sus_assis[fne605] == 1]
+freq_sus_assis_05_2 = df_sus_assis[fne605][df_sus_assis[fne605] == 2]
+freq_sus_assis_05_3 = df_sus_assis[fne605][df_sus_assis[fne605] == 3]
+freq_sus_assis_05_4 = df_sus_assis[fne605][df_sus_assis[fne605] == 4]
+freq_sus_assis_05_5 = df_sus_assis[fne605][df_sus_assis[fne605] == 5]
+
+freq_sus_assis_06_1 = df_sus_assis[fne606][df_sus_assis[fne606] == 1]
+freq_sus_assis_06_2 = df_sus_assis[fne606][df_sus_assis[fne606] == 2]
+freq_sus_assis_06_3 = df_sus_assis[fne606][df_sus_assis[fne606] == 3]
+freq_sus_assis_06_4 = df_sus_assis[fne606][df_sus_assis[fne606] == 4]
+freq_sus_assis_06_5 = df_sus_assis[fne606][df_sus_assis[fne606] == 5]
+
+freq_sus_assis_07_1 = df_sus_assis[fne607][df_sus_assis[fne607] == 1]
+freq_sus_assis_07_2 = df_sus_assis[fne607][df_sus_assis[fne607] == 2]
+freq_sus_assis_07_3 = df_sus_assis[fne607][df_sus_assis[fne607] == 3]
+freq_sus_assis_07_4 = df_sus_assis[fne607][df_sus_assis[fne607] == 4]
+freq_sus_assis_07_5 = df_sus_assis[fne607][df_sus_assis[fne607] == 5]
+
+freq_sus_assis_08_1 = df_sus_assis[fne608][df_sus_assis[fne608] == 1]
+freq_sus_assis_08_2 = df_sus_assis[fne608][df_sus_assis[fne608] == 2]
+freq_sus_assis_08_3 = df_sus_assis[fne608][df_sus_assis[fne608] == 3]
+freq_sus_assis_08_4 = df_sus_assis[fne608][df_sus_assis[fne608] == 4]
+freq_sus_assis_08_5 = df_sus_assis[fne608][df_sus_assis[fne608] == 5]
+
+freq_sus_assis_09_1 = df_sus_assis[fne609][df_sus_assis[fne609] == 1]
+freq_sus_assis_09_2 = df_sus_assis[fne609][df_sus_assis[fne609] == 2]
+freq_sus_assis_09_3 = df_sus_assis[fne609][df_sus_assis[fne609] == 3]
+freq_sus_assis_09_4 = df_sus_assis[fne609][df_sus_assis[fne609] == 4]
+freq_sus_assis_09_5 = df_sus_assis[fne609][df_sus_assis[fne609] == 5]
+
+freq_sus_assis_10_1 = df_sus_assis[fne610][df_sus_assis[fne610] == 1]
+freq_sus_assis_10_2 = df_sus_assis[fne610][df_sus_assis[fne610] == 2]
+freq_sus_assis_10_3 = df_sus_assis[fne610][df_sus_assis[fne610] == 3]
+freq_sus_assis_10_4 = df_sus_assis[fne610][df_sus_assis[fne610] == 4]
+freq_sus_assis_10_5 = df_sus_assis[fne610][df_sus_assis[fne610] == 5]
+
+ratio_sus_assis_01_1 = int(round((len(freq_sus_assis_01_1) / len(df_sus_assis[fne601])) * 100))
+ratio_sus_assis_01_2 = int(round((len(freq_sus_assis_01_2) / len(df_sus_assis[fne601])) * 100))
+ratio_sus_assis_01_3 = int(round((len(freq_sus_assis_01_3) / len(df_sus_assis[fne601])) * 100))
+ratio_sus_assis_01_4 = int(round((len(freq_sus_assis_01_4) / len(df_sus_assis[fne601])) * 100))
+ratio_sus_assis_01_5 = int(round((len(freq_sus_assis_01_5) / len(df_sus_assis[fne601])) * 100))
+
+ratio_sus_assis_02_1 = int(round((len(freq_sus_assis_02_1) / len(df_sus_assis[fne602])) * 100))
+ratio_sus_assis_02_2 = int(round((len(freq_sus_assis_02_2) / len(df_sus_assis[fne602])) * 100))
+ratio_sus_assis_02_3 = int(round((len(freq_sus_assis_02_3) / len(df_sus_assis[fne602])) * 100))
+ratio_sus_assis_02_4 = int(round((len(freq_sus_assis_02_4) / len(df_sus_assis[fne602])) * 100))
+ratio_sus_assis_02_5 = int(round((len(freq_sus_assis_02_5) / len(df_sus_assis[fne602])) * 100))
+
+ratio_sus_assis_03_1 = int(round((len(freq_sus_assis_03_1) / len(df_sus_assis[fne603])) * 100))
+ratio_sus_assis_03_2 = int(round((len(freq_sus_assis_03_2) / len(df_sus_assis[fne603])) * 100))
+ratio_sus_assis_03_3 = int(round((len(freq_sus_assis_03_3) / len(df_sus_assis[fne603])) * 100))
+ratio_sus_assis_03_4 = int(round((len(freq_sus_assis_03_4) / len(df_sus_assis[fne603])) * 100))
+ratio_sus_assis_03_5 = int(round((len(freq_sus_assis_03_5) / len(df_sus_assis[fne603])) * 100))
+
+ratio_sus_assis_04_1 = int(round((len(freq_sus_assis_04_1) / len(df_sus_assis[fne604])) * 100))
+ratio_sus_assis_04_2 = int(round((len(freq_sus_assis_04_2) / len(df_sus_assis[fne604])) * 100))
+ratio_sus_assis_04_3 = int(round((len(freq_sus_assis_04_3) / len(df_sus_assis[fne604])) * 100))
+ratio_sus_assis_04_4 = int(round((len(freq_sus_assis_04_4) / len(df_sus_assis[fne604])) * 100))
+ratio_sus_assis_04_5 = int(round((len(freq_sus_assis_04_5) / len(df_sus_assis[fne604])) * 100))
+
+ratio_sus_assis_05_1 = int(round((len(freq_sus_assis_05_1) / len(df_sus_assis[fne605])) * 100))
+ratio_sus_assis_05_2 = int(round((len(freq_sus_assis_05_2) / len(df_sus_assis[fne605])) * 100))
+ratio_sus_assis_05_3 = int(round((len(freq_sus_assis_05_3) / len(df_sus_assis[fne605])) * 100))
+ratio_sus_assis_05_4 = int(round((len(freq_sus_assis_05_4) / len(df_sus_assis[fne605])) * 100))
+ratio_sus_assis_05_5 = int(round((len(freq_sus_assis_05_5) / len(df_sus_assis[fne605])) * 100))
+
+ratio_sus_assis_06_1 = int(round((len(freq_sus_assis_06_1) / len(df_sus_assis[fne606])) * 100))
+ratio_sus_assis_06_2 = int(round((len(freq_sus_assis_06_2) / len(df_sus_assis[fne606])) * 100))
+ratio_sus_assis_06_3 = int(round((len(freq_sus_assis_06_3) / len(df_sus_assis[fne606])) * 100))
+ratio_sus_assis_06_4 = int(round((len(freq_sus_assis_06_4) / len(df_sus_assis[fne606])) * 100))
+ratio_sus_assis_06_5 = int(round((len(freq_sus_assis_06_5) / len(df_sus_assis[fne606])) * 100))
+
+ratio_sus_assis_07_1 = int(round((len(freq_sus_assis_07_1) / len(df_sus_assis[fne607])) * 100))
+ratio_sus_assis_07_2 = int(round((len(freq_sus_assis_07_2) / len(df_sus_assis[fne607])) * 100))
+ratio_sus_assis_07_3 = int(round((len(freq_sus_assis_07_3) / len(df_sus_assis[fne607])) * 100))
+ratio_sus_assis_07_4 = int(round((len(freq_sus_assis_07_4) / len(df_sus_assis[fne607])) * 100))
+ratio_sus_assis_07_5 = int(round((len(freq_sus_assis_07_5) / len(df_sus_assis[fne607])) * 100))
+
+ratio_sus_assis_08_1 = int(round((len(freq_sus_assis_08_1) / len(df_sus_assis[fne608])) * 100))
+ratio_sus_assis_08_2 = int(round((len(freq_sus_assis_08_2) / len(df_sus_assis[fne608])) * 100))
+ratio_sus_assis_08_3 = int(round((len(freq_sus_assis_08_3) / len(df_sus_assis[fne608])) * 100))
+ratio_sus_assis_08_4 = int(round((len(freq_sus_assis_08_4) / len(df_sus_assis[fne608])) * 100))
+ratio_sus_assis_08_5 = int(round((len(freq_sus_assis_08_5) / len(df_sus_assis[fne608])) * 100))
+
+ratio_sus_assis_09_1 = int(round((len(freq_sus_assis_09_1) / len(df_sus_assis[fne609])) * 100))
+ratio_sus_assis_09_2 = int(round((len(freq_sus_assis_09_2) / len(df_sus_assis[fne609])) * 100))
+ratio_sus_assis_09_3 = int(round((len(freq_sus_assis_09_3) / len(df_sus_assis[fne609])) * 100))
+ratio_sus_assis_09_4 = int(round((len(freq_sus_assis_09_4) / len(df_sus_assis[fne609])) * 100))
+ratio_sus_assis_09_5 = int(round((len(freq_sus_assis_09_5) / len(df_sus_assis[fne609])) * 100))
+
+ratio_sus_assis_10_1 = int(round((len(freq_sus_assis_10_1) / len(df_sus_assis[fne610])) * 100))
+ratio_sus_assis_10_2 = int(round((len(freq_sus_assis_10_2) / len(df_sus_assis[fne610])) * 100))
+ratio_sus_assis_10_3 = int(round((len(freq_sus_assis_10_3) / len(df_sus_assis[fne610])) * 100))
+ratio_sus_assis_10_4 = int(round((len(freq_sus_assis_10_4) / len(df_sus_assis[fne610])) * 100))
+ratio_sus_assis_10_5 = int(round((len(freq_sus_assis_10_5) / len(df_sus_assis[fne610])) * 100))
+
+arr_ratio_sus_assis_01 = [ratio_sus_assis_01_1,
+                          ratio_sus_assis_01_2,
+                          ratio_sus_assis_01_3,
+                          ratio_sus_assis_01_4,
+                          ratio_sus_assis_01_5]
+
+arr_ratio_sus_assis_02 = [ratio_sus_assis_02_1,
+                          ratio_sus_assis_02_2,
+                          ratio_sus_assis_02_3,
+                          ratio_sus_assis_02_4,
+                          ratio_sus_assis_02_5]
+
+
+arr_ratio_sus_assis_03 = [ratio_sus_assis_03_1,
+                          ratio_sus_assis_03_2,
+                          ratio_sus_assis_03_3,
+                          ratio_sus_assis_03_4,
+                          ratio_sus_assis_03_5]
+
+arr_ratio_sus_assis_04 = [ratio_sus_assis_04_1,
+                          ratio_sus_assis_04_2,
+                          ratio_sus_assis_04_3,
+                          ratio_sus_assis_04_4,
+                          ratio_sus_assis_04_5]
+
+arr_ratio_sus_assis_01 = [ratio_sus_assis_01_1,
+                          ratio_sus_assis_01_2,
+                          ratio_sus_assis_01_3,
+                          ratio_sus_assis_01_4,
+                          ratio_sus_assis_01_5]
+
+
+arr_ratio_sus_assis_05 = [ratio_sus_assis_05_1,
+                          ratio_sus_assis_05_2,
+                          ratio_sus_assis_05_3,
+                          ratio_sus_assis_05_4,
+                          ratio_sus_assis_05_5]
+
+arr_ratio_sus_assis_06 = [ratio_sus_assis_06_1,
+                          ratio_sus_assis_06_2,
+                          ratio_sus_assis_06_3,
+                          ratio_sus_assis_06_4,
+                          ratio_sus_assis_06_5]
+
+arr_ratio_sus_assis_07 = [ratio_sus_assis_07_1,
+                          ratio_sus_assis_07_2,
+                          ratio_sus_assis_07_3,
+                          ratio_sus_assis_07_4,
+                          ratio_sus_assis_07_5]
+
+
+arr_ratio_sus_assis_08 = [ratio_sus_assis_08_1,
+                          ratio_sus_assis_08_2,
+                          ratio_sus_assis_08_3,
+                          ratio_sus_assis_08_4,
+                          ratio_sus_assis_08_5]
+
+arr_ratio_sus_assis_09 = [ratio_sus_assis_09_1,
+                          ratio_sus_assis_09_2,
+                          ratio_sus_assis_09_3,
+                          ratio_sus_assis_09_4,
+                          ratio_sus_assis_09_5]
+
+
+arr_ratio_sus_assis_10 = [ratio_sus_assis_10_1,
+                          ratio_sus_assis_10_2,
+                          ratio_sus_assis_10_3,
+                          ratio_sus_assis_10_4,
+                          ratio_sus_assis_10_5]
 
 # +++++++++++++ Current - Odd +++++++++++++++++ #
 
@@ -516,27 +708,186 @@ pio.write_html(figCrrntEven, file = fp302, auto_open = True)
 
 # +++++++++++++ Assistant - Odd ++++++++++++++++ #
 
-# TODO
+x_data_assis_odd = [arr_ratio_sus_assis_09,
+                    arr_ratio_sus_assis_07,
+                    arr_ratio_sus_assis_05,
+                    arr_ratio_sus_assis_03,
+                    arr_ratio_sus_assis_01]
+
+figAssisOdd = go.Figure()
+
+for i in range(0, len(x_data_assis_odd[0])):
+    for xd, yd in zip(x_data_assis_odd, y_data_odd):
+        figAssisOdd.add_trace(go.Bar(
+            x=[xd[i]], y=[yd],
+            orientation='h',
+            marker=dict(
+                color=colors_odd[i],
+                line=dict(color='rgb(248, 248, 249)', width=1)
+            )
+        ))
+
+figAssisOdd.update_layout(
+    xaxis=dict(
+        showgrid=False,
+        showline=False,
+        showticklabels=False,
+        zeroline=False,
+        domain=[0.15, 1]
+    ),
+    yaxis=dict(
+        showgrid=False,
+        showline=False,
+        showticklabels=False,
+        zeroline=False,
+    ),
+    barmode='stack',
+    paper_bgcolor='rgb(248, 248, 255)',
+    plot_bgcolor='rgb(248, 248, 255)',
+    margin=dict(l=120, r=10, t=140, b=80),
+    showlegend=False,
+)
+
+annotations = []
+
+for yd, xd in zip(y_data_odd, x_data_assis_odd):
+    # labeling the y-axis
+    annotations.append(dict(xref='paper', yref='y',
+                            x=0.14, y=yd,
+                            xanchor='right',
+                            text=str(yd),
+                            font=dict(family='Arial', size=12,
+                                      color='rgb(67, 67, 67)'),
+                            showarrow=False, align='right'))
+    # labeling the first percentage of each bar (x_axis)
+    annotations.append(dict(xref='x', yref='y',
+                            x=xd[0] / 2, y=yd,
+                            text=str(xd[0]) + '%',
+                            font=dict(family='Arial', size=12,
+                                      color='rgb(248, 248, 255)'),
+                            showarrow=False))
+    # labeling the first Likert scale (on the top)
+    if yd == y_data_odd[-1]:
+        annotations.append(dict(xref='x', yref='paper',
+                                x=xd[0] / 2, y=1.1,
+                                text=top_labels[0],
+                                font=dict(family='Arial', size=12,
+                                          color='rgb(67, 67, 67)'),
+                                showarrow=False))
+    space = xd[0]
+    for i in range(1, len(xd)):
+            # labeling the rest of percentages for each bar (x_axis)
+            annotations.append(dict(xref='x', yref='y',
+                                    x=space + (xd[i]/2), y=yd,
+                                    text=str(xd[i]) + '%',
+                                    font=dict(family='Arial', size=12,
+                                              color='rgb(248, 248, 255)'),
+                                    showarrow=False))
+            # labeling the Likert scale
+            if yd == y_data_odd[-1]:
+                annotations.append(dict(xref='x', yref='paper',
+                                        x=space + (xd[i]/2), y=1.1,
+                                        text=top_labels[i],
+                                        font=dict(family='Arial', size=12,
+                                                  color='rgb(67, 67, 67)'),
+                                        showarrow=False))
+            space += xd[i]
+
+figAssisOdd.update_layout(annotations = annotations)
+pio.write_html(figAssisOdd, file = fp303, auto_open = True)
 
 # ++++++++++++ Assistant - Even ++++++++++++++++ #
 
-# TODO
+x_data_assis_even = [arr_ratio_sus_assis_10,
+                     arr_ratio_sus_assis_08,
+                     arr_ratio_sus_assis_06,
+                     arr_ratio_sus_assis_04,
+                     arr_ratio_sus_assis_02]
+
+figAssisEven = go.Figure()
+
+for i in range(0, len(x_data_assis_even[0])):
+    for xd, yd in zip(x_data_assis_even, y_data_even):
+        figAssisEven.add_trace(go.Bar(
+            x=[xd[i]], y=[yd],
+            orientation='h',
+            marker=dict(
+                color=colors_even[i],
+                line=dict(color='rgb(248, 248, 249)', width=1)
+            )
+        ))
+
+figAssisEven.update_layout(
+    xaxis=dict(
+        showgrid=False,
+        showline=False,
+        showticklabels=False,
+        zeroline=False,
+        domain=[0.15, 1]
+    ),
+    yaxis=dict(
+        showgrid=False,
+        showline=False,
+        showticklabels=False,
+        zeroline=False,
+    ),
+    barmode='stack',
+    paper_bgcolor='rgb(248, 248, 255)',
+    plot_bgcolor='rgb(248, 248, 255)',
+    margin=dict(l=120, r=10, t=140, b=80),
+    showlegend=False,
+)
+
+annotations = []
+
+for yd, xd in zip(y_data_even, x_data_assis_even):
+    # labeling the y-axis
+    annotations.append(dict(xref='paper', yref='y',
+                            x=0.14, y=yd,
+                            xanchor='right',
+                            text=str(yd),
+                            font=dict(family='Arial', size=12,
+                                      color='rgb(67, 67, 67)'),
+                            showarrow=False, align='right'))
+    # labeling the first percentage of each bar (x_axis)
+    annotations.append(dict(xref='x', yref='y',
+                            x=xd[0] / 2, y=yd,
+                            text=str(xd[0]) + '%',
+                            font=dict(family='Arial', size=12,
+                                      color='rgb(248, 248, 255)'),
+                            showarrow=False))
+    # labeling the first Likert scale (on the top)
+    if yd == y_data_even[-1]:
+        annotations.append(dict(xref='x', yref='paper',
+                                x=xd[0] / 2, y=1.1,
+                                text=top_labels[0],
+                                font=dict(family='Arial', size=10,
+                                          color='rgb(67, 67, 67)'),
+                                showarrow=False))
+    space = xd[0]
+    for i in range(1, len(xd)):
+            # labeling the rest of percentages for each bar (x_axis)
+            annotations.append(dict(xref='x', yref='y',
+                                    x=space + (xd[i]/2), y=yd,
+                                    text=str(xd[i]) + '%',
+                                    font=dict(family='Arial', size=12,
+                                              color='rgb(248, 248, 255)'),
+                                    showarrow=False))
+            # labeling the Likert scale
+            if yd == y_data_even[-1]:
+                annotations.append(dict(xref='x', yref='paper',
+                                        x=space + (xd[i]/2), y=1.1,
+                                        text=top_labels[i],
+                                        font=dict(family='Arial', size=10,
+                                                  color='rgb(67, 67, 67)'),
+                                        showarrow=False))
+            space += xd[i]
+
+figAssisEven.update_xaxes(tickangle = 45)
+figAssisEven.update_layout(annotations = annotations)
+pio.write_html(figAssisEven, file = fp304, auto_open = True)
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
-
-# Even Number Questions
-
-# TODO
-
-# ++++++++++++++++ Assistant +++++++++++++++++++ #
-
-# Odd Number Questions
-
-# TODO
-
-# Even Number Questions
-
-# TODO
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 # +++++++++++++++++ END SUS ++++++++++++++++++++ #
