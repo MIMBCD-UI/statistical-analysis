@@ -57,17 +57,17 @@ resultsPath = os.path.join(repoPath, 'results', '')
 resultsAbsPath = os.path.abspath(resultsPath)
 sys.path.append(resultsAbsPath)
 
-# Appending results path.
+# Appending history path.
 resultsHistoryPath = os.path.join(resultsAbsPath, 'history', '')
 resultsHistoryAbsPath = os.path.abspath(resultsHistoryPath)
 sys.path.append(resultsHistoryAbsPath)
 
-# Appending results path.
+# Appending recent path.
 resultsRecentPath = os.path.join(resultsAbsPath, 'recent', '')
 resultsRecentAbsPath = os.path.abspath(resultsRecentPath)
 sys.path.append(resultsRecentAbsPath)
 
-# Appending results path.
+# Appending temp path.
 resultsTempPath = os.path.join(resultsAbsPath, 'temp', '')
 resultsTempAbsPath = os.path.abspath(resultsTempPath)
 sys.path.append(resultsTempAbsPath)
@@ -82,6 +82,16 @@ testsPath = os.path.join(srcPath, 'tests')
 testsAbsPath = os.path.abspath(testsPath)
 sys.path.append(testsAbsPath)
 
+# Appending uta7-statistical-analysis-charts path.
+uta7sacPath = os.path.join(rootAbsPath, 'uta7-statistical-analysis-charts')
+uta7sacAbsPath = os.path.abspath(uta7sacPath)
+sys.path.append(uta7sacAbsPath)
+
+# Appending UTA7 - SAC: Src path.
+uta7sacSrcPath = os.path.join(uta7sacAbsPath, 'src', '')
+uta7sacSrcAbsPath = os.path.abspath(uta7sacSrcPath)
+sys.path.append(uta7sacSrcAbsPath)
+
 # ============================== #
 #       FILE & Folder NAMES      #
 # ============================== #
@@ -90,6 +100,7 @@ ext101 = '.txt'
 ext102 = '.json'
 ext103 = '.dcm'
 ext104 = '.csv'
+ext105 = '.html'
 
 mul001 = '*' + ext101
 mul002 = '*' + ext102
@@ -130,6 +141,16 @@ fnc204 = fn009 + scp01 + fn004 + ext101
 fnc205 = fn009 + scp01 + fn005 + ext101
 fnc206 = fn009 + scp01 + fn006 + ext101
 fnc207 = fn009 + scp01 + fn007 + ext101
+
+pn001 = 'sus_crrnt_odd'
+pn002 = 'sus_crrnt_even'
+pn003 = 'sus_assis_odd'
+pn004 = 'sus_assis_even'
+
+pnc001 = pn001 + ext105
+pnc002 = pn002 + ext105
+pnc003 = pn003 + ext105
+pnc004 = pn004 + ext105
 
 # ============================== #
 # ============================== #
@@ -204,6 +225,18 @@ fp206 = os.path.join(resultsRecentAbsPath, fnc206)
 
 # Path to the time file (OLS)
 fp207 = os.path.join(resultsRecentAbsPath, fnc207)
+
+# ============================== #
+# ============================== #
+
+# ============================== #
+#         PATHS - Charts         #
+# ============================== #
+
+fp301 = os.path.join(uta7sacSrcAbsPath , pnc001)
+fp302 = os.path.join(uta7sacSrcAbsPath , pnc002)
+fp303 = os.path.join(uta7sacSrcAbsPath , pnc003)
+fp304 = os.path.join(uta7sacSrcAbsPath , pnc004)
 
 # ============================== #
 # ============================== #

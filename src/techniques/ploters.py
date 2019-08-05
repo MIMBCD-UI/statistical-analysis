@@ -42,6 +42,7 @@ from sheets import *
 from dataFrames import *
 
 from baseStatisticalAnalysis import *
+from pathsStatisticalAnalysis import *
 
 experience = structures.experience
 nasatlx_columns = structures.nasatlx_columns
@@ -64,6 +65,7 @@ sys.path.append(fm_sheet_dir)
 import plotly
 import chart_studio.plotly as py
 import plotly.graph_objs as go
+import plotly.io as pio
 from plotly import figure_factory as FF
 
 import pandas as pd
@@ -300,12 +302,6 @@ arr_ratio_sus_crrnt_10 = [ratio_sus_crrnt_10_1,
                           ratio_sus_crrnt_10_4,
                           ratio_sus_crrnt_10_5]
 
-x_data_odd = [arr_ratio_sus_crrnt_09,
-              arr_ratio_sus_crrnt_07,
-              arr_ratio_sus_crrnt_05,
-              arr_ratio_sus_crrnt_03,
-              arr_ratio_sus_crrnt_01]
-
 top_labels = ['Strongly<br>disagree',
               'Disagree',
               'Neutral',
@@ -320,17 +316,37 @@ colors_odd = ['rgba(192, 57, 43, 1.0)',
               'rgba(41, 128, 185, 1.0)',
               'rgba(39, 174, 96, 1.0)']
 
+colors_even = ['rgba(39, 174, 96, 1.0)',
+               'rgba(41, 128, 185, 1.0)',
+               'rgba(241, 196, 15, 1.0)',
+               'rgba(230, 126, 34, 1.0)',
+               'rgba(192, 57, 43, 1.0)']
+
 y_data_odd = ['msg005',
               'msg004',
               'msg003',
               'msg002',
               'msg001']
 
-fig = go.Figure()
+y_data_even = ['msg005',
+               'msg004',
+               'msg003',
+               'msg002',
+               'msg001']
 
-for i in range(0, len(x_data_odd[0])):
-    for xd, yd in zip(x_data_odd, y_data_odd):
-        fig.add_trace(go.Bar(
+# +++++++++++++ Current - Odd +++++++++++++++++ #
+
+x_data_crrnt_odd = [arr_ratio_sus_crrnt_09,
+                    arr_ratio_sus_crrnt_07,
+                    arr_ratio_sus_crrnt_05,
+                    arr_ratio_sus_crrnt_03,
+                    arr_ratio_sus_crrnt_01]
+
+figCrrntOdd = go.Figure()
+
+for i in range(0, len(x_data_crrnt_odd[0])):
+    for xd, yd in zip(x_data_crrnt_odd, y_data_odd):
+        figCrrntOdd.add_trace(go.Bar(
             x=[xd[i]], y=[yd],
             orientation='h',
             marker=dict(
@@ -339,7 +355,7 @@ for i in range(0, len(x_data_odd[0])):
             )
         ))
 
-fig.update_layout(
+figCrrntOdd.update_layout(
     xaxis=dict(
         showgrid=False,
         showline=False,
@@ -362,7 +378,7 @@ fig.update_layout(
 
 annotations = []
 
-for yd, xd in zip(y_data_odd, x_data_odd):
+for yd, xd in zip(y_data_odd, x_data_crrnt_odd):
     # labeling the y-axis
     annotations.append(dict(xref='paper', yref='y',
                             x=0.14, y=yd,
@@ -405,12 +421,106 @@ for yd, xd in zip(y_data_odd, x_data_odd):
                                         showarrow=False))
             space += xd[i]
 
-fig.update_layout(annotations=annotations)
+figCrrntOdd.update_layout(annotations = annotations)
+pio.write_html(figCrrntOdd, file = fp301, auto_open = True)
 
-fig.show()
+# +++++++++++++ Current - Even ++++++++++++++++ #
 
-# figBirads = go.Figure(data=dataBirads_df, layout=layoutBirads)
-# py.plot(figBirads, filename = "birads_variation_sd")
+x_data_crrnt_even = [arr_ratio_sus_crrnt_10,
+                     arr_ratio_sus_crrnt_08,
+                     arr_ratio_sus_crrnt_06,
+                     arr_ratio_sus_crrnt_04,
+                     arr_ratio_sus_crrnt_02]
+
+figCrrntEven = go.Figure()
+
+for i in range(0, len(x_data_crrnt_even[0])):
+    for xd, yd in zip(x_data_crrnt_even, y_data_even):
+        figCrrntEven.add_trace(go.Bar(
+            x=[xd[i]], y=[yd],
+            orientation='h',
+            marker=dict(
+                color=colors_even[i],
+                line=dict(color='rgb(248, 248, 249)', width=1)
+            )
+        ))
+
+figCrrntEven.update_layout(
+    xaxis=dict(
+        showgrid=False,
+        showline=False,
+        showticklabels=False,
+        zeroline=False,
+        domain=[0.15, 1]
+    ),
+    yaxis=dict(
+        showgrid=False,
+        showline=False,
+        showticklabels=False,
+        zeroline=False,
+    ),
+    barmode='stack',
+    paper_bgcolor='rgb(248, 248, 255)',
+    plot_bgcolor='rgb(248, 248, 255)',
+    margin=dict(l=120, r=10, t=140, b=80),
+    showlegend=False,
+)
+
+annotations = []
+
+for yd, xd in zip(y_data_even, x_data_crrnt_even):
+    # labeling the y-axis
+    annotations.append(dict(xref='paper', yref='y',
+                            x=0.14, y=yd,
+                            xanchor='right',
+                            text=str(yd),
+                            font=dict(family='Arial', size=12,
+                                      color='rgb(67, 67, 67)'),
+                            showarrow=False, align='right'))
+    # labeling the first percentage of each bar (x_axis)
+    annotations.append(dict(xref='x', yref='y',
+                            x=xd[0] / 2, y=yd,
+                            text=str(xd[0]) + '%',
+                            font=dict(family='Arial', size=12,
+                                      color='rgb(248, 248, 255)'),
+                            showarrow=False))
+    # labeling the first Likert scale (on the top)
+    if yd == y_data_even[-1]:
+        annotations.append(dict(xref='x', yref='paper',
+                                x=xd[0] / 2, y=1.1,
+                                text=top_labels[0],
+                                font=dict(family='Arial', size=12,
+                                          color='rgb(67, 67, 67)'),
+                                showarrow=False))
+    space = xd[0]
+    for i in range(1, len(xd)):
+            # labeling the rest of percentages for each bar (x_axis)
+            annotations.append(dict(xref='x', yref='y',
+                                    x=space + (xd[i]/2), y=yd,
+                                    text=str(xd[i]) + '%',
+                                    font=dict(family='Arial', size=12,
+                                              color='rgb(248, 248, 255)'),
+                                    showarrow=False))
+            # labeling the Likert scale
+            if yd == y_data_even[-1]:
+                annotations.append(dict(xref='x', yref='paper',
+                                        x=space + (xd[i]/2), y=1.1,
+                                        text=top_labels[i],
+                                        font=dict(family='Arial', size=12,
+                                                  color='rgb(67, 67, 67)'),
+                                        showarrow=False))
+            space += xd[i]
+
+figCrrntEven.update_layout(annotations = annotations)
+pio.write_html(figCrrntEven, file = fp302, auto_open = True)
+
+# +++++++++++++ Assistant - Odd ++++++++++++++++ #
+
+# TODO
+
+# ++++++++++++ Assistant - Even ++++++++++++++++ #
+
+# TODO
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
