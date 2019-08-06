@@ -65,6 +65,29 @@ from messagesStatisticalAnalysis import *
 
 # +++++++++++++++++ Current ++++++++++++++++++++ #
 
+# Low - FP (e.g., Real = 0; Given = 1)
+
+df033 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] > 2]
+
+# Low - FN (e.g., Real = 1; Given = 0)
+
+df032 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] < 2]
+
+# Medium - FP (e.g., Real = 2; Given = 3)
+
+df031 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] > 3]
+
+# Medium - FN (e.g., Real = 3; Given = 2)
+
+df030 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] < 3]
+
+# High - FP (e.g., Real = 4; Given = 5)
+# Does not make sense to compute this...
+
+# High - FN (e.g., Real = 5; Given = 2)
+
+df029 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] < 5]
+
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # +++++++++++++++++++ Real +++++++++++++++++++++ #

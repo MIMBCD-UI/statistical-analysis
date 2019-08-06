@@ -6,7 +6,7 @@ __author__      = "Francisco Maria Calisto"
 __maintainer__  = "Francisco Maria Calisto"
 __email__       = "francisco.calisto@tecnico.ulisboa.pt"
 __license__     = "ACADEMIC & COMMERCIAL"
-__version__     = "1.2.1"
+__version__     = "2.0.0"
 __status__      = "Production"
 __copyright__   = "Copyright 2017, Instituto Superior Técnico (IST)"
 __credits__     = [
@@ -105,6 +105,48 @@ datafile_fm = sheets.datafile_fm
 #                       UTA7                     #
 #                                                #
 # ============================================== #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Severities +++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+x_sus_nums = ['Total',
+              'Low',
+              'Medium',
+              'High']
+
+y_low_crrnt = 0
+y_low_assis = 0
+
+y_med_crrnt = 0
+y_med_assis = 0
+
+y_hgh_crrnt = 0
+y_hgh_assis = 0
+
+y_total_crrnt = y_low_crrnt + y_med_crrnt + y_hgh_crrnt
+y_total_assis = y_low_assis + y_med_assis + y_hgh_assis
+
+arr_y_crrnt = [y_total_crrnt,
+               y_low_crrnt,
+               y_med_crrnt,
+               y_hgh_crrnt]
+
+arr_y_assis = [y_total_assis,
+               y_low_assis,
+               y_med_assis,
+               y_hgh_assis]
+
+figSeverNums = go.Figure(data=[
+  go.Bar(name = 'Current', x = x_sus_nums, y = arr_y_crrnt),
+  go.Bar(name = 'Assistant', x = x_sus_nums, y = arr_y_assis)
+])
+# Change the bar mode
+figSeverNums.update_layout(barmode = 'group')
+pio.write_html(figSeverNums, file = fp305, auto_open = False)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 # ++++++++++++++++++ SUS +++++++++++++++++++++++ #
@@ -614,7 +656,7 @@ for yd, xd in zip(y_data_odd, x_data_crrnt_odd):
             space += xd[i]
 
 figCrrntOdd.update_layout(annotations = annotations)
-pio.write_html(figCrrntOdd, file = fp301, auto_open = True)
+pio.write_html(figCrrntOdd, file = fp301, auto_open = False)
 
 # +++++++++++++ Current - Even ++++++++++++++++ #
 
@@ -704,7 +746,7 @@ for yd, xd in zip(y_data_even, x_data_crrnt_even):
             space += xd[i]
 
 figCrrntEven.update_layout(annotations = annotations)
-pio.write_html(figCrrntEven, file = fp302, auto_open = True)
+pio.write_html(figCrrntEven, file = fp302, auto_open = False)
 
 # +++++++++++++ Assistant - Odd ++++++++++++++++ #
 
@@ -794,7 +836,7 @@ for yd, xd in zip(y_data_odd, x_data_assis_odd):
             space += xd[i]
 
 figAssisOdd.update_layout(annotations = annotations)
-pio.write_html(figAssisOdd, file = fp303, auto_open = True)
+pio.write_html(figAssisOdd, file = fp303, auto_open = False)
 
 # ++++++++++++ Assistant - Even ++++++++++++++++ #
 
@@ -885,7 +927,7 @@ for yd, xd in zip(y_data_even, x_data_assis_even):
 
 figAssisEven.update_xaxes(tickangle = 45)
 figAssisEven.update_layout(annotations = annotations)
-pio.write_html(figAssisEven, file = fp304, auto_open = True)
+pio.write_html(figAssisEven, file = fp304, auto_open = False)
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 

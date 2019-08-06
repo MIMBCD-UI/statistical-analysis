@@ -146,11 +146,13 @@ pn001 = 'sus_crrnt_odd'
 pn002 = 'sus_crrnt_even'
 pn003 = 'sus_assis_odd'
 pn004 = 'sus_assis_even'
+pn005 = 'birads_nums'
 
 pnc001 = pn001 + ext105
 pnc002 = pn002 + ext105
 pnc003 = pn003 + ext105
 pnc004 = pn004 + ext105
+pnc005 = pn005 + ext105
 
 # ============================== #
 # ============================== #
@@ -233,10 +235,14 @@ fp207 = os.path.join(resultsRecentAbsPath, fnc207)
 #         PATHS - Charts         #
 # ============================== #
 
+# SUS
 fp301 = os.path.join(uta7sacSrcAbsPath , pnc001)
 fp302 = os.path.join(uta7sacSrcAbsPath , pnc002)
 fp303 = os.path.join(uta7sacSrcAbsPath , pnc003)
 fp304 = os.path.join(uta7sacSrcAbsPath , pnc004)
+
+# BIRADS
+fp305 = os.path.join(uta7sacSrcAbsPath , pnc005)
 
 # ============================== #
 # ============================== #
