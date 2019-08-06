@@ -65,27 +65,26 @@ from messagesStatisticalAnalysis import *
 
 # +++++++++++++++++ Current ++++++++++++++++++++ #
 
-# Low - FP (e.g., Real = 0; Given = 1)
+# Total Samples
+df035 = df_birads_crrnt[fne017]
 
-df033 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] > 2]
+# Low - FP (e.g., Real = 0; Given = 1)
+df034 = df_birads_crrnt['low'][df_birads_crrnt['low'] > 2]
 
 # Low - FN (e.g., Real = 1; Given = 0)
-
-df032 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] < 2]
+df033 = df_birads_crrnt['low'][df_birads_crrnt['low'] < 2]
 
 # Medium - FP (e.g., Real = 2; Given = 3)
-
-df031 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] > 3]
+df032 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] > 3]
 
 # Medium - FN (e.g., Real = 3; Given = 2)
-
-df030 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] < 3]
+df031 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] < 3]
 
 # High - FP (e.g., Real = 4; Given = 5)
 # Does not make sense to compute this...
+df030 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] > 5]
 
 # High - FN (e.g., Real = 5; Given = 2)
-
 df029 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] < 5]
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
@@ -96,16 +95,42 @@ df029 = df_birads_crrnt[fne103][df_birads_crrnt[fne103] < 5]
 
 # ++++++++++++++++ Physician +++++++++++++++++++ #
 
-# Low
+# Low - Per Group
 
-# Medium
+# Medium - Per Group
 
-# High
+# High - Per Group
 
 df025 = df_birads_phy[fne103][df_birads_phy[fne012] == fne013]
 df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne014]
 df026 = df_birads_phy[fne103][df_birads_phy[fne012] == fne015]
 df028 = df_birads_phy[fne103][df_birads_phy[fne012] == fne016]
+
+# Total Samples
+df042 = df_birads_phy[fne017]
+
+numToCompLowReal = df_birads_real[fne105]
+numToCompMedReal = df_birads_real[fne104]
+numToCompHghReal = df_birads_real[fne103]
+
+# Low - FP (e.g., Real = 0; Given = 1)
+df041 = df_birads_phy[fne105][df_birads_phy[fne105] > numToCompLowReal]
+
+# Low - FN (e.g., Real = 1; Given = 0)
+df040 = df_birads_phy[fne105][df_birads_phy[fne105] < numToCompLowReal]
+
+# Medium - FP (e.g., Real = 2; Given = 3)
+df039 = df_birads_phy[fne104][df_birads_phy[fne104] > numToCompMedReal]
+
+# Medium - FN (e.g., Real = 3; Given = 2)
+df038 = df_birads_phy[fne104][df_birads_phy[fne104] < numToCompMedReal]
+
+# High - FP (e.g., Real = 4; Given = 5)
+# Does not make sense to compute this...
+df037 = df_birads_phy[fne103][df_birads_phy[fne103] > numToCompHghReal]
+
+# High - FN (e.g., Real = 5; Given = 2)
+df036 = df_birads_phy[fne103][df_birads_phy[fne103] < numToCompHghReal]
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 

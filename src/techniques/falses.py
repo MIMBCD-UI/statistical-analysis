@@ -42,10 +42,58 @@ saSrcVarsAbsPath = os.path.abspath(saSrcVarsJoinPath)
 
 from dataFrames import *
 
+# +++++++++++++++++ Current ++++++++++++++++++++ #
+
+# Total number of samples
+total_crrnt_sample = len(df035)
+
+# Total number of each condition
 total_crrnt_hgh_fn = len(df029)
+total_crrnt_hgh_fp = len(df030)
 
+total_crrnt_med_fn = len(df031)
+total_crrnt_med_fp = len(df032)
 
+total_crrnt_low_fn = len(df033)
+total_crrnt_low_fp = len(df034)
 
+# Ratio of each condition
+ratio_crrnt_hgh_fn = total_crrnt_hgh_fn / total_crrnt_sample
+ratio_crrnt_hgh_fp = total_crrnt_hgh_fp / total_crrnt_sample
 
+ratio_crrnt_med_fn = total_crrnt_med_fn / total_crrnt_sample
+ratio_crrnt_med_fp = total_crrnt_med_fp / total_crrnt_sample
+
+ratio_crrnt_low_fn = total_crrnt_low_fn / total_crrnt_sample
+ratio_crrnt_low_fp = total_crrnt_low_fp / total_crrnt_sample
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++ Physician +++++++++++++++++++ #
+
+# Total number of samples
+total_phy_sample = len(df042)
+
+# Total number of each condition
+total_phy_hgh_fn = len(df036)
+total_phy_hgh_fp = len(df037)
+
+total_phy_med_fn = len(df038)
+total_phy_med_fp = len(df039)
+
+total_phy_low_fn = len(df040)
+total_phy_low_fp = len(df041)
+
+# Ratio of each condition
+ratio_phy_hgh_fn = total_phy_hgh_fn / total_phy_sample
+ratio_phy_hgh_fp = total_phy_hgh_fp / total_phy_sample
+
+ratio_phy_med_fn = total_phy_med_fn / total_phy_sample
+ratio_phy_med_fp = total_phy_med_fp / total_phy_sample
+
+ratio_phy_low_fn = total_phy_low_fn / total_phy_sample
+ratio_phy_low_fp = total_phy_low_fp / total_phy_sample
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ==================== END File ==================== #

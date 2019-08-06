@@ -22,13 +22,29 @@ pathDirname = os.path.dirname(__file__)
 joinPath = os.path.join(pathDirname, '..', '..', '..')
 pathAbsPath = os.path.abspath(joinPath)
 
-sa_constants_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'constants')
-sa_methods_dir = os.path.join(pathAbsPath, 'statistical-analysis', 'src', 'methods')
-techniques_dir = os.path.join(pathAbsPath, 'ssheet-reader', 'src', 'techniques')
-variables_dir = os.path.join(pathAbsPath, 'ssheet-reader', 'src', 'variables')
+saJoinPath = os.path.join(pathAbsPath, 'statistical-analysis')
+saPathAbsPath = os.path.abspath(saJoinPath)
+
+srJoinPath = os.path.join(pathAbsPath, 'sheet-reader')
+srPathAbsPath = os.path.abspath(srJoinPath)
+
+saSrcJoinPath = os.path.join(saPathAbsPath, 'src')
+saSrcPathAbsPath = os.path.abspath(saSrcJoinPath)
+
+srSrcJoinPath = os.path.join(srPathAbsPath, 'src')
+srSrcPathAbsPath = os.path.abspath(srSrcJoinPath)
+
+sa_constants_dir = os.path.join(saSrcPathAbsPath, 'constants')
+sa_methods_dir = os.path.join(saSrcPathAbsPath, 'methods')
+sa_techniques_dir = os.path.join(saSrcPathAbsPath, 'techniques')
 
 sys.path.append(sa_constants_dir)
 sys.path.append(sa_methods_dir)
+sys.path.append(sa_techniques_dir)
+
+techniques_dir = os.path.join(srSrcPathAbsPath, 'techniques')
+variables_dir = os.path.join(srSrcPathAbsPath, 'variables')
+
 sys.path.append(techniques_dir)
 sys.path.append(variables_dir)
 
@@ -40,6 +56,8 @@ from biradsCalcs import *
 from structures import *
 from sheets import *
 from dataFrames import *
+
+from falses import *
 
 from baseStatisticalAnalysis import *
 from pathsStatisticalAnalysis import *
@@ -115,32 +133,58 @@ x_sus_nums = ['Total',
               'Medium',
               'High']
 
-y_low_crrnt = 0
-y_low_assis = 0
+y_fn_low_crrnt = ratio_crrnt_low_fn
+y_fn_low_phy = ratio_phy_low_fn
+y_fp_low_crrnt = ratio_crrnt_low_fp
+y_fp_low_phy = ratio_phy_low_fp
 
-y_med_crrnt = 0
-y_med_assis = 0
+y_fn_med_crrnt = ratio_crrnt_med_fn
+y_fn_med_phy = ratio_phy_med_fn
+y_fp_med_crrnt = ratio_crrnt_med_fp
+y_fp_med_phy = ratio_phy_med_fp
 
-y_hgh_crrnt = 0
-y_hgh_assis = 0
+y_fn_hgh_crrnt = ratio_crrnt_hgh_fn
+y_fn_hgh_phy = ratio_phy_hgh_fn
+y_fp_hgh_crrnt = ratio_crrnt_hgh_fp
+y_fp_hgh_phy = ratio_phy_hgh_fp
 
-y_total_crrnt = y_low_crrnt + y_med_crrnt + y_hgh_crrnt
-y_total_assis = y_low_assis + y_med_assis + y_hgh_assis
+y_fn_total_crrnt = (y_fn_low_crrnt + y_fn_med_crrnt + y_fn_hgh_crrnt) / 3
+y_fn_total_phy = (y_fn_low_phy + y_fn_med_phy + y_fn_hgh_phy) / 3
+y_fp_total_crrnt = (y_fp_low_crrnt + y_fp_med_crrnt + y_fp_hgh_crrnt) / 3
+y_fp_total_phy = (y_fp_low_phy + y_fp_med_phy + y_fp_hgh_phy) / 3
 
-arr_y_crrnt = [y_total_crrnt,
-               y_low_crrnt,
-               y_med_crrnt,
-               y_hgh_crrnt]
+arr_fn_y_crrnt = [y_fn_total_crrnt,
+                  y_fn_low_crrnt,
+                  y_fn_med_crrnt,
+                  y_fn_hgh_crrnt]
 
-arr_y_assis = [y_total_assis,
-               y_low_assis,
-               y_med_assis,
-               y_hgh_assis]
+arr_fn_y_phy = [y_fn_total_phy,
+                y_fn_low_phy,
+                y_fn_med_phy,
+                y_fn_hgh_phy]
+
+arr_fp_y_crrnt = [y_fp_total_crrnt,
+                  y_fp_low_crrnt,
+                  y_fp_med_crrnt,
+                  y_fp_hgh_crrnt]
+
+arr_fp_y_phy = [y_fp_total_phy,
+                y_fp_low_phy,
+                y_fp_med_phy,
+                y_fp_hgh_phy]
+
+nm001 = 'Current: FN'
+nm002 = 'Assistant: FN'
+nm003 = 'Current: FP'
+nm004 = 'Assistant: FP'
 
 figSeverNums = go.Figure(data=[
-  go.Bar(name = 'Current', x = x_sus_nums, y = arr_y_crrnt),
-  go.Bar(name = 'Assistant', x = x_sus_nums, y = arr_y_assis)
+  go.Bar(name = nm001, x = x_sus_nums, y = arr_fn_y_crrnt),
+  go.Bar(name = nm002, x = x_sus_nums, y = arr_fn_y_phy),
+  go.Bar(name = nm003, x = x_sus_nums, y = arr_fp_y_crrnt),
+  go.Bar(name = nm004, x = x_sus_nums, y = arr_fp_y_phy)
 ])
+
 # Change the bar mode
 figSeverNums.update_layout(barmode = 'group')
 pio.write_html(figSeverNums, file = fp305, auto_open = False)

@@ -73,6 +73,7 @@ fne013 = 'intern'
 fne014 = 'junior'
 fne015 = 'middle'
 fne016 = 'senior'
+fne017 = 'physician_number'
 
 fne103 = 'high'
 fne104 = 'medium'
