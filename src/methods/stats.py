@@ -90,20 +90,10 @@ from messagesStatisticalAnalysis import *
 
 # BIRADS
 
-# ============================================== #
-# ============================================== #
-
-# DOTS
-
-# ============================================== #
-# ============================================== #
-
-# NASA-TLX
-
 f_birads_phy_low_per_group = stats.f_oneway(df025,
-	                                          df026,
-	                                          df026,
-	                                          df028)
+                                            df026,
+                                            df026,
+                                            df028)
 
 l_birads_phy_low_per_group = stats.levene(df025,
                                           df026,
@@ -115,6 +105,64 @@ print(t003, fne002, fne004, fne105)
 print(f_birads_phy_low_per_group)
 print(l_birads_phy_low_per_group)
 print(c010)
+
+# ============================================== #
+# ============================================== #
+
+# DOTS
+
+# ============================================== #
+# ============================================== #
+
+# NASA-TLX
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Current - MD +++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_crrnt_md_per_group = stats.f_oneway(df0,
+                                              df0,
+                                              df0,
+                                              df0)
+
+l_nasatlx_crrnt_md_per_group = stats.levene(df0,
+                                            df0,
+                                            df0,
+                                            df0)
+
+print(c010)
+print(tc003, fne004, fne301)
+print(f_nasatlx_crrnt_md_per_group)
+print(l_nasatlx_crrnt_md_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Current - MD +++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++ Assistant - MD ++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_assis_md_per_group = stats.f_oneway(df0,
+                                              df0,
+                                              df0,
+                                              df0)
+
+l_nasatlx_assis_md_per_group = stats.levene(df0,
+                                            df0,
+                                            df0,
+                                            df0)
+
+print(c010)
+print(tc003, fne003, fne301)
+print(f_nasatlx_assis_md_per_group)
+print(l_nasatlx_assis_md_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Assistant - MD +++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ============================================== #
 

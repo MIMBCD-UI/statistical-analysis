@@ -69,10 +69,10 @@ from messagesStatisticalAnalysis import *
 df035 = df_birads_crrnt[fne017]
 
 # Low - FP (e.g., Real = 0; Given = 1)
-df034 = df_birads_crrnt['low'][df_birads_crrnt['low'] > 2]
+df034 = df_birads_crrnt[fne105][df_birads_crrnt[fne105] > 2]
 
 # Low - FN (e.g., Real = 1; Given = 0)
-df033 = df_birads_crrnt['low'][df_birads_crrnt['low'] < 2]
+df033 = df_birads_crrnt[fne105][df_birads_crrnt[fne105] < 2]
 
 # Medium - FP (e.g., Real = 2; Given = 3)
 df032 = df_birads_crrnt[fne104][df_birads_crrnt[fne104] > 3]
@@ -147,6 +147,114 @@ df036 = df_birads_phy[fne103][df_birads_phy[fne103] < numToCompHghReal]
 # ============================================== #
 
 # NASA-TLX
+
+# +++++++++++++++ Current - MD +++++++++++++++++ #
+
+df043 = df_nasatlx_crrnt[fne301][df_nasatlx_crrnt[fne012] == fne013]
+df044 = df_nasatlx_crrnt[fne301][df_nasatlx_crrnt[fne012] == fne014]
+df045 = df_nasatlx_crrnt[fne301][df_nasatlx_crrnt[fne012] == fne015]
+df046 = df_nasatlx_crrnt[fne301][df_nasatlx_crrnt[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++ Assistant - MD ++++++++++++++++ #
+
+df047 = df_nasatlx_assis[fne301][df_nasatlx_assis[fne012] == fne013]
+df048 = df_nasatlx_assis[fne301][df_nasatlx_assis[fne012] == fne014]
+df049 = df_nasatlx_assis[fne301][df_nasatlx_assis[fne012] == fne015]
+df050 = df_nasatlx_assis[fne301][df_nasatlx_assis[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# +++++++++++++++ Current - PD +++++++++++++++++ #
+
+df051 = df_nasatlx_crrnt[fne302][df_nasatlx_crrnt[fne012] == fne013]
+df052 = df_nasatlx_crrnt[fne302][df_nasatlx_crrnt[fne012] == fne014]
+df053 = df_nasatlx_crrnt[fne302][df_nasatlx_crrnt[fne012] == fne015]
+df054 = df_nasatlx_crrnt[fne302][df_nasatlx_crrnt[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++ Assistant - PD ++++++++++++++++ #
+
+df055 = df_nasatlx_assis[fne302][df_nasatlx_assis[fne012] == fne013]
+df056 = df_nasatlx_assis[fne302][df_nasatlx_assis[fne012] == fne014]
+df057 = df_nasatlx_assis[fne302][df_nasatlx_assis[fne012] == fne015]
+df058 = df_nasatlx_assis[fne302][df_nasatlx_assis[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# +++++++++++++++ Current - TD +++++++++++++++++ #
+
+df059 = df_nasatlx_crrnt[fne303][df_nasatlx_crrnt[fne012] == fne013]
+df060 = df_nasatlx_crrnt[fne303][df_nasatlx_crrnt[fne012] == fne014]
+df061 = df_nasatlx_crrnt[fne303][df_nasatlx_crrnt[fne012] == fne015]
+df062 = df_nasatlx_crrnt[fne303][df_nasatlx_crrnt[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++ Assistant - TD ++++++++++++++++ #
+
+df063 = df_nasatlx_assis[fne303][df_nasatlx_assis[fne012] == fne013]
+df064 = df_nasatlx_assis[fne303][df_nasatlx_assis[fne012] == fne014]
+df065 = df_nasatlx_assis[fne303][df_nasatlx_assis[fne012] == fne015]
+df066 = df_nasatlx_assis[fne303][df_nasatlx_assis[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# +++++++++++++++ Current - PE +++++++++++++++++ #
+
+df067 = df_nasatlx_crrnt[fne304][df_nasatlx_crrnt[fne012] == fne013]
+df068 = df_nasatlx_crrnt[fne304][df_nasatlx_crrnt[fne012] == fne014]
+df069 = df_nasatlx_crrnt[fne304][df_nasatlx_crrnt[fne012] == fne015]
+df070 = df_nasatlx_crrnt[fne304][df_nasatlx_crrnt[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++ Assistant - PE ++++++++++++++++ #
+
+df071 = df_nasatlx_assis[fne304][df_nasatlx_assis[fne012] == fne013]
+df072 = df_nasatlx_assis[fne304][df_nasatlx_assis[fne012] == fne014]
+df073 = df_nasatlx_assis[fne304][df_nasatlx_assis[fne012] == fne015]
+df074 = df_nasatlx_assis[fne304][df_nasatlx_assis[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# +++++++++++++++ Current - EF +++++++++++++++++ #
+
+df075 = df_nasatlx_crrnt[fne305][df_nasatlx_crrnt[fne012] == fne013]
+df076 = df_nasatlx_crrnt[fne305][df_nasatlx_crrnt[fne012] == fne014]
+df077 = df_nasatlx_crrnt[fne305][df_nasatlx_crrnt[fne012] == fne015]
+df078 = df_nasatlx_crrnt[fne305][df_nasatlx_crrnt[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++ Assistant - EF ++++++++++++++++ #
+
+df079 = df_nasatlx_assis[fne305][df_nasatlx_assis[fne012] == fne013]
+df080 = df_nasatlx_assis[fne305][df_nasatlx_assis[fne012] == fne014]
+df081 = df_nasatlx_assis[fne305][df_nasatlx_assis[fne012] == fne015]
+df082 = df_nasatlx_assis[fne305][df_nasatlx_assis[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# +++++++++++++++ Current - FR +++++++++++++++++ #
+
+df083 = df_nasatlx_crrnt[fne306][df_nasatlx_crrnt[fne012] == fne013]
+df084 = df_nasatlx_crrnt[fne306][df_nasatlx_crrnt[fne012] == fne014]
+df085 = df_nasatlx_crrnt[fne306][df_nasatlx_crrnt[fne012] == fne015]
+df086 = df_nasatlx_crrnt[fne306][df_nasatlx_crrnt[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++ Assistant - FR ++++++++++++++++ #
+
+df087 = df_nasatlx_assis[fne306][df_nasatlx_assis[fne012] == fne013]
+df088 = df_nasatlx_assis[fne306][df_nasatlx_assis[fne012] == fne014]
+df089 = df_nasatlx_assis[fne306][df_nasatlx_assis[fne012] == fne015]
+df090 = df_nasatlx_assis[fne306][df_nasatlx_assis[fne012] == fne016]
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ============================================== #
 # ============================================== #
