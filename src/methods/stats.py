@@ -101,7 +101,7 @@ l_birads_phy_low_per_group = stats.levene(df025,
                                           df028)
 
 print(c010)
-print(t003, fne002, fne004, fne105)
+print(t001, fne002, fne004, fne105)
 print(f_birads_phy_low_per_group)
 print(l_birads_phy_low_per_group)
 print(c010)
@@ -112,6 +112,12 @@ print(c010)
 # DOTS
 
 # ============================================== #
+
+print(c001)
+print(c001)
+print(c001)
+print(c001)
+
 # ============================================== #
 
 # NASA-TLX
@@ -120,15 +126,15 @@ print(c010)
 # +++++++++++++++ Current - MD +++++++++++++++++ #
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
-f_nasatlx_crrnt_md_per_group = stats.f_oneway(df0,
-                                              df0,
-                                              df0,
-                                              df0)
+f_nasatlx_crrnt_md_per_group = stats.f_oneway(df043,
+                                              df044,
+                                              df045,
+                                              df046)
 
-l_nasatlx_crrnt_md_per_group = stats.levene(df0,
-                                            df0,
-                                            df0,
-                                            df0)
+l_nasatlx_crrnt_md_per_group = stats.levene(df043,
+                                            df044,
+                                            df045,
+                                            df046)
 
 print(c010)
 print(tc003, fne004, fne301)
@@ -144,15 +150,15 @@ print(c010)
 # ++++++++++++++ Assistant - MD ++++++++++++++++ #
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
-f_nasatlx_assis_md_per_group = stats.f_oneway(df0,
-                                              df0,
-                                              df0,
-                                              df0)
+f_nasatlx_assis_md_per_group = stats.f_oneway(df047,
+                                              df048,
+                                              df049,
+                                              df050)
 
-l_nasatlx_assis_md_per_group = stats.levene(df0,
-                                            df0,
-                                            df0,
-                                            df0)
+l_nasatlx_assis_md_per_group = stats.levene(df047,
+                                            df048,
+                                            df049,
+                                            df050)
 
 print(c010)
 print(tc003, fne003, fne301)
@@ -162,6 +168,246 @@ print(c010)
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 # +++++++++++++ END Assistant - MD +++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Current - PD +++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_crrnt_pd_per_group = stats.f_oneway(df051,
+                                              df052,
+                                              df053,
+                                              df054)
+
+l_nasatlx_crrnt_pd_per_group = stats.levene(df051,
+                                            df052,
+                                            df053,
+                                            df054)
+
+print(c010)
+print(tc003, fne004, fne302)
+print(f_nasatlx_crrnt_pd_per_group)
+print(l_nasatlx_crrnt_pd_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Current - PD +++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++ Assistant - PD ++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_assis_pd_per_group = stats.f_oneway(df055,
+                                              df056,
+                                              df057,
+                                              df058)
+
+l_nasatlx_assis_pd_per_group = stats.levene(df055,
+                                            df056,
+                                            df057,
+                                            df058)
+
+print(c010)
+print(tc003, fne003, fne302)
+print(f_nasatlx_assis_pd_per_group)
+print(l_nasatlx_assis_pd_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Assistant - PD +++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Current - TD +++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_crrnt_td_per_group = stats.f_oneway(df059,
+                                              df060,
+                                              df061,
+                                              df062)
+
+l_nasatlx_crrnt_td_per_group = stats.levene(df059,
+                                            df060,
+                                            df061,
+                                            df062)
+
+print(c010)
+print(tc003, fne004, fne303)
+print(f_nasatlx_crrnt_td_per_group)
+print(l_nasatlx_crrnt_td_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Current - TD +++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++ Assistant - TD ++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_assis_td_per_group = stats.f_oneway(df063,
+                                              df064,
+                                              df065,
+                                              df066)
+
+l_nasatlx_assis_td_per_group = stats.levene(df063,
+                                            df064,
+                                            df065,
+                                            df066)
+
+print(c010)
+print(tc003, fne003, fne303)
+print(f_nasatlx_assis_td_per_group)
+print(l_nasatlx_assis_td_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Assistant - TD +++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Current - PE +++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_crrnt_pe_per_group = stats.f_oneway(df067,
+                                              df068,
+                                              df069,
+                                              df070)
+
+l_nasatlx_crrnt_pe_per_group = stats.levene(df067,
+                                            df068,
+                                            df069,
+                                            df070)
+
+print(c010)
+print(tc003, fne004, fne304)
+print(f_nasatlx_crrnt_pe_per_group)
+print(l_nasatlx_crrnt_pe_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Current - PE +++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++ Assistant - PE ++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_assis_pe_per_group = stats.f_oneway(df071,
+                                              df072,
+                                              df073,
+                                              df074)
+
+l_nasatlx_assis_pe_per_group = stats.levene(df071,
+                                            df072,
+                                            df073,
+                                            df074)
+
+print(c010)
+print(tc003, fne003, fne304)
+print(f_nasatlx_assis_pe_per_group)
+print(l_nasatlx_assis_pe_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Assistant - PE +++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Current - EF +++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_crrnt_ef_per_group = stats.f_oneway(df075,
+                                              df076,
+                                              df077,
+                                              df078)
+
+l_nasatlx_crrnt_ef_per_group = stats.levene(df075,
+                                            df076,
+                                            df077,
+                                            df078)
+
+print(c010)
+print(tc003, fne004, fne305)
+print(f_nasatlx_crrnt_ef_per_group)
+print(l_nasatlx_crrnt_ef_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Current - EF +++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++ Assistant - EF ++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_assis_ef_per_group = stats.f_oneway(df079,
+                                              df080,
+                                              df081,
+                                              df082)
+
+l_nasatlx_assis_ef_per_group = stats.levene(df079,
+                                            df080,
+                                            df081,
+                                            df082)
+
+print(c010)
+print(tc003, fne003, fne305)
+print(f_nasatlx_assis_ef_per_group)
+print(l_nasatlx_assis_ef_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Assistant - EF +++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++ Current - FU +++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_crrnt_fu_per_group = stats.f_oneway(df083,
+                                              df084,
+                                              df085,
+                                              df086)
+
+l_nasatlx_crrnt_fu_per_group = stats.levene(df083,
+                                            df084,
+                                            df085,
+                                            df086)
+
+print(c010)
+print(tc003, fne004, fne306)
+print(f_nasatlx_crrnt_fu_per_group)
+print(l_nasatlx_crrnt_fu_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Current - FU +++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++ Assistant - FU ++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+f_nasatlx_assis_fu_per_group = stats.f_oneway(df087,
+                                              df088,
+                                              df089,
+                                              df090)
+
+l_nasatlx_assis_fu_per_group = stats.levene(df087,
+                                            df088,
+                                            df089,
+                                            df090)
+
+print(c010)
+print(tc003, fne003, fne306)
+print(f_nasatlx_assis_fu_per_group)
+print(l_nasatlx_assis_fu_per_group)
+print(c010)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++ END Assistant - FU +++++++++++++ #
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ============================================== #
