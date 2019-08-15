@@ -979,6 +979,87 @@ pio.write_html(figAssisEven, file = fp304, auto_open = False)
 # +++++++++++++++++ END SUS ++++++++++++++++++++ #
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
 
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# ++++++++++++++++++ Time ++++++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# TODO: Refactor!!!
+x = ['Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Low', 'Low', 'Low',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'Medium', 'Medium', 'Medium',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',
+     'High', 'High', 'High',]
+
+figTime = go.Figure()
+
+figTime.add_trace(go.Box(
+    y = df094,
+    x = x,
+    boxmean = 'sd',
+    name = 'Current',
+    marker_color = '#FF4136'
+))
+
+figTime.add_trace(go.Box(
+    y = df098,
+    x = x,
+    boxmean = 'sd',
+    name = 'Assistant',
+    marker_color = '#3D9970'
+))
+
+# group together boxes of the different traces for each value of x
+figTime.update_layout(
+    yaxis_title = 'seconds',
+    boxmode = 'group'
+)
+
+pio.write_html(figTime, file = fp306, auto_open = False)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+# +++++++++++++++++ END Time +++++++++++++++++++ #
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
 # ============================================== #
 # ============================================== #
 # ============================================== #

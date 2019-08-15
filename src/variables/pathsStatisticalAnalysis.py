@@ -147,12 +147,14 @@ pn002 = 'sus_crrnt_even'
 pn003 = 'sus_assis_odd'
 pn004 = 'sus_assis_even'
 pn005 = 'birads_nums'
+pn006 = 'time'
 
 pnc001 = pn001 + ext105
 pnc002 = pn002 + ext105
 pnc003 = pn003 + ext105
 pnc004 = pn004 + ext105
 pnc005 = pn005 + ext105
+pnc006 = pn006 + ext105
 
 # ============================== #
 # ============================== #
@@ -243,6 +245,9 @@ fp304 = os.path.join(uta7sacSrcAbsPath , pnc004)
 
 # BIRADS
 fp305 = os.path.join(uta7sacSrcAbsPath , pnc005)
+
+# Time
+fp306 = os.path.join(uta7sacSrcAbsPath , pnc006)
 
 # ============================== #
 # ============================== #

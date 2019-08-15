@@ -39,6 +39,7 @@ sys.path.append(saSrcVarsJoinPath)
 saSrcVarsAbsPath = os.path.abspath(saSrcVarsJoinPath)
 
 import pandas as pd
+import numpy as np
 import scipy.stats as stats
 import researchpy as rp
 import statsmodels.api as sm
@@ -321,6 +322,36 @@ df021 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne013]
 df022 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne014]
 df023 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne015]
 df024 = df_time_full_assis[fne103][df_time_full_assis[fne012] == fne016]
+
+# ============================================== #
+
+# +++++++++++++++++++ Current ++++++++++++++++++ #
+
+df091 = df_time_full_crrnt[fne105] # low
+df092 = df_time_full_crrnt[fne104] # medium
+df093 = df_time_full_crrnt[fne103] # high
+
+arr_df091 = np.asarray(df091)
+arr_df092 = np.asarray(df092)
+arr_df093 = np.asarray(df093)
+
+df094 = np.concatenate((arr_df091, arr_df092, arr_df093), axis=0)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
+
+# ++++++++++++++++++ Assistant +++++++++++++++++ #
+
+df095 = df_time_full_assis[fne105] # low
+df096 = df_time_full_assis[fne104] # medium
+df097 = df_time_full_assis[fne103] # high
+
+arr_df095 = np.asarray(df095)
+arr_df096 = np.asarray(df096)
+arr_df097 = np.asarray(df097)
+
+df098 = np.concatenate((arr_df095, arr_df096, arr_df097), axis=0)
+
+# ++++++++++++++++++++++++++++++++++++++++++++++ #
 
 # ============================================== #
 
