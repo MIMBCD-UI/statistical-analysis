@@ -186,7 +186,10 @@ figSeverNums = go.Figure(data=[
 ])
 
 # Change the bar mode
-figSeverNums.update_layout(barmode = 'group')
+figSeverNums.update_layout(barmode = 'group',
+  font=dict(family='Arial',
+            size=24,
+            color='rgb(67, 67, 67)'))
 pio.write_html(figSeverNums, file = fp305, auto_open = False)
 
 # ++++++++++++++++++++++++++++++++++++++++++++++ #
@@ -662,7 +665,7 @@ for yd, xd in zip(y_data_odd, x_data_crrnt_odd):
                             x=0.14, y=yd,
                             xanchor='right',
                             text=str(yd),
-                            font=dict(family='Arial', size=12,
+                            font=dict(family='Arial', size=18,
                                       color='rgb(67, 67, 67)'),
                             showarrow=False, align='right'))
     # labeling the first percentage of each bar (x_axis)
@@ -677,7 +680,8 @@ for yd, xd in zip(y_data_odd, x_data_crrnt_odd):
         annotations.append(dict(xref='x', yref='paper',
                                 x=xd[0] / 2, y=1.1,
                                 text=top_labels[0],
-                                font=dict(family='Arial', size=12,
+                                textangle=-90,
+                                font=dict(family='Arial', size=16,
                                           color='rgb(67, 67, 67)'),
                                 showarrow=False))
     space = xd[0]
@@ -694,7 +698,8 @@ for yd, xd in zip(y_data_odd, x_data_crrnt_odd):
                 annotations.append(dict(xref='x', yref='paper',
                                         x=space + (xd[i]/2), y=1.1,
                                         text=top_labels[i],
-                                        font=dict(family='Arial', size=12,
+                                        textangle=-90,
+                                        font=dict(family='Arial', size=16,
                                                   color='rgb(67, 67, 67)'),
                                         showarrow=False))
             space += xd[i]
@@ -752,7 +757,7 @@ for yd, xd in zip(y_data_even, x_data_crrnt_even):
                             x=0.14, y=yd,
                             xanchor='right',
                             text=str(yd),
-                            font=dict(family='Arial', size=12,
+                            font=dict(family='Arial', size=18,
                                       color='rgb(67, 67, 67)'),
                             showarrow=False, align='right'))
     # labeling the first percentage of each bar (x_axis)
@@ -767,7 +772,8 @@ for yd, xd in zip(y_data_even, x_data_crrnt_even):
         annotations.append(dict(xref='x', yref='paper',
                                 x=xd[0] / 2, y=1.1,
                                 text=top_labels[0],
-                                font=dict(family='Arial', size=12,
+                                textangle=-90,
+                                font=dict(family='Arial', size=16,
                                           color='rgb(67, 67, 67)'),
                                 showarrow=False))
     space = xd[0]
@@ -784,7 +790,8 @@ for yd, xd in zip(y_data_even, x_data_crrnt_even):
                 annotations.append(dict(xref='x', yref='paper',
                                         x=space + (xd[i]/2), y=1.1,
                                         text=top_labels[i],
-                                        font=dict(family='Arial', size=12,
+                                        textangle=-90,
+                                        font=dict(family='Arial', size=16,
                                                   color='rgb(67, 67, 67)'),
                                         showarrow=False))
             space += xd[i]
@@ -842,7 +849,7 @@ for yd, xd in zip(y_data_odd, x_data_assis_odd):
                             x=0.14, y=yd,
                             xanchor='right',
                             text=str(yd),
-                            font=dict(family='Arial', size=12,
+                            font=dict(family='Arial', size=18,
                                       color='rgb(67, 67, 67)'),
                             showarrow=False, align='right'))
     # labeling the first percentage of each bar (x_axis)
@@ -857,7 +864,8 @@ for yd, xd in zip(y_data_odd, x_data_assis_odd):
         annotations.append(dict(xref='x', yref='paper',
                                 x=xd[0] / 2, y=1.1,
                                 text=top_labels[0],
-                                font=dict(family='Arial', size=12,
+                                textangle=-90,
+                                font=dict(family='Arial', size=16,
                                           color='rgb(67, 67, 67)'),
                                 showarrow=False))
     space = xd[0]
@@ -874,7 +882,8 @@ for yd, xd in zip(y_data_odd, x_data_assis_odd):
                 annotations.append(dict(xref='x', yref='paper',
                                         x=space + (xd[i]/2), y=1.1,
                                         text=top_labels[i],
-                                        font=dict(family='Arial', size=12,
+                                        textangle=-90,
+                                        font=dict(family='Arial', size=16,
                                                   color='rgb(67, 67, 67)'),
                                         showarrow=False))
             space += xd[i]
@@ -932,7 +941,7 @@ for yd, xd in zip(y_data_even, x_data_assis_even):
                             x=0.14, y=yd,
                             xanchor='right',
                             text=str(yd),
-                            font=dict(family='Arial', size=12,
+                            font=dict(family='Arial', size=18,
                                       color='rgb(67, 67, 67)'),
                             showarrow=False, align='right'))
     # labeling the first percentage of each bar (x_axis)
@@ -947,7 +956,8 @@ for yd, xd in zip(y_data_even, x_data_assis_even):
         annotations.append(dict(xref='x', yref='paper',
                                 x=xd[0] / 2, y=1.1,
                                 text=top_labels[0],
-                                font=dict(family='Arial', size=10,
+                                textangle=-90,
+                                font=dict(family='Arial', size=16,
                                           color='rgb(67, 67, 67)'),
                                 showarrow=False))
     space = xd[0]
@@ -964,7 +974,8 @@ for yd, xd in zip(y_data_even, x_data_assis_even):
                 annotations.append(dict(xref='x', yref='paper',
                                         x=space + (xd[i]/2), y=1.1,
                                         text=top_labels[i],
-                                        font=dict(family='Arial', size=10,
+                                        textangle=-90,
+                                        font=dict(family='Arial', size=16,
                                                   color='rgb(67, 67, 67)'),
                                         showarrow=False))
             space += xd[i]
@@ -1033,25 +1044,28 @@ x = ['Low', 'Low', 'Low',
 figTime = go.Figure()
 
 figTime.add_trace(go.Box(
-    y = df094,
-    x = x,
-    boxmean = 'sd',
-    name = 'Current',
-    marker_color = '#FF4136'
+  y = df094,
+  x = x,
+  boxmean = 'sd',
+  name = 'Current',
+  marker_color = '#FF4136'
 ))
 
 figTime.add_trace(go.Box(
-    y = df098,
-    x = x,
-    boxmean = 'sd',
-    name = 'Assistant',
-    marker_color = '#3D9970'
+  y = df098,
+  x = x,
+  boxmean = 'sd',
+  name = 'Assistant',
+  marker_color = '#3D9970'
 ))
 
 # group together boxes of the different traces for each value of x
 figTime.update_layout(
-    yaxis_title = 'seconds',
-    boxmode = 'group'
+  yaxis_title = 'seconds',
+  boxmode = 'group',
+  font=dict(family='Arial',
+            size=24,
+            color='rgb(67, 67, 67)'),
 )
 
 pio.write_html(figTime, file = fp306, auto_open = False)
