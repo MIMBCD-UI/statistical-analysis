@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="0; url='https://mimbcd-ui.github.io/statistical-analysis/web/index.html'" />
+
 # Statistical Analysis
 
 <img src="https://github.com/mida-project/meta/blob/master/banners/statistical-analysis.png?raw=true" width="100%" />
